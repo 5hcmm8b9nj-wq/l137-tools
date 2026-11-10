@@ -1,0 +1,264 @@
+/* =============================================================
+   L137 DELIVERANCE MINISTRIES — ACCESSIBILITY & CONTRAST PATCH
+   Drop-in stylesheet. Load AFTER styles.css.
+   Raises every text/background pairing to WCAG AA, most to AAA,
+   while preserving the navy + royal gold + cream + burgundy identity.
+   ============================================================= */
+
+:root {
+  /* Brighter heading gold — same family, more luminance for AAA on navy */
+  --gold-bright: #E0BB45;
+  /* Slightly more opaque body white — small bump, big phone-screen difference */
+  --ink-soft-aa: rgba(255, 255, 255, 0.88);
+  /* Used for emphasized captions on dark surfaces */
+  --ink-strong: #FFFFFF;
+}
+
+/* Global rendering polish for older readers */
+html { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+body { color: var(--ink-strong); }
+
+
+/* =============================================================
+   PRIORITY 1 — AA FAILURES (six fixes)
+   ============================================================= */
+
+/* 1. Breath Prayer — "Ready" / "Inhale" / "Hold" / "Exhale" label
+      was navy on navy (1.00:1). Force to gold for the resting/Ready
+      state; JS state classes can still override per phase.            */
+.breath-label {
+  color: var(--gold-bright) !important;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+}
+
+/* 2. Breath Prayer — "Cycle X of 7" counter
+      was burgundy on navy (1.61:1). Soft gold reads cleanly on navy. */
+.breath-counter {
+  color: var(--gold-soft) !important;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* 3. Breath Prayer — subtitle ("Press Begin. Seven breaths...")
+      was muted slate on navy (2.76:1).                                */
+.breath-sub {
+  color: var(--ink-soft-aa) !important;
+  font-size: 17px;
+  line-height: 1.55;
+}
+
+/* 4. Seven Doorways — first card icon (👁 rendered white on cream)
+      Force dark color so any uncolored Unicode glyph stays visible.
+      Native colored emojis (👂 👃 etc.) keep their own paint.        */
+.doorway-icon {
+  color: var(--navy) !important;
+  font-size: 44px;
+  line-height: 1;
+  filter: none;
+}
+
+/* 5 & 6. Scale / Squatter numbers — gold on cream was 1.97:1.
+         Teal on cream is 7.45:1 — strong, editorial, on-brand.       */
+.scale-num,
+.squatter-num {
+  color: var(--teal) !important;
+  font-weight: 800;
+  font-size: 15px;
+  letter-spacing: 0.10em;
+}
+
+
+/* =============================================================
+   PRIORITY 2 — AAA UPLIFT FOR GOLD HEADINGS ON NAVY
+   Routes the gold "voice" through a brighter shade for headings/
+   numbers only; decorative gold pills/buttons keep --gold.
+   ============================================================= */
+
+.hero-title,
+.hero-eyebrow,
+.section h2,
+.section h3,
+.section-tinted h2,
+.section-tinted h3,
+.section-dark h2,
+.section-dark h3,
+.tool-num,
+.quiz-question,
+.verse-ref,
+.memory-ref,
+.renounce-progress-text,
+.pdf-thumb-band,
+.pdf-thumb-sub,
+.squatter-back-title,
+.brand-name,
+.ref-label,
+.eyebrow.on-dark {
+  color: var(--gold-bright) !important;
+}
+
+/* Small caps / kicker text gets a fraction more weight on dark */
+.eyebrow,
+.kicker,
+.brand-verse,
+.brand-founder {
+  color: var(--gold-bright) !important;
+  font-weight: 600;
+}
+
+/* Lifted-navy panel headings (gold-soft already AAA — leave alone, but
+   ensure smallest tags are still readable)                              */
+.tool-title,
+.diagnose-title,
+.dl-title,
+.audio h3,
+.audio-tag,
+.memory-ref,
+.figcaption {
+  color: var(--gold-soft);
+}
+
+/* Body copy on lifted panels — bump slightly */
+.section,
+.section-tinted,
+.section-dark,
+.section p,
+.section-tinted p,
+.section-dark p,
+.lede,
+.lead,
+.section-lead,
+.section-lead p {
+  color: var(--ink-soft-aa);
+}
+
+
+/* =============================================================
+   PRIORITY 3 — ALERT AFFORDANCE & FOCUS RINGS
+   ============================================================= */
+
+/* Quiz feedback — keep tinted bg but add a clear left border so the
+   alert reads as an alert, not just colored text.                    */
+.quiz-feedback.correct {
+  background: rgba(108, 203, 111, 0.18) !important;
+  border-left: 4px solid var(--success) !important;
+  color: #BCE9BE !important;            /* brighter green for AAA on navy-2 */
+  padding: 14px 16px;
+  border-radius: 6px;
+}
+.quiz-feedback.incorrect {
+  background: rgba(224, 123, 123, 0.18) !important;
+  border-left: 4px solid var(--danger) !important;
+  color: #F2B5B5 !important;            /* brighter red for AAA on navy-2 */
+  padding: 14px 16px;
+  border-radius: 6px;
+}
+
+/* Branded global focus ring — visible for keyboard users on every
+   interactive element. Replaces the dotted browser default.         */
+a:focus-visible,
+button:focus-visible,
+[role="button"]:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+summary:focus-visible,
+details:focus-visible {
+  outline: 3px solid var(--gold-bright) !important;
+  outline-offset: 2px !important;
+  border-radius: 6px;
+}
+
+/* Quiz options — make the selected/wrong/right states more obvious */
+.quiz-option {
+  color: var(--ink-strong);
+}
+.quiz-option:hover:not(:disabled) {
+  border-color: var(--gold-bright) !important;
+  background: var(--navy) !important;
+}
+
+
+/* =============================================================
+   PRIORITY 4 — TYPOGRAPHY MINIMUMS FOR MINISTRY AUDIENCE
+   ============================================================= */
+
+/* Don't let any caption/eyebrow drop below 12px effective on mobile */
+.kicker,
+.eyebrow,
+.tool-num,
+.quiz-progress-text,
+.brand-verse,
+.brand-founder,
+.scale-num,
+.squatter-num,
+.ref-label,
+.dl-sub,
+.audio-tag {
+  font-size: max(12px, 0.78rem);
+}
+
+/* Body paragraphs — comfortable for older readers */
+p {
+  font-size: max(16px, 1rem);
+  line-height: 1.6;
+}
+
+/* Buttons — keep label readable */
+.btn,
+.btn-primary,
+.quiz-next,
+.memory-check-btn {
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+
+/* =============================================================
+   PRIORITY 5 — VERSE / SCRIPTURE CARDS
+   Most verse cards on this site sit on a navy-2 lifted panel,
+   not on cream. So verse text stays light, references stay gold.
+   We only re-color verses inside an explicitly cream container.
+   ============================================================= */
+
+.verse,
+.verse-text,
+.flashcard-verse {
+  font-weight: 500;
+}
+
+/* If a verse card is wrapped in a cream/light container, dark text */
+[data-bg="cream"] .verse,
+[data-bg="cream"] .verse-text,
+.cream-card .verse,
+.cream-card .verse-text {
+  color: var(--navy) !important;
+}
+[data-bg="cream"] .verse-ref,
+.cream-card .verse-ref {
+  color: var(--burgundy) !important;
+  font-weight: 700;
+}
+
+
+/* =============================================================
+   PRIORITY 6 — DOORWAY / SCALE / SQUATTER CARD LABELS ON CREAM
+   "Tap to open", "Tap to reveal" labels should be unambiguous.
+   ============================================================= */
+
+.doorway-hint,
+.scale-hint,
+.squatter-flip-hint,
+.card-hint {
+  color: var(--teal) !important;
+  font-weight: 700;
+  letter-spacing: 0.10em;
+}
+
+
+/* =============================================================
+   Done. Every fix is additive — no existing rule is rewritten.
+   ============================================================= */

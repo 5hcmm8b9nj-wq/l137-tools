@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interactive Workbook | Destroying All Evil Covenants</title>
+  <link rel="preconnect" href="https://api.fontshare.com" />
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&f[]=zodiak@400,700&display=swap" rel="stylesheet" />
+  <style>
+    :root{
+      --text-xs:clamp(.75rem,.7rem + .25vw,.875rem);--text-sm:clamp(.875rem,.8rem + .35vw,1rem);--text-base:clamp(1rem,.95rem + .25vw,1.125rem);--text-lg:clamp(1.125rem,1rem + .75vw,1.5rem);--text-xl:clamp(1.5rem,1.2rem + 1.25vw,2.25rem);--text-2xl:clamp(2rem,1.2rem + 2.5vw,3.5rem);
+      --space-1:.25rem;--space-2:.5rem;--space-3:.75rem;--space-4:1rem;--space-5:1.25rem;--space-6:1.5rem;--space-8:2rem;--space-10:2.5rem;--space-12:3rem;--space-16:4rem;
+      --bg:#f7f6f2;--surface:#fcfbf8;--surface-2:#f4f1eb;--surface-3:#ece7df;--text:#28251d;--muted:#666158;--faint:#938f87;--line:#d8d1c7;--primary:#01696f;--primary-2:#d8ece9;--accent:#7b1e54;--success:#3f7c35;--warning:#9a5a00;--radius-sm:.5rem;--radius-md:.85rem;--radius-lg:1.25rem;--radius-xl:1.6rem;--shadow:0 10px 30px rgba(34,31,26,.08);--shadow-sm:0 2px 10px rgba(34,31,26,.06);
+    }
+    [data-theme="dark"]{--bg:#171614;--surface:#201e1b;--surface-2:#272420;--surface-3:#312d28;--text:#ece6dc;--muted:#b7afa2;--faint:#91897d;--line:#3d3933;--primary:#63aab3;--primary-2:#243438;--accent:#dc8fc0;--success:#8bc17b;--warning:#e0b463;--shadow:0 16px 40px rgba(0,0,0,.35);--shadow-sm:0 4px 14px rgba(0,0,0,.22)}
+    *,:before,:after{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:'Satoshi',sans-serif;background:linear-gradient(180deg,var(--bg),var(--surface-2));color:var(--text);font-size:var(--text-base);line-height:1.6}
+    h1,h2,h3{font-family:'Zodiak',serif;line-height:1.08;margin:0 0 .6rem} p{margin:.2rem 0 0} button,input,textarea,select{font:inherit}
+    .app{display:grid;grid-template-columns:290px minmax(0,1fr);min-height:100vh}
+    .sidebar{position:sticky;top:0;height:100vh;padding:1.2rem;background:color-mix(in srgb,var(--surface) 92%, transparent);backdrop-filter:blur(14px);border-right:1px solid color-mix(in srgb,var(--text) 12%, transparent);overflow:auto}
+    .logo{display:flex;gap:.9rem;align-items:center;margin-bottom:1.2rem}.logo-mark{width:50px;height:50px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,var(--primary),var(--accent));color:white;box-shadow:var(--shadow-sm)}
+    .logo small{display:block;color:var(--muted);font-size:var(--text-xs);letter-spacing:.08em;text-transform:uppercase}.logo strong{display:block;font-size:var(--text-sm)}
+    .toolbar{display:grid;gap:.6rem;margin:1rem 0 1.1rem}.toolbar button,.toolbar a,.utility button{width:100%;border:none;border-radius:999px;padding:.85rem 1rem;background:var(--surface-2);color:var(--text);cursor:pointer;text-decoration:none;box-shadow:var(--shadow-sm)}
+    .toolbar button.primary{background:var(--primary);color:white}.toolbar button:hover,.toolbar a:hover,.utility button:hover{transform:translateY(-1px)}
+    .progress-card{background:var(--surface);border:1px solid color-mix(in srgb,var(--text) 10%, transparent);border-radius:var(--radius-lg);padding:1rem;box-shadow:var(--shadow-sm);margin-bottom:1rem}
+    .meter{height:12px;background:var(--surface-3);border-radius:999px;overflow:hidden;margin:.8rem 0 .4rem}.meter span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--primary),var(--accent));transition:width .25s ease}
+    .nav{display:grid;gap:.5rem}.nav a{padding:.8rem .9rem;border-radius:1rem;color:var(--muted);text-decoration:none;background:transparent;border:1px solid transparent}.nav a.active,.nav a:hover{background:var(--surface);color:var(--text);border-color:color-mix(in srgb,var(--text) 8%, transparent)}
+    .main{padding:1.2rem 1.2rem 4rem;display:grid;gap:1rem}
+    .hero{background:linear-gradient(135deg,var(--surface),var(--surface-2));border:1px solid color-mix(in srgb,var(--text) 10%, transparent);border-radius:var(--radius-xl);padding:clamp(1.5rem,3vw,3rem);box-shadow:var(--shadow);display:grid;grid-template-columns:1.15fr .85fr;gap:1rem;align-items:end}
+    .hero .eyebrow{font-size:var(--text-xs);letter-spacing:.14em;text-transform:uppercase;color:var(--primary);margin-bottom:.8rem}.hero h1{font-size:var(--text-2xl);max-width:12ch}.hero p{max-width:60ch;color:var(--muted)}
+    .hero-panel{background:var(--bg);border:1px solid color-mix(in srgb,var(--text) 10%, transparent);border-radius:var(--radius-lg);padding:1rem}
+    .hero-panel ul{margin:0;padding-left:1rem}.hero-panel li{margin:.45rem 0;color:var(--muted)}
+    .card{background:var(--surface);border:1px solid color-mix(in srgb,var(--text) 10%, transparent);border-radius:var(--radius-xl);box-shadow:var(--shadow-sm);overflow:hidden}
+    .card-head{padding:1.2rem 1.2rem .6rem;border-bottom:1px solid color-mix(in srgb,var(--text) 8%, transparent)} .card-body{padding:1.2rem;display:grid;gap:1rem}
+    .pill-row{display:flex;flex-wrap:wrap;gap:.6rem}.pill{padding:.45rem .8rem;border-radius:999px;background:var(--primary-2);color:var(--primary);font-size:var(--text-xs);letter-spacing:.03em}
+    .check-grid{display:grid;gap:.75rem}.check-item{display:flex;gap:.8rem;align-items:flex-start;padding:1rem;background:var(--surface-2);border:1px solid color-mix(in srgb,var(--text) 8%, transparent);border-radius:1rem}.check-item input{width:1.1rem;height:1.1rem;accent-color:var(--primary);margin-top:.2rem}
+    .scripture{padding:1rem;border-radius:1rem;background:linear-gradient(180deg,var(--surface),var(--surface-2));border:1px solid color-mix(in srgb,var(--text) 8%, transparent)} .scripture strong{display:block;margin-bottom:.3rem;font-size:var(--text-sm)} .scripture small{display:block;color:var(--faint);margin-top:.35rem}
+    .prompt, .prayer-box{padding:1rem 1rem 1rem 1.15rem;border-radius:1rem;background:var(--surface-2);border-left:4px solid var(--primary)} .prompt strong,.prayer-box strong{display:block;margin-bottom:.25rem}
+    textarea, input[type="text"]{width:100%;padding:1rem;border-radius:1rem;border:1px solid color-mix(in srgb,var(--text) 12%, transparent);background:var(--bg);color:var(--text)} textarea{min-height:120px;resize:vertical}
+    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:1rem}.three-col{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+    .declaration{display:flex;gap:.75rem;align-items:flex-start;padding:1rem;border-radius:1rem;background:var(--surface-2);border:1px solid color-mix(in srgb,var(--text) 8%, transparent)} .declaration input{margin-top:.15rem;width:1.05rem;height:1.05rem;accent-color:var(--accent)}
+    .utility{display:flex;gap:.75rem;flex-wrap:wrap}.utility button{width:auto;padding:.8rem 1rem}.save-note{font-size:var(--text-xs);color:var(--muted)}
+    .footer-box{padding:1.2rem;border-radius:var(--radius-lg);background:linear-gradient(135deg,var(--primary-2),var(--surface-2));border:1px solid color-mix(in srgb,var(--primary) 18%, transparent)}
+    .tabs{display:flex;flex-wrap:wrap;gap:.6rem}.tab-btn{border:none;border-radius:999px;padding:.8rem 1rem;background:var(--surface-2);cursor:pointer}.tab-btn.active{background:var(--primary);color:#fff}
+    .tab-panel{display:none}.tab-panel.active{display:block}
+    details.accordion{border:1px solid color-mix(in srgb,var(--text) 10%, transparent);border-radius:1rem;background:var(--surface-2);padding:.2rem .95rem}.accordion + .accordion{margin-top:.8rem}
+    details summary{cursor:pointer;list-style:none;font-weight:700;padding:1rem 0}.night-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:.8rem}.night-card{padding:1rem;border-radius:1rem;background:var(--surface-2);border:1px solid color-mix(in srgb,var(--text) 8%, transparent)}
+    .mini-input{margin-top:.6rem}
+
+    @media (max-width: 980px){.app{grid-template-columns:1fr}.sidebar{position:relative;height:auto}.hero,.two-col,.three-col{grid-template-columns:1fr}.main{padding:1rem}.nav{grid-template-columns:1fr 1fr}}
+    @media print{.sidebar,.utility,.toolbar{display:none!important}.app{display:block}.main{padding:0}.card,.hero{box-shadow:none}.card,.hero,.scripture,.check-item,.declaration{break-inside:avoid;background:#fff}.hero-panel{display:none}}
+  </style>
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="logo">
+        <div class="logo-mark">
+          <svg viewBox="0 0 64 64" width="28" height="28" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="32" cy="32" r="24" stroke="currentColor" stroke-width="4"/><path d="M32 16v32M20 32h24" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><path d="M18 22c7 2 11 6 14 12 3-6 7-10 14-12" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
+        </div>
+        <div><small>Interactive workbook</small><strong>Destroying All Evil Covenants</strong></div>
+      </div>
+
+      <div class="toolbar">
+        <button class="primary" id="saveBtn">Save My Notes</button>
+        <button id="loadBtn">Load My Notes</button>
+        <button id="clearBtn">Clear Workbook</button>
+      </div>
+
+      <div class="progress-card">
+        <strong>Progress</strong>
+        <div class="meter"><span id="meterBar"></span></div>
+        <div id="progressText" class="save-note">0 of 0 items completed</div>
+      </div>
+
+      <nav class="nav">
+        <a href="#welcome">Welcome</a>
+        <a href="#heart">Preparing the Heart</a>
+        <a href="#spirit">Holy Spirit</a>
+        <a href="#scriptures">Scriptures</a>
+        <a href="#action">Prophetic Action</a>
+        <a href="#prayers">Declarations</a>
+        <a href="#reflection">Reflection</a>
+      </nav>
+
+      <div class="progress-card">
+        <strong>How this works</strong>
+        <p class="save-note">Check boxes as you pray, type reflections into the journal areas, then use Save My Notes to download your personal workbook file to your device.</p>
+      </div>
+    </aside>
+
+    <main class="main">
+      <section class="hero" id="welcome">
+        <div class="utility" style="margin-bottom:1rem;grid-column:1 / -1">
+          <button type="button" id="expandAllBtn">Expand All Prayer Sections</button>
+          <button type="button" id="collapseAllBtn">Collapse All Prayer Sections</button>
+        </div>
+        <div>
+          <div class="eyebrow">Christian workbook page</div>
+          <h1>Pray, reflect, record, and return.</h1>
+          <p>This version is built as an interactive workbook, not a plain outline. It includes live progress tracking, writable journal areas, check-off sections, downloadable notes, and a clean format for personal use, group prayer, or ministry classes.</p>
+          <div class="pill-row" style="margin-top:1rem">
+            <span class="pill">Interactive checkboxes</span>
+            <span class="pill">Journal prompts</span>
+            <span class="pill">Saveable notes</span>
+            <span class="pill">Printable layout</span>
+          </div>
+        </div>
+        <div class="hero-panel">
+          <ul>
+            <li>Move section by section as you pray.</li>
+            <li>Use the text areas for dreams, testimonies, and impressions.</li>
+            <li>Use “Save My Notes” to download your entries as a text file.</li>
+            <li>Use Print to create a paper or PDF version when needed.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="card" id="heart">
+        <div class="card-head"><h2>1. Preparing the Heart</h2><p>Thanksgiving, confession, and forgiveness.</p></div>
+        <div class="card-body">
+          <div class="three-col">
+            <div>
+              <h3>Thanksgiving</h3>
+              <div class="scripture"><strong>Read aloud</strong>Psalm 100:4; Psalm 103:1–5; 1 Thessalonians 5:16–18.</div>
+              <div class="check-grid" style="margin-top:.75rem">
+                <label class="check-item"><input type="checkbox" class="track"><span>I read the thanksgiving scriptures aloud.</span></label>
+                <label class="check-item"><input type="checkbox" class="track"><span>I thanked God for at least three specific mercies.</span></label>
+              </div>
+              <div class="prayer-box" style="margin-top:.75rem"><strong>Prayer</strong>Father, in the name of Jesus, I thank You for Your mercy, goodness, and covenant love over my life.</div>
+              <textarea data-note="thanksgiving_notes" placeholder="Write the things you are thanking God for..."></textarea>
+            </div>
+            <div>
+              <h3>Confession of Sins</h3>
+              <div class="scripture"><strong>Read aloud</strong>1 John 1:9; Psalm 51:1–4; Proverbs 28:13.</div>
+              <div class="check-grid" style="margin-top:.75rem">
+                <label class="check-item"><input type="checkbox" class="track"><span>I asked the Holy Spirit to search my heart.</span></label>
+                <label class="check-item"><input type="checkbox" class="track"><span>I confessed known sins before the Lord.</span></label>
+                <label class="check-item"><input type="checkbox" class="track"><span>I renounced every agreement with darkness.</span></label>
+              </div>
+              <div class="prayer-box" style="margin-top:.75rem"><strong>Prayer</strong>Lord Jesus, I confess my sins before You. Wash me with Your blood and cleanse me from all unrighteousness.</div>
+              <textarea data-note="confession_notes" placeholder="Write what the Holy Spirit is bringing to your attention..."></textarea>
+            </div>
+            <div>
+              <h3>Forgiving Others</h3>
+              <div class="scripture"><strong>Read aloud</strong>Matthew 6:14–15; Mark 11:25; Ephesians 4:31–32.</div>
+              <div class="check-grid" style="margin-top:.75rem">
+                <label class="check-item"><input type="checkbox" class="track"><span>I forgave every person the Holy Spirit brought to mind.</span></label>
+                <label class="check-item"><input type="checkbox" class="track"><span>I released bitterness, resentment, and retaliation.</span></label>
+              </div>
+              <div class="prayer-box" style="margin-top:.75rem"><strong>Prayer</strong>In the name of Jesus, I forgive every person who has hurt me. I release them fully before God.</div>
+              <textarea data-note="forgiveness_notes" placeholder="Who did you forgive? What shifted in your heart?"></textarea>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="card" id="spirit">
+        <div class="card-head"><h2>2. Inviting the Holy Spirit</h2><p>Invite the Spirit of God to lead the session.</p></div>
+        <div class="card-body two-col">
+          <div>
+            <div class="scripture"><strong>Read aloud</strong>Romans 8:14; John 16:13; 2 Corinthians 3:17.</div>
+            <div class="check-grid" style="margin-top:.75rem">
+              <label class="check-item"><input type="checkbox" class="track"><span>I invited the Holy Spirit to take full control.</span></label>
+              <label class="check-item"><input type="checkbox" class="track"><span>I asked for revelation about hidden covenants and repeated patterns.</span></label>
+            </div>
+            <div class="prayer-box"><strong>Prayer</strong>Holy Spirit, take full control. Reveal what must be exposed, broken, healed, and cleansed.</div>
+          </div>
+          <div>
+            <div class="prompt"><strong>Reflection prompt</strong>What patterns or battles keep repeating in your life or family line?</div>
+            <textarea data-note="holy_spirit_reflection" placeholder="Write patterns, impressions, dreams, or things the Holy Spirit reveals..."></textarea>
+          </div>
+        </div>
+      </section>
+
+      <section class="card" id="scriptures">
+        <div class="card-head"><h2>3. Covenant Scriptures to Read Aloud</h2><p>Use these as your scriptural foundation.</p></div>
+        <div class="card-body">
+          <div class="two-col">
+            <div class="scripture"><strong>Luke 22:20</strong>This cup is the new covenant in His blood.<small>Read aloud slowly.</small></div>
+            <div class="scripture"><strong>Hebrews 12:24</strong>The blood of Jesus speaks better things.<small>Read aloud slowly.</small></div>
+            <div class="scripture"><strong>Ezekiel 16:1–6</strong>Read the full passage aloud, especially the language about nativity, navel cord, blood, and “Live.”</div>
+            <div class="scripture"><strong>Galatians 3:13 and 1 Peter 1:18–19</strong>Christ redeems and His blood secures redemption.</div>
+          </div>
+          <div class="check-grid">
+            <label class="check-item"><input type="checkbox" class="track"><span>I read all the covenant scriptures aloud.</span></label>
+            <label class="check-item"><input type="checkbox" class="track"><span>I paused to meditate on the new covenant in Christ.</span></label>
+          </div>
+          <textarea data-note="scripture_meditation" placeholder="What does the blood of Jesus guarantee you that no inherited covenant can override?"></textarea>
+        </div>
+      </section>
+
+      <section class="card" id="action">
+        <div class="card-head"><h2>4. Prophetic Action Instructions</h2><p>Follow prayerfully, remembering that Christ is the source of deliverance.</p></div>
+        <div class="card-body two-col">
+          <div class="check-grid">
+            <label class="check-item"><input type="checkbox" class="track"><span>I prepared communion elements in remembrance of Jesus Christ.</span></label>
+            <label class="check-item"><input type="checkbox" class="track"><span>I held the area of my navel or umbilical cord as a prophetic point of contact.</span></label>
+            <label class="check-item"><input type="checkbox" class="track"><span>I anointed the navel area with oil in the name of Jesus.</span></label>
+            <label class="check-item"><input type="checkbox" class="track"><span>I committed to continue for however many nights the Holy Spirit leads.</span></label>
+          </div>
+          <div>
+            <div class="prompt"><strong>Reminder</strong>The power is not in the act itself, but in faith in the finished work of Jesus Christ and the speaking blood of the new covenant.</div>
+            <textarea data-note="prophetic_action_notes" placeholder="Write any instructions, impressions, or confirmations you sense here..."></textarea>
+          </div>
+        </div>
+      </section>
+
+      <section class="card" id="prayers">
+        <div class="card-head"><h2>5. Prayers for Breaking Evil Covenants</h2><p>Use tabs for flow, and expandable sections for focused praying.</p></div>
+        <div class="card-body">
+          <div class="tabs" role="tablist" aria-label="Prayer tabs">
+            <button class="tab-btn active" type="button" data-tab="tab1">Declarations</button>
+            <button class="tab-btn" type="button" data-tab="tab2">Prayer Sections</button>
+            <button class="tab-btn" type="button" data-tab="tab3">Prayer-Night Tracker</button>
+          </div>
+
+          <div class="tab-panel active" id="tab1">
+            <div class="declaration"><input type="checkbox" class="track"><div>Blood of Jesus, speak against every unconscious evil covenant.</div></div>
+            <div class="declaration"><input type="checkbox" class="track"><div>I speak destruction unto the fruits of unclean spirits in my life, in the name of Jesus.</div></div>
+            <div class="declaration"><input type="checkbox" class="track"><div>I break every evil covenant link, by the blood of Jesus.</div></div>
+            <div class="declaration"><input type="checkbox" class="track"><div>I dismantle every stronghold of evil blood covenants, by the blood of Jesus.</div></div>
+            <div class="declaration"><input type="checkbox" class="track"><div>I nullify the effects of evil access to my blood, by the blood of Jesus.</div></div>
+            <div class="declaration"><input type="checkbox" class="track"><div>I release myself from every covenanted curse, by the blood of Jesus.</div></div>
+            <div class="declaration"><input type="checkbox" class="track"><div>I release every organ in my body from the grip of evil blood covenant, by the blood of Jesus.</div></div>
+            <div class="declaration"><input type="checkbox" class="track"><div>I dissociate myself and my family from every territorial blood covenant, by the blood of Jesus.</div></div>
+            <div class="declaration"><input type="checkbox" class="track"><div>I dissociate myself from every tribal blood covenant, by the blood of Jesus.</div></div>
+            <div class="declaration"><input type="checkbox" class="track"><div>I dissociate myself from every inherited blood covenant, by the blood of Jesus.</div></div>
+            <div class="declaration"><input type="checkbox" class="track"><div>I withdraw my blood from every evil altar, in the name of Jesus.</div></div>
+            <div class="declaration"><input type="checkbox" class="track"><div>I release myself from every curse attached to evil covenants, in the name of Jesus.</div></div>
+            <div class="declaration"><input type="checkbox" class="track"><div>I release myself from the grip of every enforcing power attached to evil covenants, in the name of Jesus.</div></div>
+            <div class="declaration"><input type="checkbox" class="track"><div>Every repercussion of breaking unconscious covenants, be washed away by the blood of Jesus.</div></div>
+            <div class="declaration"><input type="checkbox" class="track"><div>Lord, by the blood of Jesus, set me free from all evil covenants.</div></div>
+            <div class="declaration"><input type="checkbox" class="track"><div>Let every inherited battle from my mother’s side and my father’s side be terminated in Jesus’ name.</div></div>
+          </div>
+
+          <div class="tab-panel" id="tab2">
+            <details class="accordion" open>
+              <summary>Section A — Renouncing Evil Covenants</summary>
+              <div class="declaration"><input type="checkbox" class="track"><div>I renounce every evil covenant knowingly or unknowingly entered.</div></div>
+              <div class="declaration"><input type="checkbox" class="track"><div>I reject every inherited agreement with darkness operating from my bloodline.</div></div>
+            </details>
+            <details class="accordion">
+              <summary>Section B — Applying the Blood of Jesus</summary>
+              <div class="declaration"><input type="checkbox" class="track"><div>Blood of Jesus, silence every accusation speaking against my life.</div></div>
+              <div class="declaration"><input type="checkbox" class="track"><div>Let the new covenant in Christ override every evil ancestral claim.</div></div>
+            </details>
+            <details class="accordion">
+              <summary>Section C — Freedom and Peace</summary>
+              <div class="declaration"><input type="checkbox" class="track"><div>I receive freedom, peace, and restoration in every area affected by evil covenants.</div></div>
+              <div class="declaration"><input type="checkbox" class="track"><div>I declare peaceful sleep and divine protection in Jesus’ name.</div></div>
+            </details>
+          </div>
+
+          <div class="tab-panel" id="tab3">
+            <div class="night-grid">
+              <div class="night-card"><strong>Night 1</strong><textarea class="mini-input" data-note="night_1" placeholder="What happened during prayer or sleep?"></textarea></div>
+              <div class="night-card"><strong>Night 2</strong><textarea class="mini-input" data-note="night_2" placeholder="Dreams, impressions, peace, resistance..."></textarea></div>
+              <div class="night-card"><strong>Night 3</strong><textarea class="mini-input" data-note="night_3" placeholder="Write what changed here..."></textarea></div>
+              <div class="night-card"><strong>Night 4</strong><textarea class="mini-input" data-note="night_4" placeholder="What did the Holy Spirit reveal?"></textarea></div>
+              <div class="night-card"><strong>Night 5</strong><textarea class="mini-input" data-note="night_5" placeholder="Record testimonies or warfare notes..."></textarea></div>
+              <div class="night-card"><strong>Night 6+</strong><textarea class="mini-input" data-note="night_more" placeholder="Continue tracking additional nights here..."></textarea></div>
+            </div>
+          </div>
+
+          <textarea data-note="declaration_notes" placeholder="Write additional declarations, scriptures, or prayer impressions here..."></textarea>
+          <div class="prayer-box"><strong>Closing Prayer</strong>Every evil covenant is canceled, every ancestral altar is silenced, and every inherited battle is overturned by the covenant of Jesus Christ. I receive peace, freedom, and protection in Jesus’ name. Amen.</div>
+        </div>
+      </section>
+
+      <section class="card" id="reflection">
+        <div class="card-head"><h2>6. Reflection Pages</h2><p>Return here after prayer, sleep, or multiple nights of ministry.</p></div>
+        <div class="card-body three-col">
+          <div>
+            <h3>Next-Morning Reflection</h3>
+            <textarea data-note="morning_reflection" placeholder="What changed in your dreams, peace, clarity, or spiritual atmosphere?"></textarea>
+          </div>
+          <div>
+            <h3>Dream Notes</h3>
+            <textarea data-note="dream_notes" placeholder="Record dreams, symbols, night impressions, or repeated scenes..."></textarea>
+          </div>
+          <div>
+            <h3>Testimonies of Breakthrough</h3>
+            <textarea data-note="testimony_notes" placeholder="Record answered prayers, healing, peace, freedom, and visible changes..."></textarea>
+          </div>
+        </div>
+      </section>
+
+      <section class="footer-box">
+        <div class="utility">
+          <button onclick="window.print()">Print Workbook / Save PDF</button>
+          <button id="themeBtn">Toggle Light / Dark</button>
+        </div>
+        <p class="save-note" style="margin-top:.75rem">Note: because local browser files do not always preserve form entries automatically, use Save My Notes to download your written responses as a text file to your device.</p>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    const tracked = [...document.querySelectorAll('.track')];
+    const meterBar = document.getElementById('meterBar');
+    const progressText = document.getElementById('progressText');
+    const noteFields = [...document.querySelectorAll('[data-note]')];
+    const themeBtn = document.getElementById('themeBtn');
+    const saveBtn = document.getElementById('saveBtn');
+    const loadBtn = document.getElementById('loadBtn');
+    const clearBtn = document.getElementById('clearBtn');
+    const navLinks = [...document.querySelectorAll('.nav a')];
+    const tabBtns = [...document.querySelectorAll('[data-tab]')];
+    const tabPanels = [...document.querySelectorAll('.tab-panel')];
+    const accordions = [...document.querySelectorAll('details.accordion')];
+
+    function updateProgress(){
+      const done = tracked.filter(i => i.checked).length;
+      const total = tracked.length;
+      const pct = total ? Math.round((done/total)*100) : 0;
+      meterBar.style.width = pct + '%';
+      progressText.textContent = `${done} of ${total} items completed`;
+    }
+    tracked.forEach(i => i.addEventListener('change', updateProgress));
+    updateProgress();
+
+    themeBtn.addEventListener('click', () => {
+      const root = document.documentElement;
+      root.setAttribute('data-theme', root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+    });
+
+    document.querySelectorAll('.nav a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+      });
+    });
+
+    function collectWorkbookData(){
+      const data = {
+        completed: tracked.map((box, idx) => ({index: idx + 1, checked: box.checked})),
+        notes: {}
+      };
+      noteFields.forEach(field => data.notes[field.dataset.note] = field.value);
+      return data;
+    }
+
+    saveBtn.addEventListener('click', () => {
+      const data = collectWorkbookData();
+      let text = 'Destroying All Evil Covenants – Saved Workbook Notes\n\n';
+      text += 'Completed Items:\n';
+      data.completed.forEach(item => { if(item.checked) text += `- Item ${item.index}: completed\n`; });
+      text += '\nWritten Notes:\n';
+      Object.entries(data.notes).forEach(([key,val]) => {
+        text += `\n[${key}]\n${val || '(blank)'}\n`;
+      });
+      const blob = new Blob([text], {type: 'text/plain'});
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'destroying-all-evil-covenants-notes.txt';
+      a.click();
+      URL.revokeObjectURL(a.href);
+    });
+
+    loadBtn.addEventListener('click', () => {
+      const input = document.createElement('input');
+      input.type = 'file';
+      input.accept = '.json';
+      input.onchange = () => {
+        const file = input.files[0];
+        if(!file) return;
+        const reader = new FileReader();
+        reader.onload = () => {
+          try {
+            const data = JSON.parse(reader.result);
+            if(Array.isArray(data.completed)) tracked.forEach((box, idx) => box.checked = !!data.completed[idx]?.checked);
+            if(data.notes) noteFields.forEach(field => { if(data.notes[field.dataset.note] !== undefined) field.value = data.notes[field.dataset.note]; });
+            updateProgress();
+            alert('Workbook notes loaded.');
+          } catch(e){ alert('That file could not be loaded.'); }
+        };
+        reader.readAsText(file);
+      };
+      input.click();
+    });
+
+    const exportJsonBtn = document.createElement('button');
+    exportJsonBtn.textContent = 'Export Workbook File';
+    exportJsonBtn.addEventListener('click', () => {
+      const blob = new Blob([JSON.stringify(collectWorkbookData(), null, 2)], {type:'application/json'});
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'destroying-all-evil-covenants-workbook.json';
+      a.click();
+      URL.revokeObjectURL(a.href);
+    });
+    document.querySelector('.toolbar').appendChild(exportJsonBtn);
+
+    tabBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        tabBtns.forEach(b => b.classList.remove('active'));
+        tabPanels.forEach(p => p.classList.remove('active'));
+        btn.classList.add('active');
+        document.getElementById(btn.dataset.tab).classList.add('active');
+      });
+    });
+
+    document.getElementById('expandAllBtn')?.addEventListener('click', () => accordions.forEach(a => a.open = true));
+    document.getElementById('collapseAllBtn')?.addEventListener('click', () => accordions.forEach(a => a.open = false));
+
+    clearBtn.addEventListener('click', () => {
+      if(!confirm('Clear all checkboxes and written notes?')) return;
+      tracked.forEach(box => box.checked = false);
+      noteFields.forEach(field => field.value = '');
+      updateProgress();
+    });
+  </script>
+</body>
+</html>

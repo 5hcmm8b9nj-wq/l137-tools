@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>L137 Strongman Spirit - ElevenLabs Script</title>
+<style>
+  :root{--ink:#1b1b1f;--muted:#5f6470;--line:#e3e5ea;--gold:#8a6a1f;--bg:#faf9f7;}
+  *{box-sizing:border-box;-webkit-text-size-adjust:100%;}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font:17px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    padding:24px 18px 64px;}
+  .wrap{max-width:680px;margin:0 auto;}
+  h1{font-size:1.35rem;line-height:1.25;margin:0 0 4px;letter-spacing:-.01em;}
+  .sub{color:var(--muted);font-size:.95rem;margin:0 0 24px;}
+  .tabs{display:flex;gap:8px;margin-bottom:14px;}
+  .tab{flex:1;padding:11px 8px;border:1px solid var(--line);background:#fff;border-radius:10px;
+    font:600 .9rem/1.2 inherit;color:var(--muted);cursor:pointer;text-align:center;}
+  .tab[aria-selected="true"]{border-color:var(--gold);color:var(--gold);background:#fffdf6;}
+  button.copy{width:100%;padding:17px;border:0;border-radius:12px;background:var(--ink);color:#fff;
+    font:600 1.05rem inherit;cursor:pointer;margin-bottom:8px;}
+  button.copy.done{background:#1f6b3a;}
+  .count{color:var(--muted);font-size:.85rem;text-align:center;margin:0 0 22px;}
+  textarea{width:100%;height:340px;padding:14px;border:1px solid var(--line);border-radius:12px;
+    background:#fff;font:14px/1.65 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--ink);
+    resize:vertical;-webkit-user-select:text;user-select:text;}
+  h2{font-size:1rem;margin:30px 0 8px;}
+  ol{padding-left:22px;margin:0;}
+  li{margin-bottom:9px;}
+  .note{margin-top:22px;padding:13px 15px;background:#fffdf6;border:1px solid #ecdfb8;
+    border-radius:10px;font-size:.9rem;color:#6b551a;}
+</style></head><body><div class="wrap">
+
+<h1>Deliverance from the Strongman Spirit</h1>
+<p class="sub">L137 Deliverance Ministry &middot; Pastor Kiky Ocansey &middot; Clubhouse, September 16, 2026 &middot; narration script</p>
+
+<div class="tabs" role="tablist">
+  <button class="tab" role="tab" aria-selected="true"  data-k="tagged">With pauses (repeat &amp; reflect)</button>
+  <button class="tab" role="tab" aria-selected="false" data-k="lean">No pauses (fewer credits)</button>
+</div>
+
+<button class="copy" id="copyBtn">Copy the whole script</button>
+<p class="count" id="count"></p>
+
+<textarea id="box" readonly spellcheck="false"></textarea>
+
+<h2>Then in ElevenLabs</h2>
+<ol>
+  <li>Open ElevenLabs and go to <strong>Text to Speech</strong>.</li>
+  <li>Tap the text box and hold your finger down until <strong>Paste</strong> appears, then tap it.</li>
+  <li>Set the voice to <strong>Adam</strong> &mdash; it carries the prophetic declarations and prayer with the right weight.</li>
+  <li>Set the model to <strong>Eleven Turbo v2.5</strong> to use half the credits.</li>
+  <li>Tap <strong>Generate</strong>, then download the audio.</li>
+</ol>
+
+<div class="note">Do not choose Eleven v3. It does not handle the pause tags reliably. The "With pauses" version gives about 2&ndash;2.5 seconds between scriptures and instructions to reflect, 3 seconds after every "repeat after me" prayer line so you can speak it aloud, and 4 seconds before "Amen" to close.</div>
+
+<script>
+const DATA = {"tagged": "L137 Deliverance Ministry. Pastor Kiky Ocansey. <break time=\"2.0s\" />\n\nThis is a prophetic direction from a service on Clubhouse, Wednesday, September sixteenth, twenty twenty six. <break time=\"2.5s\" />\n\nTopic. Deliverance from the Strongman Spirit. <break time=\"3.0s\" />\n\nProphetic Direction. <break time=\"2.0s\" />\n\nLuke chapter eleven, verses twenty one to twenty two. King James Version. <break time=\"1.0s\" />\n\nWhen a strong man armed keepeth his palace, his goods are in peace. But when a stronger than he shall come upon him, and overcome him, he taketh from him all his armour wherein he trusted, and divideth his spoils. <break time=\"3.0s\" />\n\nJeremiah chapter twenty two, verses twenty nine to thirty. King James Version. <break time=\"1.0s\" />\n\nO earth, earth, earth, hear the word of the LORD. Thus saith the LORD, Write ye this man childless, a man that shall not prosper in his days: for no man of his seed shall prosper, sitting upon the throne of David, and ruling any more in Judah. <break time=\"3.0s\" />\n\nLeviticus chapter seventeen, verse eleven. King James Version. <break time=\"1.0s\" />\n\nFor the life of the flesh is in the blood: and I have given it to you upon the altar to make an atonement for your souls: for it is the blood that maketh an atonement for the soul. <break time=\"3.0s\" />\n\nTake your blood of Jesus. Go outside, and stand on the earth. Pray this prayer, and pour your communion wine on the ground, the earth. <break time=\"3.0s\" />\n\nThe Ground. The Earth. <break time=\"2.5s\" />\n\nPrayer. <break time=\"1.5s\" />\n\nSay. Repeat after me. <break time=\"2.5s\" />\n\nBy the power of the Holy Ghost, O earth, earth, earth, hear the word of the LORD, and fight every strongman in my life fighting my destiny, in Jesus' name. <break time=\"3.0s\" />\n\nAs I pour the blood of Jesus on this earth, you strongman of mind destruction, be bound, by the blood of Jesus, in Jesus' name. <break time=\"3.0s\" />\n\nYou strongman of financial destruction, be bound, by the blood of Jesus, in Jesus' name. <break time=\"3.0s\" />\n\nEvery strongman of bad luck, attached to my life, fall down and die, in Jesus' name. <break time=\"3.0s\" />\n\nI bind every strongman, militating against my home, by the blood of Jesus, in the name of Jesus. <break time=\"3.0s\" />\n\nI bind and paralyze every strongman of death and hell, by the blood of Jesus, in the name of Jesus. <break time=\"3.0s\" />\n\nYou evil strongman, attached to my destiny, be bound, by the blood of Jesus, in Jesus' name. <break time=\"3.0s\" />\n\nEvery strongman of my father's house, die right now, and set me free, in the name of Jesus. <break time=\"3.0s\" />\n\nEvery strongman, assigned by the evil powers of my father's house against my life, die, in the name of Jesus. <break time=\"3.0s\" />\n\nEvery strongman, assigned to weaken my faith, catch fire, in the name of Jesus. <break time=\"3.0s\" />\n\nAs I pour the blood of Jesus on this earth, I bind, and I render to naught, all the strongmen that are currently troubling my life, by the blood of Jesus. <break time=\"3.0s\" />\n\nLet the backbone of the stubborn pursuer and strongman break, in the name of Jesus. <break time=\"3.0s\" />\n\nEarth, hear me. I bind every strongman, having my goods in his possession, in the name of Jesus. <break time=\"3.0s\" />\n\nI clear my goods from the warehouse of the strongman, in the name of Jesus. <break time=\"3.0s\" />\n\nI withdraw the staff of the office of the strongman delegated against me, by the blood of Jesus, in the name of Jesus. <break time=\"3.0s\" />\n\nI bind every strongman delegated against me. Fall down to the ground, and become impotent, in Jesus' name. <break time=\"3.0s\" />\n\nOh earth, bind the strongman behind my spiritual blindness and deafness, and paralyze his operations in my life, by the blood of Jesus. <break time=\"3.0s\" />\n\nAs I pour the blood of Jesus on this earth, render every strongman in my life powerless. Unless they leave me alone, they will not have peace in any area of their lives, in Jesus' name. <break time=\"3.0s\" />\n\nEarth, earth, earth, open your mouth, and swallow up the blood of Jesus, and fight on my behalf, through the power of the Holy Ghost. Amen. <break time=\"4.0s\" />\n\nDo this for three days. <break time=\"2.5s\" />\n\nMay the Lord be with you. <break time=\"1.5s\" />\n\nAmen.", "lean": "L137 Deliverance Ministry. Pastor Kiky Ocansey.\n\nThis is a prophetic direction from a service on Clubhouse, Wednesday, September sixteenth, twenty twenty six.\n\nTopic. Deliverance from the Strongman Spirit.\n\nProphetic Direction.\n\nLuke chapter eleven, verses twenty one to twenty two. King James Version.\n\nWhen a strong man armed keepeth his palace, his goods are in peace. But when a stronger than he shall come upon him, and overcome him, he taketh from him all his armour wherein he trusted, and divideth his spoils.\n\nJeremiah chapter twenty two, verses twenty nine to thirty. King James Version.\n\nO earth, earth, earth, hear the word of the LORD. Thus saith the LORD, Write ye this man childless, a man that shall not prosper in his days: for no man of his seed shall prosper, sitting upon the throne of David, and ruling any more in Judah.\n\nLeviticus chapter seventeen, verse eleven. King James Version.\n\nFor the life of the flesh is in the blood: and I have given it to you upon the altar to make an atonement for your souls: for it is the blood that maketh an atonement for the soul.\n\nTake your blood of Jesus. Go outside, and stand on the earth. Pray this prayer, and pour your communion wine on the ground, the earth.\n\nThe Ground. The Earth.\n\nPrayer.\n\nSay. Repeat after me.\n\nBy the power of the Holy Ghost, O earth, earth, earth, hear the word of the LORD, and fight every strongman in my life fighting my destiny, in Jesus' name.\n\nAs I pour the blood of Jesus on this earth, you strongman of mind destruction, be bound, by the blood of Jesus, in Jesus' name.\n\nYou strongman of financial destruction, be bound, by the blood of Jesus, in Jesus' name.\n\nEvery strongman of bad luck, attached to my life, fall down and die, in Jesus' name.\n\nI bind every strongman, militating against my home, by the blood of Jesus, in the name of Jesus.\n\nI bind and paralyze every strongman of death and hell, by the blood of Jesus, in the name of Jesus.\n\nYou evil strongman, attached to my destiny, be bound, by the blood of Jesus, in Jesus' name.\n\nEvery strongman of my father's house, die right now, and set me free, in the name of Jesus.\n\nEvery strongman, assigned by the evil powers of my father's house against my life, die, in the name of Jesus.\n\nEvery strongman, assigned to weaken my faith, catch fire, in the name of Jesus.\n\nAs I pour the blood of Jesus on this earth, I bind, and I render to naught, all the strongmen that are currently troubling my life, by the blood of Jesus.\n\nLet the backbone of the stubborn pursuer and strongman break, in the name of Jesus.\n\nEarth, hear me. I bind every strongman, having my goods in his possession, in the name of Jesus.\n\nI clear my goods from the warehouse of the strongman, in the name of Jesus.\n\nI withdraw the staff of the office of the strongman delegated against me, by the blood of Jesus, in the name of Jesus.\n\nI bind every strongman delegated against me. Fall down to the ground, and become impotent, in Jesus' name.\n\nOh earth, bind the strongman behind my spiritual blindness and deafness, and paralyze his operations in my life, by the blood of Jesus.\n\nAs I pour the blood of Jesus on this earth, render every strongman in my life powerless. Unless they leave me alone, they will not have peace in any area of their lives, in Jesus' name.\n\nEarth, earth, earth, open your mouth, and swallow up the blood of Jesus, and fight on my behalf, through the power of the Holy Ghost. Amen.\n\nDo this for three days.\n\nMay the Lord be with you.\n\nAmen."};
+const box=document.getElementById('box'), btn=document.getElementById('copyBtn'),
+      cnt=document.getElementById('count'), tabs=[...document.querySelectorAll('.tab')];
+let key='tagged';
+function render(){
+  box.value=DATA[key];
+  cnt.textContent=DATA[key].length.toLocaleString()+' characters';
+  btn.textContent='Copy the whole script'; btn.classList.remove('done');
+}
+tabs.forEach(t=>t.onclick=()=>{
+  key=t.dataset.k;
+  tabs.forEach(x=>x.setAttribute('aria-selected', x===t));
+  render();
+});
+btn.onclick=async()=>{
+  const text=DATA[key];
+  try{ await navigator.clipboard.writeText(text); }
+  catch(e){
+    box.removeAttribute('readonly'); box.focus();
+    box.setSelectionRange(0,text.length);
+    document.execCommand('copy');
+    box.setAttribute('readonly','');
+  }
+  btn.textContent='Copied - now paste into ElevenLabs';
+  btn.classList.add('done');
+};
+render();
+</script>
+</div><script data-pplx-inline-edit>
+(function () {
+  if (window === window.top) return;
+
+  const allowedParentOrigins = ["https://www.perplexity.ai","https://perplexity.ai","https://testing.perplexity.ai","https://staging.perplexity.ai","https://*.preview.i.perplexity.ai","http://perplexity.localhost","http://localhost:1420","http://127.0.0.1:1420","http://localhost:3000","http://127.0.0.1:3000","http://localhost:5173","http://127.0.0.1:5173"];
+  const MAX_FONT_BYTES = 500 * 1024;
+  const MAX_TOTAL_FONT_BYTES = 2 * 1024 * 1024;
+  let scrollForwarding = false;
+  let scrollRaf = 0;
+  let trustedTopOrigin = null;
+
+  // Allow entries like "https://*.preview.i.perplexity.ai" — the wildcard
+  // matches a single DNS label (no dots), so "https://*.foo" cannot stretch
+  // across multiple labels.
+  function matchesAllowedOrigin(origin) {
+    if (!origin) return false;
+    for (const entry of allowedParentOrigins) {
+      if (!entry.includes("*")) {
+        if (entry === origin) return true;
+        continue;
+      }
+      const pattern = new RegExp(
+        "^" +
+          entry.replace(/[.+?^${}()|[\]\\]/g, "\\$&").replace(/\*/g, "[^.]+") +
+          "$",
+      );
+      if (pattern.test(origin)) return true;
+    }
+    return false;
+  }
+
+  // Trust decision: when the sender is same-origin-visible (event.origin is a
+  // real origin like https://www.perplexity.ai) we trust event.origin directly.
+  // When event.origin is "null" (opaque broker srcdoc), we fall back to the
+  // broker's stamped `parentOrigin` to identify the top window. The fallback
+  // is claim-only — we rely on the browser's native `targetOrigin` enforcement
+  // on the response path (see postToTrustedTop) to ensure replies can't be
+  // delivered to anyone but the actual top window of that claimed origin.
+  function getTrustedParentOrigin(event) {
+    const forwardedParentOrigin =
+      typeof event.data.parentOrigin === "string" ? event.data.parentOrigin : null;
+    const parentOrigin = event.origin === "null" ? forwardedParentOrigin : event.origin;
+    return matchesAllowedOrigin(parentOrigin) ? parentOrigin : null;
+  }
+
+  // All responses go to window.top with targetOrigin = the allowlisted origin.
+  // An attacker that iframes us inside their own null-origin broker can claim
+  // any parentOrigin they like, but the browser will drop the reply whenever
+  // the real top's origin doesn't match — so the screenshot never leaves.
+  function postToTrustedTop(message) {
+    if (!trustedTopOrigin) return;
+    try {
+      window.top.postMessage(message, trustedTopOrigin);
+    } catch (_error) {}
+  }
+
+  function inlineAll(original, clone) {
+    if (original.nodeType !== 1 || clone.nodeType !== 1) return;
+
+    try {
+      const computedStyle = getComputedStyle(original);
+      // cssText on a computed style is the serialized declaration in modern
+      // Chromium/Safari — a single read beats enumerating ~400 longhand
+      // properties. Firefox returns "" here, so we fall back on empty.
+      const serialized = computedStyle.cssText;
+      if (serialized) {
+        clone.style.cssText = serialized;
+      } else {
+        const parts = new Array(computedStyle.length);
+        for (let index = 0; index < computedStyle.length; index += 1) {
+          const property = computedStyle[index];
+          parts[index] = `${property}:${computedStyle.getPropertyValue(property)};`;
+        }
+        clone.style.cssText = parts.join("");
+      }
+    } catch (_error) {}
+
+    const originalChildren = original.children;
+    const clonedChildren = clone.children;
+    for (
+      let index = 0;
+      index < originalChildren.length && index < clonedChildren.length;
+      index += 1
+    ) {
+      inlineAll(originalChildren[index], clonedChildren[index]);
+    }
+  }
+
+  function extractFontUrl(srcValue) {
+    const matches = [
+      ...srcValue.matchAll(
+        /url\(["']?([^"')]+)["']?\)(?:\s*format\(["']?([^"')]+)["']?\))?/gi,
+      ),
+    ];
+    if (matches.length === 0) return null;
+    const woff2 = matches.find((m) => m[2] && m[2].toLowerCase().includes("woff2"));
+    if (woff2) return woff2[1];
+    const woff = matches.find((m) => m[2] && m[2].toLowerCase().includes("woff"));
+    if (woff) return woff[1];
+    return matches[0][1];
+  }
+
+  // Cache resolved font URL -> data URI across captures. Fonts on a page
+  // essentially never change, and a batch run emits multiple captures back to
+  // back — without this we'd refetch + re-base64 every time.
+  const fontDataUriCache = new Map();
+  const SRC_DECLARATION_RE = /src\s*:\s*[^;}]+/i;
+
+  async function fetchAsDataUri(url) {
+    if (fontDataUriCache.has(url)) return fontDataUriCache.get(url);
+    let dataUri = null;
+    try {
+      const response = await fetch(url, { mode: "cors", credentials: "omit" });
+      if (response.ok) {
+        const blob = await response.blob();
+        if (blob.size <= MAX_FONT_BYTES) {
+          dataUri = await new Promise((resolve) => {
+            const reader = new FileReader();
+            reader.onloadend = () =>
+              resolve(typeof reader.result === "string" ? reader.result : null);
+            reader.onerror = () => resolve(null);
+            reader.readAsDataURL(blob);
+          });
+        }
+      }
+    } catch (_error) {
+      dataUri = null;
+    }
+    fontDataUriCache.set(url, dataUri);
+    return dataUri;
+  }
+
+  function collectFontFaceRuleTexts() {
+    const rules = [];
+    for (const sheet of document.styleSheets) {
+      let cssRules;
+      try {
+        cssRules = sheet.cssRules;
+      } catch (_error) {
+        continue;
+      }
+      if (!cssRules) continue;
+      for (const rule of cssRules) {
+        const cssText = rule.cssText || "";
+        if (cssText.startsWith("@font-face")) rules.push(cssText);
+      }
+    }
+    return rules;
+  }
+
+  async function buildInlinedFontCss() {
+    const ruleTexts = collectFontFaceRuleTexts();
+    if (ruleTexts.length === 0) return null;
+
+    const resolved = ruleTexts.map((cssText) => {
+      if (!SRC_DECLARATION_RE.test(cssText)) return null;
+      const srcMatch = cssText.match(/src\s*:\s*([^;}]+)[;}]/i);
+      if (!srcMatch) return null;
+      const url = extractFontUrl(srcMatch[1]);
+      if (!url) return null;
+      try {
+        return { cssText, url: new URL(url, document.baseURI).href };
+      } catch (_error) {
+        return null;
+      }
+    });
+
+    const dataUris = await Promise.all(
+      resolved.map((entry) => (entry ? fetchAsDataUri(entry.url) : Promise.resolve(null))),
+    );
+
+    const inlined = [];
+    let totalBytes = 0;
+    for (let index = 0; index < resolved.length; index += 1) {
+      const entry = resolved[index];
+      const dataUri = dataUris[index];
+      if (!entry || !dataUri) continue;
+      const approxBytes = dataUri.length * 0.75;
+      if (totalBytes + approxBytes > MAX_TOTAL_FONT_BYTES) break;
+      totalBytes += approxBytes;
+      inlined.push(entry.cssText.replace(SRC_DECLARATION_RE, `src: url("${dataUri}")`));
+    }
+    return inlined.length > 0 ? inlined.join("\n") : null;
+  }
+
+  function stripExternal(clone) {
+    const images = clone.querySelectorAll("img");
+    for (let index = 0; index < images.length; index += 1) {
+      const src = images[index].getAttribute("src");
+      if (src && !src.startsWith("data:")) images[index].removeAttribute("src");
+    }
+
+    const elements = clone.querySelectorAll("*");
+    for (let index = 0; index < elements.length; index += 1) {
+      const style = elements[index].style.cssText;
+      if (style && style.includes("url(")) {
+        elements[index].style.cssText = style.replace(
+          /url\(["']?(?!data:)[^)"']*["']?\)/gi,
+          "none",
+        );
+      }
+    }
+  }
+
+  function emitScroll() {
+    scrollRaf = 0;
+    if (!scrollForwarding) return;
+    postToTrustedTop({
+      type: "INLINE_EDIT_SCROLL",
+      scrollX: window.scrollX,
+      scrollY: window.scrollY,
+    });
+  }
+
+  window.addEventListener(
+    "scroll",
+    function () {
+      if (!scrollForwarding || scrollRaf) return;
+      scrollRaf = requestAnimationFrame(emitScroll);
+    },
+    { passive: true, capture: true },
+  );
+
+  async function handleCaptureRequest(event) {
+    const requestId = event.data.requestId;
+    const scrollX = window.scrollX;
+    const scrollY = window.scrollY;
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+
+    function postResult(dataUrl) {
+      postToTrustedTop({
+        type: "INLINE_EDIT_SCREENSHOT_RESULT",
+        requestId,
+        dataUrl,
+        scrollX,
+        scrollY,
+      });
+    }
+
+    try {
+      // Wait for any pending web fonts to resolve so both inline metrics and
+      // the @font-face inlining below see the same loaded faces.
+      if (document.fonts && document.fonts.ready) {
+        try {
+          await document.fonts.ready;
+        } catch (_error) {}
+      }
+
+      const clone = document.documentElement.cloneNode(true);
+      inlineAll(document.documentElement, clone);
+
+      const removedNodes = clone.querySelectorAll("script,link[rel=\"stylesheet\"],style");
+      for (let index = 0; index < removedNodes.length; index += 1) {
+        removedNodes[index].remove();
+      }
+
+      stripExternal(clone);
+
+      // Re-embed web fonts as data-URI @font-face rules so the SVG rasterizer
+      // can resolve them — external font URLs aren't fetched during
+      // foreignObject rendering, which would otherwise force a fallback face
+      // and change text metrics.
+      const inlinedFontCss = await buildInlinedFontCss();
+      if (inlinedFontCss) {
+        const styleEl = document.createElement("style");
+        styleEl.textContent = inlinedFontCss;
+        const head = clone.querySelector("head");
+        if (head) head.appendChild(styleEl);
+        else clone.insertBefore(styleEl, clone.firstChild);
+      }
+
+      const html = new XMLSerializer().serializeToString(clone);
+      const svg =
+        `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}">` +
+        '<foreignObject width="100%" height="100%">' +
+        `<div xmlns="http://www.w3.org/1999/xhtml" style="width:${width}px;height:${height}px;overflow:hidden">` +
+        `<div style="position:relative;left:-${scrollX}px;top:-${scrollY}px">` +
+        html +
+        "</div></div></foreignObject></svg>";
+      const svgUrl = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
+      const image = new Image();
+      image.onload = function () {
+        const canvas = document.createElement("canvas");
+        canvas.width = width;
+        canvas.height = height;
+        canvas.getContext("2d").drawImage(image, 0, 0);
+        postResult(canvas.toDataURL("image/png"));
+      };
+      image.onerror = function () {
+        postResult(null);
+      };
+      image.src = svgUrl;
+    } catch (_error) {
+      postResult(null);
+    }
+  }
+
+  window.addEventListener("message", function (event) {
+    if (!event.data) return;
+    // Only accept messages from the direct parent frame. Blocks sibling /
+    // unrelated-window postMessage senders that could otherwise reach us.
+    if (event.source !== window.parent) return;
+
+    const trustedParentOrigin = getTrustedParentOrigin(event);
+    if (!trustedParentOrigin) return;
+    trustedTopOrigin = trustedParentOrigin;
+
+    if (event.data.type === "INLINE_EDIT_SCROLL_START") {
+      scrollForwarding = true;
+      emitScroll();
+      return;
+    }
+
+    if (event.data.type === "INLINE_EDIT_SCROLL_STOP") {
+      scrollForwarding = false;
+      if (scrollRaf) cancelAnimationFrame(scrollRaf);
+      scrollRaf = 0;
+      return;
+    }
+
+    if (event.data.type !== "INLINE_EDIT_CAPTURE_REQUEST") return;
+
+    handleCaptureRequest(event);
+  });
+})();
+
+
+</script></body></html>

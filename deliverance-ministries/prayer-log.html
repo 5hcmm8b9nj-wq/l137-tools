@@ -1,0 +1,480 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>21-Day Prayer Log — L137 Deliverance Ministries International</title>
+<meta name="description" content="Private 21-day prayer log for the Deliverance from Spirit Spouse journey. L137 Deliverance Ministries International — Pastor Kiki Ocansey, Founder." />
+<meta name="robots" content="noindex" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1F1A14;
+    --page:#FBF7EE;
+    --accent:#7A1F1F;
+    --accent-dark:#561515;
+    --gold:#B8893A;
+    --rule:#D6CDB8;
+    --card:#FFFDF7;
+    --muted:#6B5E48;
+    --ok:#2F6B3A;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+    background:var(--page);
+    color:var(--ink);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  .topbar{
+    background:linear-gradient(180deg,var(--accent) 0%,var(--accent-dark) 100%);
+    color:#F8EFD8;
+    padding:14px 18px;
+    border-bottom:3px solid var(--gold);
+    text-align:center;
+    font-size:13px;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    font-weight:600;
+  }
+  .topbar-title{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:8px 10px;line-height:1.35;text-align:center;}
+  .topbar-title .cross{color:var(--gold);flex:0 0 auto}
+  .topbar-title .name{flex:0 1 auto;text-align:center;word-break:keep-all;}
+  .topbar-founder{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;font-size:12px;letter-spacing:.08em;text-transform:none;color:#F3E0B8;font-weight:400;margin-top:4px;text-align:center;}
+  @media (max-width:520px){
+    .topbar{font-size:11.5px;letter-spacing:.10em;padding:12px 14px}
+    .topbar-founder{font-size:11.5px}
+    .topbar-title .cross{display:none}
+  }
+  main{max-width:780px;margin:0 auto;padding:40px 22px 80px;}
+  .eyebrow{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);font-weight:600;text-align:center;margin-bottom:14px;}
+  h1{font-family:'Source Serif 4',Georgia,serif;font-weight:700;font-size:clamp(28px,4.5vw,40px);line-height:1.15;text-align:center;margin:0 0 10px;color:var(--ink);}
+  .subtitle{font-family:'Source Serif 4',Georgia,serif;font-style:italic;font-size:17px;color:var(--muted);text-align:center;margin:0 auto 24px;max-width:620px;}
+  .divider{display:flex;align-items:center;justify-content:center;gap:14px;margin:24px 0;color:var(--gold);}
+  .divider::before,.divider::after{content:"";height:1px;background:var(--rule);flex:1;max-width:120px;}
+  .scripture{font-family:'Source Serif 4',Georgia,serif;font-style:italic;font-size:18px;text-align:center;color:var(--ink);background:#F3ECD8;border-left:4px solid var(--gold);padding:18px 24px;margin:24px 0;border-radius:2px;}
+  .scripture cite{display:block;font-style:normal;font-family:'Inter',sans-serif;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-top:10px;font-weight:600;}
+  .privacy{background:#F3ECD8;border:1px dashed var(--gold);border-radius:6px;padding:14px 18px;margin:0 0 20px;font-size:13.5px;color:var(--ink);}
+  .privacy strong{color:var(--accent-dark)}
+  .name-row{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:0 0 18px;}
+  .name-row label{font-size:13px;color:var(--muted);letter-spacing:.04em;}
+  .name-row input{
+    flex:1 1 220px;
+    min-width:180px;
+    padding:10px 12px;
+    border:1px solid var(--rule);
+    border-radius:4px;
+    background:#fff;
+    font-family:inherit;
+    font-size:15px;
+    color:var(--ink);
+  }
+  .name-row input:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:var(--accent);}
+  .greeting{font-family:'Source Serif 4',Georgia,serif;font-size:18px;color:var(--accent-dark);text-align:center;margin:6px 0 18px;}
+  .day-grid{
+    display:grid;
+    grid-template-columns:repeat(7,1fr);
+    gap:6px;
+    margin:18px 0 24px;
+  }
+  .day-btn{
+    appearance:none;
+    border:1px solid var(--rule);
+    background:#fff;
+    color:var(--ink);
+    font-family:inherit;
+    font-weight:600;
+    font-size:14px;
+    padding:10px 4px;
+    border-radius:4px;
+    cursor:pointer;
+    transition:background .12s, border-color .12s, color .12s;
+    position:relative;
+  }
+  .day-btn:hover{border-color:var(--accent)}
+  .day-btn.active{background:var(--accent);color:#FBF7EE;border-color:var(--accent-dark);}
+  .day-btn.done{border-color:var(--ok);}
+  .day-btn.done::after{
+    content:"✓";
+    position:absolute;
+    top:2px;
+    right:4px;
+    color:var(--ok);
+    font-size:10px;
+    font-weight:700;
+  }
+  .day-btn.active.done::after{color:#F8EFD8}
+  @media (max-width:520px){
+    .day-grid{grid-template-columns:repeat(7,1fr);gap:4px}
+    .day-btn{font-size:12.5px;padding:9px 2px}
+  }
+  .card{background:var(--card);border:1px solid var(--rule);border-radius:6px;padding:24px;margin:18px 0;box-shadow:0 1px 0 rgba(0,0,0,.02);}
+  .card h2{font-family:'Source Serif 4',Georgia,serif;font-size:22px;margin:0 0 14px;color:var(--accent-dark);}
+  .field{margin:14px 0;}
+  .field label{
+    display:block;
+    font-size:12px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--accent);
+    font-weight:600;
+    margin-bottom:6px;
+  }
+  .field textarea{
+    width:100%;
+    min-height:110px;
+    padding:12px 14px;
+    border:1px solid var(--rule);
+    border-radius:4px;
+    background:#fff;
+    font-family:inherit;
+    font-size:15px;
+    color:var(--ink);
+    line-height:1.55;
+    resize:vertical;
+  }
+  .field textarea:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:var(--accent);}
+  .actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:flex-start;margin-top:18px;}
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    background:var(--accent);color:#FBF7EE;text-decoration:none;
+    padding:13px 24px;border-radius:4px;font-weight:600;font-size:15px;letter-spacing:.04em;
+    border:1px solid var(--accent-dark);cursor:pointer;font-family:inherit;
+    transition:background .15s ease;
+  }
+  .btn:hover{background:var(--accent-dark)}
+  .btn[disabled]{opacity:.6;cursor:not-allowed}
+  .btn.secondary{background:transparent;color:var(--accent);border:1px solid var(--accent);}
+  .btn.secondary:hover{background:rgba(122,31,31,.06)}
+  .btn.ghost{background:transparent;color:var(--muted);border:1px solid var(--rule);}
+  .btn.ghost:hover{color:var(--accent);border-color:var(--accent);}
+  .status{font-size:13px;color:var(--muted);margin-left:auto;min-height:18px;}
+  .status.ok{color:var(--ok)}
+  .status.err{color:var(--accent)}
+  .summary{margin-top:36px}
+  .summary h3{font-family:'Source Serif 4',Georgia,serif;font-size:18px;color:var(--accent-dark);margin:0 0 12px;text-align:center;}
+  .progress-bar{height:8px;background:#F3ECD8;border-radius:4px;overflow:hidden;border:1px solid var(--rule);margin:0 0 10px;}
+  .progress-fill{height:100%;background:linear-gradient(90deg,var(--gold),var(--accent));transition:width .3s ease;}
+  .progress-text{text-align:center;font-size:13px;color:var(--muted);margin:0 0 18px;}
+  .entry-list{list-style:none;padding:0;margin:0;}
+  .entry-list li{
+    border:1px solid var(--rule);
+    background:#fff;
+    border-radius:4px;
+    padding:12px 14px;
+    margin:8px 0;
+    cursor:pointer;
+    transition:border-color .12s, background .12s;
+  }
+  .entry-list li:hover{border-color:var(--accent);background:#FFFCF3}
+  .entry-list .day-label{font-weight:600;color:var(--accent-dark);font-size:14px;}
+  .entry-list .entry-snippet{font-size:13.5px;color:var(--muted);margin-top:4px;line-height:1.45;}
+  .empty{font-style:italic;color:var(--muted);text-align:center;font-size:14px;padding:14px;}
+  .backlink{display:inline-block;margin-bottom:18px;color:var(--accent);text-decoration:none;font-size:14px;font-weight:600;}
+  .backlink:hover{text-decoration:underline}
+  footer{text-align:center;color:var(--muted);font-size:13px;padding:32px 20px 48px;border-top:1px solid var(--rule);margin-top:48px;}
+  footer .ministry{font-family:'Source Serif 4',Georgia,serif;font-size:15px;color:var(--accent-dark);margin-bottom:6px;font-weight:600;letter-spacing:.06em;}
+  footer .cross{color:var(--gold);margin:0 6px}
+  @media (max-width:520px){
+    main{padding:28px 16px 60px}
+    .card{padding:18px}
+    .btn{flex:1 1 auto;min-width:0}
+    .status{margin-left:0;width:100%;text-align:center}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-title">
+    <span class="cross">&#10016;</span>
+    <span class="name">L137 Deliverance Ministries International</span>
+    <span class="cross">&#10016;</span>
+  </div>
+  <div class="topbar-founder">Pastor Kiki Ocansey, Founder</div>
+</div>
+
+<main>
+  <a class="backlink" href="./">&larr; Back to the ministry home</a>
+
+  <div class="eyebrow">21-Day Night Watch &middot; Prayer Log</div>
+  <h1>Your Private Prayer Log</h1>
+  <p class="subtitle">A quiet place to record what the Lord is doing each day — your dreams, the Scriptures He gives you, and your prayer notes. Only you can see your entries on this device.</p>
+
+  <div class="scripture">
+    &ldquo;Write the vision, and make it plain upon tables, that he may run that readeth it.&rdquo;
+    <cite>Habakkuk 2:2 &middot; KJV</cite>
+  </div>
+
+  <div class="privacy">
+    <strong>Private to you.</strong> Your entries are saved under a personal key stored on this device (browser). No one else can read your log. If you clear your browser data or use a different device, your entries on that device will start fresh.
+  </div>
+
+  <div class="name-row">
+    <label for="displayName">Your name (optional):</label>
+    <input id="displayName" type="text" placeholder="e.g., Mary" maxlength="60" autocomplete="off" />
+  </div>
+  <div id="greeting" class="greeting" hidden></div>
+
+  <h3 style="font-family:'Source Serif 4',Georgia,serif;color:var(--accent-dark);text-align:center;margin:24px 0 6px;font-size:18px;">Choose a day</h3>
+  <div id="dayGrid" class="day-grid" role="group" aria-label="Select day 1 to 21"></div>
+
+  <div class="card">
+    <h2><span id="dayHeading">Day 1</span> &mdash; <span style="font-family:'Inter',sans-serif;font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:600;">Night Watch Entry</span></h2>
+
+    <div class="field">
+      <label for="dreams">Dreams &amp; encounters</label>
+      <textarea id="dreams" placeholder="What did you see, hear, or sense in the night? Any dreams the Lord gave you?"></textarea>
+    </div>
+
+    <div class="field">
+      <label for="scriptures">Scriptures the Lord highlighted</label>
+      <textarea id="scriptures" placeholder="Verses that stood out today (book, chapter, verse — and what He spoke through them)."></textarea>
+    </div>
+
+    <div class="field">
+      <label for="prayer_notes">Prayer notes &amp; breakthroughs</label>
+      <textarea id="prayer_notes" placeholder="What you prayed, what you renounced, what was loosed — and any breakthrough the Lord gave you."></textarea>
+    </div>
+
+    <div class="actions">
+      <button id="saveBtn" class="btn" type="button"><span style="color:var(--gold)">&#10016;</span> Save Day</button>
+      <button id="clearBtn" class="btn ghost" type="button">Clear this day</button>
+      <span id="status" class="status" aria-live="polite"></span>
+    </div>
+  </div>
+
+  <div class="summary">
+    <h3>Your 21-Day Journey</h3>
+    <div class="progress-bar"><div id="progressFill" class="progress-fill" style="width:0%"></div></div>
+    <div id="progressText" class="progress-text">0 of 21 days completed</div>
+    <ul id="entryList" class="entry-list"></ul>
+    <div id="emptyState" class="empty" hidden>No entries yet. Begin with Day 1 — write what the Lord is showing you tonight.</div>
+  </div>
+</main>
+
+<footer>
+  <div class="ministry"><span class="cross">&#10016;</span> L137 Deliverance Ministries International <span class="cross">&#10016;</span></div>
+  <div style="font-family:'Inter',sans-serif;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-top:10px">Luke 1:37 &middot; KJV</div>
+  <div style="font-family:'Source Serif 4',Georgia,serif;font-style:italic;font-size:15px;color:var(--ink);margin-top:6px;max-width:460px;margin-left:auto;margin-right:auto;line-height:1.5">&ldquo;For with God nothing shall be impossible.&rdquo;</div>
+</footer>
+
+<script>
+(function(){
+  // ---- visitor identity (private per device) ----
+  const VID_KEY = "l137_visitor_id";
+  const NAME_KEY = "l137_display_name";
+
+  function makeVid(){
+    if (window.crypto && crypto.randomUUID) return "v-" + crypto.randomUUID();
+    const bytes = new Uint8Array(16);
+    (window.crypto || window.msCrypto).getRandomValues(bytes);
+    return "v-" + Array.from(bytes).map(b => b.toString(16).padStart(2,"0")).join("");
+  }
+
+  let vid = localStorage.getItem(VID_KEY);
+  if (!vid) { vid = makeVid(); localStorage.setItem(VID_KEY, vid); }
+
+  const nameInput = document.getElementById("displayName");
+  const greeting = document.getElementById("greeting");
+  const savedName = localStorage.getItem(NAME_KEY) || "";
+  nameInput.value = savedName;
+
+  function renderGreeting(){
+    const n = (nameInput.value || "").trim();
+    if (n){
+      greeting.textContent = "Welcome, " + n + ". The Lord meets you here.";
+      greeting.hidden = false;
+    } else {
+      greeting.hidden = true;
+    }
+  }
+  renderGreeting();
+  nameInput.addEventListener("input", function(){
+    localStorage.setItem(NAME_KEY, nameInput.value.trim().slice(0,60));
+    renderGreeting();
+  });
+
+  // ---- state ----
+  let currentDay = 1;
+  let entriesByDay = {};  // {1: {...}, 2: {...}}
+
+  const dayGrid = document.getElementById("dayGrid");
+  const dayHeading = document.getElementById("dayHeading");
+  const dreamsEl = document.getElementById("dreams");
+  const scripturesEl = document.getElementById("scriptures");
+  const notesEl = document.getElementById("prayer_notes");
+  const saveBtn = document.getElementById("saveBtn");
+  const clearBtn = document.getElementById("clearBtn");
+  const statusEl = document.getElementById("status");
+  const entryList = document.getElementById("entryList");
+  const emptyState = document.getElementById("emptyState");
+  const progressFill = document.getElementById("progressFill");
+  const progressText = document.getElementById("progressText");
+
+  // ---- day grid ----
+  function buildDayGrid(){
+    dayGrid.innerHTML = "";
+    for (let d=1; d<=21; d++){
+      const b = document.createElement("button");
+      b.type = "button";
+      b.className = "day-btn";
+      b.textContent = d;
+      b.dataset.day = d;
+      b.setAttribute("aria-label", "Day " + d);
+      b.addEventListener("click", function(){ selectDay(d); });
+      dayGrid.appendChild(b);
+    }
+  }
+
+  function refreshDayGridState(){
+    const buttons = dayGrid.querySelectorAll(".day-btn");
+    buttons.forEach(function(btn){
+      const d = parseInt(btn.dataset.day, 10);
+      btn.classList.toggle("active", d === currentDay);
+      const e = entriesByDay[d];
+      const filled = e && (e.dreams || e.scriptures || e.prayer_notes);
+      btn.classList.toggle("done", !!filled);
+    });
+  }
+
+  function selectDay(d){
+    currentDay = d;
+    dayHeading.textContent = "Day " + d;
+    const e = entriesByDay[d] || {dreams:"", scriptures:"", prayer_notes:""};
+    dreamsEl.value = e.dreams || "";
+    scripturesEl.value = e.scriptures || "";
+    notesEl.value = e.prayer_notes || "";
+    setStatus("");
+    refreshDayGridState();
+    // scroll the card into view on mobile
+    if (window.innerWidth <= 520){
+      document.querySelector(".card").scrollIntoView({behavior:"smooth", block:"start"});
+    }
+  }
+
+  function setStatus(msg, kind){
+    statusEl.textContent = msg || "";
+    statusEl.className = "status" + (kind ? " " + kind : "");
+  }
+
+  // ---- API ----
+  // Published pplx.app sites do not auto-route backend ports — they require /port/5000/ prefix.
+  // Local dev / preview serves the backend at the site root, so no prefix.
+  const API_BASE = /\.pplx\.app$/i.test(location.hostname) ? "/port/5000" : "";
+
+  async function api(path, opts){
+    opts = opts || {};
+    opts.headers = Object.assign({"Content-Type":"application/json"}, opts.headers || {});
+    const res = await fetch(API_BASE + path, opts);
+    if (!res.ok){
+      const t = await res.text();
+      throw new Error("Request failed (" + res.status + "): " + t);
+    }
+    return res.json();
+  }
+
+  async function loadEntries(){
+    try {
+      const rows = await api("/api/entries?visitor_id=" + encodeURIComponent(vid));
+      entriesByDay = {};
+      rows.forEach(function(r){ entriesByDay[r.day] = r; });
+      renderEntryList();
+      refreshDayGridState();
+      // populate current day in case it exists
+      selectDay(currentDay);
+    } catch (err){
+      setStatus("Could not load saved entries.", "err");
+      console.error(err);
+    }
+  }
+
+  async function saveEntry(){
+    saveBtn.disabled = true;
+    setStatus("Saving…");
+    try {
+      const payload = {
+        visitor_id: vid,
+        day: currentDay,
+        dreams: dreamsEl.value.trim().slice(0,8000),
+        scriptures: scripturesEl.value.trim().slice(0,8000),
+        prayer_notes: notesEl.value.trim().slice(0,8000),
+      };
+      const saved = await api("/api/entries", {
+        method:"POST",
+        body: JSON.stringify(payload),
+      });
+      entriesByDay[saved.day] = saved;
+      renderEntryList();
+      refreshDayGridState();
+      setStatus("Saved &#10016; Day " + saved.day + " recorded.", "ok");
+    } catch (err){
+      setStatus("Could not save. Please try again.", "err");
+      console.error(err);
+    } finally {
+      saveBtn.disabled = false;
+    }
+  }
+
+  async function clearEntry(){
+    if (!confirm("Clear your entry for Day " + currentDay + "? This cannot be undone.")) return;
+    try {
+      await api("/api/entries/" + currentDay + "?visitor_id=" + encodeURIComponent(vid), {method:"DELETE"});
+      delete entriesByDay[currentDay];
+      dreamsEl.value = ""; scripturesEl.value = ""; notesEl.value = "";
+      renderEntryList();
+      refreshDayGridState();
+      setStatus("Day " + currentDay + " cleared.", "ok");
+    } catch (err){
+      setStatus("Could not clear. Please try again.", "err");
+      console.error(err);
+    }
+  }
+
+  function snippet(e){
+    const parts = [];
+    if (e.dreams) parts.push("Dreams: " + e.dreams);
+    if (e.scriptures) parts.push("Scripture: " + e.scriptures);
+    if (e.prayer_notes) parts.push("Prayer: " + e.prayer_notes);
+    const s = parts.join(" · ");
+    return s.length > 160 ? s.slice(0,160) + "…" : s;
+  }
+
+  function renderEntryList(){
+    const days = Object.keys(entriesByDay).map(Number).sort(function(a,b){return a-b;});
+    entryList.innerHTML = "";
+    if (days.length === 0){
+      emptyState.hidden = false;
+    } else {
+      emptyState.hidden = true;
+      days.forEach(function(d){
+        const e = entriesByDay[d];
+        const li = document.createElement("li");
+        li.innerHTML = '<div class="day-label">Day ' + d + '</div><div class="entry-snippet"></div>';
+        li.querySelector(".entry-snippet").textContent = snippet(e) || "(empty)";
+        li.addEventListener("click", function(){ selectDay(d); });
+        entryList.appendChild(li);
+      });
+    }
+    const completed = days.filter(function(d){
+      const e = entriesByDay[d];
+      return e && (e.dreams || e.scriptures || e.prayer_notes);
+    }).length;
+    progressFill.style.width = (completed / 21 * 100).toFixed(1) + "%";
+    progressText.textContent = completed + " of 21 days recorded";
+  }
+
+  saveBtn.addEventListener("click", saveEntry);
+  clearBtn.addEventListener("click", clearEntry);
+
+  buildDayGrid();
+  selectDay(1);
+  loadEntries();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Breaking Satanic Chains — Interactive Study | L137</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ivory:#FAF7EF;--cream:#F3EEDF;--sand:#EFE7D2;--charcoal:#221E1A;
+  --teal:#0F5B5F;--teal-deep:#083E42;--teal-light:#3E8B8F;
+  --gold:#B6871A;--gold-light:#E7C965;--gold-warm:#D4A83B;
+  --ember:#C24A16;--ember-light:#E67548;
+  --plum:#6E2F5A;--plum-light:#9A5588;
+  --green:#4F7A2E;--green-light:#7CA354;
+  --line:#C8BEAA;
+  --serif:'Source Serif 4',Georgia,serif;--sans:'DM Sans',system-ui,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--ivory);color:var(--charcoal);font-family:var(--sans);line-height:1.6;font-size:16px}
+
+/* ================= OPENING BLOCK ================= */
+.opening-block{background:var(--ivory);padding:34px 20px 6px;border-bottom:1px solid var(--line)}
+.opening-block .wrap{max-width:900px;margin:0 auto}
+.opening-eyebrow{font-family:var(--sans);font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:10px}
+.opening-lede{font-family:var(--serif);font-size:20px;line-height:1.5;color:var(--charcoal);max-width:780px;margin:0 0 22px;font-style:italic}
+.opening-rule{height:2px;background:linear-gradient(90deg,var(--teal-deep) 0,var(--gold) 60%,transparent 100%);border-radius:2px}
+@media (max-width:900px){.opening-lede{font-size:17.5px}}
+
+/* ================= HERO ================= */
+.hero{background:linear-gradient(135deg,var(--teal-deep) 0%,var(--teal) 100%);color:var(--ivory);padding:56px 20px 44px;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--gold),var(--gold-warm),var(--gold))}
+.hero-inner{max-width:900px;margin:0 auto;position:relative;z-index:2}
+.hero .date-line{font-family:var(--sans);font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-light);margin-bottom:14px;font-weight:600}
+.hero h1{font-family:var(--serif);font-size:44px;line-height:1.12;font-weight:700;margin-bottom:14px}
+.hero .scripture{font-family:var(--serif);font-style:italic;font-size:19px;color:var(--gold-light);margin-bottom:18px}
+.hero .attribution{font-size:13.5px;color:var(--ivory);opacity:.9;letter-spacing:.05em}
+@media (max-width:700px){.hero h1{font-size:32px}.hero .scripture{font-size:16.5px}}
+
+/* ================= 5-STAGE JOURNEY NAV (sticky) ================= */
+.journey-nav{position:sticky;top:0;z-index:100;background:var(--ivory);border-bottom:1px solid var(--line);padding:14px 12px 12px}
+.journey-nav .inner{max-width:900px;margin:0 auto;display:flex;gap:8px;justify-content:space-between}
+.stage-btn{flex:1;min-width:0;padding:10px 6px;border-radius:12px;background:var(--cream);border:2px solid transparent;cursor:pointer;transition:all .2s;text-align:center;font-family:var(--sans);color:var(--charcoal)}
+.stage-btn:hover{transform:translateY(-2px)}
+.stage-btn.active{background:var(--teal-deep);color:var(--ivory);border-color:var(--gold)}
+.stage-btn.done{background:var(--green);color:var(--ivory)}
+.stage-btn.done::after{content:" ✓";font-size:11px}
+.stage-btn .stage-icon{font-size:22px;line-height:1;display:block;margin-bottom:3px}
+.stage-btn .stage-label{font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+@media (max-width:600px){.stage-btn{padding:8px 3px}.stage-btn .stage-icon{font-size:19px}.stage-btn .stage-label{font-size:9.5px;letter-spacing:.04em}}
+
+/* Progress bar under nav */
+.progress-strip{max-width:900px;margin:0 auto;padding:10px 20px 0}
+.progress-track{height:6px;background:var(--sand);border-radius:3px;overflow:hidden}
+.progress-fill{height:100%;background:linear-gradient(90deg,var(--teal),var(--gold));border-radius:3px;transition:width .5s;width:0%}
+.progress-label{font-size:11px;color:var(--teal-deep);margin-top:6px;font-weight:600;letter-spacing:.05em}
+
+/* ================= STAGE PANELS ================= */
+.stage-panel{display:none;max-width:900px;margin:0 auto;padding:44px 20px 40px;animation:fadeIn .35s ease}
+.stage-panel.visible{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+
+.stage-header{margin-bottom:22px}
+.stage-eyebrow{font-family:var(--sans);font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;font-weight:700;margin-bottom:8px}
+.stage-title{font-family:var(--serif);font-size:36px;line-height:1.12;font-weight:700;margin-bottom:8px}
+.stage-sub{font-size:15.5px;color:#5a5245;font-style:italic;margin-bottom:14px}
+.stage-rule{width:60px;height:3px;border-radius:2px;margin-bottom:10px}
+
+/* Stage colour themes */
+#stage-prepare .stage-eyebrow,#stage-prepare .stage-title strong{color:var(--gold)}
+#stage-prepare .stage-rule{background:var(--gold)}
+#stage-learn .stage-eyebrow,#stage-learn .stage-title strong{color:var(--plum)}
+#stage-learn .stage-rule{background:var(--plum)}
+#stage-break .stage-eyebrow,#stage-break .stage-title strong{color:var(--ember)}
+#stage-break .stage-rule{background:var(--ember)}
+#stage-pray .stage-eyebrow,#stage-pray .stage-title strong{color:var(--teal)}
+#stage-pray .stage-rule{background:var(--teal)}
+#stage-seal .stage-eyebrow,#stage-seal .stage-title strong{color:var(--green)}
+#stage-seal .stage-rule{background:var(--green)}
+
+/* ================= SHARED BUTTONS ================= */
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:26px;font-family:var(--sans);font-weight:600;font-size:13.5px;letter-spacing:.05em;text-transform:uppercase;text-decoration:none;transition:all .18s;cursor:pointer;border:none}
+.btn-gold{background:var(--gold);color:var(--charcoal)}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(0,0,0,.2)}
+.btn-teal{background:var(--teal);color:var(--ivory)}
+.btn-teal:hover{background:var(--teal-deep);transform:translateY(-2px)}
+.btn-ember{background:var(--ember);color:var(--ivory)}
+.btn-ember:hover{background:#a53e11;transform:translateY(-2px)}
+.btn-outline{background:transparent;color:var(--teal-deep);border:2px solid var(--teal)}
+.btn-outline:hover{background:var(--teal);color:var(--ivory)}
+
+/* ================= STAGE 1 — PREPARE ================= */
+.prepare-list{display:flex;flex-direction:column;gap:14px;margin:24px 0}
+.prepare-card{background:var(--cream);border-left:5px solid var(--gold);border-radius:0 12px 12px 0;padding:18px 20px}
+.prepare-card h3{font-family:var(--serif);font-size:19px;margin-bottom:6px;color:var(--teal-deep)}
+.prepare-card p{font-size:14.5px;color:var(--charcoal);line-height:1.55}
+.prepare-mark{margin-top:14px;text-align:right}
+
+/* ================= STAGE 2 — LEARN (swipe cards) ================= */
+.swipe-frame{background:var(--cream);border-radius:20px;padding:26px 22px;position:relative;overflow:hidden;min-height:280px;display:flex;flex-direction:column;justify-content:space-between}
+.swipe-card{text-align:center}
+.swipe-icon{font-size:52px;line-height:1;margin-bottom:12px}
+.swipe-card h3{font-family:var(--serif);font-size:26px;line-height:1.15;margin-bottom:12px;color:var(--teal-deep)}
+.swipe-card p{font-size:16px;line-height:1.55;color:var(--charcoal);max-width:560px;margin:0 auto}
+.swipe-nav{display:flex;justify-content:space-between;align-items:center;margin-top:18px;gap:12px}
+.swipe-dot{width:8px;height:8px;border-radius:50%;background:var(--sand);transition:all .2s}
+.swipe-dot.active{background:var(--plum);width:22px;border-radius:4px}
+.swipe-dots{display:flex;gap:6px;align-items:center}
+.swipe-btn{background:var(--ivory);border:2px solid var(--plum);color:var(--plum);width:38px;height:38px;border-radius:50%;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .18s}
+.swipe-btn:hover{background:var(--plum);color:var(--ivory)}
+.swipe-btn:disabled{opacity:.35;cursor:not-allowed}
+
+/* ================= STAGE 3 — BREAK (grid + modal) ================= */
+.chain-toolbar{display:flex;flex-wrap:wrap;gap:10px;margin:10px 0 16px;align-items:center}
+.chain-search{flex:1;min-width:200px;padding:11px 15px;border:2px solid var(--line);border-radius:22px;font-family:var(--sans);font-size:14px;background:var(--ivory)}
+.chain-search:focus{outline:none;border-color:var(--ember)}
+.chain-count-pill{padding:8px 14px;border-radius:20px;background:var(--cream);font-size:12px;font-weight:600;color:var(--teal-deep)}
+.chain-count-pill strong{color:var(--ember)}
+
+.chain-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin:12px 0 22px}
+.chain-tile{background:var(--ivory);border:2px solid var(--line);border-radius:12px;padding:12px 10px;cursor:pointer;transition:all .18s;text-align:left;position:relative;font-family:var(--sans);color:var(--charcoal)}
+.chain-tile:hover{border-color:var(--ember);transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.08)}
+.chain-tile.broken{background:linear-gradient(135deg,var(--green) 0%,var(--green-light) 100%);border-color:var(--green);color:var(--ivory)}
+.chain-tile.broken::after{content:"✓";position:absolute;top:8px;right:10px;font-size:14px;font-weight:800;color:var(--ivory)}
+.chain-tile.opened:not(.broken){border-color:var(--gold)}
+.chain-num{font-size:10.5px;font-weight:700;letter-spacing:.06em;opacity:.75;margin-bottom:4px}
+.chain-tile.broken .chain-num{opacity:.9}
+.chain-name{font-size:13.5px;font-weight:600;line-height:1.25}
+
+/* Modal */
+.modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,0.72);z-index:1000;display:none;align-items:flex-start;justify-content:center;overflow-y:auto;padding:24px 16px}
+.modal-backdrop.active{display:flex}
+.modal{background:var(--ivory);max-width:600px;width:100%;border-radius:18px;padding:0;overflow:hidden;position:relative;margin:auto 0}
+.modal-header{background:linear-gradient(135deg,var(--ember) 0%,#a53e11 100%);color:var(--ivory);padding:22px 24px 18px}
+.modal-num{font-family:var(--sans);font-size:11px;letter-spacing:.2em;font-weight:700;opacity:.85;margin-bottom:6px}
+.modal-title{font-family:var(--serif);font-size:26px;font-weight:700;line-height:1.15}
+.modal-close{position:absolute;top:14px;right:16px;background:rgba(255,255,255,0.18);border:none;color:var(--ivory);width:32px;height:32px;border-radius:50%;font-size:20px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.modal-close:hover{background:rgba(255,255,255,0.32)}
+.modal-body{padding:22px 24px 24px}
+.study-tag{display:inline-block;font-family:var(--sans);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;padding:4px 10px;border-radius:12px;background:var(--sand);color:var(--charcoal);margin-bottom:10px}
+.modal-teaching{font-size:15px;line-height:1.62;color:var(--charcoal);margin-bottom:22px}
+.modal-teaching em{font-style:italic;color:var(--teal-deep);font-weight:500}
+
+/* ================= HEAVY IRON CHAIN — photoreal, serious ================= */
+.chain-visual{
+  background:#000;border-radius:14px;margin:14px 0 18px;
+  position:relative;overflow:hidden;
+  aspect-ratio:16/9;width:100%;
+  box-shadow:inset 0 0 40px rgba(0,0,0,.8),0 6px 18px rgba(0,0,0,.5);
+  border:1px solid #1a1610;
+}
+.chain-visual .chain-img{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;object-position:center;
+  transition:opacity .5s ease;
+}
+.chain-visual .chain-intact{opacity:1;z-index:1}
+.chain-visual .chain-broken-img{opacity:0;z-index:2}
+
+/* BROKEN STATE — cross-fade with slight zoom for impact */
+.chain-broken .chain-intact{opacity:0}
+.chain-broken .chain-broken-img{opacity:1;animation:chainSnapZoom 1.4s cubic-bezier(.2,.7,.3,1) both}
+@keyframes chainSnapZoom{
+  0%{transform:scale(1.15);filter:brightness(1.6) saturate(1.2)}
+  25%{transform:scale(1.08);filter:brightness(1.3) saturate(1.1)}
+  100%{transform:scale(1);filter:brightness(1) saturate(1)}
+}
+
+/* Screen-shake on snap */
+.chain-visual.snapping{animation:snapShake .55s cubic-bezier(.36,.07,.19,.97)}
+@keyframes snapShake{
+  10%,90%{transform:translate3d(-2px,0,0)}
+  20%,80%{transform:translate3d(3px,0,0)}
+  30%,50%,70%{transform:translate3d(-6px,2px,0)}
+  40%,60%{transform:translate3d(6px,-2px,0)}
+}
+
+/* Instruction overlay */
+.chain-instruction{
+  position:absolute;bottom:14px;left:14px;right:14px;
+  font-family:var(--serif);font-style:italic;font-size:14px;color:#e0d4b8;
+  line-height:1.4;z-index:3;text-align:center;
+  text-shadow:0 2px 10px rgba(0,0,0,1),0 0 20px rgba(0,0,0,.9);
+  transition:opacity .35s;
+  padding:8px 10px;background:linear-gradient(to top,rgba(0,0,0,.75) 0%,rgba(0,0,0,0) 100%);
+  border-radius:0 0 12px 12px;
+}
+.chain-broken .chain-instruction{opacity:0;pointer-events:none}
+
+/* Scripture badge appears after break */
+.chain-broken-badge{
+  position:absolute;bottom:14px;left:14px;right:14px;
+  font-family:var(--serif);font-style:italic;font-size:16px;
+  color:var(--gold-light);line-height:1.45;z-index:3;text-align:center;
+  text-shadow:0 2px 10px rgba(0,0,0,1),0 0 24px rgba(0,0,0,.95);
+  padding:10px 12px;background:linear-gradient(to top,rgba(0,0,0,.85) 0%,rgba(0,0,0,0) 100%);
+  border-radius:0 0 12px 12px;
+  opacity:0;transform:translateY(8px);pointer-events:none;
+}
+.chain-broken .chain-broken-badge{
+  opacity:1;transform:translateY(0);
+  transition:opacity .8s .6s ease,transform .8s .6s ease;
+}
+
+.modal-actions{display:flex;flex-wrap:wrap;gap:10px;justify-content:flex-start}
+.mini-btn{padding:10px 16px;border-radius:20px;border:none;font-family:var(--sans);font-weight:600;font-size:12.5px;letter-spacing:.05em;text-transform:uppercase;cursor:pointer;transition:all .18s;display:inline-flex;align-items:center;gap:6px}
+.mini-btn.btn-break{background:var(--ember);color:var(--ivory)}
+.mini-btn.btn-break:hover{background:#a53e11}
+.mini-btn.btn-broken{background:var(--green);color:var(--ivory)}
+.mini-btn.btn-broken:hover{background:#3d5f24}
+.mini-btn.btn-secondary{background:var(--sand);color:var(--charcoal)}
+.mini-btn.btn-secondary:hover{background:var(--line)}
+
+/* ================= STAGE 4 — PRAY (reverent list) ================= */
+.pray-header{background:linear-gradient(135deg,var(--teal-deep) 0%,var(--teal) 100%);color:var(--ivory);padding:24px 22px;border-radius:16px 16px 0 0;text-align:center}
+.pray-header h3{font-family:var(--serif);font-size:24px;line-height:1.15;margin-bottom:8px}
+.pray-header p{font-size:14px;opacity:.9;line-height:1.55}
+.pp-shell{background:var(--teal-deep);color:var(--ivory);padding:24px 22px 30px;border-radius:0 0 16px 16px}
+.pp-note{background:rgba(255,255,255,0.08);padding:12px 14px;border-radius:8px;font-size:12.5px;line-height:1.5;color:var(--gold-light);margin-bottom:16px}
+.pp-list{display:flex;flex-direction:column;gap:11px}
+.pp{background:rgba(255,255,255,0.05);border-left:3px solid var(--gold);padding:12px 14px;border-radius:0 8px 8px 0;font-family:var(--serif);font-size:15.5px;line-height:1.5;color:var(--ivory);display:flex;gap:10px;align-items:flex-start}
+.pp-num{flex-shrink:0;font-family:var(--sans);font-size:11px;font-weight:700;color:var(--gold-light);letter-spacing:.05em;margin-top:3px;min-width:22px}
+.pray-cta{margin:16px 0 4px}
+.play-btn{background:var(--gold);color:var(--charcoal);padding:14px 22px;border-radius:26px;border:none;font-family:var(--sans);font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:all .18s}
+.play-btn:hover{background:var(--gold-light);transform:translateY(-2px)}
+
+/* ================= STAGE 5 — SEAL ================= */
+.seal-scripture{background:linear-gradient(135deg,var(--green) 0%,var(--green-light) 100%);color:var(--ivory);padding:32px 26px;border-radius:16px;text-align:center;margin:14px 0 22px}
+.seal-scripture .ref{font-family:var(--sans);font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;opacity:.85;margin-bottom:10px}
+.seal-scripture blockquote{font-family:var(--serif);font-size:20px;line-height:1.5;font-style:italic;max-width:560px;margin:0 auto}
+
+.share-card{background:var(--cream);border:2px solid var(--gold-light);border-radius:16px;padding:22px;margin:16px 0}
+.share-card h3{font-family:var(--serif);font-size:20px;color:var(--teal-deep);margin-bottom:8px}
+.share-card p{font-size:14px;color:var(--charcoal);margin-bottom:14px;line-height:1.55}
+.share-actions{display:flex;flex-wrap:wrap;gap:8px}
+
+/* Share preview canvas */
+.share-preview{margin-top:16px;text-align:center;display:none}
+.share-preview.visible{display:block}
+.share-preview img{max-width:100%;border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,.2)}
+.share-preview .hint{font-size:12px;color:var(--teal-deep);margin-top:8px;font-style:italic}
+
+/* ================= STUDY DEEPER ================= */
+.study-deeper-toggle{max-width:900px;margin:20px auto 40px;padding:0 20px;text-align:center}
+.study-deeper-btn{background:transparent;border:2px dashed var(--line);color:var(--teal-deep);padding:14px 26px;border-radius:24px;font-family:var(--sans);font-weight:700;font-size:12.5px;letter-spacing:.15em;text-transform:uppercase;cursor:pointer;transition:all .18s}
+.study-deeper-btn:hover{border-color:var(--gold);color:var(--gold-warm)}
+
+.study-deeper-panel{display:none;max-width:900px;margin:0 auto 60px;padding:24px 20px;background:var(--cream);border-radius:16px;border:1px solid var(--line)}
+.study-deeper-panel.visible{display:block}
+.study-deeper-panel h3{font-family:var(--serif);font-size:22px;color:var(--teal-deep);margin-bottom:14px}
+.deeper-links{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px;margin-bottom:22px}
+.deeper-link{background:var(--ivory);border:1px solid var(--line);border-radius:10px;padding:13px 14px;font-family:var(--sans);font-size:13.5px;color:var(--charcoal);cursor:pointer;transition:all .18s;text-align:left}
+.deeper-link:hover{border-color:var(--gold);transform:translateY(-2px)}
+.deeper-link .di{font-size:18px;display:inline-block;margin-right:6px}
+.deeper-body{display:none;background:var(--ivory);border-radius:12px;padding:20px;margin-top:14px;max-height:60vh;overflow-y:auto}
+.deeper-body.visible{display:block}
+.deeper-body h4{font-family:var(--serif);font-size:18px;color:var(--teal-deep);margin-bottom:10px}
+.deeper-body p{font-size:14px;line-height:1.6;color:var(--charcoal);margin-bottom:10px}
+.deeper-body ul{margin:10px 0 10px 22px;font-size:14px;line-height:1.6}
+.deeper-body ul li{margin-bottom:6px}
+.deeper-body blockquote{background:var(--sand);border-left:4px solid var(--gold);padding:12px 16px;border-radius:0 8px 8px 0;font-style:italic;font-family:var(--serif);margin:12px 0;font-size:15px}
+
+/* ================= FOOTER ================= */
+footer.site-foot{background:var(--teal-deep);color:var(--ivory);padding:32px 20px 24px;text-align:center;margin-top:40px}
+footer.site-foot .tag{font-family:var(--serif);font-style:italic;font-size:16px;color:var(--gold-light);margin-bottom:8px}
+footer.site-foot .attr{font-size:12px;opacity:.85;letter-spacing:.05em}
+footer.site-foot a{color:var(--gold-light);text-decoration:underline}
+
+/* ================= UTIL ================= */
+.done-mark-row{margin-top:22px;display:flex;justify-content:center}
+.mark-stage-btn{background:var(--green);color:var(--ivory);padding:13px 26px;border-radius:24px;border:none;font-family:var(--sans);font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:all .18s}
+.mark-stage-btn:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(0,0,0,.2)}
+.mark-stage-btn.marked{background:var(--gold);color:var(--charcoal)}
+</style>
+</head>
+<body>
+
+<!-- OPENING BLOCK (required, verbatim) -->
+<section class="opening-block" aria-label="About this study">
+  <div class="wrap">
+    <div class="opening-eyebrow">L137 Deliverance Ministry</div>
+    <p class="opening-lede">The following is an interactive study following a service held on Clubhouse by Pastor Kiki Ocansey.</p>
+    <div class="opening-rule" aria-hidden="true"></div>
+  </div>
+</section>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="date-line">August 26, 2026 · Clubhouse Service</div>
+    <h1>Breaking Satanic Chains</h1>
+    <p class="scripture">Psalm 94:1 · Acts 12:7 · John 8:36</p>
+    <p class="attribution">Pastor Kiki Ocansey · L137 Deliverance Ministry International</p>
+    <div style="margin-top:22px">
+      <a href="video.html" style="display:inline-flex;align-items:center;gap:10px;background:var(--gold);color:var(--charcoal);padding:14px 26px;border-radius:30px;font-family:var(--sans);font-weight:700;font-size:14px;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;box-shadow:0 6px 20px rgba(0,0,0,.25)">
+        <span style="font-size:18px">▶</span> Watch the Video (5 min)
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- 5-STAGE JOURNEY NAV -->
+<nav class="journey-nav" aria-label="Journey">
+  <div class="inner">
+    <button class="stage-btn active" data-stage="prepare"><span class="stage-icon">🙏🏾</span><span class="stage-label">Prepare</span></button>
+    <button class="stage-btn" data-stage="learn"><span class="stage-icon">📖</span><span class="stage-label">Learn</span></button>
+    <button class="stage-btn" data-stage="break"><span class="stage-icon">🔥</span><span class="stage-label">Break</span></button>
+    <button class="stage-btn" data-stage="pray"><span class="stage-icon">🫗</span><span class="stage-label">Pray</span></button>
+    <button class="stage-btn" data-stage="seal"><span class="stage-icon">🛡️</span><span class="stage-label">Seal</span></button>
+  </div>
+  <div class="progress-strip">
+    <div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div>
+    <div class="progress-label" id="progress-label">0 of 5 stages marked</div>
+  </div>
+</nav>
+
+<!-- ================= STAGE 1 · PREPARE ================= -->
+<section class="stage-panel visible" id="stage-prepare">
+  <div class="stage-header">
+    <div class="stage-eyebrow">Stage 1 · Prepare your heart</div>
+    <h2 class="stage-title"><strong>Come before the Lord</strong></h2>
+    <div class="stage-rule"></div>
+    <p class="stage-sub">Before we break anything, we come humbly, thankful, forgiven, and filled with the Holy Spirit.</p>
+  </div>
+  <div class="prepare-list">
+    <div class="prepare-card">
+      <h3>🙏🏾 Praise & Thanksgiving</h3>
+      <p>Lift up the name of Jesus. Thank God for another day of life, and for the finished work of the cross. Praise Him for who He is before you ask Him for anything.</p>
+    </div>
+    <div class="prepare-card">
+      <h3>🕊️ Repentance & Forgiveness</h3>
+      <p>Confess every known sin. Forgive anyone who has hurt you — spouse, family, boss, church member, even yourself. Unforgiveness holds chains in place. Let them go before the Father does the breaking.</p>
+    </div>
+    <div class="prepare-card">
+      <h3>✨ Invite the Holy Spirit</h3>
+      <p>Say aloud: <em>Holy Spirit, fill me afresh and strengthen me for prayer, in Jesus' name.</em> Wait a moment. Do not rush past this — He is the One who breaks the chain.</p>
+    </div>
+  </div>
+  <div class="done-mark-row">
+    <button class="mark-stage-btn" data-mark="prepare">✓ I have prepared my heart</button>
+  </div>
+</section>
+
+<!-- ================= STAGE 2 · LEARN ================= -->
+<section class="stage-panel" id="stage-learn">
+  <div class="stage-header">
+    <div class="stage-eyebrow">Stage 2 · Learn the teaching</div>
+    <h2 class="stage-title"><strong>What is a chain?</strong></h2>
+    <div class="stage-rule"></div>
+    <p class="stage-sub">Five short cards. Tap the arrows to move through Pastor Kiki's teaching in your own time.</p>
+  </div>
+
+  <div class="swipe-frame">
+    <div class="swipe-card" id="swipe-card">
+      <!-- filled by JS -->
+    </div>
+    <div class="swipe-nav">
+      <button class="swipe-btn" id="swipe-prev" aria-label="Previous">‹</button>
+      <div class="swipe-dots" id="swipe-dots"></div>
+      <button class="swipe-btn" id="swipe-next" aria-label="Next">›</button>
+    </div>
+  </div>
+
+  <div class="done-mark-row">
+    <button class="mark-stage-btn" data-mark="learn">✓ I have read the teaching</button>
+  </div>
+</section>
+
+<!-- ================= STAGE 3 · BREAK ================= -->
+<section class="stage-panel" id="stage-break">
+  <div class="stage-header">
+    <div class="stage-eyebrow">Stage 3 · Break the 29 chains</div>
+    <h2 class="stage-title"><strong>Tap. Pray. Break.</strong></h2>
+    <div class="stage-rule"></div>
+    <p class="stage-sub">Tap any chain to open Pastor Kiki's teaching on it. Speak "Break by fire" aloud, then tap the animated chain to break it.</p>
+  </div>
+
+  <div class="chain-toolbar">
+    <input type="text" class="chain-search" id="chain-search" placeholder="Search chains — e.g. fear, finance, family…" aria-label="Search chains">
+    <span class="chain-count-pill"><strong id="broken-count">0</strong>/29 broken</span>
+  </div>
+
+  <div class="chain-grid" id="chain-grid"></div>
+
+  <div class="done-mark-row">
+    <button class="mark-stage-btn" data-mark="break">✓ I have prayed through the chains</button>
+  </div>
+</section>
+
+<!-- ================= STAGE 4 · PRAY (REVERENT) ================= -->
+<section class="stage-panel" id="stage-pray">
+  <div class="stage-header">
+    <div class="stage-eyebrow">Stage 4 · Pray the prophetic direction</div>
+    <h2 class="stage-title"><strong>Pour the oil. Speak the word.</strong></h2>
+    <div class="stage-rule"></div>
+    <p class="stage-sub">These are Pastor Kiki's exact 32 prayer points. Nothing is added or paraphrased. Say them slowly, aloud, one by one.</p>
+  </div>
+
+  <div class="pray-header">
+    <h3>Prophetic Direction — 32 Prayer Points</h3>
+    <p>Pastor Kiki Ocansey · Breaking Satanic Chains (Aug 26, 2026)</p>
+  </div>
+  <div class="pp-shell">
+    <div class="pp-note">Verbatim from Pastor Kiki's written Prophetic Direction. Nothing added. Nothing removed. Punctuation, capitalization, and emojis kept exactly as she wrote them. Say each one aloud as you pour the anointing oil on the earth.</div>
+    <div class="pray-cta">
+      <button class="play-btn" data-say="__ALL_PRAYERS__">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        Play all 32 prayer points
+      </button>
+    </div>
+    <div class="pp-list" id="pp-list"></div>
+    <div style="margin-top:22px;padding:16px 18px;background:rgba(255,255,255,0.08);border-left:4px solid var(--gold);border-radius:0 8px 8px 0;font-family:var(--sans);font-size:13.5px;line-height:1.55;color:var(--ivory)">
+      <strong style="color:var(--gold-light);letter-spacing:.05em;display:block;margin-bottom:6px">NOW POUR THE OIL ON THE GROUND (EARTH)</strong>
+      and continue to the Sealing stage.
+    </div>
+  </div>
+
+  <div class="done-mark-row">
+    <button class="mark-stage-btn" data-mark="pray">✓ I have prayed the 32 prayers</button>
+  </div>
+</section>
+
+<!-- ================= STAGE 5 · SEAL ================= -->
+<section class="stage-panel" id="stage-seal">
+  <div class="stage-header">
+    <div class="stage-eyebrow">Stage 5 · Seal the prayer</div>
+    <h2 class="stage-title"><strong>Cover it with Psalm 94:1</strong></h2>
+    <div class="stage-rule"></div>
+    <p class="stage-sub">The oil is on the ground. Now seal every word you have spoken.</p>
+  </div>
+
+  <div class="seal-scripture">
+    <div class="ref">Psalm 94:1 (KJV)</div>
+    <blockquote>"O LORD God, to whom vengeance belongeth; O God, to whom vengeance belongeth, shew thyself."</blockquote>
+  </div>
+
+  <div class="share-card">
+    <h3>Share a verse with someone</h3>
+    <p>Generate a WhatsApp-sized card and share the word with a friend, a family member, or your prayer group.</p>
+    <div class="share-actions">
+      <button class="btn btn-teal" id="share-generate">🖼️ Generate share card</button>
+      <button class="btn btn-outline" id="share-copy">📋 Copy verse text</button>
+    </div>
+    <div class="share-preview" id="share-preview">
+      <canvas id="share-canvas" width="900" height="1200" style="display:none"></canvas>
+      <img id="share-img" alt="Shareable verse card">
+      <div class="hint">Long-press the image to save, then share to WhatsApp.</div>
+    </div>
+  </div>
+
+  <div class="done-mark-row">
+    <button class="mark-stage-btn" data-mark="seal">✓ I have sealed my prayer</button>
+  </div>
+</section>
+
+<!-- ================= STUDY DEEPER ================= -->
+<div class="study-deeper-toggle">
+  <button class="study-deeper-btn" id="deeper-toggle">📚 Study deeper — full teaching, transcript & libraries</button>
+</div>
+
+<div class="study-deeper-panel" id="deeper-panel">
+  <h3>Study deeper</h3>
+  <div class="deeper-links" id="deeper-links">
+    <button class="deeper-link" data-deeper="teaching"><span class="di">📖</span>Full teaching notes</button>
+    <button class="deeper-link" data-deeper="scriptures"><span class="di">📜</span>Scripture library (KJV, full)</button>
+    <button class="deeper-link" data-deeper="declarations"><span class="di">📢</span>Declarations spoken in service</button>
+    <button class="deeper-link" data-deeper="memory"><span class="di">🃏</span>Memory verse cards</button>
+    <button class="deeper-link" data-deeper="transcript"><span class="di">📄</span>Public transcript notes</button>
+  </div>
+  <div class="deeper-body" id="deeper-body"></div>
+</div>
+
+<!-- CHAIN MODAL -->
+<div class="modal-backdrop" id="modal-backdrop">
+  <div class="modal" role="dialog" aria-modal="true">
+    <div class="modal-header">
+      <button class="modal-close" id="modal-close" aria-label="Close">×</button>
+      <div class="modal-num" id="modal-num">CHAIN 01</div>
+      <div class="modal-title" id="modal-title">Chain</div>
+    </div>
+    <div class="modal-body">
+      <div class="study-tag">Study note · from Pastor Kiki's teaching</div>
+      <div class="modal-teaching" id="modal-teaching"></div>
+
+      <!-- HEAVY IRON CHAIN — photorealistic hero, the weight of generational bondage -->
+      <div class="chain-visual" id="chain-visual">
+        <img class="chain-img chain-intact" src="intact_chain.png" alt="Heavy iron chain of bondage">
+        <img class="chain-img chain-broken-img" src="broken_chain.png" alt="Chain broken by the fire of God">
+        <p class="chain-instruction">Speak the command aloud. Then break the chain in Jesus’ name.</p>
+        <div class="chain-broken-badge">“And his chains fell off from his hands.” &mdash; Acts 12:7</div>
+      </div>
+
+      <div class="modal-actions">
+        <button class="mini-btn btn-break" id="modal-speak">🔊 Speak "Break by fire"</button>
+        <button class="mini-btn btn-broken" id="modal-mark">🔥 Break this chain</button>
+        <button class="mini-btn btn-secondary" id="modal-close-2">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="site-foot">
+  <div class="tag">L137 · Luke 1:37 — For with God nothing shall be impossible.</div>
+  <div class="attr">Pastor Kiki Ocansey · L137 Deliverance Ministry International</div>
+</footer>
+
+<script>
+// ================= DATA =================
+const PRAYERS = ["Holy Spirit, fill me afresh and strengthen me for prayer, in Jesus Name.", "As I pour this oil on the earth every chain of bondage restricting my progress, break, in Jesus Name.", "Every chain assigned to keep me in one position, break now, in Jesus Name.", "Every chain of limitation around my destiny, As I pour this oil on the earth break now.", "Every chain of stagnation working against my progress, break, in Jesus Name.", "Every chain of repeated disappointment, lose your hold over my life, in Jesus Name.", "As I pour this oil on the earth Every chain of fear controlling my decisions, break Now.", "Every chain of discouragement weakening my faith, break Now.", "Every chain of hopelessness, I renounce you, in the Name of Jesus.", "Every chain of confusion surrounding my decisions, break now.", "As I pour this oil on the earth Every chain of procrastination delaying my progress, break now, in Jesus Name.", "Every destructive habit holding me captive, lose your grip.", "Every chain of unforgiveness in my heart, break Now", "As I pour this oil on the earth Every chain of bitterness poisoning my peace, break now, In Jesus mighty Name.", "Every chain of anger controlling my emotions, break, in Jesus Name.", "Every chain of rejection affecting my confidence, break, in Jesus Name.", "Every chain of shame connected to my past, break, Now", "As I pour this oil on the earth Every chain of guilt that Christ has already forgiven, release me and let me go", "Every chain keeping me connected to destructive relationships, break, loose me and let me go", "Every unhealthy attachment hindering my spiritual growth, break Now in Jesus Name", "I declare freedom through the finished work of Jesus Christ.", "As I pour this oil on the earth Every chain around my hands, symbolically restricting productive work, I declare freedom through the finished work of Jesus Christ.", "Every chain around my feet, symbolically restricting progress be destroyed by fire 🔥", "Every chain around my mind, symbolically restricting vision and hope, be destroyed in Jesus Name", "Every chain around my voice, symbolically restricting prayer and righteous expression, be destroyed by fire 🔥", "As I pour this oil on the earth Every prison door God desires opened before me, open according to His will, in Jesus Name.", "As Peter’s chains fell off, let every ungodly bondage fall away from my life.", "As Paul and Silas experienced freedom at midnight, let this season mark a turning point in my life.", "As I pour this oil on the earth I declare that Jesus Christ is Lord over my life, my home, my future, and my destiny.", "I will walk in wisdom, obedience, faith, and freedom, in the Name of Jesus Christ", "As I pour this oil on the earth I declare according to John 8:36 whom the Son sets free is free indeed Amen 🙏🏽", "Lord I activate my prayer on this earth in Jesus Name Amen 🙏🏽"];
+const CHAINS  = [{"n": 1, "label": "Coven Chains", "teaching": "Witches and wizards meet together to place vision, destiny, opportunity, business, family, community, and nation under bondage."}, {"n": 2, "label": "Foundational Chains", "teaching": "When forefathers chained the destiny of unborn children in covenant, the children live under that oppression until someone rises and breaks it."}, {"n": 3, "label": "Idolatry Chains", "teaching": "Idols worshipped generationally still torment finance, progress, and marriage — even in a Christian home — until they are renounced."}, {"n": 4, "label": "Sexual Immorality Chains", "teaching": "A believer can pray, worship, even lead — and still fall into sexual immorality — because a chain of immorality is on the life."}, {"n": 5, "label": "Marine Chains", "teaching": "Attacks from the marine kingdom — every marine chain of darkness must break."}, {"n": 6, "label": "Occultic Chains", "teaching": "When an occultic person is in the household, they change people's finances, well-being, destiny, and glory."}, {"n": 7, "label": "Witchcraft Chains", "teaching": "Witchcraft in family, in a best friend, in an aunt — sometimes in a mother. Every assignment fired at you returns to sender."}, {"n": 8, "label": "Familiar Spirit Chains", "teaching": "Familiar spirits in the family keep you from progressing academically, financially, spiritually — 'they say you owe them.'"}, {"n": 9, "label": "Hatred Chains", "teaching": "At the workplace and beyond — people who do not like you and will do anything to remove you. Break every chain of hatred."}, {"n": 10, "label": "Anti-Progress Chains", "teaching": "No progress no matter what you do. Break the anti-progress chain in marriage, finance, health."}, {"n": 11, "label": "Frustration Chains", "teaching": "Everything you touch becomes frustration. Chains of frustration — break by fire."}, {"n": 12, "label": "Barrenness Chains", "teaching": "Every chain of barrenness must break. Nothing is too hard for God."}, {"n": 13, "label": "Palace Chains", "teaching": "Chains that hold destiny captive from high places. If a leader has connections with evil covens, he can change an entire country."}, {"n": 14, "label": "Polygamous Chains", "teaching": "Polygamous chains that entered through family lines and covenants — break them by fire."}, {"n": 15, "label": "Failure Chains", "teaching": "Failure at everything you start — everything you place your hands on. You are the one who will break these chains."}, {"n": 16, "label": "Enchantment & Evil Recitation", "teaching": "Words spoken over you by enchantment cannot follow you into your workplace, your home, your journey."}, {"n": 17, "label": "Procrastination Chains", "teaching": "You have an idea to do something — to start, to move, to obey — and you delay, or you change your mind, and the moment passes. Every chain of procrastination delaying my progress, break now, in Jesus' name."}, {"n": 18, "label": "Mistakes & Errors", "teaching": "'Why am I always making mistakes? Everything I do is mistakes.' Every mistake chain is breaking by fire."}, {"n": 19, "label": "Negative Habits", "teaching": "Habits that will not go — you do not understand what controls them. You need to pray. We break negative-habit chains by the power of the Holy Ghost."}, {"n": 20, "label": "Wrong Location", "teaching": "Living in a place that does not favour your life — the environment is toxic, people point fingers, you cannot elevate. Every chain of wrong location must break."}, {"n": 21, "label": "Manipulation", "teaching": "Easily manipulated — by family, by children being turned against you, by school, by workplace. Break every chain of manipulation."}, {"n": 22, "label": "Bewitchment", "teaching": "Witchcraft surrounds them wherever they go, whatever they do. Chains of bewitchment — break by fire."}, {"n": 23, "label": "Sicknesses", "teaching": "Every morning the whole body hurts and it will not get better. Chains of sickness, cancer, paralysis, chains blocking success — I break it right now."}, {"n": 24, "label": "Difficulties", "teaching": "Anything you try — business, academics, study — you face difficulty. Chains of difficulty must be prayed and broken."}, {"n": 25, "label": "Hardship", "teaching": "Everything is hard. The work is hard, and even when you earn, the money escapes. Every chain of hardship must break."}, {"n": 26, "label": "Laziness & Indolence", "teaching": "Natural laziness — you can shout, you can plead, but the chain is on the life. Chains of laziness and indolence, break by fire."}, {"n": 27, "label": "Confusion & Depression", "teaching": "Confusion, anxiety, depression, suicidal thoughts. The devil brings these chains — we break them in the mighty name of Jesus."}, {"n": 28, "label": "Lack of Progress", "teaching": "No progress in marriage, in finance, in business, in any area. We break the chains of lack of progress."}, {"n": 29, "label": "Death", "teaching": "Fierce attacks in health, going in and out of hospital, no matter the medication. Doctors cannot find what is wrong. Every chain of death — break by fire."}];
+const LEARN   = [{"icon": "🔗", "title": "What is a chain?", "body": "A chain is bondage — captivity, limitation, restriction. It holds down what God has released."}, {"icon": "📖", "title": "Where do they come from?", "body": "From covenants, idols, foundations, witchcraft, familiar spirits, wrong locations, our own words, and things others have spoken over us."}, {"icon": "🔑", "title": "How do they break?", "body": "Repentance. Forgiveness. The blood of Jesus. The name of Jesus. The word of God spoken aloud. The Holy Spirit's fire."}, {"icon": "⚡", "title": "Acts 12:7", "body": "'And his chains fell off from his hands.' The angel struck Peter, the light shined, and the chains fell. God still does this."}, {"icon": "🛡️", "title": "Psalm 94:1 — the sealing", "body": "'O LORD God, to whom vengeance belongeth; O God, to whom vengeance belongeth, shew thyself.' We pour the oil on the earth and seal every prayer."}];
+
+// ================= STATE =================
+const KEY = "l137_bsc_v2";
+let state = JSON.parse(localStorage.getItem(KEY) || "{}");
+state.stages = state.stages || {};    // {prepare:true, learn:true, ...}
+state.broken = state.broken || {};    // {1:true, 2:true, ...}
+state.opened = state.opened || {};    // {1:true, ...}
+function saveState(){ localStorage.setItem(KEY, JSON.stringify(state)); }
+
+// ================= 5-STAGE NAV =================
+const stages = ["prepare","learn","break","pray","seal"];
+function showStage(s){
+  document.querySelectorAll(".stage-panel").forEach(p => p.classList.remove("visible"));
+  document.getElementById("stage-"+s).classList.add("visible");
+  document.querySelectorAll(".stage-btn").forEach(b => {
+    b.classList.toggle("active", b.dataset.stage === s);
+  });
+  window.scrollTo({top:0, behavior:"smooth"});
+}
+document.querySelectorAll(".stage-btn").forEach(b => {
+  b.addEventListener("click", () => showStage(b.dataset.stage));
+});
+// Reflect done state on nav
+function refreshNavDone(){
+  document.querySelectorAll(".stage-btn").forEach(b => {
+    b.classList.toggle("done", !!state.stages[b.dataset.stage]);
+  });
+}
+// Progress bar
+function refreshProgress(){
+  const done = stages.filter(s => state.stages[s]).length;
+  document.getElementById("progress-fill").style.width = (done/5*100) + "%";
+  document.getElementById("progress-label").textContent = done + " of 5 stages marked";
+}
+// Mark-stage buttons
+document.querySelectorAll(".mark-stage-btn").forEach(btn => {
+  const s = btn.dataset.mark;
+  const refresh = () => {
+    if(state.stages[s]){ btn.textContent = "✓ Completed"; btn.classList.add("marked"); }
+    else { btn.textContent = btn.textContent.replace("✓ Completed", "✓ Mark complete"); btn.classList.remove("marked"); }
+  };
+  btn.addEventListener("click", () => {
+    state.stages[s] = !state.stages[s];
+    saveState(); refreshNavDone(); refreshProgress(); refresh();
+    // Advance to next stage automatically
+    if(state.stages[s]){
+      const idx = stages.indexOf(s);
+      if(idx < stages.length - 1){
+        setTimeout(() => showStage(stages[idx+1]), 500);
+      }
+    }
+  });
+  refresh();
+});
+refreshNavDone(); refreshProgress();
+
+// ================= STAGE 2 — SWIPE CARDS =================
+let swipeIdx = 0;
+function renderSwipe(){
+  const c = LEARN[swipeIdx];
+  document.getElementById("swipe-card").innerHTML =
+    '<div class="swipe-icon">' + c.icon + '</div>' +
+    '<h3>' + c.title + '</h3>' +
+    '<p>' + c.body + '</p>';
+  document.getElementById("swipe-prev").disabled = swipeIdx === 0;
+  document.getElementById("swipe-next").disabled = swipeIdx === LEARN.length - 1;
+  const dots = LEARN.map((_,i) => '<div class="swipe-dot ' + (i===swipeIdx?"active":"") + '"></div>').join("");
+  document.getElementById("swipe-dots").innerHTML = dots;
+}
+document.getElementById("swipe-prev").addEventListener("click", () => { if(swipeIdx>0){ swipeIdx--; renderSwipe(); }});
+document.getElementById("swipe-next").addEventListener("click", () => { if(swipeIdx<LEARN.length-1){ swipeIdx++; renderSwipe(); }});
+renderSwipe();
+
+// ================= STAGE 3 — CHAIN GRID + MODAL =================
+function renderChains(filter){
+  filter = (filter||"").toLowerCase().trim();
+  const grid = document.getElementById("chain-grid");
+  const list = CHAINS.filter(c => !filter || c.label.toLowerCase().includes(filter) || c.teaching.toLowerCase().includes(filter));
+  grid.innerHTML = list.map(c => {
+    const broken = !!state.broken[c.n];
+    const opened = !!state.opened[c.n];
+    return '<div class="chain-tile ' + (broken?"broken":"") + ' ' + (opened?"opened":"") + '" data-n="' + c.n + '">' +
+      '<div class="chain-num">CHAIN ' + String(c.n).padStart(2,"0") + '</div>' +
+      '<div class="chain-name">' + c.label + '</div>' +
+    '</div>';
+  }).join("");
+  grid.querySelectorAll(".chain-tile").forEach(el => {
+    el.addEventListener("click", () => openChain(parseInt(el.dataset.n)));
+  });
+  document.getElementById("broken-count").textContent = Object.values(state.broken).filter(Boolean).length;
+}
+document.getElementById("chain-search").addEventListener("input", e => renderChains(e.target.value));
+renderChains();
+
+const backdrop = document.getElementById("modal-backdrop");
+const modalVisual = document.getElementById("chain-visual");
+let currentChain = null;
+
+function openChain(n){
+  const c = CHAINS.find(x => x.n === n);
+  currentChain = c;
+  state.opened[n] = true; saveState();
+  document.getElementById("modal-num").textContent = "CHAIN " + String(n).padStart(2,"0");
+  document.getElementById("modal-title").textContent = c.label;
+  document.getElementById("modal-teaching").textContent = c.teaching;
+  modalVisual.classList.toggle("chain-broken", !!state.broken[n]);
+  const mark = document.getElementById("modal-mark");
+  mark.textContent = state.broken[n] ? "✓ Chain broken" : "🔥 Break this chain";
+  backdrop.classList.add("active");
+  renderChains(document.getElementById("chain-search").value);
+}
+function closeModal(){ backdrop.classList.remove("active"); currentChain = null; }
+document.getElementById("modal-close").addEventListener("click", closeModal);
+document.getElementById("modal-close-2").addEventListener("click", closeModal);
+backdrop.addEventListener("click", e => { if(e.target === backdrop) closeModal(); });
+
+// Break chain button
+document.getElementById("modal-mark").addEventListener("click", () => {
+  if(!currentChain) return;
+  const n = currentChain.n;
+  if(state.broken[n]){
+    delete state.broken[n];
+    modalVisual.classList.remove("chain-broken");
+    document.getElementById("modal-mark").textContent = "🔥 Break this chain";
+  } else {
+    state.broken[n] = true;
+    // Trigger dramatic screen-shake for the snap moment
+    modalVisual.classList.add("snapping");
+    setTimeout(() => modalVisual.classList.remove("snapping"), 600);
+    // Slight delay so the shake registers before links recoil
+    setTimeout(() => modalVisual.classList.add("chain-broken"), 120);
+    document.getElementById("modal-mark").textContent = "✓ Chain broken";
+  }
+  saveState();
+  renderChains(document.getElementById("chain-search").value);
+});
+
+// Speak "Break by fire"
+document.getElementById("modal-speak").addEventListener("click", () => {
+  if(!currentChain) return;
+  speak("Break by fire, in the mighty name of Jesus.");
+});
+
+// ================= STAGE 4 — PRAYERS =================
+function renderPrayers(){
+  const list = document.getElementById("pp-list");
+  list.innerHTML = PRAYERS.map((p,i) =>
+    '<div class="pp"><span class="pp-num">' + String(i+1).padStart(2,"0") + '.</span><span>' + p + '</span></div>'
+  ).join("");
+}
+renderPrayers();
+
+// ================= TTS =================
+let currentUtterance = null;
+function speak(text){
+  if(!window.speechSynthesis) return;
+  window.speechSynthesis.cancel();
+  currentUtterance = new SpeechSynthesisUtterance(text);
+  currentUtterance.rate = 0.94;
+  currentUtterance.pitch = 1.0;
+  window.speechSynthesis.speak(currentUtterance);
+}
+document.querySelectorAll("[data-say]").forEach(b => {
+  b.addEventListener("click", () => {
+    const t = b.getAttribute("data-say");
+    speak(t === "__ALL_PRAYERS__" ? PRAYERS.join(" ") : t);
+  });
+});
+
+// ================= STAGE 5 — SHARE CARD =================
+document.getElementById("share-copy").addEventListener("click", async () => {
+  const t = 'Breaking Satanic Chains — L137 Deliverance Ministry\n\n"O LORD God, to whom vengeance belongeth; O God, to whom vengeance belongeth, shew thyself." — Psalm 94:1 (KJV)\n\n"And his chains fell off from his hands." — Acts 12:7 (KJV)\n\nPastor Kiki Ocansey · L137 · Luke 1:37 — For with God nothing shall be impossible.';
+  try { await navigator.clipboard.writeText(t); alert("Verse copied. Paste it into WhatsApp."); }
+  catch(e){ alert("Copy failed. Try again."); }
+});
+document.getElementById("share-generate").addEventListener("click", () => {
+  const canvas = document.getElementById("share-canvas");
+  const ctx = canvas.getContext("2d");
+  const W = canvas.width, H = canvas.height;
+  // Background gradient
+  const g = ctx.createLinearGradient(0,0,0,H);
+  g.addColorStop(0, "#083E42"); g.addColorStop(1, "#0F5B5F");
+  ctx.fillStyle = g; ctx.fillRect(0,0,W,H);
+  // Gold top border
+  ctx.fillStyle = "#B6871A"; ctx.fillRect(0,0,W,10);
+  // Eyebrow
+  ctx.fillStyle = "#E7C965";
+  ctx.font = "bold 34px 'DM Sans', sans-serif";
+  ctx.textAlign = "center";
+  ctx.fillText("L137 DELIVERANCE MINISTRY", W/2, 120);
+  // Title
+  ctx.fillStyle = "#FAF7EF";
+  ctx.font = "bold 72px 'Source Serif 4', Georgia, serif";
+  ctx.fillText("Breaking Satanic Chains", W/2, 220);
+  // Ref
+  ctx.fillStyle = "#E7C965";
+  ctx.font = "bold 40px 'DM Sans', sans-serif";
+  ctx.fillText("PSALM 94:1 (KJV)", W/2, 340);
+  // Verse
+  ctx.fillStyle = "#FAF7EF";
+  ctx.font = "italic 44px 'Source Serif 4', Georgia, serif";
+  const verse = ['"O LORD God, to whom', 'vengeance belongeth;', 'O God, to whom vengeance', 'belongeth, shew thyself."'];
+  verse.forEach((line,i) => ctx.fillText(line, W/2, 460 + i*70));
+  // Second verse
+  ctx.fillStyle = "#E7C965";
+  ctx.font = "bold 34px 'DM Sans', sans-serif";
+  ctx.fillText("ACTS 12:7 (KJV)", W/2, 830);
+  ctx.fillStyle = "#FAF7EF";
+  ctx.font = "italic 40px 'Source Serif 4', Georgia, serif";
+  ctx.fillText('"And his chains fell off', W/2, 900);
+  ctx.fillText('from his hands."', W/2, 960);
+  // Bottom
+  ctx.fillStyle = "#E7C965";
+  ctx.font = "bold 32px 'DM Sans', sans-serif";
+  ctx.fillText("PASTOR KIKI OCANSEY", W/2, 1080);
+  ctx.fillStyle = "#FAF7EF";
+  ctx.font = "italic 28px 'Source Serif 4', Georgia, serif";
+  ctx.fillText("Luke 1:37 — For with God", W/2, 1130);
+  ctx.fillText("nothing shall be impossible.", W/2, 1170);
+
+  const img = document.getElementById("share-img");
+  img.src = canvas.toDataURL("image/png");
+  document.getElementById("share-preview").classList.add("visible");
+});
+
+// ================= STUDY DEEPER =================
+document.getElementById("deeper-toggle").addEventListener("click", () => {
+  const p = document.getElementById("deeper-panel");
+  p.classList.toggle("visible");
+  if(p.classList.contains("visible")) p.scrollIntoView({behavior:"smooth"});
+});
+
+const DEEPER_CONTENT = {
+  teaching: {
+    title: "Full teaching notes",
+    html: `
+      <h4>The chain is bondage</h4>
+      <p>A chain is bondage — captivity, limitation, restriction. Pastor Kiki taught that satanic chains attempt to hold what God has released. Wherever there is bondage, God's word says the Son sets us free (John 8:36).</p>
+      <h4>How chains enter</h4>
+      <ul>
+        <li>Family covenants and idols (foundational chains)</li>
+        <li>Witchcraft, marine kingdoms, occult households</li>
+        <li>Our own agreements — words we said, mistakes we repeated</li>
+        <li>Wrong locations and toxic environments</li>
+        <li>Unforgiveness we hold onto</li>
+      </ul>
+      <h4>How chains break</h4>
+      <p>Pastor Kiki always begins deliverance with the same order — praise, thanksgiving, confession, forgiveness, invite the Holy Spirit, teaching, then declaration and prayer, then sealing with the blood of Jesus and the word.</p>
+      <blockquote>"And his chains fell off from his hands." — Acts 12:7 (KJV)</blockquote>
+      <blockquote>"If the Son therefore shall make you free, ye shall be free indeed." — John 8:36 (KJV)</blockquote>
+    `
+  },
+  scriptures: {
+    title: "Scripture library — KJV, full",
+    html: `
+      <h4>Psalm 94:1 — The sealing scripture</h4>
+      <blockquote>"O LORD God, to whom vengeance belongeth; O God, to whom vengeance belongeth, shew thyself."</blockquote>
+      <h4>Acts 12:7 — Peter's chains</h4>
+      <blockquote>"And, behold, the angel of the Lord came upon him, and a light shined in the prison: and he smote Peter on the side, and raised him up, saying, Arise up quickly. And his chains fell off from his hands."</blockquote>
+      <h4>Acts 16:25–26 — Paul and Silas</h4>
+      <blockquote>"And at midnight Paul and Silas prayed, and sang praises unto God: and the prisoners heard them. And suddenly there was a great earthquake, so that the foundations of the prison were shaken: and immediately all the doors were opened, and every one's bands were loosed."</blockquote>
+      <h4>John 8:36 — Free indeed</h4>
+      <blockquote>"If the Son therefore shall make you free, ye shall be free indeed."</blockquote>
+      <h4>Luke 1:37 — The L137 verse</h4>
+      <blockquote>"For with God nothing shall be impossible."</blockquote>
+      <h4>Isaiah 10:27 — The anointing that breaks the yoke</h4>
+      <blockquote>"And it shall come to pass in that day, that his burden shall be taken away from off thy shoulder, and his yoke from off thy neck, and the yoke shall be destroyed because of the anointing."</blockquote>
+    `
+  },
+  declarations: {
+    title: "Declarations spoken in the service",
+    html: `
+      <p><em>Repeat aloud, one by one:</em></p>
+      <ul>
+        <li>I break every satanic chain over my life, in the name of Jesus.</li>
+        <li>Every chain of stagnation, break by fire.</li>
+        <li>Every chain of fear, discouragement, and confusion — break now.</li>
+        <li>Every foundational chain planted before I was born — break now.</li>
+        <li>Every witchcraft chain fired at my destiny — I return it back to sender.</li>
+        <li>As Peter's chains fell off, let every ungodly bondage fall away from my life.</li>
+        <li>According to John 8:36, whom the Son sets free is free indeed. Amen.</li>
+      </ul>
+    `
+  },
+  memory: {
+    title: "Memory verse cards",
+    html: `
+      <p><em>Print or screenshot these to carry with you.</em></p>
+      <blockquote><strong>Psalm 94:1 —</strong> "O LORD God, to whom vengeance belongeth; O God, to whom vengeance belongeth, shew thyself."</blockquote>
+      <blockquote><strong>Acts 12:7 —</strong> "And his chains fell off from his hands."</blockquote>
+      <blockquote><strong>John 8:36 —</strong> "If the Son therefore shall make you free, ye shall be free indeed."</blockquote>
+      <blockquote><strong>Luke 1:37 —</strong> "For with God nothing shall be impossible."</blockquote>
+      <blockquote><strong>Isaiah 10:27 —</strong> "The yoke shall be destroyed because of the anointing."</blockquote>
+    `
+  },
+  transcript: {
+    title: "Public transcript notes",
+    html: `
+      <h4>Service summary</h4>
+      <p>Held on Clubhouse on August 26, 2026, by Pastor Kiki Ocansey. The teaching focused on identifying 29 kinds of satanic chains that keep believers bound and the biblical pattern for breaking them.</p>
+      <p>The service followed the standard L137 deliverance flow:</p>
+      <ol>
+        <li>Praise and worship</li>
+        <li>Thanksgiving</li>
+        <li>Confession of sins</li>
+        <li>Forgive others</li>
+        <li>Invite the Holy Spirit</li>
+        <li>Teaching on the 29 chains</li>
+        <li>Prophetic Direction — 32 verbatim prayer points</li>
+        <li>Sealing with Psalm 94:1 as oil was poured on the earth</li>
+      </ol>
+      <p><em>Personal names, prophecies, individual deliverance, and confidential testimonies have been removed. All 29 chain names and 32 prayer points appear here exactly as Pastor Kiki gave them.</em></p>
+    `
+  }
+};
+
+document.querySelectorAll(".deeper-link").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const key = btn.dataset.deeper;
+    const box = document.getElementById("deeper-body");
+    const c = DEEPER_CONTENT[key];
+    box.innerHTML = "<h4>" + c.title + "</h4>" + c.html;
+    box.classList.add("visible");
+    box.scrollIntoView({behavior:"smooth", block:"nearest"});
+  });
+});
+
+</script>
+</body>
+</html>

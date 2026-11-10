@@ -1,0 +1,66 @@
+/* L137 Deliverance Ministry — balanced palette.
+   Day (default): warm cream page, white cards, deep navy headings, gold labels, olive-green activities.
+   Night: deep navy page with gold, switched with the sun/moon button. No purple or pink. */
+html[data-mode="night"]{
+  --bg:#0D1424 !important; --surface:#141C2E !important; --ink:#ECE6D8 !important; --ink-2:#D6D0C2 !important; --muted:#A9A496 !important; --heading:#F3EDE0 !important;
+  --line:#26314A !important; --line-strong:#3A4766 !important; --shadow:rgba(0,0,0,.35) !important;
+  --primary:#D2AE5E !important; --primary-ink:#E3C57E !important; --primary-soft:#1B2540 !important; --on-primary:#0D1424 !important;
+  --accent:#D2AE5E !important; --accent-ink:#E0C27A !important; --accent-soft:#1D2333 !important; --on-accent:#0D1424 !important;
+  --hot:#8FA36A !important; --hot-ink:#B5C78E !important; --hot-soft:#18241C !important;
+  --ok:#8FA36A !important; --ok-soft:#18241C !important; --danger:#E08A80 !important; --danger-soft:#2A1A1C !important;
+  --warn-soft:#2A2416 !important; --focus:#E3C57E !important;
+}
+html{background:var(--bg)}
+body{background:var(--bg)}
+html[data-mode="night"] body{background:#0D1424 radial-gradient(ellipse at 50% -10%,rgba(210,174,94,.12),transparent 55%) no-repeat}
+h1,h2{color:var(--heading);font-weight:700;letter-spacing:0}
+h1{font-size:clamp(38px,8vw,60px)}
+h3{font-family:var(--display-font)}
+.brand-line{font-family:'Cinzel',Georgia,serif;color:var(--accent-ink);letter-spacing:.2em;font-size:14px;font-weight:600}
+.opening-lede{color:var(--muted)}
+.step-label{color:var(--accent-ink);font-family:'Cinzel',Georgia,serif;font-weight:600;letter-spacing:.2em}
+.rule{background:linear-gradient(90deg,var(--accent),rgba(156,122,43,0));height:2px;width:120px}
+.topbar{background:var(--surface);border-bottom:1px solid var(--line)}
+html[data-mode="night"] .topbar{background:rgba(13,20,36,.96)}
+.progressbar span{background:linear-gradient(90deg,var(--accent),var(--primary))}
+.card{border:1px solid var(--line);border-radius:16px;box-shadow:0 4px 16px var(--shadow)}
+.teaching{border-left:4px solid var(--primary)}.teaching .block-label{background:var(--primary-soft);color:var(--primary-ink)}
+.scripture{background:var(--accent-soft);border-left:4px solid var(--accent)}
+.scripture .block-label{background:var(--accent-soft);color:var(--accent-ink);border:1px solid var(--line-strong)}
+.scripture cite{color:var(--accent-ink)}
+.scripture blockquote{font-family:var(--display-font);font-size:1.15em;font-style:italic;color:var(--ink)}
+.activity{border-left:4px solid var(--hot)}.activity .block-label{background:var(--hot-soft);color:var(--hot-ink)}
+.instruction{background:var(--primary-soft);border-left:4px solid var(--accent)}
+.instruction .tag{background:var(--primary);color:var(--on-primary)}
+.btn{border-width:1.5px}
+.btn.hot{color:#fff}
+html[data-mode="night"] .btn.hot{color:#0D1424}
+.meta span b{color:var(--heading)}
+.hero-img,.panel-img img{border:1px solid var(--line);border-radius:16px;box-shadow:0 8px 24px var(--shadow)}
+.decl{border:1px solid var(--line);border-left:4px solid var(--accent)}
+.decl .ref{color:var(--accent-ink)}
+.decl mark{background:var(--accent-soft);color:inherit;border-bottom-color:var(--accent)}
+.player{background:var(--surface);border-top:2px solid var(--accent);box-shadow:0 -4px 16px var(--shadow)}
+.pbtn{background:var(--bg);border:1px solid var(--line-strong);color:var(--ink)}
+.pbtn.main{background:var(--primary);border-color:var(--primary);color:var(--on-primary)}
+.ring-bg{stroke:var(--line)}.ring-fg{stroke:var(--accent)}
+.site-foot{background:var(--surface);border-top:1px solid var(--line);max-width:none}
+.site-foot b{color:var(--heading)}
+details.help{border:1px solid var(--line)}
+textarea,input[type=text]{background:var(--surface);border:1.5px solid var(--line-strong);color:var(--ink)}
+a{color:var(--primary)}
+a.btn{text-decoration:none}
+.mode-btn{flex:none;width:44px;height:44px;border-radius:50%;border:1.5px solid var(--line-strong);background:var(--surface);color:var(--accent-ink);display:inline-flex;align-items:center;justify-content:center;cursor:pointer;padding:0}
+.mode-btn svg{width:20px;height:20px}
+.mode-btn .moon{display:none}
+html[data-mode="night"] .mode-btn .sun{display:none}
+html[data-mode="night"] .mode-btn .moon{display:block}
+input[type=checkbox],input[type=radio]{accent-color:var(--accent)}
+
+/* Starry sky behind the pages in night mode */
+#sky{position:fixed;inset:0;z-index:0;pointer-events:none;display:none}
+html[data-mode="night"] #sky{display:block}
+html[data-mode="night"] main, html[data-mode="night"] .site-foot{position:relative;z-index:1}
+html[data-mode="night"] body{background:#0B1222 radial-gradient(ellipse at 50% 0%,rgba(210,174,94,.14),transparent 60%) fixed no-repeat}
+html[data-mode="night"] .card{background:rgba(20,28,46,.80)}
+html[data-mode="night"] .scripture{background:rgba(29,35,51,.82)}

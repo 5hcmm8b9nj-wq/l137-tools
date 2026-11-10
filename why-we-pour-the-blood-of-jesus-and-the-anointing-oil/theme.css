@@ -1,0 +1,35 @@
+/* L137 Deliverance Ministry — toned-down poster palette (royal purple, warm gold, a touch of green) */
+html{background:#FAF8FC}
+body{background:#FAF8FC linear-gradient(180deg,#F1ECF8 0%,#FAF8FC 520px) no-repeat}
+h1,h2{color:#3E1F73;font-weight:700}
+.brand-line{color:#4E2A8C;letter-spacing:.2em;font-size:14px}
+.opening-lede{color:#625A75}
+.step-label{color:#735510}
+.rule{background:linear-gradient(90deg,#4E2A8C,#C9A23F);height:3px}
+.topbar{background:rgba(255,255,255,.97);border-bottom:1px solid #E8E2F1}
+.progressbar span{background:linear-gradient(90deg,#4E2A8C,#C9A23F)}
+.card{border:1px solid #E8E2F1;border-radius:16px;box-shadow:0 4px 16px rgba(62,31,115,.05)}
+.teaching{border-left:5px solid #4E2A8C}.teaching .block-label{background:#F0EBF8;color:#3E1F73}
+.scripture{background:#FDFAF1;border-left:5px solid #C9A23F}
+.scripture .block-label{background:#F3E8C8;color:#5E4508}
+.scripture cite{color:#735510}
+.scripture blockquote{font-style:italic;color:#2C2240}
+.activity{border-left:5px solid #3F7D5C}.activity .block-label{background:#EAF4EE;color:#2F6046}
+.instruction{background:#F4F0FA;border-left:5px solid #4E2A8C}
+.btn{border-width:1.5px}
+.btn.hot{color:#fff}
+.meta span b{color:#3E1F73}
+.hero-img{border:1px solid #E8E2F1;border-radius:16px;box-shadow:0 8px 24px rgba(62,31,115,.12)}
+.decl{border:1px solid #E8E2F1;border-left:5px solid #C9A23F}
+.decl .ref{color:#735510}
+.decl mark{background:#FBF6E6;border-bottom-color:#C9A23F}
+.player{background:#FFFFFF;border-top:2px solid #4E2A8C;box-shadow:0 -4px 16px rgba(62,31,115,.08)}
+.pbtn{background:#FAF8FC;border:1px solid #CFC5E0}
+.pbtn.main{background:#4E2A8C;border-color:#4E2A8C;color:#fff}
+.ring-bg{stroke:#EDE7F5}.ring-fg{stroke:#4E2A8C}
+.site-foot{background:#F1ECF8;border-top:1px solid #E8E2F1;max-width:none}
+.site-foot b{color:#3E1F73}
+details.help{border:1px solid #E8E2F1}
+textarea,input[type=text]{background:#FFFFFF;border:1.5px solid #CFC5E0}
+a{color:#4E2A8C}
+a.btn{text-decoration:none}

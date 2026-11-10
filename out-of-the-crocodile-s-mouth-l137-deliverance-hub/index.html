@@ -1,0 +1,738 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Out of the Crocodile's Mouth — L137 Deliverance Hub</title>
+<meta name="description" content="A Scripture-first deliverance hub built from a Koinonia Sunday-worship vision. Six categories, linked to Pastor Kiky Ocansey's L137 courses.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ivory:#FAF7EF; --cream:#F3EEDF; --line:#E5DFCC;
+  --charcoal:#221E1A; --charcoal-2:#3B342C;
+  --teal:#0F5B5F; --teal-deep:#083E42;
+  --gold:#B6871A; --gold-light:#E7C965;
+  --ember:#C24A16; --plum:#6E2F5A; --green:#4F7A2E;
+  --serif:'Source Serif 4', Georgia, serif;
+  --sans:'DM Sans', -apple-system, system-ui, sans-serif;
+  --radius:14px;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{background:var(--ivory);color:var(--charcoal);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:900px;margin:0 auto;padding:0 20px}
+h1,h2,h3,h4{font-family:var(--serif);color:var(--charcoal);font-weight:700;margin:0 0 12px}
+h1{font-size:44px;line-height:1.08;letter-spacing:-.01em}
+h2{font-size:30px;line-height:1.15;letter-spacing:-.005em}
+h3{font-size:22px;line-height:1.25}
+h4{font-size:17px;font-family:var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:700}
+p{margin:0 0 14px}
+a{color:var(--teal-deep);text-decoration:underline;text-underline-offset:3px}
+a:hover{color:var(--ember)}
+.eyebrow{font-family:var(--sans);font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:700}
+
+/* Top bar */
+header.top{position:sticky;top:0;z-index:20;background:var(--ivory);border-bottom:1px solid var(--line)}
+header.top .row{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+header.top .brand{font-family:var(--serif);font-weight:700;font-size:18px;color:var(--teal-deep);text-decoration:none}
+header.top .menu-btn{background:var(--teal-deep);color:var(--ivory);border:0;border-radius:10px;padding:10px 16px;font-family:var(--sans);font-weight:600;font-size:14px;cursor:pointer;min-height:44px}
+header.top .menu-btn:hover{background:var(--charcoal)}
+
+/* Opening block (skill standard) */
+.opening-block{background:var(--ivory);padding:34px 0 6px;border-bottom:1px solid var(--line)}
+.opening-eyebrow{font-family:var(--sans);font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:10px}
+.opening-lede{font-family:var(--serif);font-size:20px;line-height:1.5;color:var(--charcoal);max-width:780px;margin:0 0 22px;font-style:italic}
+.opening-rule{height:2px;background:linear-gradient(90deg,var(--teal-deep) 0,var(--gold) 60%,transparent 100%);border-radius:2px}
+@media (max-width:900px){.opening-lede{font-size:17.5px}}
+
+/* Hero */
+.hero{padding:40px 0 34px;border-bottom:1px solid var(--line)}
+.hero .meta{display:flex;gap:10px;flex-wrap:wrap;font-family:var(--sans);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--teal-deep);font-weight:700;margin-bottom:14px}
+.hero .attribution{color:var(--charcoal-2);font-size:15px;margin:14px 0 22px}
+.hero .lede{font-family:var(--serif);font-size:20px;line-height:1.5;color:var(--charcoal-2);max-width:720px;margin-bottom:24px}
+.cta-row{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:14px 22px;border-radius:12px;font-family:var(--sans);font-weight:600;font-size:15px;text-decoration:none;min-height:44px;line-height:1.2;transition:transform .1s,box-shadow .15s}
+.btn:hover{transform:translateY(-1px);box-shadow:0 4px 16px rgba(15,91,95,.18)}
+.btn-primary{background:var(--teal-deep);color:var(--ivory)}
+.btn-primary:hover{color:var(--ivory);background:var(--charcoal)}
+.btn-secondary{background:var(--cream);color:var(--charcoal);border:1px solid var(--line)}
+.btn-secondary:hover{color:var(--charcoal)}
+
+/* Vision panel */
+.vision{background:var(--teal-deep);color:var(--ivory);padding:44px 0 40px;border-bottom:1px solid var(--line)}
+.vision h4{color:var(--gold-light);margin-bottom:14px}
+.vision h2{color:var(--ivory);max-width:760px}
+.vision p{color:#EFE7D6;max-width:760px;font-size:17.5px;line-height:1.65}
+.vision .quote{font-family:var(--serif);font-style:italic;font-size:22px;line-height:1.4;border-left:3px solid var(--gold);padding:10px 0 10px 18px;margin:24px 0 0;max-width:760px}
+.vision .scrip{margin-top:22px;background:rgba(255,255,255,.06);border-left:3px solid var(--gold);border-radius:0 10px 10px 0;padding:14px 18px;max-width:760px}
+.vision .scrip .ref{font-family:var(--sans);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-light);font-weight:700;margin-bottom:6px}
+.vision .scrip .text{font-family:var(--serif);font-size:17px;line-height:1.5;color:var(--ivory)}
+
+/* Section base */
+section.band{padding:44px 0;border-bottom:1px solid var(--line)}
+section.band.alt{background:var(--cream)}
+section.band .kicker{margin-bottom:8px}
+section.band h2{margin-bottom:10px}
+section.band .lede{color:var(--charcoal-2);max-width:720px;margin-bottom:24px;font-size:17px}
+
+/* Category cards */
+.cats{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:8px}
+.cat{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:22px;display:flex;flex-direction:column}
+.cat .n{font-family:var(--sans);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:8px}
+.cat h3{font-size:20px;margin-bottom:8px}
+.cat p{font-size:15px;color:var(--charcoal-2);margin-bottom:16px;flex:1}
+.cat .row-links{display:flex;flex-wrap:wrap;gap:10px}
+.cat .pill{display:inline-block;padding:10px 14px;border-radius:10px;font-family:var(--sans);font-weight:600;font-size:13.5px;text-decoration:none;min-height:44px;line-height:1.6}
+.cat .pill.primary{background:var(--teal-deep);color:var(--ivory)}
+.cat .pill.primary:hover{background:var(--charcoal);color:var(--ivory)}
+.cat .pill.ghost{background:var(--cream);color:var(--charcoal);border:1px solid var(--line)}
+.cat .pill.ghost:hover{color:var(--charcoal)}
+.cat .status{font-size:12px;color:var(--charcoal-2);margin-top:10px;font-style:italic}
+
+/* Flow strip */
+.flow{background:var(--ivory);border:1px solid var(--line);border-radius:var(--radius);padding:22px}
+.flow h3{margin-top:0;color:var(--teal-deep)}
+.flow ol{margin:0;padding-left:22px;columns:2;column-gap:28px}
+.flow ol li{margin:6px 0;font-family:var(--sans);font-weight:600;color:var(--charcoal);break-inside:avoid}
+@media (max-width:640px){.flow ol{columns:1}}
+
+/* Scripture block reused */
+.scrip-box{background:var(--cream);border-left:3px solid var(--gold);border-radius:0 10px 10px 0;padding:14px 18px;margin:12px 0}
+.scrip-box .ref{font-family:var(--sans);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--teal-deep);font-weight:700;margin-bottom:6px}
+.scrip-box .text{font-family:var(--serif);font-size:17px;line-height:1.55;color:var(--charcoal)}
+.prayer-box{background:#fff;border-left:3px solid var(--teal);border:1px solid var(--line);border-radius:0 10px 10px 0;padding:14px 18px;margin:10px 0}
+.prayer-box .tag{font-family:var(--sans);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);font-weight:700;margin-bottom:6px}
+.prayer-box .text{font-family:var(--serif);font-size:16.5px;line-height:1.55;color:var(--charcoal)}
+.decl-box{background:#FFF7F0;border-left:3px solid var(--ember);border:1px solid var(--line);border-radius:0 10px 10px 0;padding:14px 18px;margin:10px 0}
+.decl-box .tag{font-family:var(--sans);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ember);font-weight:700;margin-bottom:6px}
+.decl-box .text{font-family:var(--serif);font-size:16.5px;line-height:1.55;color:var(--charcoal);font-weight:600}
+
+/* Companion (Soul Ties + Marine mini) */
+details.companion{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:0;margin:14px 0;overflow:hidden}
+details.companion > summary{cursor:pointer;padding:18px 22px;font-family:var(--sans);font-weight:700;font-size:16px;color:var(--teal-deep);list-style:none;display:flex;align-items:center;justify-content:space-between;background:var(--cream)}
+details.companion > summary::-webkit-details-marker{display:none}
+details.companion > summary::after{content:"+";font-size:22px;color:var(--gold);font-weight:700}
+details.companion[open] > summary::after{content:"−"}
+details.companion .body{padding:18px 22px 22px}
+
+/* Downloads */
+.downloads{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:8px}
+.dl{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:20px}
+.dl h4{font-family:var(--sans);color:var(--gold);margin-bottom:10px}
+.dl .name{font-family:var(--serif);font-size:18px;font-weight:700;color:var(--charcoal);margin-bottom:6px}
+.dl p{font-size:14.5px;color:var(--charcoal-2);margin-bottom:14px}
+.dl a.btn{width:100%;text-align:center;box-sizing:border-box}
+
+/* Callout */
+.callout{background:#fff;border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:0 10px 10px 0;padding:18px 20px;margin:16px 0}
+.callout .tag{font-family:var(--sans);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:6px}
+.callout p{margin:0;color:var(--charcoal)}
+
+/* Footer */
+footer{padding:36px 0 60px;background:var(--charcoal);color:var(--cream)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:flex-start}
+footer .brand{font-family:var(--serif);font-size:20px;font-weight:700;color:var(--ivory)}
+footer .verse{font-family:var(--serif);font-style:italic;font-size:15px;color:#D8CFB8;max-width:420px}
+footer .small{font-family:var(--sans);font-size:12.5px;color:#B8AE95;margin-top:10px}
+footer a{color:var(--gold-light)}
+
+@media (max-width:720px){
+  h1{font-size:34px} h2{font-size:24px}
+  .hero{padding:28px 0 24px}
+  .vision{padding:32px 0}
+  section.band{padding:32px 0}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap row">
+    <a class="brand" href="#top">Out of the Crocodile's Mouth</a>
+    <a class="menu-btn" href="#courses">The Courses</a>
+  </div>
+</header>
+
+<span id="top"></span>
+
+<!-- Standard L137 opening block (skill standard, wording exact) -->
+<section class="opening-block" aria-label="About this study">
+  <div class="wrap">
+    <div class="opening-eyebrow">L137 Deliverance Ministry</div>
+    <p class="opening-lede">The following is an interactive study following a service held on Clubhouse by Pastor Kiky Ocansey.</p>
+    <div class="opening-rule" aria-hidden="true"></div>
+  </div>
+</section>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="meta"><span>Deliverance Hub</span><span>·</span><span>September 6, 2026</span></div>
+    <h1>Out of the Crocodile's Mouth</h1>
+    <p class="lede">A Scripture-first hub for deliverance from serpent, marine, soul-tie, evil-covenant and witchcraft spirits — built from a Koinonia Sunday-worship vision and linked to Pastor Kiky Ocansey's full L137 interactive courses.</p>
+    <p class="attribution">Pastor Kiky Ocansey · L137 Deliverance Ministry International</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="#vision">Read the Vision</a>
+      <a class="btn btn-secondary" href="#courses">Open the Courses</a>
+      <a class="btn btn-secondary" href="crocodile-cage-prayer-manual.pdf">Download the Prayer Manual</a>
+    </div>
+  </div>
+</section>
+
+<section class="vision" id="vision">
+  <div class="wrap">
+    <h4>The Vision · Koinonia Sunday Worship</h4>
+    <h2>The Crocodile That Would Not Let Go</h2>
+    <p>A believer at Koinonia Sunday worship on September 6, 2026 went through deliverance during the service. Her spirit was quickened. As she continued in prayer, she saw a huge crocodile. It opened its mouth. She was in a cage, deep inside its mouth.</p>
+    <p class="quote">The Lord did not show her the crocodile so she would stay in the cage. He showed her the crocodile so she would know what to pray against, and what to be delivered from, by the blood of Jesus Christ.</p>
+    <div class="scrip">
+      <div class="ref">Psalm 74:13–14 KJV</div>
+      <div class="text">Thou didst divide the sea by thy strength: thou brakest the heads of the dragons in the waters. Thou brakest the heads of leviathan in pieces, and gavest him to be meat to the people inhabiting the wilderness.</div>
+    </div>
+    <div class="scrip">
+      <div class="ref">Job 41:1 KJV</div>
+      <div class="text">Canst thou draw out leviathan with an hook? or his tongue with a cord which thou lettest down?</div>
+    </div>
+    <div class="scrip">
+      <div class="ref">Jonah 2:6 KJV</div>
+      <div class="text">I went down to the bottoms of the mountains; the earth with her bars was about me for ever: yet hast thou brought up my life from corruption, O LORD my God.</div>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="eyebrow kicker">Before You Begin</div>
+    <h2>Standard L137 Deliverance Flow</h2>
+    <p class="lede">Walk through these eight steps before each category. Never skip, never reorder. Pastor Kiky Ocansey teaches this order for every service.</p>
+    <div class="flow">
+      <h3>Eight steps · in order</h3>
+      <ol>
+        <li>Praise &amp; worship</li>
+        <li>Thanksgiving</li>
+        <li>Confession of sins</li>
+        <li>Forgive others</li>
+        <li>Invite the Holy Spirit</li>
+        <li>Teaching</li>
+        <li>Deliverance prayers &amp; declarations</li>
+        <li>Sealing (blood of Jesus)</li>
+      </ol>
+    </div>
+    <div class="callout" style="margin-top:22px">
+      <div class="tag">LISTEN &amp; PRAY ALOUD</div>
+      <p>Scan the QR code on any course page to begin the audio companion, or read every prayer aloud. Deliverance is heard in the mouth, not only in the mind.</p>
+    </div>
+  </div>
+</section>
+
+<section class="band alt" id="courses">
+  <div class="wrap">
+    <div class="eyebrow kicker">The Six Categories</div>
+    <h2>Each Category Opens a Full L137 Course</h2>
+    <p class="lede">Three categories link to Pastor Kiky Ocansey's published interactive courses. Soul Ties and Marine &amp; Water open a companion below with full KJV Scripture, prayers and declarations you can use tonight; the full courses are on the way.</p>
+    <div class="cats">
+
+      <div class="cat">
+        <div class="n">Category 1</div>
+        <h3>Serpent &amp; Crocodile Spirits</h3>
+        <p>The subtle serpent, the crocodile that cages destiny, the leviathan in the waters — and the authority Jesus gave to tread on them.</p>
+        <div class="row-links">
+          <a class="pill primary" href="https://l137-serpentine-spirits.pplx.app" target="_blank" rel="noopener">Open the Course →</a>
+          <a class="pill ghost" href="#serpent-scrip">Scriptures</a>
+        </div>
+      </div>
+
+      <div class="cat">
+        <div class="n">Category 2</div>
+        <h3>Marine &amp; Water Spirits</h3>
+        <p>Marine crowns, water covenants, spirit spouses, destinies held in the deep — the Lord draws us out of many waters.</p>
+        <div class="row-links">
+          <a class="pill primary" href="https://www.perplexity.ai/computer/a/l137-deliverance-from-marine-w-Md3D.GviTYueyikdjZmqog" target="_blank" rel="noopener">Open the Course →</a>
+          <a class="pill ghost" href="#marine-companion">Quick Prayers</a>
+        </div>
+      </div>
+
+      <div class="cat">
+        <div class="n">Category 3</div>
+        <h3>Soul Ties</h3>
+        <p>Ungodly bonds — sexual, covenantal, controlling, dependent — cut by the sword of the Spirit and sealed by the blood of Jesus.</p>
+        <div class="row-links">
+          <a class="pill primary" href="https://www.perplexity.ai/computer/a/l137-deliverance-from-ungodly-uPBbKn69SH6cq2vfNVKrTQ" target="_blank" rel="noopener">Open the Course →</a>
+          <a class="pill ghost" href="#soul-ties-companion">Quick Prayers</a>
+        </div>
+      </div>
+
+      <div class="cat">
+        <div class="n">Category 4</div>
+        <h3>Evil Covenants</h3>
+        <p>Every inherited and personal covenant — nailed to the cross, silenced by the blood that speaks better things than that of Abel.</p>
+        <div class="row-links">
+          <a class="pill primary" href="https://l137-breaking-destructive-covenants.pplx.app" target="_blank" rel="noopener">Open the Course →</a>
+          <a class="pill ghost" href="#covenants-scrip">Scriptures</a>
+        </div>
+      </div>
+
+      <div class="cat">
+        <div class="n">Category 5</div>
+        <h3>Witchcraft Manipulation</h3>
+        <p>Twenty-one Blood-of-Jesus-on-the-Ground prayers from Pastor Kiky Ocansey. The earth is the Lord's — no coven has any right to it.</p>
+        <div class="row-links">
+          <a class="pill primary" href="https://l137-destroying-witchcraft.pplx.app" target="_blank" rel="noopener">Open the Course →</a>
+          <a class="pill ghost" href="#witchcraft-scrip">Scriptures</a>
+        </div>
+      </div>
+
+      <div class="cat">
+        <div class="n">Category 6</div>
+        <h3>Sealing &amp; Aftercare</h3>
+        <p>Close every door the enemy opened. Fill the empty house with the Holy Spirit. Walk out the next seven days in the fear of the Lord.</p>
+        <div class="row-links">
+          <a class="pill primary" href="#sealing-companion">Open the Sealing ↓</a>
+          <a class="pill ghost" href="#sealing-companion">Prayer</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Marine companion -->
+<section class="band" id="marine-companion">
+  <div class="wrap">
+    <div class="eyebrow kicker">Category 2 · Companion</div>
+    <h2>Marine &amp; Water — Pray Tonight</h2>
+    <p class="lede">Use this companion while the full L137 course is being built. Every Scripture is in full KJV.</p>
+
+    <div class="scrip-box"><div class="ref">Psalm 18:16 KJV</div><div class="text">He sent from above, he took me, he drew me out of many waters.</div></div>
+    <div class="scrip-box"><div class="ref">Psalm 144:6–7 KJV</div><div class="text">Cast forth lightning, and scatter them: shoot out thine arrows, and destroy them. Send thine hand from above; rid me, and deliver me out of great waters, from the hand of strange children.</div></div>
+    <div class="scrip-box"><div class="ref">Isaiah 49:24–25 KJV</div><div class="text">Shall the prey be taken from the mighty, or the lawful captive delivered? But thus saith the LORD, Even the captives of the mighty shall be taken away, and the prey of the terrible shall be delivered: for I will contend with him that contendeth with thee, and I will save thy children.</div></div>
+    <div class="scrip-box"><div class="ref">Revelation 17:1–2 KJV</div><div class="text">And there came one of the seven angels which had the seven vials, and talked with me, saying unto me, Come hither; I will shew unto thee the judgment of the great whore that sitteth upon many waters: With whom the kings of the earth have committed fornication, and the inhabitants of the earth have been made drunk with the wine of her fornication.</div></div>
+
+    <h3 style="margin-top:22px">Prayers</h3>
+    <div class="prayer-box"><div class="tag">Renunciation</div><div class="text">In the name of Jesus Christ of Nazareth, I renounce every marine covenant, every water covenant, every river dedication, every sea dedication, every mermaid or "queen of the coast" dedication ever made over me, my parents, my grandparents, or my bloodline. Amen.</div></div>
+    <div class="prayer-box"><div class="tag">Deliverance</div><div class="text">Marine crowns upon my glory, catch fire, in the name of Jesus. Marine serpents in my reproductive area, come out by the blood of Jesus. Any internal altar connecting me to water demons, be dismantled by the fire of God, in the name of Jesus. Blood of Jesus, fire of God — cast out marine waters from my body. Amen.</div></div>
+    <div class="prayer-box"><div class="tag">Spirit Spouse</div><div class="text">Every spirit spouse assigned to my life, the fire of God separates us tonight. I divorce you by the blood of the everlasting covenant. Every dream of sex, every dream of eating, every dream of swimming, every dream of unknown weddings — I reject you and I burn you in the name of Jesus. Amen.</div></div>
+    <div class="prayer-box"><div class="tag">Restoration</div><div class="text">Lord Jesus, You drew Peter out of the water and You draw me out tonight. Every destiny of mine held in the deep — restore it by the blood of Jesus. Every child of mine held in the deep — release them by the blood of Jesus. Every finance, every business, every calling held under water — surface by the fire of God. Amen.</div></div>
+
+    <h3 style="margin-top:18px">Declaration</h3>
+    <div class="decl-box"><div class="tag">Declare aloud</div><div class="text">The Lord has drawn me out of many waters — Psalm 18:16. I am no longer married to the water — I am married to the Lamb. Every marine altar behind my delay is dismantled tonight. The captive of the mighty is delivered — Isaiah 49:25.</div></div>
+  </div>
+</section>
+
+<!-- Soul Ties companion -->
+<section class="band alt" id="soul-ties-companion">
+  <div class="wrap">
+    <div class="eyebrow kicker">Category 3 · Companion</div>
+    <h2>Soul Ties — Pray Tonight</h2>
+    <p class="lede">Use this companion while the full L137 course is being built. Every Scripture is in full KJV.</p>
+
+    <div class="scrip-box"><div class="ref">Genesis 34:2–3 KJV</div><div class="text">And when Shechem the son of Hamor the Hivite, prince of the country, saw her, he took her, and lay with her, and defiled her. And his soul clave unto Dinah the daughter of Jacob, and he loved the damsel, and spake kindly unto the damsel.</div></div>
+    <div class="scrip-box"><div class="ref">1 Corinthians 6:16 KJV</div><div class="text">What? know ye not that he which is joined to an harlot is one body? for two, saith he, shall be one flesh.</div></div>
+    <div class="scrip-box"><div class="ref">1 Samuel 18:1 KJV</div><div class="text">And it came to pass, when he had made an end of speaking unto Saul, that the soul of Jonathan was knit with the soul of David, and Jonathan loved him as his own soul.</div></div>
+    <div class="scrip-box"><div class="ref">Ephesians 5:31 KJV</div><div class="text">For this cause shall a man leave his father and mother, and shall be joined unto his wife, and they two shall be one flesh.</div></div>
+    <div class="scrip-box"><div class="ref">2 Corinthians 6:14 KJV</div><div class="text">Be ye not unequally yoked together with unbelievers: for what fellowship hath righteousness with unrighteousness? and what communion hath light with darkness?</div></div>
+    <div class="scrip-box"><div class="ref">Colossians 2:14 KJV</div><div class="text">Blotting out the handwriting of ordinances that was against us, which was contrary to us, and took it out of the way, nailing it to his cross.</div></div>
+
+    <h3 style="margin-top:22px">Prayers</h3>
+    <div class="prayer-box"><div class="tag">Forgiveness</div><div class="text">Lord Jesus, I forgive every person I have ever been tied to in an ungodly way — every sexual partner, every controlling relative, every false prophet, every friend who pulled me from You. I release them into Your hands. I do not carry their burden anymore. In the name of Jesus. Amen.</div></div>
+    <div class="prayer-box"><div class="tag">Renunciation</div><div class="text">In the name of Jesus Christ of Nazareth, I renounce every ungodly soul tie — every sexual soul tie, every blood soul tie, every covenant soul tie, every hatred soul tie, every dependence soul tie, every dedication soul tie, every mentorship soul tie made outside the will of God. Amen.</div></div>
+    <div class="prayer-box"><div class="tag">Breaking</div><div class="text">By the sword of the Spirit, which is the word of God (Ephesians 6:17), I cut every ungodly cord that ties my soul to anyone the Lord has not joined me to. Every fragment of my soul held by another person, return to me now in the name of Jesus. Every fragment of another person's soul held in me, I release now in the name of Jesus. Blood of Jesus, wash the cut. Amen.</div></div>
+    <div class="prayer-box"><div class="tag">Restoration</div><div class="text">Holy Spirit, join my soul afresh to Jesus Christ my Lord. Let every godly bond — with my spouse, with my children, with my true brothers and sisters in Christ — be strengthened. Let every ungodly bond stay severed forever. Amen.</div></div>
+
+    <h3 style="margin-top:18px">Declaration</h3>
+    <div class="decl-box"><div class="tag">Declare aloud</div><div class="text">I am joined to the Lord and I am one spirit with Him — 1 Corinthians 6:17. Every ungodly cord is cut by the blood of Jesus and cannot be re-tied. My soul is not for sale, my soul is not for rent, my soul belongs to Jesus Christ of Nazareth. What God has joined, no man puts asunder. What God has not joined, no devil holds together.</div></div>
+  </div>
+</section>
+
+<!-- Sealing -->
+<section class="band" id="sealing-companion">
+  <div class="wrap">
+    <div class="eyebrow kicker">Category 6 · Sealing &amp; Aftercare</div>
+    <h2>Close the Doors. Fill the House.</h2>
+    <p class="lede">After every deliverance, seal what the Lord has done and fill the empty room with the Holy Spirit.</p>
+
+    <div class="scrip-box"><div class="ref">Exodus 12:13 KJV</div><div class="text">And the blood shall be to you for a token upon the houses where ye are: and when I see the blood, I will pass over you, and the plague shall not be upon you to destroy you, when I smite the land of Egypt.</div></div>
+    <div class="scrip-box"><div class="ref">Matthew 12:43–45 KJV</div><div class="text">When the unclean spirit is gone out of a man, he walketh through dry places, seeking rest, and findeth none. Then he saith, I will return into my house from whence I came out; and when he is come, he findeth it empty, swept, and garnished. Then goeth he, and taketh with himself seven other spirits more wicked than himself, and they enter in and dwell there: and the last state of that man is worse than the first.</div></div>
+    <div class="scrip-box"><div class="ref">Romans 12:2 KJV</div><div class="text">And be not conformed to this world: but be ye transformed by the renewing of your mind, that ye may prove what is that good, and acceptable, and perfect, will of God.</div></div>
+    <div class="scrip-box"><div class="ref">Ephesians 6:11 KJV</div><div class="text">Put on the whole armour of God, that ye may be able to stand against the wiles of the devil.</div></div>
+    <div class="scrip-box"><div class="ref">Luke 1:37 KJV</div><div class="text">For with God nothing shall be impossible.</div></div>
+
+    <h3 style="margin-top:22px">Sealing prayer</h3>
+    <div class="prayer-box"><div class="tag">Sealing</div><div class="text">Father, in the name of Jesus Christ of Nazareth, I seal every deliverance received tonight with the blood of Jesus. I close every door the enemy opened. I close every gate every serpent slid through. I close every window every marine spirit climbed into. I close every foundation every evil covenant was laid on. I close every path every witchcraft footprint walked. The blood of Jesus is on the doorpost of my life, my body, my home, my marriage, my children, and my destiny. When You see the blood, You pass over me, and the destroyer cannot enter. Amen.</div></div>
+    <div class="prayer-box"><div class="tag">Filling</div><div class="text">Holy Spirit, fill every empty room the deliverance left behind. Fill me with Yourself — with the word, with worship, with holiness, with the fear of the Lord, with love. Let my house not be empty, swept, and garnished — let it be full of You. Amen.</div></div>
+
+    <h3 style="margin-top:18px">Final declaration</h3>
+    <div class="decl-box"><div class="tag">Declare aloud</div><div class="text">The crocodile has opened its mouth — and the Lord has drawn me out. The cage is broken. The blood of Jesus has broken the cage. I am delivered from the serpent, the water, the soul tie, the covenant, and the coven. I am sealed by the Holy Spirit unto the day of redemption — Ephesians 4:30. For with God nothing shall be impossible — Luke 1:37.</div></div>
+
+    <div class="callout" style="margin-top:22px">
+      <div class="tag">Aftercare · the next 7 days</div>
+      <p>Read your Bible daily · pray morning and night · take communion at least once this week and plead the better covenant · return to a Bible-teaching church and to your prayer group · avoid the friendships, media, and places that were the hedge-breakers · bring persistent physical or emotional symptoms to a trusted physician as well as to prayer — both are gifts from the Father of lights (James 1:17).</p>
+    </div>
+  </div>
+</section>
+
+<section class="band alt">
+  <div class="wrap">
+    <div class="eyebrow kicker">Take It With You</div>
+    <h2>Downloads</h2>
+    <p class="lede">A printable KJV prayer manual covering all six categories.</p>
+    <div class="downloads">
+      <div class="dl">
+        <h4>Prayer Manual · PDF</h4>
+        <div class="name">Out of the Crocodile's Mouth</div>
+        <p>17 pages. Full KJV. All six categories. Print for your prayer group or send by WhatsApp.</p>
+        <a class="btn btn-primary" href="crocodile-cage-prayer-manual.pdf" download>Download the Prayer Manual</a>
+      </div>
+      <div class="dl">
+        <h4>Companion Courses</h4>
+        <div class="name">The full L137 studies</div>
+        <p>Serpentine Spirits · Breaking Destructive Covenants · Destroying Witchcraft.</p>
+        <a class="btn btn-secondary" href="#courses">Open the Courses</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <div class="brand">L137 Deliverance Ministry International</div>
+      <div class="small">Pastor Kiky Ocansey · Out of the Crocodile's Mouth · September 6, 2026</div>
+    </div>
+    <div class="verse">
+      <em>“For with God nothing shall be impossible.” — Luke 1:37 KJV</em>
+    </div>
+  </div>
+</footer>
+
+<script data-pplx-inline-edit>
+(function () {
+  if (window === window.top) return;
+
+  const allowedParentOrigins = ["https://www.perplexity.ai","https://perplexity.ai","https://testing.perplexity.ai","https://staging.perplexity.ai","https://*.preview.i.perplexity.ai","http://perplexity.localhost","http://localhost:1420","http://127.0.0.1:1420","http://localhost:3000","http://127.0.0.1:3000","http://localhost:5173","http://127.0.0.1:5173"];
+  const MAX_FONT_BYTES = 500 * 1024;
+  const MAX_TOTAL_FONT_BYTES = 2 * 1024 * 1024;
+  let scrollForwarding = false;
+  let scrollRaf = 0;
+  let trustedTopOrigin = null;
+
+  // Allow entries like "https://*.preview.i.perplexity.ai" — the wildcard
+  // matches a single DNS label (no dots), so "https://*.foo" cannot stretch
+  // across multiple labels.
+  function matchesAllowedOrigin(origin) {
+    if (!origin) return false;
+    for (const entry of allowedParentOrigins) {
+      if (!entry.includes("*")) {
+        if (entry === origin) return true;
+        continue;
+      }
+      const pattern = new RegExp(
+        "^" +
+          entry.replace(/[.+?^${}()|[\]\\]/g, "\\$&").replace(/\*/g, "[^.]+") +
+          "$",
+      );
+      if (pattern.test(origin)) return true;
+    }
+    return false;
+  }
+
+  // Trust decision: when the sender is same-origin-visible (event.origin is a
+  // real origin like https://www.perplexity.ai) we trust event.origin directly.
+  // When event.origin is "null" (opaque broker srcdoc), we fall back to the
+  // broker's stamped `parentOrigin` to identify the top window. The fallback
+  // is claim-only — we rely on the browser's native `targetOrigin` enforcement
+  // on the response path (see postToTrustedTop) to ensure replies can't be
+  // delivered to anyone but the actual top window of that claimed origin.
+  function getTrustedParentOrigin(event) {
+    const forwardedParentOrigin =
+      typeof event.data.parentOrigin === "string" ? event.data.parentOrigin : null;
+    const parentOrigin = event.origin === "null" ? forwardedParentOrigin : event.origin;
+    return matchesAllowedOrigin(parentOrigin) ? parentOrigin : null;
+  }
+
+  // All responses go to window.top with targetOrigin = the allowlisted origin.
+  // An attacker that iframes us inside their own null-origin broker can claim
+  // any parentOrigin they like, but the browser will drop the reply whenever
+  // the real top's origin doesn't match — so the screenshot never leaves.
+  function postToTrustedTop(message) {
+    if (!trustedTopOrigin) return;
+    try {
+      window.top.postMessage(message, trustedTopOrigin);
+    } catch (_error) {}
+  }
+
+  function inlineAll(original, clone) {
+    if (original.nodeType !== 1 || clone.nodeType !== 1) return;
+
+    try {
+      const computedStyle = getComputedStyle(original);
+      // cssText on a computed style is the serialized declaration in modern
+      // Chromium/Safari — a single read beats enumerating ~400 longhand
+      // properties. Firefox returns "" here, so we fall back on empty.
+      const serialized = computedStyle.cssText;
+      if (serialized) {
+        clone.style.cssText = serialized;
+      } else {
+        const parts = new Array(computedStyle.length);
+        for (let index = 0; index < computedStyle.length; index += 1) {
+          const property = computedStyle[index];
+          parts[index] = `${property}:${computedStyle.getPropertyValue(property)};`;
+        }
+        clone.style.cssText = parts.join("");
+      }
+    } catch (_error) {}
+
+    const originalChildren = original.children;
+    const clonedChildren = clone.children;
+    for (
+      let index = 0;
+      index < originalChildren.length && index < clonedChildren.length;
+      index += 1
+    ) {
+      inlineAll(originalChildren[index], clonedChildren[index]);
+    }
+  }
+
+  function extractFontUrl(srcValue) {
+    const matches = [
+      ...srcValue.matchAll(
+        /url\(["']?([^"')]+)["']?\)(?:\s*format\(["']?([^"')]+)["']?\))?/gi,
+      ),
+    ];
+    if (matches.length === 0) return null;
+    const woff2 = matches.find((m) => m[2] && m[2].toLowerCase().includes("woff2"));
+    if (woff2) return woff2[1];
+    const woff = matches.find((m) => m[2] && m[2].toLowerCase().includes("woff"));
+    if (woff) return woff[1];
+    return matches[0][1];
+  }
+
+  // Cache resolved font URL -> data URI across captures. Fonts on a page
+  // essentially never change, and a batch run emits multiple captures back to
+  // back — without this we'd refetch + re-base64 every time.
+  const fontDataUriCache = new Map();
+  const SRC_DECLARATION_RE = /src\s*:\s*[^;}]+/i;
+
+  async function fetchAsDataUri(url) {
+    if (fontDataUriCache.has(url)) return fontDataUriCache.get(url);
+    let dataUri = null;
+    try {
+      const response = await fetch(url, { mode: "cors", credentials: "omit" });
+      if (response.ok) {
+        const blob = await response.blob();
+        if (blob.size <= MAX_FONT_BYTES) {
+          dataUri = await new Promise((resolve) => {
+            const reader = new FileReader();
+            reader.onloadend = () =>
+              resolve(typeof reader.result === "string" ? reader.result : null);
+            reader.onerror = () => resolve(null);
+            reader.readAsDataURL(blob);
+          });
+        }
+      }
+    } catch (_error) {
+      dataUri = null;
+    }
+    fontDataUriCache.set(url, dataUri);
+    return dataUri;
+  }
+
+  function collectFontFaceRuleTexts() {
+    const rules = [];
+    for (const sheet of document.styleSheets) {
+      let cssRules;
+      try {
+        cssRules = sheet.cssRules;
+      } catch (_error) {
+        continue;
+      }
+      if (!cssRules) continue;
+      for (const rule of cssRules) {
+        const cssText = rule.cssText || "";
+        if (cssText.startsWith("@font-face")) rules.push(cssText);
+      }
+    }
+    return rules;
+  }
+
+  async function buildInlinedFontCss() {
+    const ruleTexts = collectFontFaceRuleTexts();
+    if (ruleTexts.length === 0) return null;
+
+    const resolved = ruleTexts.map((cssText) => {
+      if (!SRC_DECLARATION_RE.test(cssText)) return null;
+      const srcMatch = cssText.match(/src\s*:\s*([^;}]+)[;}]/i);
+      if (!srcMatch) return null;
+      const url = extractFontUrl(srcMatch[1]);
+      if (!url) return null;
+      try {
+        return { cssText, url: new URL(url, document.baseURI).href };
+      } catch (_error) {
+        return null;
+      }
+    });
+
+    const dataUris = await Promise.all(
+      resolved.map((entry) => (entry ? fetchAsDataUri(entry.url) : Promise.resolve(null))),
+    );
+
+    const inlined = [];
+    let totalBytes = 0;
+    for (let index = 0; index < resolved.length; index += 1) {
+      const entry = resolved[index];
+      const dataUri = dataUris[index];
+      if (!entry || !dataUri) continue;
+      const approxBytes = dataUri.length * 0.75;
+      if (totalBytes + approxBytes > MAX_TOTAL_FONT_BYTES) break;
+      totalBytes += approxBytes;
+      inlined.push(entry.cssText.replace(SRC_DECLARATION_RE, `src: url("${dataUri}")`));
+    }
+    return inlined.length > 0 ? inlined.join("\n") : null;
+  }
+
+  function stripExternal(clone) {
+    const images = clone.querySelectorAll("img");
+    for (let index = 0; index < images.length; index += 1) {
+      const src = images[index].getAttribute("src");
+      if (src && !src.startsWith("data:")) images[index].removeAttribute("src");
+    }
+
+    const elements = clone.querySelectorAll("*");
+    for (let index = 0; index < elements.length; index += 1) {
+      const style = elements[index].style.cssText;
+      if (style && style.includes("url(")) {
+        elements[index].style.cssText = style.replace(
+          /url\(["']?(?!data:)[^)"']*["']?\)/gi,
+          "none",
+        );
+      }
+    }
+  }
+
+  function emitScroll() {
+    scrollRaf = 0;
+    if (!scrollForwarding) return;
+    postToTrustedTop({
+      type: "INLINE_EDIT_SCROLL",
+      scrollX: window.scrollX,
+      scrollY: window.scrollY,
+    });
+  }
+
+  window.addEventListener(
+    "scroll",
+    function () {
+      if (!scrollForwarding || scrollRaf) return;
+      scrollRaf = requestAnimationFrame(emitScroll);
+    },
+    { passive: true, capture: true },
+  );
+
+  async function handleCaptureRequest(event) {
+    const requestId = event.data.requestId;
+    const scrollX = window.scrollX;
+    const scrollY = window.scrollY;
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+
+    function postResult(dataUrl) {
+      postToTrustedTop({
+        type: "INLINE_EDIT_SCREENSHOT_RESULT",
+        requestId,
+        dataUrl,
+        scrollX,
+        scrollY,
+      });
+    }
+
+    try {
+      // Wait for any pending web fonts to resolve so both inline metrics and
+      // the @font-face inlining below see the same loaded faces.
+      if (document.fonts && document.fonts.ready) {
+        try {
+          await document.fonts.ready;
+        } catch (_error) {}
+      }
+
+      const clone = document.documentElement.cloneNode(true);
+      inlineAll(document.documentElement, clone);
+
+      const removedNodes = clone.querySelectorAll("script,link[rel=\"stylesheet\"],style");
+      for (let index = 0; index < removedNodes.length; index += 1) {
+        removedNodes[index].remove();
+      }
+
+      stripExternal(clone);
+
+      // Re-embed web fonts as data-URI @font-face rules so the SVG rasterizer
+      // can resolve them — external font URLs aren't fetched during
+      // foreignObject rendering, which would otherwise force a fallback face
+      // and change text metrics.
+      const inlinedFontCss = await buildInlinedFontCss();
+      if (inlinedFontCss) {
+        const styleEl = document.createElement("style");
+        styleEl.textContent = inlinedFontCss;
+        const head = clone.querySelector("head");
+        if (head) head.appendChild(styleEl);
+        else clone.insertBefore(styleEl, clone.firstChild);
+      }
+
+      const html = new XMLSerializer().serializeToString(clone);
+      const svg =
+        `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}">` +
+        '<foreignObject width="100%" height="100%">' +
+        `<div xmlns="http://www.w3.org/1999/xhtml" style="width:${width}px;height:${height}px;overflow:hidden">` +
+        `<div style="position:relative;left:-${scrollX}px;top:-${scrollY}px">` +
+        html +
+        "</div></div></foreignObject></svg>";
+      const svgUrl = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
+      const image = new Image();
+      image.onload = function () {
+        const canvas = document.createElement("canvas");
+        canvas.width = width;
+        canvas.height = height;
+        canvas.getContext("2d").drawImage(image, 0, 0);
+        postResult(canvas.toDataURL("image/png"));
+      };
+      image.onerror = function () {
+        postResult(null);
+      };
+      image.src = svgUrl;
+    } catch (_error) {
+      postResult(null);
+    }
+  }
+
+  window.addEventListener("message", function (event) {
+    if (!event.data) return;
+    // Only accept messages from the direct parent frame. Blocks sibling /
+    // unrelated-window postMessage senders that could otherwise reach us.
+    if (event.source !== window.parent) return;
+
+    const trustedParentOrigin = getTrustedParentOrigin(event);
+    if (!trustedParentOrigin) return;
+    trustedTopOrigin = trustedParentOrigin;
+
+    if (event.data.type === "INLINE_EDIT_SCROLL_START") {
+      scrollForwarding = true;
+      emitScroll();
+      return;
+    }
+
+    if (event.data.type === "INLINE_EDIT_SCROLL_STOP") {
+      scrollForwarding = false;
+      if (scrollRaf) cancelAnimationFrame(scrollRaf);
+      scrollRaf = 0;
+      return;
+    }
+
+    if (event.data.type !== "INLINE_EDIT_CAPTURE_REQUEST") return;
+
+    handleCaptureRequest(event);
+  });
+})();
+
+
+</script></body>
+</html>

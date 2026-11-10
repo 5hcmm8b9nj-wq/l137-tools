@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<title>Breaking Destructive Covenants — Interactive Study | L137 Deliverance Ministry</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+<!-- ── standard opening block ── -->
+<section class="opening-block" aria-label="About this study">
+  <div class="wrap">
+    <div class="opening-eyebrow">L137 Deliverance Ministry</div>
+    <p class="opening-lede">The following is an interactive study following a service held on Clubhouse by Pastor Kiky Ocansey.</p>
+    <div class="opening-rule" aria-hidden="true"></div>
+  </div>
+</section>
+
+<!-- ── hero ── -->
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="pill">Part One of Two</span>
+      <div class="eyebrow" id="hDate"></div>
+      <h1 id="hTitle"></h1>
+      <p class="sub" id="hSub"></p>
+      <div class="rule"></div>
+      <div class="eyebrow" style="color:var(--gold)">Main scripture · <span id="hRef"></span></div>
+      <p class="attrib">Pastor Kiky Ocansey · L137 Deliverance Ministry International</p>
+      <p class="desc" id="hDesc"></p>
+      <div class="btnrow">
+        <a class="btn btn-primary" href="#" data-go="modules">Open the course</a>
+        <a class="btn btn-ghost" href="#" data-go="session">Start the deliverance session</a>
+        <a class="btn btn-ghost" href="#" data-go="downloads">Download the pack</a>
+      </div>
+    </div>
+    <div class="card">
+      <div class="eyebrow">Your progress</div>
+      <div class="ring">
+        <svg viewBox="0 0 100 100"><circle class="bg" cx="50" cy="50" r="42"></circle><circle class="fg" id="ringFg" cx="50" cy="50" r="42" stroke-dasharray="264" stroke-dashoffset="264"></circle></svg>
+        <div><b id="pctTxt">0%</b><span class="note" id="pctSub">Nothing completed yet</span></div>
+      </div>
+      <div class="metrics">
+        <div class="metric"><b class="tnum" id="mMods">0</b><span>Modules</span></div>
+        <div class="metric"><b class="tnum" id="mScr">0</b><span>Scriptures</span></div>
+        <div class="metric"><b class="tnum" id="mDec">0</b><span>Declarations</span></div>
+        <div class="metric"><b class="tnum" id="mPrayer">0</b><span>Prayer points</span></div>
+      </div>
+      <p class="note" style="margin-top:14px">Progress, notes, journal entries and your names worksheet are saved privately in this browser only. Nothing is uploaded.</p>
+      <button class="btn btn-ghost btn-sm" id="resetBtn" style="width:100%">Reset all saved work</button>
+    </div>
+  </div>
+</header>
+
+<div class="wrap shell">
+  <nav class="side" id="nav"></nav>
+  <main id="main">
+
+    <!-- OVERVIEW -->
+    <section class="panel on" id="p-overview">
+      <h2>Welcome</h2><div class="sec-rule"></div>
+      <p class="lead" id="ovLead"></p>
+      <div class="block info"><div class="kicker">Faithfulness of this study</div>
+        <ul>
+          <li>Every teaching point, prayer, declaration and prophetic direction appears exactly as delivered in the service. Nothing has been added, softened or reworded.</li>
+          <li>Every scripture is quoted in full King James Version.</li>
+          <li>Where the live audio could not be heard clearly, it is marked <em>[audio unclear — verify against the recording]</em> rather than guessed at.</li>
+          <li>One reference note: the words spoken as "Isaiah 22:29" are Jeremiah 22:29–30 in the KJV. The reference as delivered and the corrected citation are both shown; the teaching point is unchanged.</li>
+        </ul>
+      </div>
+      <h3 class="topic-h">How to use this study</h3>
+      <div class="grid2" id="ovHow"></div>
+    </section>
+
+    <!-- SERVICE FLOW -->
+    <section class="panel" id="p-flow">
+      <h2>Order of service</h2><div class="sec-rule"></div>
+      <p class="lead">The standard L137 deliverance flow, as it ran in this service. Tick each stage as you walk through it.</p>
+      <div id="flowList"></div>
+    </section>
+
+    <!-- MODULES -->
+    <section class="panel" id="p-modules">
+      <h2>Teaching modules</h2><div class="sec-rule"></div>
+      <p class="lead">Fourteen modules covering the service from the opening thanksgiving to the closing charge. Open each one, pray the prayers aloud, then mark it complete.</p>
+      <div class="btnrow" style="margin-top:6px"><button class="btn btn-ghost btn-sm" id="expandAll">Expand all</button><button class="btn btn-ghost btn-sm" id="collapseAll">Collapse all</button></div>
+      <div id="modList" style="margin-top:18px"></div>
+    </section>
+
+    <!-- SESSION RUNNER -->
+    <section class="panel" id="p-session">
+      <h2>Guided deliverance session</h2><div class="sec-rule"></div>
+      <p class="lead">Walk the service through in order, exactly as Pastor Kiky Ocansey led it. Do not skip or reorder the stages.</p>
+      <div class="block apply"><div class="kicker">Before you begin — gather these</div>
+        <ul>
+          <li>Your Bible (King James Version)</li>
+          <li>Communion wine if you have it — if you do not have the blood, take water that represents the blood of Jesus</li>
+          <li>Your anointing oil</li>
+          <li>A piece of paper and a pen for the names</li>
+        </ul>
+      </div>
+      <div class="block private"><div class="kicker">As given in the teaching</div>
+        <p style="margin:0">"You cannot just wake up and break it by yourself and declare that the covenant is no longer binding on your life… For you to break the covenant you must involve Jesus, and a deliverance minister that is skilled in that area to help you by the power of the Holy Ghost."</p>
+      </div>
+      <div class="timer" id="timer">
+        <div class="kicker">Prayer timer</div>
+        <div class="clock tnum" id="tClock">15:00</div>
+        <div class="tbtns">
+          <button data-min="5">5 min</button><button data-min="10">10 min</button>
+          <button data-min="15">15 min</button><button data-min="30">30 min</button>
+          <button data-min="60">60 min</button>
+        </div>
+        <div class="tbtns"><button id="tStart" class="go">Start</button><button id="tPause">Pause</button><button id="tReset">Reset</button></div>
+        <p class="note" style="margin:12px 0 0">Set the length, start it, and stay in prayer until it rings. Keep the tab open.</p>
+      </div>
+      <div class="stepnav" id="stepnav"></div>
+      <div class="stepview" id="stepview"></div>
+      <div id="sessionList" style="display:none"></div>
+    </section>
+
+    <!-- SCRIPTURE LIBRARY -->
+    <section class="panel" id="p-scripture">
+      <h2>Scripture library</h2><div class="sec-rule"></div>
+      <p class="lead">Every scripture read or quoted in the service, in full King James Version, grouped by topic.</p>
+      <div id="scrList"></div>
+    </section>
+
+    <!-- PRAYER LIBRARY -->
+    <section class="panel" id="p-prayers">
+      <h2>Prayer point manual</h2><div class="sec-rule"></div>
+      <p class="lead">Organised in the order of the deliverance flow. Tick each point as you pray it aloud.</p>
+      <div id="prayList"></div>
+    </section>
+
+    <!-- DECLARATIONS -->
+    <section class="panel" id="p-declarations">
+      <h2>Declaration library</h2><div class="sec-rule"></div>
+      <p class="lead">Every corporate declaration exactly as spoken in the service, including every repetition. Use the reader to declare them aloud, one at a time.</p>
+      <div class="reader">
+        <div class="meta" id="rdMeta">Declaration reader</div>
+        <div class="txt" id="rdTxt">Choose a set below and declare it aloud.</div>
+        <div class="ctrl">
+          <select id="rdSel" aria-label="Choose declaration set"></select>
+          <button id="rdPrev">‹ Previous</button>
+          <button id="rdNext">Next ›</button>
+          <button data-say="rd:now">&#9834; Read aloud</button>
+        </div>
+      </div>
+      <div id="decList"></div>
+    </section>
+
+    <!-- NAMES WORKSHEET -->
+    <section class="panel" id="p-names">
+      <h2>The names worksheet</h2><div class="sec-rule"></div>
+      <p class="lead">The prophetic assignment given at the close of the service, made interactive. Add each name, read the renunciation aloud over it, then mark it renounced. Print the sheet to keep the paper copy the teaching asked for.</p>
+      <div class="block private"><div class="kicker">The direction, as given</div>
+        <p style="margin:0">"When you leave here tonight, you take a piece of paper and you write down certain names — of certain partners, old husbands, old boyfriends, old girlfriends, whoever in your life. Even the ones that you asked, and you sent money for them to go and do certain things for you… And as that agreement is working over your life, disconnect yourself."</p>
+      </div>
+      <div class="frm">
+        <div><label for="nName">Name or description</label><input id="nName" placeholder="e.g. former partner, initials only"></div>
+        <div><label for="nKind">Category</label><select id="nKind">
+          <option>Ex-partner / ex-spouse</option><option>Old friendship covenant</option><option>Words spoken during sexual contact</option>
+          <option>Person sent to an altar on my behalf</option><option>Covenant made by mother</option><option>Covenant made by father</option>
+          <option>Ancestral / family covenant</option><option>Altar I have never seen</option><option>Occultic group involvement</option>
+          <option>Dream transaction</option><option>Evil dedication</option><option>Other</option></select></div>
+        <div><label for="nNote">What was said, promised or sent</label><input id="nNote" placeholder="Optional — kept private in this browser"></div>
+        <div><button class="btn btn-primary btn-sm" id="nAdd">Add</button></div>
+      </div>
+      <table><thead><tr><th>Name</th><th>Category</th><th>What was said / sent</th><th>Renounced</th><th></th></tr></thead><tbody id="nBody"></tbody></table>
+      <p class="note" id="nEmpty" style="margin-top:14px">No names added yet.</p>
+      <div class="block declare" style="margin-top:24px"><div class="kicker">Declare over each name — exactly as given</div><ul id="nDecl"></ul></div>
+      <div class="btnrow"><button class="btn btn-ghost btn-sm" id="nPrint">Print the worksheet</button><button class="btn btn-ghost btn-sm" id="nExport">Save as text file</button></div>
+      <div class="block info" style="margin-top:20px"><div class="kicker">If one still lingers</div>
+        <p style="margin:0">"There are some that the Lord will show you Himself in your dream… So when you do it and you continue to feel or see, or sometimes the Lord might show you in the dream a particular one, a particular old relationship that is still with you — do it again and renounce that one."</p>
+      </div>
+    </section>
+
+    <!-- CHARACTERS -->
+    <section class="panel" id="p-characters">
+      <h2>Bible character studies</h2><div class="sec-rule"></div>
+      <p class="lead">Every biblical figure referenced in the teaching, with the covenant principle drawn from them.</p>
+      <div class="grid2" id="charList"></div>
+    </section>
+
+    <!-- FLOW CHART -->
+    <section class="panel" id="p-chart">
+      <h2>Teaching flow chart</h2><div class="sec-rule"></div>
+      <p class="lead">Problem → Biblical Root → Scripture → Prayer → Deliverance → Healing → Restoration → Maintenance.</p>
+      <div id="chartList"></div>
+    </section>
+
+    <!-- QUIZ -->
+    <section class="panel" id="p-quiz">
+      <h2>Knowledge check</h2><div class="sec-rule"></div>
+      <p class="lead">Twelve questions drawn only from what was taught in this service.</p>
+      <div class="score" id="qScore" style="display:none"></div>
+      <div id="quizList"></div>
+      <div class="btnrow"><button class="btn btn-primary" id="qSubmit">Mark my answers</button><button class="btn btn-ghost" id="qReset">Start again</button></div>
+    </section>
+
+    <!-- FLIP CARDS -->
+    <section class="panel" id="p-cards">
+      <h2>Memory verse cards</h2><div class="sec-rule"></div>
+      <p class="lead">Tap a card to turn it over and see the verse in full. Tap the speaker to hear it read aloud.</p>
+      <div class="cards" id="cardGrid"></div>
+    </section>
+
+    <!-- MATCH -->
+    <section class="panel" id="p-match">
+      <h2>Match the scripture</h2><div class="sec-rule"></div>
+      <p class="lead">Tap a reference on the left, then the opening words that belong to it on the right. Ten pairs from this teaching.</p>
+      <div class="score" id="mScore" style="display:none"></div>
+      <div class="match">
+        <div id="mLeft"></div>
+        <div id="mRight"></div>
+      </div>
+      <div class="btnrow"><button class="btn btn-ghost btn-sm" id="mNew">Shuffle and start again</button></div>
+    </section>
+
+    <!-- JOURNAL -->
+    <section class="panel" id="p-journal">
+      <h2>Reflection journal</h2><div class="sec-rule"></div>
+      <p class="lead">Written answers are saved privately in this browser as you type.</p>
+      <div id="jrnList"></div>
+    </section>
+
+    <!-- CHECKLIST -->
+    <section class="panel" id="p-checklist">
+      <h2>Deliverance checklist</h2><div class="sec-rule"></div>
+      <p class="lead">Work through every item before you consider this teaching completed.</p>
+      <div class="card" id="chkList"></div>
+    </section>
+
+    <!-- DIRECTIONS -->
+    <section class="panel" id="p-directions">
+      <h2>Prophetic directions</h2><div class="sec-rule"></div>
+      <p class="lead">Every practical instruction given by Pastor Kiky Ocansey in this service, in full.</p>
+      <div id="dirList"></div>
+    </section>
+
+    <!-- NOTES -->
+    <section class="panel" id="p-notes">
+      <h2>My notes</h2><div class="sec-rule"></div>
+      <p class="lead">Free notes, plus every module note you have written, gathered in one place.</p>
+      <textarea id="freeNote" placeholder="Write freely…" style="min-height:200px"></textarea>
+      <span class="saved" id="freeSaved">Saved</span>
+      <div id="noteRoll" style="margin-top:24px"></div>
+    </section>
+
+    <!-- BOOKMARKS -->
+    <section class="panel" id="p-bookmarks">
+      <h2>Bookmarks</h2><div class="sec-rule"></div>
+      <p class="lead">Scriptures and declarations you have marked while studying.</p>
+      <div id="bmkList"></div>
+    </section>
+
+    <!-- SEARCH -->
+    <section class="panel" id="p-search">
+      <h2>Search this teaching</h2><div class="sec-rule"></div>
+      <p class="lead">Searches every module, scripture, prayer point, declaration and prophetic direction in this study.</p>
+      <input id="sq" type="search" placeholder="Search — try covenant, blood, altar, dream, oil, names…">
+      <p class="note" id="sCount" style="margin-top:12px"></p>
+      <div id="sRes"></div>
+    </section>
+
+    <!-- MEDIA -->
+    <section class="panel" id="p-media">
+      <h2>Audio &amp; video</h2><div class="sec-rule"></div>
+      <p class="lead">Add the service recording here when it is ready. Until then the placeholders remain.</p>
+      <div class="media" style="margin-bottom:16px"><div class="big">Listen &amp; pray aloud</div>
+        <p class="note" style="margin:0">Audio companion not yet attached. Place the service audio file beside this page as <code>assets/audio/service.mp3</code> and it will play here. Scan the QR code to begin.</p></div>
+      <div class="media"><div class="big">Video</div>
+        <p class="note" style="margin:0">Video not yet attached. Add the recording link here when available.</p></div>
+    </section>
+
+    <!-- DOWNLOADS -->
+    <section class="panel" id="p-downloads">
+      <h2>Download the pack</h2><div class="sec-rule"></div>
+      <p class="lead">Sixteen printable documents from this teaching — the workbook, the prayer manual, the declaration card, the scripture companion and more.</p>
+      <div id="dlList"></div>
+    </section>
+
+    <!-- CERTIFICATE -->
+    <section class="panel" id="p-certificate">
+      <h2>Completion certificate</h2><div class="sec-rule"></div>
+      <p class="lead">Unlocks when all fourteen modules, the checklist and the knowledge check are complete.</p>
+      <div id="certBox"></div>
+    </section>
+
+    <!-- SOURCE NOTES -->
+    <section class="panel" id="p-transcript">
+      <h2>Source notes</h2><div class="sec-rule"></div>
+      <p class="lead">How this study was prepared from the service recording.</p>
+      <div class="block info"><div class="kicker">Preparation notes</div>
+        <ul>
+          <li>Teaching, prayers, declarations and prophetic directions reproduced exactly as spoken. Nothing added, nothing reworded.</li>
+          <li>Unintelligible live-audio passages marked <em>[audio unclear — verify against the recording]</em> — never guessed at.</li>
+          <li>All scripture references verified word for word against the King James Version.</li>
+          <li>Reference note: the words quoted as "Isaiah 22:29" are Jeremiah 22:29–30 (KJV). Both are shown and the teaching point is unchanged.</li>
+        </ul>
+      </div>
+      <div class="block apply"><div class="kicker">Part Two</div>
+        <p style="margin:0">Part Two of this teaching was announced for the Monday following the service. When it is recorded it will be added here as a second set of modules, with a combined workbook and a combined declaration collection.</p>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<footer class="site"><div class="wrap">
+  <b>L137 Deliverance Ministry International</b>
+  <div>Pastor Kiky Ocansey · Breaking Destructive Covenants Through Prayer and Deliverance, Part One · Clubhouse, Saturday, May 23, 2026</div>
+  <div class="tag">L137 — Luke 1:37: For with God nothing shall be impossible.</div>
+  <div class="note" style="color:#a9c6c6;margin-top:12px">© L137 Deliverance Ministry International. The teaching, prayers and declarations are the property of the ministry.</div>
+</div></footer>
+
+<script src="content.js"></script>
+<script src="app.js"></script>
+<script data-pplx-inline-edit>
+(function () {
+  if (window === window.top) return;
+
+  const allowedParentOrigins = ["https://www.perplexity.ai","https://perplexity.ai","https://testing.perplexity.ai","https://staging.perplexity.ai","https://*.preview.i.perplexity.ai","http://perplexity.localhost","http://localhost:1420","http://127.0.0.1:1420","http://localhost:3000","http://127.0.0.1:3000","http://localhost:5173","http://127.0.0.1:5173"];
+  const MAX_FONT_BYTES = 500 * 1024;
+  const MAX_TOTAL_FONT_BYTES = 2 * 1024 * 1024;
+  let scrollForwarding = false;
+  let scrollRaf = 0;
+  let trustedTopOrigin = null;
+
+  // Allow entries like "https://*.preview.i.perplexity.ai" — the wildcard
+  // matches a single DNS label (no dots), so "https://*.foo" cannot stretch
+  // across multiple labels.
+  function matchesAllowedOrigin(origin) {
+    if (!origin) return false;
+    for (const entry of allowedParentOrigins) {
+      if (!entry.includes("*")) {
+        if (entry === origin) return true;
+        continue;
+      }
+      const pattern = new RegExp(
+        "^" +
+          entry.replace(/[.+?^${}()|[\]\\]/g, "\\$&").replace(/\*/g, "[^.]+") +
+          "$",
+      );
+      if (pattern.test(origin)) return true;
+    }
+    return false;
+  }
+
+  // Trust decision: when the sender is same-origin-visible (event.origin is a
+  // real origin like https://www.perplexity.ai) we trust event.origin directly.
+  // When event.origin is "null" (opaque broker srcdoc), we fall back to the
+  // broker's stamped `parentOrigin` to identify the top window. The fallback
+  // is claim-only — we rely on the browser's native `targetOrigin` enforcement
+  // on the response path (see postToTrustedTop) to ensure replies can't be
+  // delivered to anyone but the actual top window of that claimed origin.
+  function getTrustedParentOrigin(event) {
+    const forwardedParentOrigin =
+      typeof event.data.parentOrigin === "string" ? event.data.parentOrigin : null;
+    const parentOrigin = event.origin === "null" ? forwardedParentOrigin : event.origin;
+    return matchesAllowedOrigin(parentOrigin) ? parentOrigin : null;
+  }
+
+  // All responses go to window.top with targetOrigin = the allowlisted origin.
+  // An attacker that iframes us inside their own null-origin broker can claim
+  // any parentOrigin they like, but the browser will drop the reply whenever
+  // the real top's origin doesn't match — so the screenshot never leaves.
+  function postToTrustedTop(message) {
+    if (!trustedTopOrigin) return;
+    try {
+      window.top.postMessage(message, trustedTopOrigin);
+    } catch (_error) {}
+  }
+
+  function inlineAll(original, clone) {
+    if (original.nodeType !== 1 || clone.nodeType !== 1) return;
+
+    try {
+      const computedStyle = getComputedStyle(original);
+      // cssText on a computed style is the serialized declaration in modern
+      // Chromium/Safari — a single read beats enumerating ~400 longhand
+      // properties. Firefox returns "" here, so we fall back on empty.
+      const serialized = computedStyle.cssText;
+      if (serialized) {
+        clone.style.cssText = serialized;
+      } else {
+        const parts = new Array(computedStyle.length);
+        for (let index = 0; index < computedStyle.length; index += 1) {
+          const property = computedStyle[index];
+          parts[index] = `${property}:${computedStyle.getPropertyValue(property)};`;
+        }
+        clone.style.cssText = parts.join("");
+      }
+    } catch (_error) {}
+
+    const originalChildren = original.children;
+    const clonedChildren = clone.children;
+    for (
+      let index = 0;
+      index < originalChildren.length && index < clonedChildren.length;
+      index += 1
+    ) {
+      inlineAll(originalChildren[index], clonedChildren[index]);
+    }
+  }
+
+  function extractFontUrl(srcValue) {
+    const matches = [
+      ...srcValue.matchAll(
+        /url\(["']?([^"')]+)["']?\)(?:\s*format\(["']?([^"')]+)["']?\))?/gi,
+      ),
+    ];
+    if (matches.length === 0) return null;
+    const woff2 = matches.find((m) => m[2] && m[2].toLowerCase().includes("woff2"));
+    if (woff2) return woff2[1];
+    const woff = matches.find((m) => m[2] && m[2].toLowerCase().includes("woff"));
+    if (woff) return woff[1];
+    return matches[0][1];
+  }
+
+  // Cache resolved font URL -> data URI across captures. Fonts on a page
+  // essentially never change, and a batch run emits multiple captures back to
+  // back — without this we'd refetch + re-base64 every time.
+  const fontDataUriCache = new Map();
+  const SRC_DECLARATION_RE = /src\s*:\s*[^;}]+/i;
+
+  async function fetchAsDataUri(url) {
+    if (fontDataUriCache.has(url)) return fontDataUriCache.get(url);
+    let dataUri = null;
+    try {
+      const response = await fetch(url, { mode: "cors", credentials: "omit" });
+      if (response.ok) {
+        const blob = await response.blob();
+        if (blob.size <= MAX_FONT_BYTES) {
+          dataUri = await new Promise((resolve) => {
+            const reader = new FileReader();
+            reader.onloadend = () =>
+              resolve(typeof reader.result === "string" ? reader.result : null);
+            reader.onerror = () => resolve(null);
+            reader.readAsDataURL(blob);
+          });
+        }
+      }
+    } catch (_error) {
+      dataUri = null;
+    }
+    fontDataUriCache.set(url, dataUri);
+    return dataUri;
+  }
+
+  function collectFontFaceRuleTexts() {
+    const rules = [];
+    for (const sheet of document.styleSheets) {
+      let cssRules;
+      try {
+        cssRules = sheet.cssRules;
+      } catch (_error) {
+        continue;
+      }
+      if (!cssRules) continue;
+      for (const rule of cssRules) {
+        const cssText = rule.cssText || "";
+        if (cssText.startsWith("@font-face")) rules.push(cssText);
+      }
+    }
+    return rules;
+  }
+
+  async function buildInlinedFontCss() {
+    const ruleTexts = collectFontFaceRuleTexts();
+    if (ruleTexts.length === 0) return null;
+
+    const resolved = ruleTexts.map((cssText) => {
+      if (!SRC_DECLARATION_RE.test(cssText)) return null;
+      const srcMatch = cssText.match(/src\s*:\s*([^;}]+)[;}]/i);
+      if (!srcMatch) return null;
+      const url = extractFontUrl(srcMatch[1]);
+      if (!url) return null;
+      try {
+        return { cssText, url: new URL(url, document.baseURI).href };
+      } catch (_error) {
+        return null;
+      }
+    });
+
+    const dataUris = await Promise.all(
+      resolved.map((entry) => (entry ? fetchAsDataUri(entry.url) : Promise.resolve(null))),
+    );
+
+    const inlined = [];
+    let totalBytes = 0;
+    for (let index = 0; index < resolved.length; index += 1) {
+      const entry = resolved[index];
+      const dataUri = dataUris[index];
+      if (!entry || !dataUri) continue;
+      const approxBytes = dataUri.length * 0.75;
+      if (totalBytes + approxBytes > MAX_TOTAL_FONT_BYTES) break;
+      totalBytes += approxBytes;
+      inlined.push(entry.cssText.replace(SRC_DECLARATION_RE, `src: url("${dataUri}")`));
+    }
+    return inlined.length > 0 ? inlined.join("\n") : null;
+  }
+
+  function stripExternal(clone) {
+    const images = clone.querySelectorAll("img");
+    for (let index = 0; index < images.length; index += 1) {
+      const src = images[index].getAttribute("src");
+      if (src && !src.startsWith("data:")) images[index].removeAttribute("src");
+    }
+
+    const elements = clone.querySelectorAll("*");
+    for (let index = 0; index < elements.length; index += 1) {
+      const style = elements[index].style.cssText;
+      if (style && style.includes("url(")) {
+        elements[index].style.cssText = style.replace(
+          /url\(["']?(?!data:)[^)"']*["']?\)/gi,
+          "none",
+        );
+      }
+    }
+  }
+
+  function emitScroll() {
+    scrollRaf = 0;
+    if (!scrollForwarding) return;
+    postToTrustedTop({
+      type: "INLINE_EDIT_SCROLL",
+      scrollX: window.scrollX,
+      scrollY: window.scrollY,
+    });
+  }
+
+  window.addEventListener(
+    "scroll",
+    function () {
+      if (!scrollForwarding || scrollRaf) return;
+      scrollRaf = requestAnimationFrame(emitScroll);
+    },
+    { passive: true, capture: true },
+  );
+
+  async function handleCaptureRequest(event) {
+    const requestId = event.data.requestId;
+    const scrollX = window.scrollX;
+    const scrollY = window.scrollY;
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+
+    function postResult(dataUrl) {
+      postToTrustedTop({
+        type: "INLINE_EDIT_SCREENSHOT_RESULT",
+        requestId,
+        dataUrl,
+        scrollX,
+        scrollY,
+      });
+    }
+
+    try {
+      // Wait for any pending web fonts to resolve so both inline metrics and
+      // the @font-face inlining below see the same loaded faces.
+      if (document.fonts && document.fonts.ready) {
+        try {
+          await document.fonts.ready;
+        } catch (_error) {}
+      }
+
+      const clone = document.documentElement.cloneNode(true);
+      inlineAll(document.documentElement, clone);
+
+      const removedNodes = clone.querySelectorAll("script,link[rel=\"stylesheet\"],style");
+      for (let index = 0; index < removedNodes.length; index += 1) {
+        removedNodes[index].remove();
+      }
+
+      stripExternal(clone);
+
+      // Re-embed web fonts as data-URI @font-face rules so the SVG rasterizer
+      // can resolve them — external font URLs aren't fetched during
+      // foreignObject rendering, which would otherwise force a fallback face
+      // and change text metrics.
+      const inlinedFontCss = await buildInlinedFontCss();
+      if (inlinedFontCss) {
+        const styleEl = document.createElement("style");
+        styleEl.textContent = inlinedFontCss;
+        const head = clone.querySelector("head");
+        if (head) head.appendChild(styleEl);
+        else clone.insertBefore(styleEl, clone.firstChild);
+      }
+
+      const html = new XMLSerializer().serializeToString(clone);
+      const svg =
+        `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}">` +
+        '<foreignObject width="100%" height="100%">' +
+        `<div xmlns="http://www.w3.org/1999/xhtml" style="width:${width}px;height:${height}px;overflow:hidden">` +
+        `<div style="position:relative;left:-${scrollX}px;top:-${scrollY}px">` +
+        html +
+        "</div></div></foreignObject></svg>";
+      const svgUrl = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
+      const image = new Image();
+      image.onload = function () {
+        const canvas = document.createElement("canvas");
+        canvas.width = width;
+        canvas.height = height;
+        canvas.getContext("2d").drawImage(image, 0, 0);
+        postResult(canvas.toDataURL("image/png"));
+      };
+      image.onerror = function () {
+        postResult(null);
+      };
+      image.src = svgUrl;
+    } catch (_error) {
+      postResult(null);
+    }
+  }
+
+  window.addEventListener("message", function (event) {
+    if (!event.data) return;
+    // Only accept messages from the direct parent frame. Blocks sibling /
+    // unrelated-window postMessage senders that could otherwise reach us.
+    if (event.source !== window.parent) return;
+
+    const trustedParentOrigin = getTrustedParentOrigin(event);
+    if (!trustedParentOrigin) return;
+    trustedTopOrigin = trustedParentOrigin;
+
+    if (event.data.type === "INLINE_EDIT_SCROLL_START") {
+      scrollForwarding = true;
+      emitScroll();
+      return;
+    }
+
+    if (event.data.type === "INLINE_EDIT_SCROLL_STOP") {
+      scrollForwarding = false;
+      if (scrollRaf) cancelAnimationFrame(scrollRaf);
+      scrollRaf = 0;
+      return;
+    }
+
+    if (event.data.type !== "INLINE_EDIT_CAPTURE_REQUEST") return;
+
+    handleCaptureRequest(event);
+  });
+})();
+
+
+</script></body>
+</html>

@@ -1,0 +1,1586 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Destroying Witchcraft Activities — Fire Wednesday · L137</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ivory:#FAF7EF;--cream:#F3EEDF;--charcoal:#221E1A;--teal:#0F5B5F;--teal-deep:#083E42;
+  --gold:#B6871A;--gold-light:#E7C965;--ember:#C24A16;--plum:#6E2F5A;--green:#4F7A2E;
+  --line:rgba(34,30,26,.12);--serif:'Source Serif 4',Georgia,serif;--sans:'DM Sans',system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--ivory);color:var(--charcoal);font-family:var(--sans);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+h1,h2,h3,h4{font-family:var(--serif);color:var(--charcoal);margin:0 0 .5em;line-height:1.2}
+h1{font-size:34px;font-weight:700}
+h2{font-size:26px;font-weight:700}
+h3{font-size:20px;font-weight:600}
+h4{font-size:17px;font-weight:600;letter-spacing:.01em}
+p{margin:0 0 1em}
+a{color:var(--teal-deep)}
+button{font:inherit}
+.wrap{max-width:900px;margin:0 auto;padding:0 20px}
+
+/* opening block */
+.opening-block{background:var(--ivory);padding:34px 0 6px;border-bottom:1px solid var(--line)}
+.opening-eyebrow{font-family:var(--sans);font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:10px}
+.opening-lede{font-family:var(--serif);font-size:20px;line-height:1.5;color:var(--charcoal);max-width:780px;margin:0 0 22px;font-style:italic}
+.opening-rule{height:2px;background:linear-gradient(90deg,var(--teal-deep) 0,var(--gold) 60%,transparent 100%);border-radius:2px}
+@media (max-width:900px){.opening-lede{font-size:17.5px}}
+
+/* hero */
+.hero{background:var(--cream);padding:32px 0 40px;border-bottom:1px solid var(--line)}
+.hero .date{font-family:var(--sans);font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--teal-deep);font-weight:700;margin-bottom:12px}
+.hero .verse{background:#fff;border-left:4px solid var(--gold);padding:12px 16px;border-radius:4px;font-family:var(--serif);font-style:italic;margin:0 0 16px;font-size:17px}
+.hero .verse .ref{display:block;font-style:normal;font-family:var(--sans);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-top:6px}
+.hero h1{margin-bottom:10px}
+.hero .sub{font-family:var(--serif);font-size:18px;max-width:720px;margin:0 0 20px;color:#2b2620}
+.hero .attrib{font-size:13px;color:#5a544c;letter-spacing:.02em}
+.ctas{margin-top:22px;display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-block;padding:12px 18px;border-radius:6px;font-weight:600;font-size:14.5px;letter-spacing:.04em;text-decoration:none;border:1px solid transparent;cursor:pointer;transition:transform .05s ease}
+.btn:active{transform:translateY(1px)}
+.btn-primary{background:var(--teal-deep);color:#fff}
+.btn-secondary{background:transparent;color:var(--teal-deep);border-color:var(--teal-deep)}
+.btn-gold{background:var(--gold);color:#fff}
+
+/* progress */
+.progress-bar{position:sticky;top:0;background:var(--ivory);border-bottom:1px solid var(--line);padding:10px 0;z-index:50}
+.progress-inner{display:flex;align-items:center;gap:12px}
+.progress-track{flex:1;height:8px;background:#e8e2d0;border-radius:4px;overflow:hidden}
+.progress-fill{height:100%;background:linear-gradient(90deg,var(--teal-deep),var(--gold));width:0%;transition:width .3s ease}
+.progress-text{font-size:12px;font-weight:700;color:var(--teal-deep);letter-spacing:.08em}
+
+/* tab nav */
+.tabs{position:sticky;top:38px;z-index:40;background:var(--ivory);border-bottom:1px solid var(--line);padding:6px 0;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.tabs-inner{display:flex;gap:4px;padding:0 20px;max-width:100%;white-space:nowrap}
+.tab-btn{background:transparent;border:0;padding:12px 14px;font-family:var(--sans);font-weight:600;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:#5a544c;cursor:pointer;border-bottom:3px solid transparent;min-height:44px}
+.tab-btn.active{color:var(--teal-deep);border-bottom-color:var(--gold)}
+
+.panel{display:none;padding:30px 0}
+.panel.active{display:block}
+section.card{background:#fff;border:1px solid var(--line);border-radius:10px;padding:22px;margin:0 0 22px}
+section.card h2{margin-top:0}
+.eyebrow{font-family:var(--sans);font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:var(--gold);margin-bottom:8px}
+
+.callout{background:var(--cream);border-left:4px solid var(--teal);padding:14px 16px;border-radius:4px;margin:14px 0}
+.callout.warn{border-left-color:var(--ember);background:#faeee4}
+.callout.remember{border-left-color:var(--gold);background:#fbf6e6}
+.callout.pray{border-left-color:var(--plum);background:#f5eaf2}
+.callout.declare{border-left:6px solid #D40000;background:#fff5f5;position:relative;padding:14px 16px 16px}
+.callout.declare .rpt{display:inline-block;background:#D40000;color:#fff;font-family:var(--sans);font-size:15px;letter-spacing:.14em;text-transform:uppercase;font-weight:900;padding:8px 16px;border-radius:22px;margin-bottom:12px;box-shadow:0 2px 0 rgba(0,0,0,.08)}
+.callout.declare .rpt:before{content:"🗣️ "}
+.callout.declare .body,.callout.declare p{color:#8a0000;font-weight:800;font-size:17px;line-height:1.5}
+.callout.listen{border-left-color:var(--teal-deep);background:#e4edee}
+.callout .lbl{display:inline-block;font-family:var(--sans);font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--teal-deep);margin-bottom:6px}
+.callout.warn .lbl{color:var(--ember)}
+.callout.remember .lbl{color:var(--gold)}
+.callout.pray .lbl{color:var(--plum)}
+.callout.declare .lbl{color:var(--ember)}
+.callout p:last-child{margin-bottom:0}
+
+/* scripture card */
+.scripture{background:#fff;border:1px solid var(--line);border-left:5px solid var(--gold);padding:14px 16px;border-radius:6px;margin:12px 0;font-family:var(--serif);font-size:16.5px}
+.scripture .ref{display:block;font-family:var(--sans);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:700;font-style:normal;margin-bottom:8px}
+.scripture em{font-style:italic}
+
+/* level tabs on modules */
+.level-tabs{display:flex;gap:6px;margin:14px 0 10px;flex-wrap:wrap}
+.level-btn{background:transparent;border:1px solid var(--line);padding:8px 12px;border-radius:20px;font-family:var(--sans);font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#5a544c;cursor:pointer;min-height:34px}
+.level-btn.active{background:var(--teal-deep);color:#fff;border-color:var(--teal-deep)}
+.level-body{display:none}
+.level-body.active{display:block}
+
+/* module list */
+.module{margin-bottom:22px}
+.mod-num{display:inline-block;background:var(--teal-deep);color:#fff;font-family:var(--sans);font-weight:700;font-size:12px;letter-spacing:.14em;padding:4px 10px;border-radius:20px;margin-bottom:8px;text-transform:uppercase}
+
+/* reveal */
+details.reveal{background:var(--cream);border-radius:6px;padding:12px 14px;margin:10px 0;cursor:pointer;border:1px solid var(--line)}
+details.reveal[open]{background:#fff}
+details.reveal summary{font-weight:700;color:var(--teal-deep);list-style:none;padding:6px 0;min-height:34px}
+details.reveal summary::-webkit-details-marker{display:none}
+details.reveal summary:before{content:"▶ ";color:var(--gold);margin-right:6px;font-size:11px}
+details.reveal[open] summary:before{content:"▼ "}
+details.reveal .body{margin-top:8px;padding-top:8px;border-top:1px solid var(--line)}
+
+/* flashcard flip */
+.flashcards{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px;margin-top:16px}
+.flashcard{background:transparent;height:180px;perspective:1000px;cursor:pointer}
+.flashcard-inner{position:relative;width:100%;height:100%;transition:transform .5s;transform-style:preserve-3d}
+.flashcard.flipped .flashcard-inner{transform:rotateY(180deg)}
+.flashcard-front,.flashcard-back{position:absolute;inset:0;-webkit-backface-visibility:hidden;backface-visibility:hidden;border-radius:10px;padding:16px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;font-family:var(--serif)}
+.flashcard-front{background:var(--teal-deep);color:#fff}
+.flashcard-back{background:var(--gold-light);color:var(--charcoal);transform:rotateY(180deg);font-size:14.5px}
+.flashcard-front .tap{font-family:var(--sans);font-size:11px;letter-spacing:.14em;text-transform:uppercase;opacity:.75;margin-top:12px}
+
+/* quiz */
+.quiz-q{background:#fff;border:1px solid var(--line);border-radius:8px;padding:16px;margin-bottom:14px}
+.quiz-q .qtxt{font-weight:600;margin-bottom:10px}
+.quiz-opts{display:flex;flex-direction:column;gap:8px}
+.quiz-opt{background:var(--ivory);border:1px solid var(--line);padding:12px 14px;border-radius:6px;text-align:left;cursor:pointer;font-family:var(--sans);font-size:14.5px;min-height:44px}
+.quiz-opt:hover{border-color:var(--teal)}
+.quiz-opt.correct{background:#e2f0d9;border-color:var(--green);color:var(--green);font-weight:700}
+.quiz-opt.wrong{background:#f5d4c4;border-color:var(--ember);color:var(--ember)}
+.quiz-explain{display:none;margin-top:10px;background:var(--cream);border-left:3px solid var(--gold);padding:10px 12px;border-radius:4px;font-size:14px}
+.quiz-explain.show{display:block}
+.fitb input{width:100%;padding:12px;font-family:var(--sans);font-size:15px;border:1px solid var(--line);border-radius:6px;background:var(--ivory);min-height:44px}
+.fitb button{margin-top:10px;background:var(--teal-deep);color:#fff;border:0;padding:10px 16px;border-radius:6px;cursor:pointer;font-weight:600}
+
+/* matching */
+.match-wrap{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.match-col button{width:100%;padding:12px;background:var(--ivory);border:1px solid var(--line);border-radius:6px;text-align:left;font-family:var(--sans);cursor:pointer;min-height:44px;margin-bottom:8px;font-size:14px}
+.match-col button.selected{border-color:var(--teal-deep);background:#fff}
+.match-col button.matched{background:#e2f0d9;border-color:var(--green);color:var(--green);pointer-events:none}
+
+/* order */
+.order-list{list-style:none;padding:0;margin:0}
+.order-list li{background:var(--ivory);border:1px solid var(--line);padding:12px;border-radius:6px;margin-bottom:8px;cursor:grab;display:flex;justify-content:space-between;align-items:center}
+.order-list li .ctrls button{background:var(--teal-deep);color:#fff;border:0;width:32px;height:32px;border-radius:4px;margin-left:4px;cursor:pointer}
+
+/* notes */
+textarea{width:100%;min-height:160px;padding:12px;font-family:var(--sans);font-size:15px;border:1px solid var(--line);border-radius:6px;background:var(--ivory)}
+
+/* library items */
+.lib-item{background:#fff;border:1px solid var(--line);border-radius:8px;padding:14px 16px;margin-bottom:10px}
+.lib-item h4{margin:0 0 6px}
+.lib-item .body{display:none;margin-top:8px;padding-top:8px;border-top:1px dashed var(--line)}
+.lib-item.open .body{display:block}
+.lib-item .tag{display:inline-block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-right:8px}
+
+/* search */
+#search{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;background:#fff;font-size:15px;margin-bottom:12px}
+.search-hit{background:#fff;border-left:3px solid var(--teal);padding:10px 12px;margin-bottom:8px;border-radius:4px}
+.search-hit .where{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:700}
+
+/* nav footer */
+.mod-nav{display:flex;justify-content:space-between;gap:10px;margin-top:20px}
+.mod-nav button{background:#fff;border:1px solid var(--line);padding:12px 14px;border-radius:6px;cursor:pointer;font-weight:600;min-height:44px}
+.mod-nav button:hover{border-color:var(--teal)}
+
+/* home cards */
+.home-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;margin-top:16px}
+.home-card{background:#fff;border:1px solid var(--line);border-radius:10px;padding:18px;cursor:pointer;transition:border-color .15s}
+.home-card:hover{border-color:var(--teal)}
+.home-card h4{margin:0 0 6px}
+.home-card p{margin:0;font-size:14px;color:#5a544c}
+.home-card .ico{font-size:22px;margin-bottom:8px}
+
+/* completion */
+.certificate{display:none;background:linear-gradient(135deg,var(--teal-deep),var(--plum));color:#fff;padding:32px 24px;border-radius:14px;text-align:center;margin-top:22px}
+.certificate.show{display:block}
+.certificate h2{color:#fff}
+.certificate .seal{font-size:44px;margin:0 0 8px}
+
+/* footer */
+footer{background:var(--charcoal);color:#e2ddd1;padding:26px 0;margin-top:40px;text-align:center;font-size:13px}
+footer .luke{font-family:var(--serif);font-style:italic;font-size:16px;color:var(--gold-light);margin-bottom:8px}
+
+@media(max-width:600px){
+  h1{font-size:26px}h2{font-size:22px}
+  .hero{padding:24px 0 28px}
+  section.card{padding:16px}
+  .flashcard{height:160px}
+}
+</style>
+</head>
+<body>
+
+<!-- Ministry opening block -->
+<section class="opening-block" aria-label="About this study">
+  <div class="wrap">
+    <div class="opening-eyebrow">L137 Deliverance Ministry</div>
+    <p class="opening-lede">The following is an interactive study following a service held on Clubhouse by Pastor Kiky Ocansey.</p>
+    <div class="opening-rule" aria-hidden="true"></div>
+  </div>
+</section>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="wrap">
+    <div class="date">Fire Wednesday · September 2, 2026</div>
+    <div class="scripture" style="border-left-color:var(--gold);background:#fff;margin:0 0 14px">
+      <span class="ref">Luke 12:2 · Acts 13:4–12 · Micah 5:12 · Isaiah 54:15 · Revelation 12:11</span>
+      <em>“And Saul (who also is called Paul), filled with the Holy Ghost, set his eyes on him, and said, O full of all subtilty and all mischief, thou child of the devil, thou enemy of all righteousness, wilt thou not cease to pervert the right ways of the Lord?”</em>
+    </div>
+    <h1>Destroying Witchcraft Activities Against Our Life and Destiny</h1>
+    <p class="sub">A Fire Wednesday deliverance teaching on identifying, confronting, and destroying witchcraft networks, household wickedness, and covenants of the earth — through prayer, fasting, the Word, and the blood of Jesus.</p>
+    <p class="attrib"><strong>Pastor Kiky Ocansey</strong> · L137 Deliverance Ministry International</p>
+    <div class="ctas">
+      <button class="btn btn-primary" data-goto="modules">OPEN THE STUDY</button>
+      <button class="btn btn-secondary" data-goto="prayers">PRAYER LIBRARY</button>
+      <button class="btn btn-gold" data-goto="prophetic">PROPHETIC DIRECTION</button>
+    </div>
+  </div>
+</section>
+
+<!-- Progress -->
+<div class="progress-bar">
+  <div class="wrap progress-inner">
+    <div class="progress-text" id="progressLabel">0%</div>
+    <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+    <div class="progress-text" id="progressCount">0 / 0</div>
+  </div>
+</div>
+
+<!-- Tab bar -->
+<nav class="tabs" aria-label="Course sections">
+  <div class="tabs-inner" id="tabbar">
+    <button class="tab-btn active" data-tab="home">🏠 Home</button>
+    <button class="tab-btn" data-tab="how">👋 How to Use</button>
+    <button class="tab-btn" data-tab="modules">📖 Teaching Modules</button>
+    <button class="tab-btn" data-tab="scriptures">📜 Scripture Library</button>
+    <button class="tab-btn" data-tab="prayers">🙏 Prayer Library</button>
+    <button class="tab-btn" data-tab="declarations">🔥 Declarations</button>
+    <button class="tab-btn" data-tab="flashcards">🃏 Flashcards</button>
+    <button class="tab-btn" data-tab="quiz">❓ Quiz</button>
+    <button class="tab-btn" data-tab="recall">🧠 Recall Challenge</button>
+    <button class="tab-btn" data-tab="prophetic">📣 Prophetic Direction</button>
+    <button class="tab-btn" data-tab="reflection">✍️ Reflection & Notes</button>
+    <button class="tab-btn" data-tab="review">🏆 End Review</button>
+    <button class="tab-btn" data-tab="download">📄 Download the Pack</button>
+    <button class="tab-btn" data-tab="search">🔍 Search</button>
+  </div>
+</nav>
+
+<main class="wrap">
+
+<!-- HOME -->
+<section class="panel active" id="panel-home">
+  <div class="eyebrow">Welcome</div>
+  <h2>Choose how you want to learn today</h2>
+  <p>This study takes today's Fire Wednesday service and rebuilds it as an interactive tool. You can <strong>read</strong>, <strong>listen</strong>, <strong>flip flashcards</strong>, <strong>take a quiz</strong>, or <strong>pray straight through</strong> the prayer and declaration libraries. Everything is preserved from Pastor Kiky's original teaching.</p>
+
+  <div class="home-grid">
+    <div class="home-card" data-goto="modules"><div class="ico">📖</div><h4>Teaching Modules</h4><p>7 lessons with Simple / Teen / Adult / Deeper tabs.</p></div>
+    <div class="home-card" data-goto="scriptures"><div class="ico">📜</div><h4>Scripture Library</h4><p>Every KJV verse from the service, tap to reveal.</p></div>
+    <div class="home-card" data-goto="prayers"><div class="ico">🙏</div><h4>Prayer Library</h4><p>Organized by section — repentance, deliverance, sealing.</p></div>
+    <div class="home-card" data-goto="declarations"><div class="ico">🔥</div><h4>Declarations</h4><p>Fiery declarations exactly as spoken. Repeat aloud.</p></div>
+    <div class="home-card" data-goto="flashcards"><div class="ico">🃏</div><h4>Flashcards</h4><p>Tap to flip. Memorize scriptures and key truths.</p></div>
+    <div class="home-card" data-goto="quiz"><div class="ico">❓</div><h4>Knowledge Check</h4><p>Mixed quiz — multiple choice, true/false, matching, order.</p></div>
+    <div class="home-card" data-goto="prophetic"><div class="ico">📣</div><h4>Prophetic Direction</h4><p>How to break the fast with the blood of Jesus.</p></div>
+    <div class="home-card" data-goto="reflection"><div class="ico">✍️</div><h4>Reflection & Notes</h4><p>Journal what the Holy Spirit is saying to you.</p></div>
+  </div>
+
+  <div class="callout listen" style="margin-top:22px">
+    <div class="lbl">🔊 Listen & Pray Aloud</div>
+    <p>The whole study is written so you can read it out loud, or use your phone's built-in read-aloud feature. Scan the QR code on the WhatsApp platform to begin the audio companion when it is posted.</p>
+  </div>
+</section>
+
+<!-- HOW TO USE -->
+<section class="panel" id="panel-how">
+  <section class="card">
+    <div class="eyebrow">How to Use This Study</div>
+    <h2>Before you begin</h2>
+    <ol>
+      <li><strong>Praise & thanksgiving</strong> — enter His presence first (Psalm 100).</li>
+      <li><strong>Repent & forgive</strong> — clear the way for your prayers.</li>
+      <li><strong>Invite the Holy Spirit</strong> — He leads the fight.</li>
+      <li><strong>Teaching</strong> — work through the modules in order.</li>
+      <li><strong>Deliverance prayers & declarations</strong> — pray them aloud, personalize them.</li>
+      <li><strong>Sealing</strong> — cover yourself with the blood of Jesus.</li>
+    </ol>
+    <div class="callout remember">
+      <div class="lbl">🔑 Remember</div>
+      <p>Every quiz answer is hidden until you choose or reveal it — take time to think first. Your progress is saved on this device.</p>
+    </div>
+    <div class="callout listen">
+      <div class="lbl">🔊 Audio-friendly icons</div>
+      <p><strong>🔊 LISTEN</strong> · <strong>🗣️ SAY</strong> · <strong>🔁 REPEAT</strong> · <strong>🙏 PRAY</strong> · <strong>🔥 DECLARE</strong> · <strong>⏸️ PAUSE & REFLECT</strong></p>
+    </div>
+  </section>
+</section>
+
+<!-- MODULES -->
+<section class="panel" id="panel-modules">
+  <div class="eyebrow">Teaching Modules</div>
+  <h2>Seven lessons from today's service</h2>
+  <p>Each module carries scripture, a visual explanation, a simple explanation, a key point, an interactive activity, a flashcard, a knowledge check, an application question, a prayer, a declaration, and a recall question.</p>
+
+  <!-- Module 1 -->
+  <section class="card module" id="module-1" data-mod="1">
+    <span class="mod-num">Module 1</span>
+    <h2>Fire Wednesday: Why We Fast Today</h2>
+    <div class="scripture">
+      <span class="ref">Psalm 138:1–2 · Psalm 100 (KJV)</span>
+      <em>“I will praise thee with my whole heart: before the gods will I sing praise unto thee. I will worship toward thy holy temple, and praise thy name for thy lovingkindness and for thy truth…”</em>
+    </div>
+
+    <div class="level-tabs" data-levels>
+      <button class="level-btn" data-level="simple">👦 Simple</button>
+      <button class="level-btn active" data-level="adult">👩 Adult</button>
+      <button class="level-btn" data-level="teen">🧑 Teen</button>
+      <button class="level-btn" data-level="deeper">🎓 Deeper</button>
+    </div>
+    <div class="level-body" data-body="simple">
+      <p>Every Wednesday, L137 fasts and prays. Today we are telling the wicked to <em>get out</em> of our life. We start by singing to God and thanking Him.</p>
+    </div>
+    <div class="level-body active" data-body="adult">
+      <p>Fire Wednesday is the ministry's weekly day of fasting and prayer against witchcraft activities in our lives, homes, and destinies. We open by praising the Lord and thanking Him — <em>“Enter into his gates with thanksgiving, and into his courts with praise”</em> (Psalm 100:4). Only after praise, thanksgiving, confession, forgiveness, and inviting the Holy Spirit do we go to war.</p>
+    </div>
+    <div class="level-body" data-body="teen">
+      <p>Think of fasting like turning off the noise so you can hear God clearly. Wednesday is a spiritual training day — the ministry fasts together so we all fight together.</p>
+    </div>
+    <div class="level-body" data-body="deeper">
+      <p>The deliverance flow is non-negotiable: <strong>Praise → Thanksgiving → Confession → Forgiveness → Invitation of the Holy Spirit → Teaching → Deliverance prayers → Sealing.</strong> Skipping the front-end steps leaves the deliverance stage without covering.</p>
+    </div>
+
+    <div class="callout remember"><div class="lbl">🔑 Key Point</div><p>You cannot skip praise and thanksgiving and jump straight to warfare. Presence first, then power.</p></div>
+
+    <details class="reveal"><summary>👆 Tap-to-reveal: What is a “Fire Wednesday”?</summary>
+      <div class="body">A ministry-wide day of fasting and prayer set apart to destroy witchcraft activities against your life and destiny. Break the fast between 3, 4, 5, or 6 p.m. as the Holy Spirit leads.</div>
+    </details>
+
+    <div class="callout pray"><div class="lbl">🙏 Pray</div>
+      <p>Father, I thank You for this Fire Wednesday. I enter Your gates with thanksgiving and Your courts with praise. Cleanse my heart, forgive my sins, forgive everyone who has hurt me, and fill me with Your Holy Spirit as I fast today, in Jesus' name.</p>
+    </div>
+
+    <div class="callout declare"><span class="rpt">Repeat After Me</span><div class="lbl">🔥 Declare</div>
+      <p>“Today I fast. Today I pray. Today every wicked activity against my life is destroyed by the power of the Holy Ghost, in the mighty name of Jesus.”</p>
+    </div>
+
+    <div class="quiz-q" data-quiz>
+      <div class="qtxt">❓ Which step comes <em>first</em> before deliverance prayers?</div>
+      <div class="quiz-opts">
+        <button class="quiz-opt" data-correct="true">Praise and thanksgiving</button>
+        <button class="quiz-opt">Rebuking the enemy</button>
+        <button class="quiz-opt">Deliverance prayers</button>
+        <button class="quiz-opt">Sealing with the blood</button>
+      </div>
+      <div class="quiz-explain">Right — Psalm 100 tells us to enter His gates with thanksgiving. Praise builds the throne (Psalm 22:3) before the warfare begins.</div>
+    </div>
+
+    <div class="callout"><div class="lbl">🤔 Apply</div><p>What is one thing you can thank God for right now, even before you fight?</p></div>
+    <div class="mod-nav"><button data-goto="modules">All modules</button><button data-mod-goto="2">Module 2 →</button></div>
+  </section>
+
+  <!-- Module 2 -->
+  <section class="card module" id="module-2" data-mod="2">
+    <span class="mod-num">Module 2</span>
+    <h2>The Sorcerer Struck Blind (Acts 13)</h2>
+    <div class="scripture">
+      <span class="ref">Acts 13:4–12 (KJV)</span>
+      <em>“So they, being sent forth by the Holy Ghost, departed unto Seleucia… And there they found a certain sorcerer, a false prophet, a Jew, whose name was Bar-jesus… Then Saul, (who also is called Paul,) filled with the Holy Ghost, set his eyes on him, And said, O full of all subtilty and all mischief, thou child of the devil, thou enemy of all righteousness, wilt thou not cease to pervert the right ways of the Lord? And now, behold, the hand of the Lord is upon thee, and thou shalt be blind, not seeing the sun for a season. And immediately there fell on him a mist and a darkness; and he went about seeking some to lead him by the hand.”</em>
+    </div>
+
+    <div class="level-tabs" data-levels>
+      <button class="level-btn" data-level="simple">👦 Simple</button>
+      <button class="level-btn active" data-level="adult">👩 Adult</button>
+      <button class="level-btn" data-level="teen">🧑 Teen</button>
+      <button class="level-btn" data-level="deeper">🎓 Deeper</button>
+    </div>
+    <div class="level-body" data-body="simple">
+      <p>A bad man tried to stop people from believing in Jesus. Paul looked him in the eye. God made him blind so he could not see the sun. That is what happens to wickedness when we stand up in the name of Jesus.</p>
+    </div>
+    <div class="level-body active" data-body="adult">
+      <p>Elymas — his name literally means <em>sorcerer</em> in Greek — was pulling a governor <em>away</em> from the gospel. Paul did not negotiate; filled with the Holy Ghost, he named the spirit, addressed it directly, and released the hand of the Lord. Darkness fell instantly. When you fast today, look the beast in the eye and speak the same way against every witchcraft activity in your life.</p>
+    </div>
+    <div class="level-body" data-body="teen">
+      <p>The Bible highlights it: this guy's name meant “sorcerer.” It says something spiritual — his identity was written all over him. When you're filled with the Holy Spirit, you can see what's really going on and speak to it directly.</p>
+    </div>
+    <div class="level-body" data-body="deeper">
+      <p>Note the pattern: (1) <em>filled with the Holy Ghost</em>, (2) <em>set his eyes on him</em>, (3) named the spirit accurately (child of the devil, enemy of righteousness), (4) declared the hand of the Lord, (5) pronounced the judgment (blindness), (6) it manifested (mist and darkness). Deliverance authority follows this order — always Spirit-filled, always specific.</p>
+    </div>
+
+    <div class="callout remember"><div class="lbl">🔑 Key Point</div><p>The hand of the Lord is <em>laid on</em> witchcraft. Speak it — “Every witchcraft against my life, be struck blind, in the name of Jesus.”</p></div>
+
+    <details class="reveal"><summary>👆 Tap-to-reveal: What does “mist and darkness” mean?</summary><div class="body">A spiritual blinding — the sorcerer's demonic sight was shut down. When we pray, we ask the Lord to blind every witchcraft eye that is spying on our progress, our marriage, our finances, our children.</div></details>
+
+    <div class="quiz-q" data-quiz>
+      <div class="qtxt">❓ True or False: Paul argued and debated with the sorcerer before speaking judgment.</div>
+      <div class="quiz-opts">
+        <button class="quiz-opt">True</button>
+        <button class="quiz-opt" data-correct="true">False</button>
+      </div>
+      <div class="quiz-explain">False — he was filled with the Holy Ghost, looked him in the eye, and pronounced the judgment. He did not enter into an argument.</div>
+    </div>
+
+    <div class="callout pray"><div class="lbl">🙏 Pray</div><p>Father, in the name of Jesus, let the hand of the Lord be laid upon every witchcraft activity assigned against my life. Let mist and darkness fall on every wicked eye watching my destiny. Blind them. Silence them. Scatter them.</p></div>
+    <div class="callout declare"><span class="rpt">Repeat After Me</span><div class="lbl">🔥 Declare</div><p>“Every witchcraft eye spying on me, be struck blind. Every witchcraft mouth speaking against me, be silenced. In the mighty name of Jesus Christ of Nazareth.”</p></div>
+
+    <div class="mod-nav"><button data-mod-goto="1">← Module 1</button><button data-mod-goto="3">Module 3 →</button></div>
+  </section>
+
+  <!-- Module 3 -->
+  <section class="card module" id="module-3" data-mod="3">
+    <span class="mod-num">Module 3</span>
+    <h2>Household Wickedness & Hidden Enemies</h2>
+    <div class="scripture">
+      <span class="ref">Micah 7:6–7 (KJV)</span>
+      <em>“For the son dishonoureth the father, the daughter riseth up against her mother, the daughter in law against her mother in law; a man's enemies are the men of his own house. Therefore I will look unto the LORD; I will wait for the God of my salvation: my God will hear me.”</em>
+    </div>
+    <div class="scripture">
+      <span class="ref">Ephesians 6:12 (KJV)</span>
+      <em>“For we wrestle not against flesh and blood, but against principalities, against powers, against the rulers of the darkness of this world, against spiritual wickedness in high places.”</em>
+    </div>
+
+    <div class="level-tabs" data-levels>
+      <button class="level-btn" data-level="simple">👦 Simple</button>
+      <button class="level-btn active" data-level="adult">👩 Adult</button>
+      <button class="level-btn" data-level="teen">🧑 Teen</button>
+      <button class="level-btn" data-level="deeper">🎓 Deeper</button>
+    </div>
+    <div class="level-body" data-body="simple">
+      <p>Sometimes the people who don't want you to do well are inside your own family or friend group. God still helps you. We fight the bad spirit, not the person.</p>
+    </div>
+    <div class="level-body active" data-body="adult">
+      <p>Household enemies are real. They know your goings and comings. They become envious when you are progressing — new job, marriage going well, children doing well, travelling abroad. Every family has a spiritual head — either wicked or godly. If <em>you</em> are the one praying, <em>you</em> are the godly spiritual head — you are the one dismantling what the wicked head is building.</p>
+      <p>There are also gullible adversaries — friends who pose as friends but attack your dreams from behind.</p>
+    </div>
+    <div class="level-body" data-body="teen">
+      <p>Not everyone clapping for you is happy for you. Some people close to you get quietly jealous when your life starts going somewhere. The Bible already said this would happen. You don't fight the person — you fight the spirit behind them.</p>
+    </div>
+    <div class="level-body" data-body="deeper">
+      <p>Micah 7:7 is the pivot — <em>“Therefore I will look unto the LORD.”</em> The response to household wickedness is not vengeance, it is upward gaze. Combine with Ephesians 6:12 — the actual wrestle is against principalities, not the person. This protects your heart from bitterness while your prayer destroys the spirit.</p>
+    </div>
+
+    <div class="callout warn"><div class="lbl">⚠️ Warning</div><p>Do not name your family members in a rage. Name the <em>spirit</em>. Kill the spirit. The person may still be redeemed.</p></div>
+    <div class="callout remember"><div class="lbl">🔑 Key Point</div><p>Your neighbour is not your enemy. Your colleague is not your enemy. The battle is spiritual — and our victory is in Christ.</p></div>
+
+    <div class="quiz-q" data-quiz>
+      <div class="qtxt">❓ Fill in the blank (Ephesians 6:12): “We wrestle not against flesh and blood, but against ______, against powers, against the rulers of the darkness of this world…”</div>
+      <div class="fitb">
+        <input type="text" placeholder="Type your answer" />
+        <button>Check</button>
+      </div>
+      <div class="quiz-explain">The answer is <strong>principalities</strong>. The battle is spiritual — target the spirit, not the person.</div>
+    </div>
+
+    <div class="callout pray"><div class="lbl">🙏 Pray</div><p>Father, in the mighty name of Jesus, I destroy every household wickedness assigned against my life, my marriage, my children, my career, and my destiny. Every wicked spiritual head in my family, be silenced by the fire of the Holy Ghost.</p></div>
+    <div class="callout declare"><span class="rpt">Repeat After Me</span><div class="lbl">🔥 Declare</div><p>“A man's enemies are the men of his own house — but I look unto the Lord, and my God hears me. In Jesus' name.”</p></div>
+
+    <div class="mod-nav"><button data-mod-goto="2">← Module 2</button><button data-mod-goto="4">Module 4 →</button></div>
+  </section>
+
+  <!-- Module 4 -->
+  <section class="card module" id="module-4" data-mod="4">
+    <span class="mod-num">Module 4</span>
+    <h2>They Shall Gather — But Not By Me</h2>
+    <div class="scripture">
+      <span class="ref">Isaiah 54:15 (KJV)</span>
+      <em>“Behold, they shall surely gather together, but not by me: whosoever shall gather together against thee shall fall for thy sake.”</em>
+    </div>
+    <div class="scripture">
+      <span class="ref">Isaiah 8:9–10 (KJV)</span>
+      <em>“Associate yourselves, O ye people, and ye shall be broken in pieces; and give ear, all ye of far countries: gird yourselves, and ye shall be broken in pieces; gird yourselves, and ye shall be broken in pieces. Take counsel together, and it shall come to nought; speak the word, and it shall not stand: for God is with us.”</em>
+    </div>
+
+    <div class="level-tabs" data-levels>
+      <button class="level-btn" data-level="simple">👦 Simple</button>
+      <button class="level-btn active" data-level="adult">👩 Adult</button>
+      <button class="level-btn" data-level="teen">🧑 Teen</button>
+      <button class="level-btn" data-level="deeper">🎓 Deeper</button>
+    </div>
+    <div class="level-body" data-body="simple">
+      <p>People can meet to plan bad things. But if God is with you, their meeting cannot work. It falls apart.</p>
+    </div>
+    <div class="level-body active" data-body="adult">
+      <p>God does not promise there will be no gatherings — He promises the gathering will not be <em>by Him</em>. When they mention your name, let storms begin to thunder. When they mention your children, your husband, your business — let the fire of the Holy Ghost scatter their meeting in the mountain of Moses.</p>
+    </div>
+    <div class="level-body" data-body="teen">
+      <p>Group chats. Group meetings. Group scheming. God sees it all. And He says it can't stand — because He is with you.</p>
+    </div>
+    <div class="level-body" data-body="deeper">
+      <p>Isaiah 8:10 gives us the covenant reason — <em>“for God is with us.”</em> That is Immanuel. Every enemy gathering fails on the Immanuel principle: God's presence is the guarantee of the outcome, not our strength.</p>
+    </div>
+
+    <div class="callout remember"><div class="lbl">🔑 Key Point</div><p>Gatherings will come. Immanuel guarantees they cannot prosper.</p></div>
+
+    <div class="quiz-q" data-quiz>
+      <div class="qtxt">❓ According to Isaiah 54:15, what does God promise about gatherings against you?</div>
+      <div class="quiz-opts">
+        <button class="quiz-opt">There will never be any gatherings against me.</button>
+        <button class="quiz-opt" data-correct="true">They will surely gather — but not by God — and they shall fall for my sake.</button>
+        <button class="quiz-opt">I have to gather harder than they gather.</button>
+      </div>
+      <div class="quiz-explain">God does not promise no gatherings — He promises the gathering will not be by Him, and it will fall for your sake.</div>
+    </div>
+
+    <div class="callout pray"><div class="lbl">🙏 Pray</div><p>Father, every gathering against my life, my marriage, my finances, my children — let it scatter in the mountain of Moses, in the mighty name of Jesus. Let their counsel come to nought. Let their word not stand — for God is with me.</p></div>
+    <div class="callout declare"><span class="rpt">Repeat After Me</span><div class="lbl">🔥 Declare</div><p>“Every meeting called against my name — scatter. Every counsel taken against me — come to nought. For God is with me. In Jesus' name.”</p></div>
+
+    <div class="mod-nav"><button data-mod-goto="3">← Module 3</button><button data-mod-goto="5">Module 5 →</button></div>
+  </section>
+
+  <!-- Module 5 -->
+  <section class="card module" id="module-5" data-mod="5">
+    <span class="mod-num">Module 5</span>
+    <h2>Authority in Christ — Trample Serpents</h2>
+    <div class="scripture">
+      <span class="ref">Luke 10:19 (KJV)</span>
+      <em>“Behold, I give unto you power to tread on serpents and scorpions, and over all the power of the enemy: and nothing shall by any means hurt you.”</em>
+    </div>
+    <div class="scripture">
+      <span class="ref">Psalm 35:1 (KJV)</span>
+      <em>“Plead my cause, O LORD, with them that strive with me: fight against them that fight against me.”</em>
+    </div>
+    <div class="scripture">
+      <span class="ref">Psalm 7:11 (KJV)</span>
+      <em>“God judgeth the righteous, and God is angry with the wicked every day.”</em>
+    </div>
+
+    <div class="level-tabs" data-levels>
+      <button class="level-btn" data-level="simple">👦 Simple</button>
+      <button class="level-btn active" data-level="adult">👩 Adult</button>
+      <button class="level-btn" data-level="teen">🧑 Teen</button>
+      <button class="level-btn" data-level="deeper">🎓 Deeper</button>
+    </div>
+    <div class="level-body" data-body="simple">
+      <p>Jesus gave you power. When you say His name, bad things cannot hurt you.</p>
+    </div>
+    <div class="level-body active" data-body="adult">
+      <p>You are not fighting your case yourself — you are giving it to the Lord. But you exercise the authority He gave you. When wicked people argue with you, don't argue back. Silence. Go into your room, open your Bible, and pray. Every dagger they made lands back on their own head, because you refused to be provoked.</p>
+    </div>
+    <div class="level-body" data-body="teen">
+      <p>Some people just want you to argue so they can drain you. Don't take the bait. Answer them in prayer, not in words.</p>
+    </div>
+    <div class="level-body" data-body="deeper">
+      <p>Two authorities operate at once: (a) <em>positional</em> — Luke 10:19 grants tread-authority over serpents; (b) <em>advocacy</em> — Psalm 35:1 asks the Lord to plead the cause. Combined, they mean we can act in authority while still committing the outcome to God as our advocate.</p>
+    </div>
+
+    <div class="callout warn"><div class="lbl">⚠️ Warning</div><p>“Don't waste your time arguing with certain wizards.” Silence and prayer are the response, not debate.</p></div>
+
+    <!-- Matching -->
+    <h3 style="margin-top:20px">🧲 Match the Scripture to its Truth</h3>
+    <p class="eyebrow">Tap one on the left, then its match on the right</p>
+    <div class="match-wrap" data-match>
+      <div class="match-col" data-side="left">
+        <button data-key="a">Luke 10:19</button>
+        <button data-key="b">Psalm 35:1</button>
+        <button data-key="c">Isaiah 54:15</button>
+        <button data-key="d">Ephesians 6:12</button>
+      </div>
+      <div class="match-col" data-side="right">
+        <button data-key="c">Gatherings against me will fall for my sake</button>
+        <button data-key="a">Authority to tread on serpents & scorpions</button>
+        <button data-key="d">Our wrestle is spiritual, not against flesh</button>
+        <button data-key="b">The Lord pleads my cause and fights for me</button>
+      </div>
+    </div>
+
+    <div class="callout pray"><div class="lbl">🙏 Pray</div><p>Father, I receive Luke 10:19. I tread on every serpent, every scorpion, every witchcraft power aimed at me. Plead my cause, O Lord, and fight for me, in Jesus' name.</p></div>
+    <div class="callout declare"><span class="rpt">Repeat After Me</span><div class="lbl">🔥 Declare</div><p>“I have the authority of Jesus. I tread on serpents and scorpions. Nothing shall by any means hurt me.”</p></div>
+
+    <div class="mod-nav"><button data-mod-goto="4">← Module 4</button><button data-mod-goto="6">Module 6 →</button></div>
+  </section>
+
+  <!-- Module 6 -->
+  <section class="card module" id="module-6" data-mod="6">
+    <span class="mod-num">Module 6</span>
+    <h2>Speaking to the Earth — The Blood Covenant</h2>
+    <div class="scripture">
+      <span class="ref">Jeremiah 22:29 (KJV)</span>
+      <em>“O earth, earth, earth, hear the word of the LORD.”</em>
+    </div>
+    <div class="scripture">
+      <span class="ref">Hebrews 12:24 (KJV)</span>
+      <em>“And to Jesus the mediator of the new covenant, and to the blood of sprinkling, that speaketh better things than that of Abel.”</em>
+    </div>
+    <div class="scripture">
+      <span class="ref">Revelation 12:11 (KJV)</span>
+      <em>“And they overcame him by the blood of the Lamb, and by the word of their testimony; and they loved not their lives unto the death.”</em>
+    </div>
+    <div class="scripture">
+      <span class="ref">1 John 5:7–8 (KJV)</span>
+      <em>“For there are three that bear record in heaven, the Father, the Word, and the Holy Ghost: and these three are one. And there are three that bear witness in earth, the Spirit, and the water, and the blood: and these three agree in one.”</em>
+    </div>
+
+    <div class="level-tabs" data-levels>
+      <button class="level-btn" data-level="simple">👦 Simple</button>
+      <button class="level-btn active" data-level="adult">👩 Adult</button>
+      <button class="level-btn" data-level="teen">🧑 Teen</button>
+      <button class="level-btn" data-level="deeper">🎓 Deeper</button>
+    </div>
+    <div class="level-body" data-body="simple">
+      <p>The Bible says God can talk to the earth. Bad people also try to talk to the earth against you. But when you pour the blood of Jesus, it speaks better things and God hears it.</p>
+    </div>
+    <div class="level-body active" data-body="adult">
+      <p>The earth is a witness. God spoke to the earth against a man in Jeremiah 22. Wicked people also try to speak to the earth against your job, your marriage, your progress. When you pour the blood of Jesus on the ground, the blood <em>speaks better things than the blood of Abel</em> — restoration, new covenant, redemption. It cancels whatever the enemy has spoken to the earth about you.</p>
+    </div>
+    <div class="level-body" data-body="teen">
+      <p>The earth is more than dirt — the Bible treats it as something that can hear. That's why the blood of Jesus poured on the ground isn't a ritual — it's a witness that overrides every wicked word spoken over your location.</p>
+    </div>
+    <div class="level-body" data-body="deeper">
+      <p>1 John 5:8 identifies the three earth-witnesses: <em>Spirit, water, blood.</em> The three heavenly witnesses are <em>Father, Word, Holy Ghost.</em> When we pray using the oil, the water, and the blood, we are aligning with the earthly witnesses that agree in one. This is framed entirely through Christ's finished work — never as ritual on its own.</p>
+    </div>
+
+    <div class="callout warn"><div class="lbl">⚠️ Boundary</div><p>The oil, water, and blood are <strong>only</strong> effective through Christ's finished work. Never treat them as ritual on their own. No salt baths. No covenant-of-salt language. Ever.</p></div>
+
+    <details class="reveal"><summary>👆 Tap-to-reveal: Why the blood of Jesus, not Abel's blood?</summary><div class="body">Abel's blood cried out from the ground for vengeance (Genesis 4:10). Jesus' blood speaks better things (Hebrews 12:24) — new covenant, restoration, redemption. Where the enemy uses ancestral (ancient) blood spilled by our forefathers, the blood of Jesus overrules it.</div></details>
+
+    <div class="quiz-q" data-quiz>
+      <div class="qtxt">❓ Match: The three witnesses on earth (1 John 5:8) are…</div>
+      <div class="quiz-opts">
+        <button class="quiz-opt">Father, Son, and Holy Spirit</button>
+        <button class="quiz-opt" data-correct="true">The Spirit, the water, and the blood</button>
+        <button class="quiz-opt">The oil, the salt, and the fire</button>
+        <button class="quiz-opt">Bread, wine, and water</button>
+      </div>
+      <div class="quiz-explain">The Spirit, the water, and the blood — “and these three agree in one.” The heavenly three are Father, Word, and Holy Ghost.</div>
+    </div>
+
+    <!-- Put-in-order -->
+    <h3 style="margin-top:20px">🔢 Put in order — How to break your fast today</h3>
+    <p class="eyebrow">Use the ▲ ▼ buttons</p>
+    <ul class="order-list" data-order data-correct="1,2,3,4">
+      <li data-key="1">Take the blood of Jesus (communion or a red drink stand-in) <span class="ctrls"><button data-dir="up">▲</button><button data-dir="down">▼</button></span></li>
+      <li data-key="2">Go outside and read the scriptures aloud (Micah 5:12 · Numbers 23:23 · Revelation 12:11 · Hebrews 12:24) <span class="ctrls"><button data-dir="up">▲</button><button data-dir="down">▼</button></span></li>
+      <li data-key="3">Say the prayer — restore, redeem, break every earth-spoken word against me <span class="ctrls"><button data-dir="up">▲</button><button data-dir="down">▼</button></span></li>
+      <li data-key="4">Pour the blood of Jesus on the ground <span class="ctrls"><button data-dir="up">▲</button><button data-dir="down">▼</button></span></li>
+    </ul>
+    <button class="btn btn-primary" data-check-order style="margin-top:10px">Check my order</button>
+    <div class="quiz-explain" data-order-explain>The correct order: <strong>take the blood → read the scriptures outside → say the prayer → pour the blood on the ground.</strong> Personalize the prayer; keep the boundaries in Hebrews 12:24.</div>
+
+    <div class="callout pray"><div class="lbl">🙏 Pray</div><p>Father, in the mighty name of Jesus, as I pour the blood of Jesus on the earth, let it speak restoration and redemption. Every word the enemy has spoken to the earth against my life, my job, my marriage, my finances — be silenced by the blood that speaks better things than Abel's.</p></div>
+    <div class="callout declare"><span class="rpt">Repeat After Me</span><div class="lbl">🔥 Declare</div><p>“The blood of Jesus speaks better things over me. Every ancient blood, every ancestral blood crying against my destiny, be silenced.”</p></div>
+
+    <div class="mod-nav"><button data-mod-goto="5">← Module 5</button><button data-mod-goto="7">Module 7 →</button></div>
+  </section>
+
+  <!-- Module 7 -->
+  <section class="card module" id="module-7" data-mod="7">
+    <span class="mod-num">Module 7</span>
+    <h2>Salvation & Sealing — Cover Yourself</h2>
+    <div class="scripture">
+      <span class="ref">Romans 10:13 (KJV)</span>
+      <em>“For whosoever shall call upon the name of the Lord shall be saved.”</em>
+    </div>
+    <div class="scripture">
+      <span class="ref">Revelation 12:11 (KJV)</span>
+      <em>“And they overcame him by the blood of the Lamb, and by the word of their testimony; and they loved not their lives unto the death.”</em>
+    </div>
+
+    <div class="level-tabs" data-levels>
+      <button class="level-btn" data-level="simple">👦 Simple</button>
+      <button class="level-btn active" data-level="adult">👩 Adult</button>
+      <button class="level-btn" data-level="teen">🧑 Teen</button>
+      <button class="level-btn" data-level="deeper">🎓 Deeper</button>
+    </div>
+    <div class="level-body" data-body="simple">
+      <p>If you say “Jesus, save me,” He does. Then say “blood of Jesus, cover me,” and He does that too.</p>
+    </div>
+    <div class="level-body active" data-body="adult">
+      <p>Every deliverance service ends with sealing — covering yourself and everything the Lord touched today with the blood of Jesus. If you have never given your life to Christ, today is the day. Romans 10:13 is a promise, not a suggestion.</p>
+    </div>
+    <div class="level-body" data-body="teen">
+      <p>Saying yes to Jesus isn't a religious formality. It's the biggest change of citizenship you'll ever make. And after that, cover your day every day with His blood.</p>
+    </div>
+    <div class="level-body" data-body="deeper">
+      <p>Sealing is the closing step of the standard deliverance flow — praise, thanksgiving, confession, forgiveness, invitation of the Holy Spirit, teaching, deliverance prayers, <strong>sealing</strong>. Without sealing, the ground gained can be revisited.</p>
+    </div>
+
+    <div class="callout remember"><div class="lbl">🔑 Prayer of Salvation</div>
+      <p>“Lord Jesus, I repent of my sins and surrender my life. Wash me clean. I believe that Jesus Christ is the Son of God, that He died on the cross for my sins and rose again on the third day for my victory. I believe in my heart and confess with my mouth that Jesus is my Saviour and Lord. I receive eternal life. In Jesus' name. Amen.”</p>
+    </div>
+
+    <div class="callout pray"><div class="lbl">🙏 Sealing Prayer</div><p>Father, I cover myself, my home, my family, my finances, my career, and everything You touched today with the blood of Jesus. Let the blood be my protection, my cover, and my seal, in the mighty name of Jesus.</p></div>
+
+    <div class="mod-nav"><button data-mod-goto="6">← Module 6</button><button data-goto="review">Go to End Review →</button></div>
+  </section>
+
+</section>
+
+<!-- SCRIPTURES -->
+<section class="panel" id="panel-scriptures">
+  <div class="eyebrow">Scripture Library</div>
+  <h2>Every KJV verse from today's service</h2>
+  <p>Tap each card to reveal the full text.</p>
+  <div id="scripture-list"></div>
+</section>
+
+<!-- PRAYERS -->
+<section class="panel" id="panel-prayers">
+  <div class="eyebrow">Prayer Library</div>
+  <h2>Pray these aloud today</h2>
+  <p>Organised by section of the standard L137 deliverance flow.</p>
+  <div id="prayer-list"></div>
+</section>
+
+<!-- DECLARATIONS -->
+<section class="panel" id="panel-declarations">
+  <div class="eyebrow">Declaration Library</div>
+  <h2>Repeat aloud — exactly as delivered</h2>
+  <div class="callout listen"><div class="lbl">🗣️ Say · 🔁 Repeat After Me</div><p>Each one is a <strong>Repeat After Me</strong> declaration — say it out loud after Pastor Kiky, then say it again in your own voice. Personalize with your name, your family's name, and the area of your life where you need breakthrough.</p></div>
+  <div id="declaration-list"></div>
+</section>
+
+<!-- FLASHCARDS -->
+<section class="panel" id="panel-flashcards">
+  <div class="eyebrow">Flashcards</div>
+  <h2>Tap any card to flip</h2>
+  <p>Memorize the verse or key truth. Come back tomorrow and try again.</p>
+  <div class="flashcards" id="flashcard-grid"></div>
+</section>
+
+<!-- QUIZ -->
+<section class="panel" id="panel-quiz">
+  <div class="eyebrow">Knowledge Check</div>
+  <h2>Mixed quiz — take your time</h2>
+  <p>The correct answer is hidden until you choose. After you answer, an explanation appears.</p>
+  <div id="final-quiz"></div>
+  <div class="callout remember"><div class="lbl">🏆 Score</div><p><span id="quiz-score">0</span> / <span id="quiz-total">0</span> answered.</p></div>
+</section>
+
+<!-- RECALL -->
+<section class="panel" id="panel-recall">
+  <div class="eyebrow">Recall Challenge</div>
+  <h2>Random questions from the study</h2>
+  <p>Get a new random question each round. Try three in a row to end well.</p>
+  <div id="recall-box"></div>
+  <button class="btn btn-primary" id="recall-next">Give me another →</button>
+</section>
+
+<!-- PROPHETIC -->
+<section class="panel" id="panel-prophetic">
+  <div class="eyebrow">Prophetic Direction</div>
+  <h2>How to break the fast today</h2>
+  <p>From Pastor Kiky's word at the end of the service.</p>
+  <ol>
+    <li><strong>Read these scriptures out loud:</strong>
+      <ul>
+        <li>Micah 5:12 — cutting off witchcrafts</li>
+        <li>Numbers 23:23 — no enchantment against Jacob</li>
+        <li>Revelation 12:11 — overcome by the blood of the Lamb</li>
+        <li>Hebrews 12:24 — the blood that speaks better things than Abel</li>
+      </ul>
+    </li>
+    <li><strong>Take the blood of Jesus</strong> — communion, or a red drink as a stand-in if you have no communion wine at home.</li>
+    <li><strong>Say the prayer</strong> — restore what the enemy has taken, redeem, and break every earth-spoken word against you.</li>
+    <li><strong>Go outside and pour the blood of Jesus on the ground.</strong></li>
+  </ol>
+  <div class="callout warn"><div class="lbl">⏰ When to break</div><p>You can end your fast at 3, 4, 5, or 6 p.m. — be flexible, let the Holy Spirit lead.</p></div>
+  <div class="callout warn"><div class="lbl">⚠️ Boundary</div><p>Physical elements (blood, water, oil) are effective <em>only</em> through Christ's finished work. Never treat them as ritual on their own. No salt baths.</p></div>
+
+  <div class="scripture">
+    <span class="ref">Micah 5:12 (KJV)</span>
+    <em>“And I will cut off witchcrafts out of thine hand; and thou shalt have no more soothsayers.”</em>
+  </div>
+  <div class="scripture">
+    <span class="ref">Numbers 23:23 (KJV)</span>
+    <em>“Surely there is no enchantment against Jacob, neither is there any divination against Israel: according to this time it shall be said of Jacob and of Israel, What hath God wrought!”</em>
+  </div>
+
+  <div class="callout pray"><div class="lbl">🙏 Break-the-Fast Prayer</div>
+    <p>Father, as I pour the blood of Jesus on this earth, let it speak better things than the blood of Abel. Every witchcraft spoken to the earth against my life, my job, my marriage, my children, my finances — be cut off. Every ancient blood, every ancestral covenant crying against my destiny — be silenced by the blood of the Lamb. I overcome by the blood and by the word of my testimony. Restore me. Redeem me. In Jesus' name. Amen.</p>
+  </div>
+</section>
+
+<!-- REFLECTION -->
+<section class="panel" id="panel-reflection">
+  <div class="eyebrow">Reflection & Notes</div>
+  <h2>What is the Holy Spirit saying to you?</h2>
+  <p>Your notes stay in this browser. Answer as many as you like.</p>
+
+  <section class="card">
+    <h4>1. What convicted me today?</h4>
+    <textarea data-note="q1"></textarea>
+  </section>
+  <section class="card">
+    <h4>2. Which scripture spoke to me the most?</h4>
+    <textarea data-note="q2"></textarea>
+  </section>
+  <section class="card">
+    <h4>3. Where has the enemy been “gathering” against me? What am I asking God to scatter?</h4>
+    <textarea data-note="q3"></textarea>
+  </section>
+  <section class="card">
+    <h4>4. My prayer response</h4>
+    <textarea data-note="q4"></textarea>
+  </section>
+  <button class="btn btn-primary" id="save-notes">Save my reflection</button>
+  <span id="notes-status" style="margin-left:10px;font-size:13px;color:var(--teal-deep)"></span>
+</section>
+
+<!-- REVIEW -->
+<section class="panel" id="panel-review">
+  <div class="eyebrow">End-of-Teaching Review</div>
+  <h2>Summary & completion</h2>
+
+  <section class="card">
+    <h3>📝 Summary</h3>
+    <p>Today on Fire Wednesday, Pastor Kiky led us to destroy witchcraft activities against our life and destiny. We saw Paul strike a sorcerer blind (Acts 13), understood household wickedness (Micah 7:6–7 · Ephesians 6:12), stood on God's promise that no gathering against us shall stand (Isaiah 54:15 · Isaiah 8:10), took hold of our authority in Christ (Luke 10:19 · Psalm 35:1), learned to speak to the earth with the blood of Jesus (Jeremiah 22:29 · Hebrews 12:24 · Revelation 12:11 · 1 John 5:7–8), and closed with salvation (Romans 10:13) and sealing.</p>
+  </section>
+
+  <section class="card">
+    <h3>🔑 Key Lessons</h3>
+    <ol>
+      <li>Praise and thanksgiving come first — always.</li>
+      <li>Deliverance is Spirit-filled and specific — like Paul with Elymas.</li>
+      <li>A man's enemies are often the men of his own house — but the wrestle is spiritual.</li>
+      <li>Gatherings will happen. Immanuel guarantees they cannot prosper.</li>
+      <li>You have authority to tread on serpents and scorpions.</li>
+      <li>The blood of Jesus speaks better things than Abel — pour it on the earth.</li>
+      <li>End every warfare with sealing.</li>
+    </ol>
+  </section>
+
+  <section class="card">
+    <h3>📖 Key Scriptures (KJV)</h3>
+    <div id="key-scriptures-list"></div>
+  </section>
+
+  <section class="card">
+    <h3>🙏 Closing Prayer</h3>
+    <p>Father, in the mighty name of Jesus, thank You for this Fire Wednesday. I bless You for every teaching, every scripture, every declaration, and every deliverance released today. I seal every good thing You have done in my life and in the life of everyone I love with the blood of Jesus. Every gathering, every witchcraft, every household wickedness against my destiny — I command it to scatter in the mountain of Moses. Let the peace that surpasses all understanding come over my life today, in Jesus' name. Amen.</p>
+  </section>
+
+  <section class="card">
+    <h3>🔥 Final Declarations — Repeat After Me</h3>
+    <p class="eyebrow">Say each one out loud, then say it again in your own voice.</p>
+    <div class="callout declare"><span class="rpt">Repeat After Me</span><p>“Every witchcraft against my life, be struck blind, in Jesus' name.”</p></div>
+    <div class="callout declare"><span class="rpt">Repeat After Me</span><p>“Every gathering against my name — scatter. For God is with me.”</p></div>
+    <div class="callout declare"><span class="rpt">Repeat After Me</span><p>“I have the authority of Jesus. I tread on serpents and scorpions.”</p></div>
+    <div class="callout declare"><span class="rpt">Repeat After Me</span><p>“The blood of Jesus speaks better things over me and every ancient blood is silenced.”</p></div>
+    <div class="callout declare"><span class="rpt">Repeat After Me</span><p>“I am covered. I am sealed. I am His.”</p></div>
+  </section>
+
+  <section class="card">
+    <h3>👨‍👩‍👧‍👦 Discussion Questions</h3>
+    <ol>
+      <li>Where has the “gathering” been loudest against you lately — work, family, marriage, ministry?</li>
+      <li>What does it look like practically to “not argue with wizards” this week?</li>
+      <li>How will you remember to seal every deliverance moment with the blood?</li>
+    </ol>
+  </section>
+
+  <div class="certificate" id="cert">
+    <div class="seal">🏆</div>
+    <h2>Study Complete</h2>
+    <p>You worked through every module, took the quiz, and reflected on the teaching. Come back tomorrow — keep fighting until every witchcraft assignment is silenced.</p>
+    <p style="font-family:var(--serif);font-style:italic;margin-top:16px">“For with God nothing shall be impossible.” — Luke 1:37</p>
+  </div>
+</section>
+
+<!-- DOWNLOAD -->
+<section class="panel" id="panel-download">
+  <div class="eyebrow">Download the Pack</div>
+  <h2>17 PDFs — print, share on WhatsApp, study offline</h2>
+  <p>Every PDF was built from today's teaching. All KJV scripture in full. All corporate declarations marked <strong>Repeat After Me</strong>. Tap any card to download.</p>
+  <div class="home-grid" id="pack-grid"></div>
+  <div class="callout remember" style="margin-top:22px"><div class="lbl">📚 Master Pack</div><p>Prefer everything in one file? <a href="pack/L137-Fire-Wednesday-Sept-2-2026-FULL-PACK.pdf" download>Download the complete 17-in-1 PDF</a>.</p></div>
+</section>
+
+<!-- SEARCH -->
+<section class="panel" id="panel-search">
+  <div class="eyebrow">Search</div>
+  <h2>Search this study</h2>
+  <input id="search" type="search" placeholder="Search scriptures, prayers, teaching, declarations…"/>
+  <div id="search-results"></div>
+</section>
+
+</main>
+
+<footer>
+  <div class="luke">“For with God nothing shall be impossible.” — Luke 1:37</div>
+  <div>L137 Deliverance Ministry International · Pastor Kiky Ocansey</div>
+  <div style="margin-top:8px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8f887a">Fire Wednesday · September 2, 2026</div>
+</footer>
+
+<script>
+/* ========== safe storage with in-memory fallback ========== */
+const store=(()=>{
+  // In-memory session store only — the preview iframe blocks persistent browser storage.
+  const m={};
+  return{get:k=>k in m?m[k]:null,set:(k,v)=>{m[k]=String(v)}};
+})();
+
+/* ========== data ========== */
+const scriptures=[
+  {ref:"Psalm 138:1–2",topic:"Praise",text:"I will praise thee with my whole heart: before the gods will I sing praise unto thee. I will worship toward thy holy temple, and praise thy name for thy lovingkindness and for thy truth: for thou hast magnified thy word above all thy name."},
+  {ref:"Psalm 100:4",topic:"Thanksgiving",text:"Enter into his gates with thanksgiving, and into his courts with praise: be thankful unto him, and bless his name."},
+  {ref:"1 Thessalonians 5:18",topic:"Thanksgiving",text:"In every thing give thanks: for this is the will of God in Christ Jesus concerning you."},
+  {ref:"Psalm 51:1–2",topic:"Confession",text:"Have mercy upon me, O God, according to thy lovingkindness: according unto the multitude of thy tender mercies blot out my transgressions. Wash me throughly from mine iniquity, and cleanse me from my sin."},
+  {ref:"Ephesians 1:7",topic:"Confession",text:"In whom we have redemption through his blood, the forgiveness of sins, according to the riches of his grace."},
+  {ref:"Daniel 9:9",topic:"Confession",text:"To the Lord our God belong mercies and forgivenesses, though we have rebelled against him."},
+  {ref:"Isaiah 1:18",topic:"Confession",text:"Come now, and let us reason together, saith the LORD: though your sins be as scarlet, they shall be as white as snow; though they be red like crimson, they shall be as wool."},
+  {ref:"Ephesians 5:18",topic:"Holy Spirit",text:"And be not drunk with wine, wherein is excess; but be filled with the Spirit."},
+  {ref:"Matthew 3:11",topic:"Holy Spirit",text:"I indeed baptize you with water unto repentance: but he that cometh after me is mightier than I, whose shoes I am not worthy to bear: he shall baptize you with the Holy Ghost, and with fire."},
+  {ref:"Proverbs 23:18",topic:"Expectation",text:"For surely there is an end; and thine expectation shall not be cut off."},
+  {ref:"Acts 13:4–12",topic:"Witchcraft — the sorcerer struck blind",text:"So they, being sent forth by the Holy Ghost, departed unto Seleucia; and from thence they sailed to Cyprus. And when they were at Salamis, they preached the word of God in the synagogues of the Jews: and they had also John to their minister. And when they had gone through the isle unto Paphos, they found a certain sorcerer, a false prophet, a Jew, whose name was Bar-jesus: Which was with the deputy of the country, Sergius Paulus, a prudent man; who called for Barnabas and Saul, and desired to hear the word of God. But Elymas the sorcerer (for so is his name by interpretation) withstood them, seeking to turn away the deputy from the faith. Then Saul, (who also is called Paul,) filled with the Holy Ghost, set his eyes on him, And said, O full of all subtilty and all mischief, thou child of the devil, thou enemy of all righteousness, wilt thou not cease to pervert the right ways of the Lord? And now, behold, the hand of the Lord is upon thee, and thou shalt be blind, not seeing the sun for a season. And immediately there fell on him a mist and a darkness; and he went about seeking some to lead him by the hand. Then the deputy, when he saw what was done, believed, being astonished at the doctrine of the Lord."},
+  {ref:"Psalm 7:11",topic:"Witchcraft",text:"God judgeth the righteous, and God is angry with the wicked every day."},
+  {ref:"Micah 7:6–7",topic:"Household wickedness",text:"For the son dishonoureth the father, the daughter riseth up against her mother, the daughter in law against her mother in law; a man's enemies are the men of his own house. Therefore I will look unto the LORD; I will wait for the God of my salvation: my God will hear me."},
+  {ref:"Ephesians 6:12",topic:"Spiritual warfare",text:"For we wrestle not against flesh and blood, but against principalities, against powers, against the rulers of the darkness of this world, against spiritual wickedness in high places."},
+  {ref:"Micah 5:12",topic:"Cutting off witchcraft",text:"And I will cut off witchcrafts out of thine hand; and thou shalt have no more soothsayers."},
+  {ref:"Numbers 23:23",topic:"No enchantment against you",text:"Surely there is no enchantment against Jacob, neither is there any divination against Israel: according to this time it shall be said of Jacob and of Israel, What hath God wrought!"},
+  {ref:"Isaiah 54:15",topic:"Gatherings",text:"Behold, they shall surely gather together, but not by me: whosoever shall gather together against thee shall fall for thy sake."},
+  {ref:"Isaiah 8:9–10",topic:"Gatherings",text:"Associate yourselves, O ye people, and ye shall be broken in pieces; and give ear, all ye of far countries: gird yourselves, and ye shall be broken in pieces; gird yourselves, and ye shall be broken in pieces. Take counsel together, and it shall come to nought; speak the word, and it shall not stand: for God is with us."},
+  {ref:"Psalm 35:1",topic:"The Lord fights for you",text:"Plead my cause, O LORD, with them that strive with me: fight against them that fight against me."},
+  {ref:"Luke 10:19",topic:"Authority",text:"Behold, I give unto you power to tread on serpents and scorpions, and over all the power of the enemy: and nothing shall by any means hurt you."},
+  {ref:"Jeremiah 22:29",topic:"Speaking to the earth",text:"O earth, earth, earth, hear the word of the LORD."},
+  {ref:"Hebrews 12:24",topic:"Blood covenant",text:"And to Jesus the mediator of the new covenant, and to the blood of sprinkling, that speaketh better things than that of Abel."},
+  {ref:"Revelation 12:11",topic:"Overcoming",text:"And they overcame him by the blood of the Lamb, and by the word of their testimony; and they loved not their lives unto the death."},
+  {ref:"1 John 5:7–8",topic:"Three witnesses",text:"For there are three that bear record in heaven, the Father, the Word, and the Holy Ghost: and these three are one. And there are three that bear witness in earth, the Spirit, and the water, and the blood: and these three agree in one."},
+  {ref:"Romans 10:13",topic:"Salvation",text:"For whosoever shall call upon the name of the Lord shall be saved."},
+  {ref:"Luke 1:37",topic:"L137 tagline",text:"For with God nothing shall be impossible."}
+];
+
+const prayers=[
+  {sec:"Praise & Thanksgiving",body:"Father, I enter Your gates with thanksgiving and Your courts with praise. I thank You for Your faithfulness, Your goodness, Your grace, and Your unfailing love. I bless Your name — the Saviour, the Redeemer, the Creator. Thank You for keeping me, for protecting me, and for all You are about to do today. In Jesus' name."},
+  {sec:"Confession & Forgiveness",body:"Father, have mercy on me according to Your lovingkindness. Wash me thoroughly and cleanse me from every sin, secret and open. By the blood of Jesus, sanctify me. I forgive every person who has ever hurt me — family, friends, enemies. Let the blood of Jesus wash my heart clean, in Jesus' name."},
+  {sec:"Invite the Holy Spirit",body:"Holy Spirit, come. Fill me. Baptize me with fresh fire. Take the lead in this fast. Guide my prayers. Strengthen my mouth. Meet every expectation I came with today, in the mighty name of Jesus."},
+  {sec:"Deliverance — Witchcraft",body:"Father, in the mighty name of Jesus Christ of Nazareth, every witchcraft activity against my life, my destiny, my family, my finances, my marriage, my career — be struck blind. Every wicked eye watching my progress, let mist and darkness fall on it. Every witchcraft mouth pronouncing curses on my name, be silenced. Let the hand of the Lord be laid upon them, according to Acts 13."},
+  {sec:"Deliverance — Household wickedness",body:"Father, every household wickedness assigned against my life, be destroyed. Every wicked spiritual head in my family, every uncle, every aunt, every cousin, every grandparent transferring witchcraft — I cut it off by the fire of the Holy Ghost. I release the person; I kill the spirit. In the name of Jesus."},
+  {sec:"Deliverance — Gatherings",body:"Father, every gathering, every meeting, every counsel taken against my life — scatter it in the mountain of Moses. Let their counsel come to nought. Let their word not stand. For God is with me. Isaiah 8:10 stands over my life, in Jesus' name."},
+  {sec:"Deliverance — Points of contact",body:"Father, every witchcraft food eaten in the dream, every point of contact in my body system, every evil deposit in my life — come out by the blood of Jesus. I destroy every point of contact. I destroy every monetary spirit trying to enter my life. Blood of Jesus, purify me now, in Jesus' name."},
+  {sec:"Breaking Earth-Spoken Covenants",body:"Father, every wicked word spoken to the earth against me — that I would not prosper, that I would not marry, that I would not find work, that I would be sick — I cancel it now by the blood of Jesus that speaks better things than the blood of Abel. Every ancestral blood crying against my destiny, be silenced. Restore me. Redeem me. In Jesus' name."},
+  {sec:"Authority in Christ",body:"Father, I receive Luke 10:19. I have the power to tread on serpents and scorpions and over all the power of the enemy. Nothing shall by any means hurt me. Plead my cause, O Lord — fight for me, in Jesus' name."},
+  {sec:"Restoration",body:"Father, whatever the devil has stolen — years, opportunities, health, finances, peace, joy — restore it to me sevenfold. Let my expectation not be cut off. Let it come to pass now, in the mighty name of Jesus."},
+  {sec:"Protection & Sealing",body:"Father, I cover myself, my home, my family, my finances, my career, and everything You touched today with the blood of Jesus. Let the blood be my protection. Let the blood be my cover. Let the blood be my seal. Peace that surpasses all understanding, come over my life. In the mighty name of Jesus. Amen."},
+  {sec:"Salvation",body:"Lord Jesus, I repent of my sins and surrender my life. Wash me clean. I believe that Jesus Christ is the Son of God, that He died on the cross for my sins and rose again on the third day for my victory. I believe in my heart and confess with my mouth that Jesus is my Saviour and Lord. I receive eternal life. In Jesus' name. Amen."}
+];
+
+const declarations=[
+  "Today I fast. Today I pray. Today every wicked activity against my life is destroyed by the power of the Holy Ghost, in the mighty name of Jesus.",
+  "Every witchcraft eye spying on me — be struck blind. Every witchcraft mouth speaking against me — be silenced. In the mighty name of Jesus Christ of Nazareth.",
+  "The hand of the Lord is laid upon every witchcraft against my life. Mist and darkness fall on every wicked assignment, in Jesus' name.",
+  "A man's enemies are the men of his own house — but I look unto the Lord, and my God hears me.",
+  "Every gathering, every meeting, every counsel taken against my life — scatter in the mountain of Moses. For God is with me.",
+  "I do not wrestle against flesh and blood. I fight the spirit. I kill the spirit. The person may live; the spirit must die.",
+  "I have the authority of Jesus. I tread on serpents and scorpions. Nothing shall by any means hurt me.",
+  "I do not argue with wizards. I take my Bible. I pray. I dismiss every power against me by the blood of Jesus.",
+  "The blood of Jesus speaks better things over me than the blood of Abel. Every ancient blood crying against my destiny is silenced.",
+  "Every witchcraft food eaten in my dream — come out by the blood of Jesus. Every point of contact in my body system — come out now.",
+  "I overcome by the blood of the Lamb and by the word of my testimony.",
+  "I am covered. I am sealed. I am His. For with God nothing shall be impossible."
+];
+
+const flashcards=[
+  {front:"Luke 1:37",back:"“For with God nothing shall be impossible.” — the L137 tagline."},
+  {front:"Acts 13:11 — key phrase",back:"“The hand of the Lord is upon thee.” Speak this over every witchcraft activity."},
+  {front:"Micah 7:6",back:"“A man's enemies are the men of his own house.” Household wickedness is biblical — pray, don't panic."},
+  {front:"Ephesians 6:12",back:"“We wrestle not against flesh and blood…” Target the spirit, never the person."},
+  {front:"Isaiah 54:15",back:"“They shall surely gather — but not by me.” Every gathering falls for your sake."},
+  {front:"Luke 10:19",back:"Authority to tread on serpents and scorpions. Nothing shall by any means hurt you."},
+  {front:"Psalm 35:1",back:"“Plead my cause, O LORD.” The Lord is your advocate — you don't have to answer every accusation."},
+  {front:"Hebrews 12:24",back:"The blood of Jesus speaks better things than the blood of Abel — new covenant, redemption, restoration."},
+  {front:"Revelation 12:11",back:"“Overcame him by the blood of the Lamb and by the word of their testimony.”"},
+  {front:"1 John 5:8",back:"Three earth-witnesses: the Spirit, the water, and the blood — and these three agree in one."},
+  {front:"Standard L137 flow",back:"Praise → Thanksgiving → Confession → Forgiveness → Holy Spirit → Teaching → Deliverance → Sealing."},
+  {front:"Fire Wednesday",back:"Weekly ministry-wide fast against witchcraft. Break at 3, 4, 5, or 6 p.m. as led."}
+];
+
+const finalQuiz=[
+  {type:"mc",q:"Whose name in Acts 13 means 'sorcerer'?",opts:["Sergius Paulus","Bar-jesus / Elymas","Barnabas","Silas"],correct:1,ex:"Elymas the sorcerer — 'for so is his name by interpretation' (Acts 13:8)."},
+  {type:"mc",q:"According to Isaiah 8:10, why does the enemy's counsel come to nought?",opts:["Because we outsmart them","Because we shout louder","Because God is with us (Immanuel)","Because we ignore them"],correct:2,ex:"'Speak the word, and it shall not stand: for God is with us.'"},
+  {type:"tf",q:"True or False: Pastor Kiky taught that we should argue with the wizards until they back down.",opts:["True","False"],correct:1,ex:"False — silence and prayer. Take your Bible into the room and pray. Do not enter the argument."},
+  {type:"mc",q:"What does the blood of Jesus speak, compared with the blood of Abel? (Hebrews 12:24)",opts:["The same things","Louder things","Better things","Older things"],correct:2,ex:"'…the blood of sprinkling, that speaketh better things than that of Abel.'"},
+  {type:"mc",q:"Which is NOT part of the standard L137 deliverance flow?",opts:["Praise & thanksgiving","Confession & forgiveness","Salt bath ritual","Sealing with the blood"],correct:2,ex:"Never salt baths. The flow is: praise, thanksgiving, confession, forgiveness, invitation of the Holy Spirit, teaching, deliverance, sealing."},
+  {type:"mc",q:"What are the three earth-witnesses in 1 John 5:8?",opts:["Father, Son, Holy Spirit","Fire, wind, oil","The Spirit, the water, and the blood","Bread, wine, and salt"],correct:2,ex:"'The Spirit, and the water, and the blood: and these three agree in one.'"},
+  {type:"tf",q:"True or False: The blood, water, and oil work as rituals on their own, apart from Christ.",opts:["True","False"],correct:1,ex:"False. They are only effective through Christ's finished work. Never treat them as ritual on their own."},
+  {type:"mc",q:"What time did Pastor Kiky say the fast could be broken?",opts:["Only at noon","3, 4, 5, or 6 p.m. — as the Spirit leads","At midnight","Sunrise the next day"],correct:1,ex:"'You can end your fasting at three, four, five, and six. Be flexible.'"}
+];
+
+/* ========== render libraries ========== */
+function renderScriptures(){
+  const el=document.getElementById('scripture-list');
+  const byTopic={};
+  scriptures.forEach(s=>{(byTopic[s.topic]=byTopic[s.topic]||[]).push(s)});
+  el.innerHTML=Object.keys(byTopic).map(topic=>{
+    return `<h3 style="margin-top:20px">${topic}</h3>`+byTopic[topic].map((s,i)=>`
+      <div class="lib-item" data-lib>
+        <span class="tag">${s.ref}</span>
+        <h4>${s.topic}</h4>
+        <div class="body"><em style="font-family:var(--serif);font-size:16.5px">${s.text}</em></div>
+      </div>`).join('');
+  }).join('');
+  // key scriptures block
+  const key=['Acts 13:4–12','Micah 7:6–7','Ephesians 6:12','Isaiah 54:15','Luke 10:19','Hebrews 12:24','Revelation 12:11','1 John 5:7–8','Luke 1:37'];
+  document.getElementById('key-scriptures-list').innerHTML=scriptures.filter(s=>key.includes(s.ref)).map(s=>`
+    <div class="scripture"><span class="ref">${s.ref}</span><em>${s.text}</em></div>`).join('');
+}
+function renderPrayers(){
+  document.getElementById('prayer-list').innerHTML=prayers.map(p=>`
+    <div class="lib-item" data-lib>
+      <span class="tag">🙏 Pray</span>
+      <h4>${p.sec}</h4>
+      <div class="body"><p>${p.body}</p></div>
+    </div>`).join('');
+}
+function renderDeclarations(){
+  document.getElementById('declaration-list').innerHTML=declarations.map((d,i)=>`
+    <div class="callout declare"><span class="rpt">Repeat After Me</span><div class="lbl">🔥 Declare #${i+1}</div><p>“${d}”</p></div>`).join('');
+}
+function renderFlashcards(){
+  document.getElementById('flashcard-grid').innerHTML=flashcards.map(c=>`
+    <div class="flashcard"><div class="flashcard-inner">
+      <div class="flashcard-front">${c.front}<div class="tap">Tap to flip</div></div>
+      <div class="flashcard-back">${c.back}</div>
+    </div></div>`).join('');
+  document.querySelectorAll('.flashcard').forEach(fc=>fc.addEventListener('click',()=>fc.classList.toggle('flipped')));
+}
+function renderQuiz(){
+  document.getElementById('final-quiz').innerHTML=finalQuiz.map((q,i)=>{
+    return `<div class="quiz-q" data-quiz data-idx="${i}">
+      <div class="qtxt">Q${i+1}. ${q.q}</div>
+      <div class="quiz-opts">
+        ${q.opts.map((o,j)=>`<button class="quiz-opt" data-correct="${j===q.correct}">${o}</button>`).join('')}
+      </div>
+      <div class="quiz-explain">${q.ex}</div>
+    </div>`;
+  }).join('');
+  document.getElementById('quiz-total').textContent=finalQuiz.length;
+  bindQuizzes();
+}
+
+/* ========== library expand ========== */
+document.addEventListener('click',e=>{
+  const li=e.target.closest('[data-lib]');
+  if(li){li.classList.toggle('open')}
+});
+
+/* ========== tabs ========== */
+const tabButtons=document.querySelectorAll('.tab-btn');
+tabButtons.forEach(b=>b.addEventListener('click',()=>go(b.dataset.tab)));
+function go(id){
+  tabButtons.forEach(b=>b.classList.toggle('active',b.dataset.tab===id));
+  document.querySelectorAll('.panel').forEach(p=>p.classList.toggle('active',p.id==='panel-'+id));
+  window.scrollTo({top:0,behavior:'smooth'});
+  if(id==='modules'){markModuleVisited()}
+}
+document.querySelectorAll('[data-goto]').forEach(b=>b.addEventListener('click',()=>go(b.dataset.goto)));
+
+/* ========== module nav ========== */
+document.querySelectorAll('[data-mod-goto]').forEach(b=>b.addEventListener('click',()=>{
+  go('modules');
+  const t=document.getElementById('module-'+b.dataset.modGoto);
+  if(t)setTimeout(()=>t.scrollIntoView({behavior:'smooth',block:'start'}),100);
+  markModuleVisited(b.dataset.modGoto);
+}));
+
+/* ========== level tabs ========== */
+document.querySelectorAll('[data-levels]').forEach(container=>{
+  const parent=container.parentElement;
+  container.querySelectorAll('.level-btn').forEach(b=>b.addEventListener('click',()=>{
+    container.querySelectorAll('.level-btn').forEach(x=>x.classList.toggle('active',x===b));
+    parent.querySelectorAll('[data-body]').forEach(body=>body.classList.toggle('active',body.dataset.body===b.dataset.level));
+  }));
+});
+
+/* ========== quiz binding (inline + final) ========== */
+function bindQuizzes(){
+  document.querySelectorAll('[data-quiz]').forEach(q=>{
+    if(q.dataset.bound)return;q.dataset.bound='1';
+    q.querySelectorAll('.quiz-opt').forEach(opt=>opt.addEventListener('click',()=>{
+      const correct=opt.dataset.correct==='true';
+      q.querySelectorAll('.quiz-opt').forEach(o=>{o.disabled=true;if(o.dataset.correct==='true')o.classList.add('correct');});
+      if(!correct)opt.classList.add('wrong');
+      q.querySelector('.quiz-explain').classList.add('show');
+      updateQuizScore();
+      trackProgress();
+    }));
+    const fitb=q.querySelector('.fitb');
+    if(fitb){
+      const inp=fitb.querySelector('input');const btn=fitb.querySelector('button');
+      btn.addEventListener('click',()=>{
+        const ans=inp.value.trim().toLowerCase();
+        if(ans.includes('principal')){inp.style.borderColor='var(--green)';inp.style.background='#e2f0d9';}
+        else{inp.style.borderColor='var(--ember)';inp.style.background='#f5d4c4';}
+        q.querySelector('.quiz-explain').classList.add('show');
+        trackProgress();
+      });
+    }
+  });
+}
+function updateQuizScore(){
+  const el=document.getElementById('quiz-score');if(!el)return;
+  const done=document.querySelectorAll('#panel-quiz .quiz-explain.show').length;
+  el.textContent=done;
+}
+
+/* ========== matching ========== */
+document.querySelectorAll('[data-match]').forEach(m=>{
+  let selectedLeft=null;
+  m.querySelectorAll('button').forEach(btn=>btn.addEventListener('click',()=>{
+    const side=btn.parentElement.dataset.side;
+    if(btn.classList.contains('matched'))return;
+    if(side==='left'){
+      m.querySelectorAll('[data-side=left] button').forEach(b=>b.classList.remove('selected'));
+      btn.classList.add('selected');selectedLeft=btn;
+    } else {
+      if(!selectedLeft)return;
+      if(selectedLeft.dataset.key===btn.dataset.key){
+        selectedLeft.classList.add('matched');btn.classList.add('matched');
+        selectedLeft.classList.remove('selected');selectedLeft=null;
+      } else {
+        btn.classList.add('wrong');setTimeout(()=>btn.classList.remove('wrong'),400);
+      }
+    }
+  }));
+});
+
+/* ========== put-in-order ========== */
+document.querySelectorAll('[data-order]').forEach(list=>{
+  list.querySelectorAll('[data-dir]').forEach(b=>b.addEventListener('click',()=>{
+    const li=b.closest('li');const dir=b.dataset.dir;
+    if(dir==='up'&&li.previousElementSibling)li.parentNode.insertBefore(li,li.previousElementSibling);
+    else if(dir==='down'&&li.nextElementSibling)li.parentNode.insertBefore(li.nextElementSibling,li);
+  }));
+});
+document.querySelectorAll('[data-check-order]').forEach(btn=>btn.addEventListener('click',()=>{
+  const list=btn.previousElementSibling.querySelector? btn.previousElementSibling : document.querySelector('[data-order]');
+  const ul=document.querySelector('[data-order]');
+  const keys=[...ul.querySelectorAll('li')].map(li=>li.dataset.key).join(',');
+  const correct=ul.dataset.correct;
+  const ex=document.querySelector('[data-order-explain]');
+  ex.classList.add('show');ex.style.display='block';
+  if(keys===correct){ex.style.background='#e2f0d9';ex.style.borderColor='var(--green)';ex.innerHTML='✅ Correct order! '+ex.innerHTML.replace(/^✅ Correct order! /,'');}
+  else{ex.style.background='#f5d4c4';ex.style.borderColor='var(--ember)';}
+}));
+
+/* ========== notes ========== */
+document.querySelectorAll('[data-note]').forEach(t=>{
+  const key='note-'+t.dataset.note;
+  const saved=store.get(key);if(saved)t.value=saved;
+  t.addEventListener('input',()=>store.set(key,t.value));
+});
+document.getElementById('save-notes').addEventListener('click',()=>{
+  document.querySelectorAll('[data-note]').forEach(t=>store.set('note-'+t.dataset.note,t.value));
+  const s=document.getElementById('notes-status');s.textContent='Saved ✓';
+  setTimeout(()=>s.textContent='',2500);
+  trackProgress();
+});
+
+/* ========== progress tracking ========== */
+const visited=new Set(JSON.parse(store.get('visited')||'[]'));
+function markModuleVisited(n){
+  if(n){visited.add('m'+n)}else{
+    const inView=[...document.querySelectorAll('.module')].filter(m=>{const r=m.getBoundingClientRect();return r.top<window.innerHeight&&r.bottom>0});
+    inView.forEach(m=>visited.add('m'+m.dataset.mod));
+  }
+  store.set('visited',JSON.stringify([...visited]));
+  trackProgress();
+}
+window.addEventListener('scroll',()=>{
+  if(document.getElementById('panel-modules').classList.contains('active'))markModuleVisited();
+});
+function trackProgress(){
+  const modsDone=[...visited].filter(v=>v.startsWith('m')).length;
+  const quizDone=document.querySelectorAll('#panel-quiz .quiz-explain.show').length;
+  const notesFilled=[...document.querySelectorAll('[data-note]')].filter(t=>t.value.trim().length>10).length;
+  const total=7 + finalQuiz.length + 4; // 7 modules + quiz + 4 notes
+  const done=Math.min(modsDone,7)+quizDone+notesFilled;
+  const pct=Math.min(100,Math.round(done/total*100));
+  document.getElementById('progressFill').style.width=pct+'%';
+  document.getElementById('progressLabel').textContent=pct+'%';
+  document.getElementById('progressCount').textContent=done+' / '+total;
+  if(pct>=90)document.getElementById('cert').classList.add('show');
+}
+trackProgress();
+
+/* ========== recall challenge ========== */
+const recallPool=[
+  {q:"Which sorcerer did Paul strike blind in Acts 13?",a:"Elymas / Bar-jesus."},
+  {q:"What does Isaiah 54:15 promise about gatherings against you?",a:"They will surely gather — but not by God — and shall fall for your sake."},
+  {q:"According to Ephesians 6:12, what are we truly wrestling against?",a:"Principalities, powers, rulers of darkness, spiritual wickedness in high places — not flesh and blood."},
+  {q:"What does the blood of Jesus speak, versus the blood of Abel?",a:"Better things (Hebrews 12:24) — the new covenant, restoration, redemption."},
+  {q:"What are the three earth-witnesses in 1 John 5:8?",a:"The Spirit, the water, and the blood."},
+  {q:"Where did Pastor Kiky say to pour the blood of Jesus when breaking the fast?",a:"On the ground / earth — because the earth is a witness (Jeremiah 22:29)."},
+  {q:"What times may the fast be broken today?",a:"3, 4, 5, or 6 p.m., as the Holy Spirit leads."},
+  {q:"What is the correct response to a wizard trying to draw you into an argument?",a:"Silence. Go into your room, take your Bible, and pray. Do not argue."},
+  {q:"Name the standard L137 deliverance flow in order.",a:"Praise → Thanksgiving → Confession → Forgiveness → Invite the Holy Spirit → Teaching → Deliverance prayers → Sealing."},
+  {q:"What is the L137 tagline verse?",a:"Luke 1:37 — 'For with God nothing shall be impossible.'"}
+];
+function drawRecall(){
+  const r=recallPool[Math.floor(Math.random()*recallPool.length)];
+  document.getElementById('recall-box').innerHTML=`
+    <section class="card">
+      <div class="eyebrow">🧠 Recall</div>
+      <h3>${r.q}</h3>
+      <details class="reveal"><summary>Show answer</summary><div class="body">${r.a}</div></details>
+    </section>`;
+}
+document.getElementById('recall-next').addEventListener('click',drawRecall);
+drawRecall();
+
+/* ========== search ========== */
+function buildIndex(){
+  const idx=[];
+  scriptures.forEach(s=>idx.push({where:'Scripture · '+s.topic,txt:s.ref+' — '+s.text}));
+  prayers.forEach(p=>idx.push({where:'Prayer · '+p.sec,txt:p.body}));
+  declarations.forEach((d,i)=>idx.push({where:'Declaration #'+(i+1),txt:d}));
+  document.querySelectorAll('.module').forEach(m=>{
+    const title=m.querySelector('h2').textContent;
+    idx.push({where:'Module · '+title,txt:m.innerText.slice(0,600)});
+  });
+  return idx;
+}
+const searchIdx=buildIndex();
+document.getElementById('search').addEventListener('input',e=>{
+  const q=e.target.value.trim().toLowerCase();
+  const out=document.getElementById('search-results');
+  if(q.length<2){out.innerHTML='';return}
+  const hits=searchIdx.filter(i=>i.txt.toLowerCase().includes(q)||i.where.toLowerCase().includes(q)).slice(0,40);
+  out.innerHTML=hits.length? hits.map(h=>`<div class="search-hit"><div class="where">${h.where}</div><div>${h.txt.replace(new RegExp('('+q.replace(/[-/\\^$*+?.()|[\]{}]/g,'\\$&')+')','ig'),'<mark>$1</mark>')}</div></div>`).join('') : '<p>No matches. Try another word.</p>';
+});
+
+/* ========== render everything ========== */
+renderScriptures();
+renderPrayers();
+renderDeclarations();
+renderFlashcards();
+renderQuiz();
+bindQuizzes();
+
+/* ========== pack grid ========== */
+const packItems=[
+  {n:1,name:'Workbook (Study Guide)',ico:'📘',desc:'Full teaching outline, KJV scriptures, reflection questions.',file:'01-workbook.pdf'},
+  {n:2,name:'Prophetic Directions',ico:'📜',desc:'How to break the fast with the blood of Jesus.',file:'02-prophetic-directions.pdf'},
+  {n:3,name:'Recall Sheet',ico:'🧠',desc:'One-page summary of everything taught today.',file:'03-recall-sheet.pdf'},
+  {n:4,name:'Declaration Card',ico:'🔥',desc:'All Repeat-After-Me declarations, printable.',file:'04-declaration-card.pdf'},
+  {n:5,name:'Clean Public Transcript',ico:'📄',desc:'Anonymised, publication-safe teaching only.',file:'05-clean-transcript.pdf'},
+  {n:6,name:'Prayer Point Manual',ico:'🙏',desc:'Organised by section — repentance to sealing.',file:'06-prayer-manual.pdf'},
+  {n:7,name:'Scripture Companion',ico:'📖',desc:'Every KJV verse in full, grouped by topic.',file:'07-scripture-companion.pdf'},
+  {n:8,name:'Deliverance Preparation Guide',ico:'🛡️',desc:'Repent, forgive, take communion, worship.',file:'08-preparation-guide.pdf'},
+  {n:9,name:'Deliverance Aftercare Guide',ico:'💚',desc:'How to walk out today’s deliverance.',file:'09-aftercare-guide.pdf'},
+  {n:10,name:'Deliverance Checklist',ico:'✅',desc:'Tick each step of today’s spiritual work.',file:'10-checklist.pdf'},
+  {n:11,name:'Reflection Journal',ico:'✍️',desc:'What convicted me, what I’ll do next.',file:'11-reflection-journal.pdf'},
+  {n:12,name:'Weekly Assignment',ico:'📅',desc:'Practical application for the week ahead.',file:'12-weekly-assignment.pdf'},
+  {n:13,name:'Memory Verse Cards',ico:'🏷️',desc:'Cut-out cards for memorisation.',file:'13-memory-verse-cards.pdf'},
+  {n:14,name:'Family Prayer Guide',ico:'👨‍👩‍👧‍👦',desc:'Pray this teaching with your household.',file:'14-family-prayer-guide.pdf'},
+  {n:15,name:'Leader’s Guide',ico:'🎓',desc:'For pastors and small groups.',file:'15-leaders-guide.pdf'},
+  {n:16,name:'Bible Character Studies',ico:'👤',desc:'Paul, Elymas, Sergius Paulus, Micah.',file:'16-bible-characters.pdf'},
+  {n:17,name:'Teaching Flow Chart',ico:'🗺️',desc:'One-page visual: problem → deliverance → restoration.',file:'17-flow-chart.pdf'}
+];
+document.getElementById('pack-grid').innerHTML=packItems.map(p=>`
+  <a class="home-card" href="pack/${p.file}" download style="text-decoration:none;color:inherit;display:block">
+    <div class="ico">${p.ico}</div>
+    <h4>${p.n}. ${p.name}</h4>
+    <p>${p.desc}</p>
+    <div style="margin-top:10px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--teal-deep);font-weight:700">⬇ Download PDF</div>
+  </a>`).join('');
+</script>
+<script data-pplx-inline-edit>
+(function () {
+  if (window === window.top) return;
+
+  const allowedParentOrigins = ["https://www.perplexity.ai","https://perplexity.ai","https://testing.perplexity.ai","https://staging.perplexity.ai","https://*.preview.i.perplexity.ai","http://perplexity.localhost","http://localhost:1420","http://127.0.0.1:1420","http://localhost:3000","http://127.0.0.1:3000","http://localhost:5173","http://127.0.0.1:5173"];
+  const MAX_FONT_BYTES = 500 * 1024;
+  const MAX_TOTAL_FONT_BYTES = 2 * 1024 * 1024;
+  let scrollForwarding = false;
+  let scrollRaf = 0;
+  let trustedTopOrigin = null;
+
+  // Allow entries like "https://*.preview.i.perplexity.ai" — the wildcard
+  // matches a single DNS label (no dots), so "https://*.foo" cannot stretch
+  // across multiple labels.
+  function matchesAllowedOrigin(origin) {
+    if (!origin) return false;
+    for (const entry of allowedParentOrigins) {
+      if (!entry.includes("*")) {
+        if (entry === origin) return true;
+        continue;
+      }
+      const pattern = new RegExp(
+        "^" +
+          entry.replace(/[.+?^${}()|[\]\\]/g, "\\$&").replace(/\*/g, "[^.]+") +
+          "$",
+      );
+      if (pattern.test(origin)) return true;
+    }
+    return false;
+  }
+
+  // Trust decision: when the sender is same-origin-visible (event.origin is a
+  // real origin like https://www.perplexity.ai) we trust event.origin directly.
+  // When event.origin is "null" (opaque broker srcdoc), we fall back to the
+  // broker's stamped `parentOrigin` to identify the top window. The fallback
+  // is claim-only — we rely on the browser's native `targetOrigin` enforcement
+  // on the response path (see postToTrustedTop) to ensure replies can't be
+  // delivered to anyone but the actual top window of that claimed origin.
+  function getTrustedParentOrigin(event) {
+    const forwardedParentOrigin =
+      typeof event.data.parentOrigin === "string" ? event.data.parentOrigin : null;
+    const parentOrigin = event.origin === "null" ? forwardedParentOrigin : event.origin;
+    return matchesAllowedOrigin(parentOrigin) ? parentOrigin : null;
+  }
+
+  // All responses go to window.top with targetOrigin = the allowlisted origin.
+  // An attacker that iframes us inside their own null-origin broker can claim
+  // any parentOrigin they like, but the browser will drop the reply whenever
+  // the real top's origin doesn't match — so the screenshot never leaves.
+  function postToTrustedTop(message) {
+    if (!trustedTopOrigin) return;
+    try {
+      window.top.postMessage(message, trustedTopOrigin);
+    } catch (_error) {}
+  }
+
+  function inlineAll(original, clone) {
+    if (original.nodeType !== 1 || clone.nodeType !== 1) return;
+
+    try {
+      const computedStyle = getComputedStyle(original);
+      // cssText on a computed style is the serialized declaration in modern
+      // Chromium/Safari — a single read beats enumerating ~400 longhand
+      // properties. Firefox returns "" here, so we fall back on empty.
+      const serialized = computedStyle.cssText;
+      if (serialized) {
+        clone.style.cssText = serialized;
+      } else {
+        const parts = new Array(computedStyle.length);
+        for (let index = 0; index < computedStyle.length; index += 1) {
+          const property = computedStyle[index];
+          parts[index] = `${property}:${computedStyle.getPropertyValue(property)};`;
+        }
+        clone.style.cssText = parts.join("");
+      }
+    } catch (_error) {}
+
+    const originalChildren = original.children;
+    const clonedChildren = clone.children;
+    for (
+      let index = 0;
+      index < originalChildren.length && index < clonedChildren.length;
+      index += 1
+    ) {
+      inlineAll(originalChildren[index], clonedChildren[index]);
+    }
+  }
+
+  function extractFontUrl(srcValue) {
+    const matches = [
+      ...srcValue.matchAll(
+        /url\(["']?([^"')]+)["']?\)(?:\s*format\(["']?([^"')]+)["']?\))?/gi,
+      ),
+    ];
+    if (matches.length === 0) return null;
+    const woff2 = matches.find((m) => m[2] && m[2].toLowerCase().includes("woff2"));
+    if (woff2) return woff2[1];
+    const woff = matches.find((m) => m[2] && m[2].toLowerCase().includes("woff"));
+    if (woff) return woff[1];
+    return matches[0][1];
+  }
+
+  // Cache resolved font URL -> data URI across captures. Fonts on a page
+  // essentially never change, and a batch run emits multiple captures back to
+  // back — without this we'd refetch + re-base64 every time.
+  const fontDataUriCache = new Map();
+  const SRC_DECLARATION_RE = /src\s*:\s*[^;}]+/i;
+
+  async function fetchAsDataUri(url) {
+    if (fontDataUriCache.has(url)) return fontDataUriCache.get(url);
+    let dataUri = null;
+    try {
+      const response = await fetch(url, { mode: "cors", credentials: "omit" });
+      if (response.ok) {
+        const blob = await response.blob();
+        if (blob.size <= MAX_FONT_BYTES) {
+          dataUri = await new Promise((resolve) => {
+            const reader = new FileReader();
+            reader.onloadend = () =>
+              resolve(typeof reader.result === "string" ? reader.result : null);
+            reader.onerror = () => resolve(null);
+            reader.readAsDataURL(blob);
+          });
+        }
+      }
+    } catch (_error) {
+      dataUri = null;
+    }
+    fontDataUriCache.set(url, dataUri);
+    return dataUri;
+  }
+
+  function collectFontFaceRuleTexts() {
+    const rules = [];
+    for (const sheet of document.styleSheets) {
+      let cssRules;
+      try {
+        cssRules = sheet.cssRules;
+      } catch (_error) {
+        continue;
+      }
+      if (!cssRules) continue;
+      for (const rule of cssRules) {
+        const cssText = rule.cssText || "";
+        if (cssText.startsWith("@font-face")) rules.push(cssText);
+      }
+    }
+    return rules;
+  }
+
+  async function buildInlinedFontCss() {
+    const ruleTexts = collectFontFaceRuleTexts();
+    if (ruleTexts.length === 0) return null;
+
+    const resolved = ruleTexts.map((cssText) => {
+      if (!SRC_DECLARATION_RE.test(cssText)) return null;
+      const srcMatch = cssText.match(/src\s*:\s*([^;}]+)[;}]/i);
+      if (!srcMatch) return null;
+      const url = extractFontUrl(srcMatch[1]);
+      if (!url) return null;
+      try {
+        return { cssText, url: new URL(url, document.baseURI).href };
+      } catch (_error) {
+        return null;
+      }
+    });
+
+    const dataUris = await Promise.all(
+      resolved.map((entry) => (entry ? fetchAsDataUri(entry.url) : Promise.resolve(null))),
+    );
+
+    const inlined = [];
+    let totalBytes = 0;
+    for (let index = 0; index < resolved.length; index += 1) {
+      const entry = resolved[index];
+      const dataUri = dataUris[index];
+      if (!entry || !dataUri) continue;
+      const approxBytes = dataUri.length * 0.75;
+      if (totalBytes + approxBytes > MAX_TOTAL_FONT_BYTES) break;
+      totalBytes += approxBytes;
+      inlined.push(entry.cssText.replace(SRC_DECLARATION_RE, `src: url("${dataUri}")`));
+    }
+    return inlined.length > 0 ? inlined.join("\n") : null;
+  }
+
+  function stripExternal(clone) {
+    const images = clone.querySelectorAll("img");
+    for (let index = 0; index < images.length; index += 1) {
+      const src = images[index].getAttribute("src");
+      if (src && !src.startsWith("data:")) images[index].removeAttribute("src");
+    }
+
+    const elements = clone.querySelectorAll("*");
+    for (let index = 0; index < elements.length; index += 1) {
+      const style = elements[index].style.cssText;
+      if (style && style.includes("url(")) {
+        elements[index].style.cssText = style.replace(
+          /url\(["']?(?!data:)[^)"']*["']?\)/gi,
+          "none",
+        );
+      }
+    }
+  }
+
+  function emitScroll() {
+    scrollRaf = 0;
+    if (!scrollForwarding) return;
+    postToTrustedTop({
+      type: "INLINE_EDIT_SCROLL",
+      scrollX: window.scrollX,
+      scrollY: window.scrollY,
+    });
+  }
+
+  window.addEventListener(
+    "scroll",
+    function () {
+      if (!scrollForwarding || scrollRaf) return;
+      scrollRaf = requestAnimationFrame(emitScroll);
+    },
+    { passive: true, capture: true },
+  );
+
+  async function handleCaptureRequest(event) {
+    const requestId = event.data.requestId;
+    const scrollX = window.scrollX;
+    const scrollY = window.scrollY;
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+
+    function postResult(dataUrl) {
+      postToTrustedTop({
+        type: "INLINE_EDIT_SCREENSHOT_RESULT",
+        requestId,
+        dataUrl,
+        scrollX,
+        scrollY,
+      });
+    }
+
+    try {
+      // Wait for any pending web fonts to resolve so both inline metrics and
+      // the @font-face inlining below see the same loaded faces.
+      if (document.fonts && document.fonts.ready) {
+        try {
+          await document.fonts.ready;
+        } catch (_error) {}
+      }
+
+      const clone = document.documentElement.cloneNode(true);
+      inlineAll(document.documentElement, clone);
+
+      const removedNodes = clone.querySelectorAll("script,link[rel=\"stylesheet\"],style");
+      for (let index = 0; index < removedNodes.length; index += 1) {
+        removedNodes[index].remove();
+      }
+
+      stripExternal(clone);
+
+      // Re-embed web fonts as data-URI @font-face rules so the SVG rasterizer
+      // can resolve them — external font URLs aren't fetched during
+      // foreignObject rendering, which would otherwise force a fallback face
+      // and change text metrics.
+      const inlinedFontCss = await buildInlinedFontCss();
+      if (inlinedFontCss) {
+        const styleEl = document.createElement("style");
+        styleEl.textContent = inlinedFontCss;
+        const head = clone.querySelector("head");
+        if (head) head.appendChild(styleEl);
+        else clone.insertBefore(styleEl, clone.firstChild);
+      }
+
+      const html = new XMLSerializer().serializeToString(clone);
+      const svg =
+        `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}">` +
+        '<foreignObject width="100%" height="100%">' +
+        `<div xmlns="http://www.w3.org/1999/xhtml" style="width:${width}px;height:${height}px;overflow:hidden">` +
+        `<div style="position:relative;left:-${scrollX}px;top:-${scrollY}px">` +
+        html +
+        "</div></div></foreignObject></svg>";
+      const svgUrl = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
+      const image = new Image();
+      image.onload = function () {
+        const canvas = document.createElement("canvas");
+        canvas.width = width;
+        canvas.height = height;
+        canvas.getContext("2d").drawImage(image, 0, 0);
+        postResult(canvas.toDataURL("image/png"));
+      };
+      image.onerror = function () {
+        postResult(null);
+      };
+      image.src = svgUrl;
+    } catch (_error) {
+      postResult(null);
+    }
+  }
+
+  window.addEventListener("message", function (event) {
+    if (!event.data) return;
+    // Only accept messages from the direct parent frame. Blocks sibling /
+    // unrelated-window postMessage senders that could otherwise reach us.
+    if (event.source !== window.parent) return;
+
+    const trustedParentOrigin = getTrustedParentOrigin(event);
+    if (!trustedParentOrigin) return;
+    trustedTopOrigin = trustedParentOrigin;
+
+    if (event.data.type === "INLINE_EDIT_SCROLL_START") {
+      scrollForwarding = true;
+      emitScroll();
+      return;
+    }
+
+    if (event.data.type === "INLINE_EDIT_SCROLL_STOP") {
+      scrollForwarding = false;
+      if (scrollRaf) cancelAnimationFrame(scrollRaf);
+      scrollRaf = 0;
+      return;
+    }
+
+    if (event.data.type !== "INLINE_EDIT_CAPTURE_REQUEST") return;
+
+    handleCaptureRequest(event);
+  });
+})();
+
+
+</script></body>
+</html>

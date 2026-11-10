@@ -1,0 +1,506 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>L137 Deliverance Ministry International — Daily Reading Admin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --c-indigo: #1E1B4B;
+    --c-indigo-2: #2A2566;
+    --c-indigo-deep: #15123A;
+    --c-cream: #F7F3E8;
+    --c-cream-2: #FBF8F0;
+    --c-gold: #EAB308;
+    --c-gold-soft: #F5CD4B;
+    --c-gold-deep: #D19900;
+    --c-ink: #1B1830;
+    --c-muted: #6B6880;
+    --c-line: rgba(30, 27, 75, 0.18);
+    --c-error: #B91C1C;
+    --c-success: #166534;
+    --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+    --font-body: "Inter", system-ui, -apple-system, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--c-indigo-deep);
+    color: var(--c-cream);
+    font-family: var(--font-body);
+    min-height: 100vh;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    padding: 32px 20px 64px;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; }
+  .topbar { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 32px; }
+  .brand { display: flex; align-items: center; gap: 12px; }
+  .brand-mark {
+    width: 36px; height: 36px; border-radius: 8px;
+    background: linear-gradient(135deg, var(--c-gold) 0%, var(--c-gold-deep) 100%);
+    display: grid; place-items: center; color: var(--c-indigo-deep);
+    font-family: var(--font-display); font-weight: 700; font-size: 17px;
+  }
+  .brand-name { font-family: var(--font-body); font-weight: 600; font-size: 14px; letter-spacing: .02em; color: var(--c-cream); }
+  .brand-sub { font-family: var(--font-body); font-size: 11.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--c-gold-soft); margin-top: 2px; }
+  .home-link { color: var(--c-gold-soft); text-decoration: none; font-size: 13px; letter-spacing: .04em; }
+  .home-link:hover { color: var(--c-gold); text-decoration: underline; }
+
+  .card {
+    background: var(--c-cream);
+    color: var(--c-ink);
+    border-radius: 16px;
+    padding: 36px;
+    box-shadow: 0 28px 60px -28px rgba(0,0,0,.5);
+  }
+  .eyebrow {
+    font-family: var(--font-body);
+    font-size: 11.5px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--c-gold-deep);
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  h1 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 30px;
+    margin: 0 0 8px;
+    line-height: 1.2;
+    color: var(--c-indigo);
+  }
+  .lead { color: var(--c-muted); font-size: 14.5px; margin: 0 0 28px; max-width: 56ch; }
+
+  .field { margin-bottom: 20px; }
+  label {
+    display: block;
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--c-indigo);
+    letter-spacing: .02em;
+    margin-bottom: 6px;
+  }
+  .hint { display: block; font-size: 12px; font-weight: 400; color: var(--c-muted); margin-top: 2px; }
+  input[type="password"], input[type="text"], textarea {
+    width: 100%;
+    background: #fff;
+    border: 1px solid var(--c-line);
+    border-radius: 10px;
+    padding: 12px 14px;
+    font-family: var(--font-body);
+    font-size: 15px;
+    color: var(--c-ink);
+    line-height: 1.5;
+    transition: border-color .15s ease, box-shadow .15s ease;
+  }
+  input[type="password"]:focus, input[type="text"]:focus, textarea:focus {
+    outline: none;
+    border-color: var(--c-gold);
+    box-shadow: 0 0 0 3px rgba(234,179,8,.18);
+  }
+  textarea { resize: vertical; min-height: 110px; font-family: var(--font-body); }
+  textarea.verse { min-height: 90px; font-family: var(--font-display); font-style: italic; font-size: 16px; }
+  textarea.teaching { min-height: 180px; }
+  textarea.prayer { min-height: 120px; }
+
+  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  @media (max-width: 600px) { .row { grid-template-columns: 1fr; } }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: var(--c-indigo);
+    color: var(--c-cream);
+    border: none;
+    padding: 13px 26px;
+    border-radius: 999px;
+    font-family: var(--font-body);
+    font-size: 14.5px;
+    font-weight: 600;
+    letter-spacing: .02em;
+    cursor: pointer;
+    transition: background .15s ease, transform .1s ease;
+  }
+  .btn:hover { background: var(--c-indigo-2); }
+  .btn:active { transform: translateY(1px); }
+  .btn:disabled { opacity: .55; cursor: wait; }
+  .btn.primary { background: var(--c-gold); color: var(--c-indigo-deep); }
+  .btn.primary:hover { background: var(--c-gold-soft); }
+  .btn.ghost { background: transparent; color: var(--c-indigo); border: 1px solid var(--c-line); }
+  .btn.ghost:hover { background: rgba(30,27,75,.05); }
+
+  .actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 8px; }
+  .status {
+    margin-top: 18px;
+    padding: 12px 14px;
+    border-radius: 10px;
+    font-size: 13.5px;
+    display: none;
+  }
+  .status.error { display: block; background: #FEF2F2; color: var(--c-error); border: 1px solid #FECACA; }
+  .status.success { display: block; background: #ECFDF5; color: var(--c-success); border: 1px solid #BBF7D0; }
+
+  .gate { text-align: left; }
+  .gate p { color: var(--c-muted); font-size: 14.5px; margin: 0 0 20px; }
+
+  .preview {
+    margin-top: 32px;
+    padding: 24px;
+    border-radius: 12px;
+    background: var(--c-cream-2);
+    border: 1px dashed var(--c-line);
+  }
+  .preview h2 {
+    font-family: var(--font-body);
+    font-size: 11.5px;
+    text-transform: uppercase;
+    letter-spacing: .18em;
+    color: var(--c-gold-deep);
+    font-weight: 600;
+    margin: 0 0 14px;
+  }
+  .preview-title { font-family: var(--font-display); font-size: 24px; font-weight: 600; color: var(--c-indigo); margin: 0 0 4px; }
+  .preview-ref { font-family: var(--font-body); font-size: 13px; letter-spacing: .04em; color: var(--c-gold-deep); font-weight: 600; margin-bottom: 12px; }
+  .preview-verse { font-family: var(--font-display); font-style: italic; font-size: 17px; color: var(--c-ink); border-left: 3px solid var(--c-gold); padding-left: 14px; margin: 0 0 16px; }
+  .preview p { margin: 0 0 10px; color: var(--c-ink); font-size: 14.5px; }
+  .preview-prayer { font-style: italic; }
+
+  .history { margin-top: 28px; }
+  .history h2 { font-family: var(--font-body); font-size: 11.5px; text-transform: uppercase; letter-spacing: .18em; color: var(--c-gold-deep); font-weight: 600; margin: 0 0 14px; }
+  .history-item { padding: 14px 0; border-top: 1px solid var(--c-line); display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+  .history-item:first-of-type { border-top: 0; }
+  .history-meta strong { display: block; font-family: var(--font-display); font-weight: 600; color: var(--c-indigo); font-size: 15px; }
+  .history-meta span { font-size: 12.5px; color: var(--c-muted); }
+  .icon-btn-sm {
+    background: transparent; border: 1px solid var(--c-line); color: var(--c-muted);
+    padding: 6px 10px; border-radius: 8px; font-size: 12.5px; cursor: pointer; font-family: var(--font-body);
+  }
+  .icon-btn-sm:hover { color: var(--c-error); border-color: var(--c-error); }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <div class="brand">
+        <div class="brand-mark">L</div>
+        <div>
+          <div class="brand-name">L137 Deliverance Ministry International</div>
+          <div class="brand-sub">Admin · Daily Reading</div>
+        </div>
+      </div>
+      <a class="home-link" href="./">← Home</a>
+    </div>
+
+    <!-- GATE -->
+    <section id="gate" class="card gate">
+      <div class="eyebrow">Sign in</div>
+      <h1>Daily reading admin</h1>
+      <p class="lead">Enter the L137 Deliverance Ministry International admin password to post Pastor Kiki&rsquo;s reading for today.</p>
+      <form id="gate-form" autocomplete="off">
+        <div class="field">
+          <label for="pw">Admin password</label>
+          <input id="pw" name="pw" type="password" autocomplete="current-password" required>
+        </div>
+        <div class="actions">
+          <button class="btn primary" type="submit">Continue</button>
+        </div>
+        <div id="gate-status" class="status"></div>
+      </form>
+    </section>
+
+    <!-- EDITOR -->
+    <section id="editor" class="card" style="display:none;">
+      <div class="eyebrow">Post today&rsquo;s reading</div>
+      <h1>Paste tonight’s altar reading</h1>
+      <p class="lead">Paste each piece of the reading Pastor Kiki shared from the L137 Deliverance Ministry International altar into the matching field. Saving replaces what is shown on the homepage.</p>
+
+      <form id="reading-form" autocomplete="off">
+        <div class="row">
+          <div class="field">
+            <label for="title">Theme title
+              <span class="hint">All caps, 3&ndash;6 words. e.g. I OWE GOD THANKS</span>
+            </label>
+            <input id="title" name="title" type="text" required maxlength="200">
+          </div>
+          <div class="field">
+            <label for="ref">Scripture reference
+              <span class="hint">e.g. Psalm 116:18 (KJV)</span>
+            </label>
+            <input id="ref" name="ref" type="text" required maxlength="200">
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="verse">Verse text
+            <span class="hint">The KJV verse, exactly as posted. No surrounding quotes &mdash; the homepage adds them.</span>
+          </label>
+          <textarea id="verse" name="verse" class="verse" required></textarea>
+        </div>
+
+        <div class="field">
+          <label for="teaching">Teaching
+            <span class="hint">2&ndash;3 paragraphs. Leave a blank line between paragraphs.</span>
+          </label>
+          <textarea id="teaching" name="teaching" class="teaching"></textarea>
+        </div>
+
+        <div class="field">
+          <label for="prayer">Personal prayer
+            <span class="hint">First-person prayer. The homepage adds &ldquo;In Jesus&rsquo; name. Amen.&rdquo; automatically.</span>
+          </label>
+          <textarea id="prayer" name="prayer" class="prayer"></textarea>
+        </div>
+
+        <div class="actions">
+          <button id="save-btn" class="btn primary" type="submit">Publish to homepage</button>
+          <button id="preview-btn" class="btn ghost" type="button">Preview below</button>
+          <button id="signout-btn" class="btn ghost" type="button" style="margin-left:auto;">Sign out</button>
+        </div>
+        <div id="form-status" class="status"></div>
+      </form>
+
+      <div id="preview" class="preview" style="display:none;">
+        <h2>Preview</h2>
+        <h3 id="p-title" class="preview-title"></h3>
+        <div id="p-ref" class="preview-ref"></div>
+        <blockquote id="p-verse" class="preview-verse"></blockquote>
+        <div id="p-teaching"></div>
+        <p id="p-prayer" class="preview-prayer"></p>
+      </div>
+
+      <div class="history">
+        <h2>Recently posted (last 14)</h2>
+        <div id="history-list"></div>
+      </div>
+    </section>
+  </div>
+
+<script>
+(function () {
+  "use strict";
+
+  var API = "__PORT_8000__".startsWith("__") ? "http://localhost:8000" : "__PORT_8000__";
+  var pw = "";
+
+  var gate = document.getElementById("gate");
+  var editor = document.getElementById("editor");
+  var gateForm = document.getElementById("gate-form");
+  var gateStatus = document.getElementById("gate-status");
+  var pwInput = document.getElementById("pw");
+
+  var form = document.getElementById("reading-form");
+  var titleEl = document.getElementById("title");
+  var refEl = document.getElementById("ref");
+  var verseEl = document.getElementById("verse");
+  var teachingEl = document.getElementById("teaching");
+  var prayerEl = document.getElementById("prayer");
+  var saveBtn = document.getElementById("save-btn");
+  var formStatus = document.getElementById("form-status");
+  var previewBtn = document.getElementById("preview-btn");
+  var signoutBtn = document.getElementById("signout-btn");
+  var preview = document.getElementById("preview");
+  var pTitle = document.getElementById("p-title");
+  var pRef = document.getElementById("p-ref");
+  var pVerse = document.getElementById("p-verse");
+  var pTeaching = document.getElementById("p-teaching");
+  var pPrayer = document.getElementById("p-prayer");
+  var historyList = document.getElementById("history-list");
+
+  function setStatus(el, kind, msg) {
+    el.className = "status " + kind;
+    el.textContent = msg;
+    if (kind === "success") {
+      setTimeout(function () { el.className = "status"; el.textContent = ""; }, 4000);
+    }
+  }
+
+  function showEditor() {
+    gate.style.display = "none";
+    editor.style.display = "";
+    loadHistory();
+    // Prefill from current homepage reading so editing is easy
+    fetch(API + "/api/daily", { cache: "no-store" }).then(function (r) {
+      return r.ok ? r.json() : null;
+    }).then(function (d) {
+      if (!d) return;
+      titleEl.value = d.title || "";
+      refEl.value = d.ref || "";
+      verseEl.value = d.verse || "";
+      teachingEl.value = d.teaching || "";
+      prayerEl.value = d.prayer || "";
+    }).catch(function () {});
+  }
+
+  gateForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var candidate = pwInput.value;
+    fetch(API + "/api/admin/verify", {
+      method: "POST",
+      headers: { "X-Admin-Password": candidate }
+    }).then(function (res) {
+      if (res.ok) {
+        pw = candidate;
+        showEditor();
+      } else {
+        setStatus(gateStatus, "error", "That password is not recognised. Try again.");
+      }
+    }).catch(function () {
+      setStatus(gateStatus, "error", "Could not reach the server. Try again in a moment.");
+    });
+  });
+
+  function renderPreview() {
+    pTitle.textContent = titleEl.value.trim();
+    pRef.textContent = refEl.value.trim();
+    pVerse.textContent = verseEl.value.trim() ? "\u201C" + verseEl.value.trim() + "\u201D" : "";
+    pTeaching.innerHTML = "";
+    (teachingEl.value || "").split(/\n\s*\n/).forEach(function (chunk) {
+      var t = chunk.trim();
+      if (!t) return;
+      var p = document.createElement("p");
+      p.textContent = t;
+      pTeaching.appendChild(p);
+    });
+    var pr = prayerEl.value.trim();
+    pPrayer.textContent = pr ? pr + " In Jesus\u2019 name. Amen." : "";
+    preview.style.display = "";
+    preview.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+  previewBtn.addEventListener("click", renderPreview);
+
+  signoutBtn.addEventListener("click", function () {
+    pw = "";
+    pwInput.value = "";
+    editor.style.display = "none";
+    gate.style.display = "";
+    setStatus(gateStatus, "success", "Signed out.");
+  });
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    saveBtn.disabled = true;
+    var payload = {
+      title: titleEl.value.trim(),
+      ref: refEl.value.trim(),
+      verse: verseEl.value.trim(),
+      teaching: teachingEl.value.trim(),
+      prayer: prayerEl.value.trim(),
+      author: "Pastor Kiki Ocansey"
+    };
+    if (!payload.title || !payload.ref || !payload.verse) {
+      saveBtn.disabled = false;
+      setStatus(formStatus, "error", "Theme title, scripture reference, and verse text are required.");
+      return;
+    }
+    fetch(API + "/api/daily", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "X-Admin-Password": pw },
+      body: JSON.stringify(payload)
+    }).then(function (res) {
+      saveBtn.disabled = false;
+      if (res.status === 401) {
+        setStatus(formStatus, "error", "Your session expired. Please sign in again.");
+        signoutBtn.click();
+        return null;
+      }
+      if (!res.ok) {
+        setStatus(formStatus, "error", "Could not save. Please try again.");
+        return null;
+      }
+      return res.json();
+    }).then(function (data) {
+      if (!data) return;
+      setStatus(formStatus, "success", "Published. The homepage now shows this reading.");
+      renderPreview();
+      loadHistory();
+    }).catch(function () {
+      saveBtn.disabled = false;
+      setStatus(formStatus, "error", "Network error. Please try again.");
+    });
+  });
+
+  function loadHistory() {
+    fetch(API + "/api/daily/history", {
+      headers: { "X-Admin-Password": pw }
+    }).then(function (r) { return r.ok ? r.json() : []; })
+      .then(function (rows) {
+        historyList.innerHTML = "";
+        if (!rows.length) {
+          var empty = document.createElement("p");
+          empty.style.color = "var(--c-muted)";
+          empty.style.fontSize = "13.5px";
+          empty.textContent = "No readings posted yet.";
+          historyList.appendChild(empty);
+          return;
+        }
+        rows.slice(0, 14).forEach(function (row) {
+          var item = document.createElement("div");
+          item.className = "history-item";
+          var meta = document.createElement("div");
+          meta.className = "history-meta";
+          var t = document.createElement("strong");
+          t.textContent = row.title;
+          var s = document.createElement("span");
+          var dateLabel = "";
+          if (row.reading_date) {
+            try {
+              dateLabel = new Date(row.reading_date + "T12:00:00").toLocaleDateString(undefined, { weekday: "long", year: "numeric", month: "long", day: "numeric" });
+            } catch (e) { dateLabel = row.reading_date; }
+          }
+          s.textContent = (dateLabel ? dateLabel + " · " : "") + row.ref;
+          meta.appendChild(t); meta.appendChild(s);
+
+          var actions = document.createElement("div");
+          actions.style.display = "flex";
+          actions.style.gap = "8px";
+
+          var editBtn = document.createElement("button");
+          editBtn.className = "icon-btn-sm";
+          editBtn.type = "button";
+          editBtn.textContent = "Edit";
+          editBtn.style.color = "var(--c-indigo)";
+          editBtn.addEventListener("click", function () {
+            titleEl.value = row.title || "";
+            refEl.value = row.ref || "";
+            verseEl.value = row.verse || "";
+            teachingEl.value = row.teaching || "";
+            prayerEl.value = row.prayer || "";
+            dateEl.value = row.reading_date || todayISO();
+            currentEditId = row.id;
+            saveBtn.textContent = "Save changes";
+            window.scrollTo({ top: 0, behavior: "smooth" });
+            setStatus(formStatus, "success", "Editing this entry. Click 'Save changes' when done.");
+          });
+
+          var delBtn = document.createElement("button");
+          delBtn.className = "icon-btn-sm";
+          delBtn.type = "button";
+          delBtn.textContent = "Delete";
+          delBtn.addEventListener("click", function () {
+            if (!confirm("Delete this reading? This cannot be undone.")) return;
+            fetch(API + "/api/daily/" + row.id, {
+              method: "DELETE",
+              headers: { "X-Admin-Password": pw }
+            }).then(function () { loadHistory(); });
+          });
+
+          actions.appendChild(editBtn);
+          actions.appendChild(delBtn);
+          item.appendChild(meta); item.appendChild(actions);
+          historyList.appendChild(item);
+        });
+      });
+  }
+})();
+</script>
+</body>
+</html>

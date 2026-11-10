@@ -1,0 +1,366 @@
+/* L137 Deliverance Ministries — Interactive Companion
+   Palette matches the printed workbook (teal / gold / cream). */
+
+:root {
+  --teal-dark: #0F3A3D;
+  --teal: #1B5358;
+  --teal-light: #3C7176;
+  --cream: #FAF6EE;
+  --cream-alt: #F2EBDB;
+  --gold: #C99A3F;
+  --gold-light: #E5C77A;
+  --ink: #1F1A12;
+  --muted: #6E665A;
+  --soft: #D8CDB6;
+  --shadow: 0 1px 2px rgba(15, 58, 61, 0.04), 0 8px 24px rgba(15, 58, 61, 0.06);
+  --radius: 14px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: "DM Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.wrap { max-width: 640px; margin: 0 auto; padding: 0 22px; }
+
+/* ---------- Masthead ---------- */
+.masthead {
+  background: var(--teal-dark);
+  color: var(--cream);
+  padding: 48px 0 56px;
+  position: relative;
+  border-bottom: 1px solid rgba(201, 154, 63, 0.3);
+}
+.masthead .eyebrow {
+  margin: 0;
+  color: var(--gold);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-align: center;
+}
+.masthead .anchor {
+  margin: 6px 0 24px;
+  text-align: center;
+  font-family: "DM Serif Display", Georgia, serif;
+  font-style: italic;
+  font-size: 14px;
+  color: var(--gold-light);
+}
+.masthead .display {
+  margin: 0;
+  text-align: center;
+  font-family: "DM Serif Display", Georgia, serif;
+  font-weight: 400;
+  font-size: clamp(34px, 7vw, 46px);
+  line-height: 1.1;
+  color: var(--cream);
+}
+.masthead .byline {
+  margin: 22px 0 4px;
+  text-align: center;
+  color: var(--gold);
+  font-weight: 500;
+  font-size: 13px;
+  letter-spacing: 0.1em;
+}
+.masthead .pastor {
+  margin: 0;
+  text-align: center;
+  color: var(--gold-light);
+  font-family: "DM Serif Display", Georgia, serif;
+  font-style: italic;
+  font-size: 14px;
+}
+.masthead .ornament {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-top: 26px;
+}
+.masthead .ornament span {
+  display: inline-block;
+  width: 60px;
+  height: 1px;
+  background: var(--gold);
+}
+.masthead .ornament i {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--gold);
+}
+
+/* ---------- Section common ---------- */
+section { padding: 56px 0; }
+section + section { border-top: 1px solid rgba(110, 102, 90, 0.16); }
+
+.kicker {
+  margin: 0;
+  color: var(--gold);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-align: center;
+}
+h2 {
+  margin: 12px 0 14px;
+  text-align: center;
+  font-family: "DM Serif Display", Georgia, serif;
+  font-weight: 400;
+  font-size: clamp(28px, 5.5vw, 34px);
+  line-height: 1.15;
+  color: var(--teal-dark);
+}
+.lede {
+  margin: 0 auto 36px;
+  max-width: 480px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+/* ---------- Cards ---------- */
+.cards {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 14px;
+}
+
+.card {
+  background: var(--cream-alt);
+  border-radius: var(--radius);
+  border-left: 4px solid var(--gold);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  transition: box-shadow 200ms ease, transform 200ms ease;
+}
+.card[open] {
+  border-left-color: var(--teal-dark);
+  background: #F7EFDD;
+}
+.card summary {
+  cursor: pointer;
+  padding: 18px 20px 20px;
+  list-style: none;
+  display: block;
+  position: relative;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+.card summary::-webkit-details-marker { display: none; }
+.card summary::marker { display: none; }
+
+.card .num {
+  display: inline-block;
+  font-family: "DM Serif Display", Georgia, serif;
+  font-size: 26px;
+  color: var(--gold);
+  line-height: 1;
+  margin-right: 14px;
+  vertical-align: middle;
+}
+.card .kind {
+  display: inline-block;
+  vertical-align: middle;
+  color: var(--muted);
+  font-weight: 700;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+.card .q {
+  margin: 12px 0 0;
+  color: var(--ink);
+  font-size: 17px;
+  line-height: 1.5;
+  font-weight: 700;
+}
+.card .opts {
+  list-style: none;
+  padding: 0;
+  margin: 12px 0 0;
+}
+.card .opts li {
+  padding: 4px 0;
+  color: var(--teal-dark);
+  font-size: 15px;
+}
+.card .reveal {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 18px;
+  color: var(--teal-dark);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 8px 14px;
+  background: var(--cream);
+  border-radius: 999px;
+  border: 1px solid var(--soft);
+  transition: background 160ms ease, transform 160ms ease;
+}
+.card summary:hover .reveal {
+  background: #FFFDF6;
+  transform: translateX(2px);
+}
+.card .reveal .arrow {
+  font-size: 18px;
+  line-height: 1;
+  transition: transform 220ms ease;
+}
+.card[open] summary .reveal {
+  background: var(--teal-dark);
+  color: var(--gold-light);
+  border-color: var(--teal-dark);
+}
+.card[open] summary .reveal .arrow {
+  transform: rotate(90deg);
+}
+
+.card .answer {
+  padding: 0 20px 22px;
+  border-top: 1px solid rgba(15, 58, 61, 0.08);
+  margin-top: 4px;
+  animation: cardOpen 320ms ease;
+}
+@keyframes cardOpen {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.card .a {
+  margin: 18px 0 8px;
+  color: var(--teal-dark);
+  font-size: 18px;
+  font-weight: 700;
+}
+.card .a strong { font-weight: 800; color: var(--teal-dark); }
+.card .note {
+  margin: 0;
+  color: #5A1818;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15.5px;
+  line-height: 1.6;
+  background: rgba(201, 154, 63, 0.10);
+  border-left: 3px solid var(--gold);
+  padding: 10px 14px;
+  border-radius: 4px;
+}
+
+/* Verse-specific styling */
+.card.verse { border-left-color: var(--teal-dark); }
+.card.verse .num { color: var(--teal-dark); }
+.card.verse .answer .serif {
+  font-family: "DM Serif Display", Georgia, serif;
+  font-style: italic;
+  font-size: 19px;
+  line-height: 1.4;
+  color: var(--teal-dark);
+  margin: 18px 0 12px;
+}
+
+/* ---------- Sections ---------- */
+.intro { background: var(--cream); padding-top: 64px; padding-bottom: 28px; }
+.intro h2 { text-align: left; }
+.intro .kicker { text-align: left; }
+.intro .lede { text-align: left; margin-left: 0; margin-right: 0; max-width: 560px; }
+
+.quiz { background: var(--cream); }
+.verses { background: #F4EDDC; }
+
+.declaration {
+  background: var(--teal-dark);
+  color: var(--cream);
+  padding: 72px 0 80px;
+  position: relative;
+}
+.declaration::before,
+.declaration::after {
+  content: "";
+  position: absolute;
+  left: 22px; right: 22px;
+  height: 1px;
+  background: rgba(201, 154, 63, 0.45);
+}
+.declaration::before { top: 22px; }
+.declaration::after { bottom: 22px; }
+.declaration .kicker { color: var(--gold); }
+.declaration h2 { color: var(--cream); font-size: clamp(40px, 8vw, 52px); }
+.declaration .lede { color: var(--gold-light); font-style: italic; font-family: "DM Serif Display", Georgia, serif; }
+.declaration .declarations {
+  list-style: none; padding: 0; margin: 12px 0 0;
+  text-align: center;
+}
+.declaration .declarations li {
+  font-family: "DM Serif Display", Georgia, serif;
+  font-style: italic;
+  font-size: clamp(17px, 3.6vw, 19px);
+  color: var(--cream);
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(201, 154, 63, 0.15);
+}
+.declaration .declarations li:last-child { border-bottom: 0; }
+
+/* ---------- Footer ---------- */
+footer {
+  background: var(--cream-alt);
+  padding: 34px 0 40px;
+  border-top: 1px solid rgba(110, 102, 90, 0.18);
+}
+footer .luke {
+  margin: 0;
+  text-align: center;
+  color: var(--gold);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+footer .luke-text {
+  margin: 6px 0 18px;
+  text-align: center;
+  font-family: "DM Serif Display", Georgia, serif;
+  font-style: italic;
+  color: var(--teal-dark);
+  font-size: 16px;
+}
+footer .copy {
+  margin: 0;
+  text-align: center;
+  color: var(--muted);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+}
+
+/* ---------- Accessibility ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0ms !important;
+    transition-duration: 0ms !important;
+  }
+}
+
+:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+.card summary:focus-visible {
+  outline-offset: -3px;
+}

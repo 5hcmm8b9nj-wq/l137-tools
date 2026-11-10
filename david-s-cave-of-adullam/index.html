@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>David's Cave of Adullam — Interactive Prayer Tool | L137 Deliverance Ministry</title>
+<meta name="description" content="An interactive prayer journey through the Cave of Adullam, David's mighty men, and the 40-day walk from the cave to the kingdom. L137 Deliverance Ministry.">
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23d4a949'><path d='M12 2 L14 8 L20 8 L15 12 L17 18 L12 14 L7 18 L9 12 L4 8 L10 8 Z'/></svg>">
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="#top" class="brand">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4 20 C4 12, 8 6, 12 4 C16 6, 20 12, 20 20 Z"/>
+        <path d="M12 4 L12 20"/>
+        <circle cx="12" cy="10" r="1.5" fill="currentColor"/>
+      </svg>
+      Cave of Adullam
+    </a>
+    <button class="nav-toggle" aria-label="Toggle menu">Menu</button>
+    <ul class="nav-links">
+      <li><a href="#stations">Stations</a></li>
+      <li><a href="#journey">40 Days</a></li>
+      <li><a href="#characters">Warriors</a></li>
+      <li><a href="#scripture">Scripture</a></li>
+      <li><a href="#testimonies">Testimony</a></li>
+      <li><a href="#covenant">Covenant</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero" id="top">
+  <div class="hero-bg"></div>
+  <div class="hero-inner">
+    <span class="eyebrow">L137 Deliverance Ministry</span>
+    <h1>David's Cave of Adullam</h1>
+    <p class="subtitle">From the cave to the kingdom.<br>From broken men to mighty warriors.</p>
+    <div class="hero-scripture">
+      <p>“And every one that was in distress, and every one that was in debt, and every one that was discontented, gathered themselves unto him; and he became a captain over them: and there were with him about four hundred men.”</p>
+      <span class="ref">1 Samuel 22:2 KJV</span>
+    </div>
+    <a href="#stations" class="btn btn-primary">Enter the Cave</a>
+    <a href="#journey" class="btn">Begin the 40-Day Journey</a>
+  </div>
+</header>
+
+<!-- ============ THEME BAND ============ -->
+<section class="theme-band">
+  <div class="container-narrow">
+    <span class="eyebrow">The Theme</span>
+    <h2 style="margin-top:0.75rem;font-size:clamp(1.6rem,3.5vw,2.2rem);">From Distress to Distinction</h2>
+    <ul class="theme-list">
+      <li>From distress to distinction.</li>
+      <li>From debt to dominion.</li>
+      <li>From discontentment to divine purpose.</li>
+      <li>From the cave to the kingdom.</li>
+      <li>From broken men to mighty warriors.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ STATIONS ============ -->
+<section class="stations" id="stations">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">Eight Prayer Stations</span>
+      <h2>Pray Through the Cave</h2>
+      <p>Move station by station. Read the KJV Scripture, pray the prayer, and speak the declaration aloud.</p>
+    </div>
+    <div class="station-tabs" id="station-tabs"></div>
+    <div id="station-panels"></div>
+  </div>
+</section>
+
+<!-- ============ 40-DAY JOURNEY ============ -->
+<section class="journey" id="journey">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">Adullam Warriors Prayer Journey</span>
+      <h2>40 Days · From Cave to Kingdom</h2>
+      <p>Each day carries a KJV Scripture, a reflection, a prayer, and a declaration. Your journal, prayer tracker, and progress save automatically on this device.</p>
+    </div>
+
+    <div class="progress-wrap">
+      <div class="progress-label">
+        <span>Journey Progress</span>
+        <span><span id="progress-count">0 of 40 days</span> · <span id="progress-pct">0%</span></span>
+      </div>
+      <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+    </div>
+
+    <div class="day-grid" id="day-grid"></div>
+    <div class="day-panel" id="day-panel"></div>
+  </div>
+</section>
+
+<!-- ============ CHARACTER STUDIES ============ -->
+<section class="characters" id="characters">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">Character Studies</span>
+      <h2>The Mighty Men of David</h2>
+      <p>Tap a warrior to read the KJV passage, reflect on his life, and record what God is teaching you.</p>
+    </div>
+    <div class="char-grid" id="char-grid"></div>
+  </div>
+</section>
+
+<!-- ============ SCRIPTURE LIBRARY ============ -->
+<section class="scripture-library" id="scripture">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">Full KJV Passages</span>
+      <h2>The Adullam Scriptures</h2>
+      <p>The complete King James Version passages on David's cave and his mighty men.</p>
+    </div>
+    <div class="scripture-tabs" id="scripture-tabs"></div>
+    <div id="scripture-container"></div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIES ============ -->
+<section class="testimonies" id="testimonies">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">Testify</span>
+      <h2>My Testimonies</h2>
+      <p>Record what the LORD is doing during your journey. Your testimonies are saved privately on this device.</p>
+    </div>
+
+    <form class="testimony-form" id="testimony-form">
+      <label for="t-date">Date</label>
+      <input type="date" id="t-date" name="date" required>
+
+      <label for="t-status">Prayer Answered</label>
+      <select id="t-status" name="status">
+        <option>Yes</option>
+        <option>Still Waiting</option>
+        <option>Unexpected Answer</option>
+      </select>
+
+      <label for="t-text">What did God do?</label>
+      <textarea id="t-text" name="text" required placeholder="Write your testimony…"></textarea>
+
+      <button type="submit" class="btn btn-primary" style="margin-top:1.25rem;">Save Testimony</button>
+    </form>
+
+    <div class="testimony-list" id="testimony-list"></div>
+  </div>
+</section>
+
+<!-- ============ COVENANT ============ -->
+<section class="covenant" id="covenant">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">The Warrior Covenant</span>
+      <h2>My Mighty Warrior Covenant</h2>
+      <p>Today I choose to become a person who is…</p>
+    </div>
+
+    <div class="covenant-card">
+      <svg class="seal" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="50" cy="50" r="46" stroke-width="1.5"/>
+        <circle cx="50" cy="50" r="38" stroke-dasharray="2 4"/>
+        <path d="M50 22 L58 44 L82 44 L62 58 L70 82 L50 68 L30 82 L38 58 L18 44 L42 44 Z" fill="currentColor" stroke="none" opacity="0.9"/>
+      </svg>
+      <h3>Today I choose to become a person who is</h3>
+      <ul class="checklist" id="covenant-qualities"></ul>
+
+      <div class="covenant-signature">
+        <div>
+          <label for="cov-name">Signature</label>
+          <input type="text" id="cov-name" placeholder="Your name">
+        </div>
+        <div>
+          <label for="cov-date">Date</label>
+          <input type="date" id="cov-date">
+        </div>
+      </div>
+
+      <div class="tracker-actions" style="margin-top:2rem;justify-content:center;">
+        <button class="tracker-btn" id="cov-print">🖨 Print Covenant</button>
+        <button class="tracker-btn" id="export-json">⤓ Export My Journey</button>
+        <button class="tracker-btn" id="cov-reset">Reset All</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CLOSING PRAYER ============ -->
+<section class="closing">
+  <div class="closing-inner">
+    <span class="eyebrow">The Closing Prayer</span>
+    <h2>Let Our Caves Become Training Grounds</h2>
+    <p>Father, in the name of Jesus Christ, transform everyone who has entered a season of distress, debt, rejection or discontentment. Let our caves become training grounds and not burial places.</p>
+    <p>Raise among us people like Eleazar, whose hands clung to the sword; people like Shammah, who defended their assigned fields; people like Benaiah, who confronted lions; and people who strengthened David according to Your purpose.</p>
+    <p>Give us courage without pride, loyalty without idolatry, strength without cruelty and service without selfish ambition. Let every person arise from obscurity and become useful in Your kingdom.</p>
+    <p>May the Lord accomplish a great victory through us.</p>
+    <p class="amen">In Jesus' Mighty Name · Amen</p>
+  </div>
+</section>
+
+<!-- ============ MODAL ============ -->
+<div class="modal" id="modal" aria-hidden="true">
+  <div class="modal-body" id="modal-body"></div>
+</div>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="brand-lg">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 20 C4 12, 8 6, 12 4 C16 6, 20 12, 20 20 Z"/>
+      <path d="M12 4 L12 20"/>
+      <circle cx="12" cy="10" r="1.5" fill="currentColor"/>
+    </svg>
+    <span class="ministry-name">L137 Deliverance Ministry</span>
+  </div>
+  <p class="foot-ref">Luke 1:37 KJV</p>
+  <p class="foot-verse">For with God nothing shall be impossible.</p>
+  <p class="copy">From the Cave to the Kingdom</p>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+<script data-pplx-inline-edit>
+(function () {
+  if (window === window.top) return;
+
+  const allowedParentOrigins = ["https://www.perplexity.ai","https://perplexity.ai","https://testing.perplexity.ai","https://staging.perplexity.ai","https://*.preview.i.perplexity.ai","http://localhost:3000","http://127.0.0.1:3000","http://localhost:5173","http://127.0.0.1:5173"];
+  const MAX_FONT_BYTES = 500 * 1024;
+  const MAX_TOTAL_FONT_BYTES = 2 * 1024 * 1024;
+  let scrollForwarding = false;
+  let scrollRaf = 0;
+  let trustedTopOrigin = null;
+
+  // Allow entries like "https://*.preview.i.perplexity.ai" — the wildcard
+  // matches a single DNS label (no dots), so "https://*.foo" cannot stretch
+  // across multiple labels.
+  function matchesAllowedOrigin(origin) {
+    if (!origin) return false;
+    for (const entry of allowedParentOrigins) {
+      if (!entry.includes("*")) {
+        if (entry === origin) return true;
+        continue;
+      }
+      const pattern = new RegExp(
+        "^" +
+          entry.replace(/[.+?^${}()|[\]\\]/g, "\\$&").replace(/\*/g, "[^.]+") +
+          "$",
+      );
+      if (pattern.test(origin)) return true;
+    }
+    return false;
+  }
+
+  // Trust decision: when the sender is same-origin-visible (event.origin is a
+  // real origin like https://www.perplexity.ai) we trust event.origin directly.
+  // When event.origin is "null" (opaque broker srcdoc), we fall back to the
+  // broker's stamped `parentOrigin` to identify the top window. The fallback
+  // is claim-only — we rely on the browser's native `targetOrigin` enforcement
+  // on the response path (see postToTrustedTop) to ensure replies can't be
+  // delivered to anyone but the actual top window of that claimed origin.
+  function getTrustedParentOrigin(event) {
+    const forwardedParentOrigin =
+      typeof event.data.parentOrigin === "string" ? event.data.parentOrigin : null;
+    const parentOrigin = event.origin === "null" ? forwardedParentOrigin : event.origin;
+    return matchesAllowedOrigin(parentOrigin) ? parentOrigin : null;
+  }
+
+  // All responses go to window.top with targetOrigin = the allowlisted origin.
+  // An attacker that iframes us inside their own null-origin broker can claim
+  // any parentOrigin they like, but the browser will drop the reply whenever
+  // the real top's origin doesn't match — so the screenshot never leaves.
+  function postToTrustedTop(message) {
+    if (!trustedTopOrigin) return;
+    try {
+      window.top.postMessage(message, trustedTopOrigin);
+    } catch (_error) {}
+  }
+
+  function inlineAll(original, clone) {
+    if (original.nodeType !== 1 || clone.nodeType !== 1) return;
+
+    try {
+      const computedStyle = getComputedStyle(original);
+      // cssText on a computed style is the serialized declaration in modern
+      // Chromium/Safari — a single read beats enumerating ~400 longhand
+      // properties. Firefox returns "" here, so we fall back on empty.
+      const serialized = computedStyle.cssText;
+      if (serialized) {
+        clone.style.cssText = serialized;
+      } else {
+        const parts = new Array(computedStyle.length);
+        for (let index = 0; index < computedStyle.length; index += 1) {
+          const property = computedStyle[index];
+          parts[index] = `${property}:${computedStyle.getPropertyValue(property)};`;
+        }
+        clone.style.cssText = parts.join("");
+      }
+    } catch (_error) {}
+
+    const originalChildren = original.children;
+    const clonedChildren = clone.children;
+    for (
+      let index = 0;
+      index < originalChildren.length && index < clonedChildren.length;
+      index += 1
+    ) {
+      inlineAll(originalChildren[index], clonedChildren[index]);
+    }
+  }
+
+  function extractFontUrl(srcValue) {
+    const matches = [
+      ...srcValue.matchAll(
+        /url\(["']?([^"')]+)["']?\)(?:\s*format\(["']?([^"')]+)["']?\))?/gi,
+      ),
+    ];
+    if (matches.length === 0) return null;
+    const woff2 = matches.find((m) => m[2] && m[2].toLowerCase().includes("woff2"));
+    if (woff2) return woff2[1];
+    const woff = matches.find((m) => m[2] && m[2].toLowerCase().includes("woff"));
+    if (woff) return woff[1];
+    return matches[0][1];
+  }
+
+  // Cache resolved font URL -> data URI across captures. Fonts on a page
+  // essentially never change, and a batch run emits multiple captures back to
+  // back — without this we'd refetch + re-base64 every time.
+  const fontDataUriCache = new Map();
+  const SRC_DECLARATION_RE = /src\s*:\s*[^;}]+/i;
+
+  async function fetchAsDataUri(url) {
+    if (fontDataUriCache.has(url)) return fontDataUriCache.get(url);
+    let dataUri = null;
+    try {
+      const response = await fetch(url, { mode: "cors", credentials: "omit" });
+      if (response.ok) {
+        const blob = await response.blob();
+        if (blob.size <= MAX_FONT_BYTES) {
+          dataUri = await new Promise((resolve) => {
+            const reader = new FileReader();
+            reader.onloadend = () =>
+              resolve(typeof reader.result === "string" ? reader.result : null);
+            reader.onerror = () => resolve(null);
+            reader.readAsDataURL(blob);
+          });
+        }
+      }
+    } catch (_error) {
+      dataUri = null;
+    }
+    fontDataUriCache.set(url, dataUri);
+    return dataUri;
+  }
+
+  function collectFontFaceRuleTexts() {
+    const rules = [];
+    for (const sheet of document.styleSheets) {
+      let cssRules;
+      try {
+        cssRules = sheet.cssRules;
+      } catch (_error) {
+        continue;
+      }
+      if (!cssRules) continue;
+      for (const rule of cssRules) {
+        const cssText = rule.cssText || "";
+        if (cssText.startsWith("@font-face")) rules.push(cssText);
+      }
+    }
+    return rules;
+  }
+
+  async function buildInlinedFontCss() {
+    const ruleTexts = collectFontFaceRuleTexts();
+    if (ruleTexts.length === 0) return null;
+
+    const resolved = ruleTexts.map((cssText) => {
+      if (!SRC_DECLARATION_RE.test(cssText)) return null;
+      const srcMatch = cssText.match(/src\s*:\s*([^;}]+)[;}]/i);
+      if (!srcMatch) return null;
+      const url = extractFontUrl(srcMatch[1]);
+      if (!url) return null;
+      try {
+        return { cssText, url: new URL(url, document.baseURI).href };
+      } catch (_error) {
+        return null;
+      }
+    });
+
+    const dataUris = await Promise.all(
+      resolved.map((entry) => (entry ? fetchAsDataUri(entry.url) : Promise.resolve(null))),
+    );
+
+    const inlined = [];
+    let totalBytes = 0;
+    for (let index = 0; index < resolved.length; index += 1) {
+      const entry = resolved[index];
+      const dataUri = dataUris[index];
+      if (!entry || !dataUri) continue;
+      const approxBytes = dataUri.length * 0.75;
+      if (totalBytes + approxBytes > MAX_TOTAL_FONT_BYTES) break;
+      totalBytes += approxBytes;
+      inlined.push(entry.cssText.replace(SRC_DECLARATION_RE, `src: url("${dataUri}")`));
+    }
+    return inlined.length > 0 ? inlined.join("\n") : null;
+  }
+
+  function stripExternal(clone) {
+    const images = clone.querySelectorAll("img");
+    for (let index = 0; index < images.length; index += 1) {
+      const src = images[index].getAttribute("src");
+      if (src && !src.startsWith("data:")) images[index].removeAttribute("src");
+    }
+
+    const elements = clone.querySelectorAll("*");
+    for (let index = 0; index < elements.length; index += 1) {
+      const style = elements[index].style.cssText;
+      if (style && style.includes("url(")) {
+        elements[index].style.cssText = style.replace(
+          /url\(["']?(?!data:)[^)"']*["']?\)/gi,
+          "none",
+        );
+      }
+    }
+  }
+
+  function emitScroll() {
+    scrollRaf = 0;
+    if (!scrollForwarding) return;
+    postToTrustedTop({
+      type: "INLINE_EDIT_SCROLL",
+      scrollX: window.scrollX,
+      scrollY: window.scrollY,
+    });
+  }
+
+  window.addEventListener(
+    "scroll",
+    function () {
+      if (!scrollForwarding || scrollRaf) return;
+      scrollRaf = requestAnimationFrame(emitScroll);
+    },
+    { passive: true, capture: true },
+  );
+
+  async function handleCaptureRequest(event) {
+    const requestId = event.data.requestId;
+    const scrollX = window.scrollX;
+    const scrollY = window.scrollY;
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+
+    function postResult(dataUrl) {
+      postToTrustedTop({
+        type: "INLINE_EDIT_SCREENSHOT_RESULT",
+        requestId,
+        dataUrl,
+        scrollX,
+        scrollY,
+      });
+    }
+
+    try {
+      // Wait for any pending web fonts to resolve so both inline metrics and
+      // the @font-face inlining below see the same loaded faces.
+      if (document.fonts && document.fonts.ready) {
+        try {
+          await document.fonts.ready;
+        } catch (_error) {}
+      }
+
+      const clone = document.documentElement.cloneNode(true);
+      inlineAll(document.documentElement, clone);
+
+      const removedNodes = clone.querySelectorAll("script,link[rel=\"stylesheet\"],style");
+      for (let index = 0; index < removedNodes.length; index += 1) {
+        removedNodes[index].remove();
+      }
+
+      stripExternal(clone);
+
+      // Re-embed web fonts as data-URI @font-face rules so the SVG rasterizer
+      // can resolve them — external font URLs aren't fetched during
+      // foreignObject rendering, which would otherwise force a fallback face
+      // and change text metrics.
+      const inlinedFontCss = await buildInlinedFontCss();
+      if (inlinedFontCss) {
+        const styleEl = document.createElement("style");
+        styleEl.textContent = inlinedFontCss;
+        const head = clone.querySelector("head");
+        if (head) head.appendChild(styleEl);
+        else clone.insertBefore(styleEl, clone.firstChild);
+      }
+
+      const html = new XMLSerializer().serializeToString(clone);
+      const svg =
+        `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}">` +
+        '<foreignObject width="100%" height="100%">' +
+        `<div xmlns="http://www.w3.org/1999/xhtml" style="width:${width}px;height:${height}px;overflow:hidden">` +
+        `<div style="position:relative;left:-${scrollX}px;top:-${scrollY}px">` +
+        html +
+        "</div></div></foreignObject></svg>";
+      const svgUrl = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
+      const image = new Image();
+      image.onload = function () {
+        const canvas = document.createElement("canvas");
+        canvas.width = width;
+        canvas.height = height;
+        canvas.getContext("2d").drawImage(image, 0, 0);
+        postResult(canvas.toDataURL("image/png"));
+      };
+      image.onerror = function () {
+        postResult(null);
+      };
+      image.src = svgUrl;
+    } catch (_error) {
+      postResult(null);
+    }
+  }
+
+  window.addEventListener("message", function (event) {
+    if (!event.data) return;
+    // Only accept messages from the direct parent frame. Blocks sibling /
+    // unrelated-window postMessage senders that could otherwise reach us.
+    if (event.source !== window.parent) return;
+
+    const trustedParentOrigin = getTrustedParentOrigin(event);
+    if (!trustedParentOrigin) return;
+    trustedTopOrigin = trustedParentOrigin;
+
+    if (event.data.type === "INLINE_EDIT_SCROLL_START") {
+      scrollForwarding = true;
+      emitScroll();
+      return;
+    }
+
+    if (event.data.type === "INLINE_EDIT_SCROLL_STOP") {
+      scrollForwarding = false;
+      if (scrollRaf) cancelAnimationFrame(scrollRaf);
+      scrollRaf = 0;
+      return;
+    }
+
+    if (event.data.type !== "INLINE_EDIT_CAPTURE_REQUEST") return;
+
+    handleCaptureRequest(event);
+  });
+})();
+
+
+</script></body>
+</html>

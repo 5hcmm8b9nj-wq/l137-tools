@@ -1,0 +1,620 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A Scripture-first interactive L137 study on victory over witchcraft attacks and bewitchment, based on a Clubhouse teaching by Pastor Kiky Ocansey.">
+  <meta property="og:title" content="Victory Over Witchcraft Attacks and Bewitchment">
+  <meta property="og:description" content="Read, listen, learn, pray, declare, test, and apply this KJV teaching.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#083E42">
+  <title>Victory Over Witchcraft Attacks and Bewitchment | L137</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to course content</a>
+
+  <section class="opening-block" aria-label="About this study">
+    <div class="wrap">
+      <div class="opening-eyebrow">L137 Deliverance Ministry</div>
+      <p class="opening-lede">The following is an interactive study following a service held on Clubhouse by Pastor Kiky Ocansey.</p>
+      <div class="opening-rule" aria-hidden="true"></div>
+    </div>
+  </section>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <button class="brand-button" data-route="home" aria-label="Return to course home" data-testid="button-brand-home">
+        <svg class="brand-mark" viewBox="0 0 64 64" role="img" aria-label="L137 cross and open doorway mark">
+          <path d="M9 52V12h25v9H19v22h15v9H9Z" fill="currentColor"/>
+          <path d="M39 12h16v40H39V12Zm8 9v22" stroke="currentColor" stroke-width="7"/>
+          <path d="M43 32h8M47 28v8" stroke="#B6871A" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+        <span><b>L137</b><small>Luke 1:37</small></span>
+      </button>
+      <nav aria-label="Primary course navigation">
+        <button data-route="home" data-testid="nav-home">Home</button>
+        <button data-route="course" data-testid="nav-course">Course</button>
+        <button data-route="library" data-testid="nav-library">Library</button>
+        <button data-route="review" data-testid="nav-review">Review</button>
+      </nav>
+      <button class="icon-button" id="menuButton" aria-label="Open course menu" aria-expanded="false" data-testid="button-menu">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <div class="progress-strip" aria-label="Course progress">
+    <div id="progressFill"></div>
+  </div>
+
+  <aside class="drawer" id="drawer" aria-label="Course menu" aria-hidden="true">
+    <div class="drawer-head">
+      <div><span class="eyebrow">YOUR COURSE</span><h2>Learning menu</h2></div>
+      <button class="icon-button" id="closeMenu" aria-label="Close course menu" data-testid="button-close-menu">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg>
+      </button>
+    </div>
+    <div class="drawer-progress">
+      <div><span>Progress</span><strong id="drawerPercent">0%</strong></div>
+      <div class="meter"><div id="drawerBar"></div></div>
+    </div>
+    <div id="drawerLinks" class="drawer-links"></div>
+  </aside>
+  <div class="scrim" id="scrim" hidden></div>
+
+  <main id="main">
+    <section id="homeView" class="view active" aria-labelledby="heroTitle">
+      <div class="hero">
+        <div class="wrap hero-grid">
+          <div>
+            <span class="pill">KJV INTERACTIVE STUDY</span>
+            <p class="eyebrow light">SERVICE DATE NOT SUPPLIED IN SOURCE</p>
+            <h1 id="heroTitle">Victory Over Witchcraft Attacks <span>and Bewitchment</span></h1>
+            <div class="hero-rule"></div>
+            <p class="hero-copy">A Scripture-first learning journey on recognizing spiritual deception, standing in Christ’s victory, praying with biblical understanding, and sealing freedom with thanksgiving and the blood of Jesus.</p>
+            <p class="attribution">Pastor Kiky Ocansey · L137 Deliverance Ministry International</p>
+            <div class="hero-actions">
+              <button class="button primary" id="startCourse" data-testid="button-start-course">Open the course</button>
+              <button class="button secondary on-dark" data-route="library" data-testid="button-open-library">Open the libraries</button>
+            </div>
+          </div>
+          <aside class="hero-dashboard" aria-label="Course summary">
+            <p class="eyebrow">LEARN IN YOUR WAY</p>
+            <div class="stat"><strong>5</strong><span>guided lessons</span></div>
+            <div class="stat"><strong>13</strong><span>full KJV passages</span></div>
+            <div class="stat"><strong>7</strong><span>activity types</span></div>
+            <div class="stat"><strong id="heroProgress">0%</strong><span>completed</span></div>
+            <button class="listen-button" data-speak="#heroTitle, .hero-copy" data-testid="button-listen-intro">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 9v6h4l5 4V5L9 9H5Zm12.5 1.2a3 3 0 0 1 0 3.6M19 7a7 7 0 0 1 0 10"/></svg>
+              Listen to the introduction
+            </button>
+          </aside>
+        </div>
+      </div>
+
+      <section class="section narrow">
+        <p class="eyebrow">HOW TO USE THIS STUDY</p>
+        <h2>Move through truth in more than one way.</h2>
+        <p class="section-lede">Read each lesson, hear key passages aloud, reveal explanations, turn the flashcards, complete each activity, pray, declare, and mark the lesson complete. Your progress and notes stay on this device when browser storage is available.</p>
+        <div class="learning-path" aria-label="Learning pathway">
+          <div><span>01</span><b>Read</b><small>Full KJV Scripture</small></div>
+          <div><span>02</span><b>Understand</b><small>Clear teaching</small></div>
+          <div><span>03</span><b>Practice</b><small>Activities and prayer</small></div>
+          <div><span>04</span><b>Remember</b><small>Recall and review</small></div>
+        </div>
+      </section>
+
+      <section class="section cream">
+        <div class="wrap">
+          <div class="section-head">
+            <div><p class="eyebrow">THE REQUIRED FLOW</p><h2>Prepare before you contend.</h2></div>
+            <button class="text-button" data-route="course" data-module="0">Begin with worship <span>→</span></button>
+          </div>
+          <div class="flow-ladder">
+            <div><span>1</span><p><b>Praise and worship</b>Fix your attention on the Lord.</p></div>
+            <div><span>2</span><p><b>Thanksgiving</b>Remember His goodness and mercy.</p></div>
+            <div><span>3</span><p><b>Confession</b>Come honestly under the blood of Jesus.</p></div>
+            <div><span>4</span><p><b>Forgiveness</b>Release others before spiritual warfare.</p></div>
+            <div><span>5</span><p><b>Invite the Holy Spirit</b>Depend on His presence and power.</p></div>
+            <div><span>6</span><p><b>Learn and pray</b>Stand on Scripture, not fear.</p></div>
+            <div><span>7</span><p><b>Seal and continue</b>Give thanks and walk in freedom.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section narrow">
+        <div class="scripture-feature">
+          <p class="eyebrow">FOUNDATION VERSE</p>
+          <blockquote>“Surely there is no enchantment against Jacob, neither is there any divination against Israel: according to this time it shall be said of Jacob and of Israel, What hath God wrought!”</blockquote>
+          <cite>Numbers 23:23 · King James Version</cite>
+          <div class="button-row">
+            <button class="listen-button dark" data-speak=".scripture-feature blockquote" data-testid="button-listen-foundation">Listen</button>
+            <a href="https://www.biblegateway.com/passage/?search=Numbers%2023%3A23-24&version=KJV" target="_blank" rel="noopener">Verify at Bible Gateway</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section salvation">
+        <div class="wrap split">
+          <div><p class="eyebrow light">SALVATION & REDEDICATION</p><h2>Freedom begins with Jesus Christ.</h2><p>This study is not a substitute for belonging to Christ. Open this prayer, read it carefully, and pray sincerely if you are coming to Jesus or returning to Him.</p></div>
+          <details>
+            <summary data-testid="reveal-salvation-prayer">Open the prayer</summary>
+            <div class="prayer-text"><p>Lord Jesus Christ, I confess that I am a sinner and I need Your mercy. I believe that You died for my sins and rose again. Forgive me, cleanse me, and become Lord of my life. I turn away from sin and surrender myself to You. Fill me with the Holy Spirit and help me to follow You in truth. In Jesus’ name, Amen.</p></div>
+          </details>
+        </div>
+      </section>
+    </section>
+
+    <section id="courseView" class="view" aria-label="Teaching modules">
+      <div class="course-shell">
+        <aside class="module-rail" aria-label="Lesson navigation">
+          <div class="rail-head"><p class="eyebrow">COURSE MAP</p><strong id="railProgress">0% complete</strong></div>
+          <div id="moduleNav"></div>
+          <button class="rail-link" data-route="review"><span>Final</span><b>End-of-teaching review</b></button>
+        </aside>
+        <article id="moduleContent" class="module-content" tabindex="-1"></article>
+      </div>
+    </section>
+
+    <section id="libraryView" class="view" aria-labelledby="libraryTitle">
+      <div class="page-hero">
+        <div class="wrap">
+          <p class="eyebrow light">SEARCH · LISTEN · SAVE</p>
+          <h1 id="libraryTitle">Study libraries</h1>
+          <p>Find every verified passage, public corporate prayer, and preserved declaration used in this course.</p>
+        </div>
+      </div>
+      <div class="section wrap">
+        <div class="search-panel">
+          <label for="librarySearch">Search the teaching</label>
+          <div><input id="librarySearch" type="search" placeholder="Try “blood,” “freedom,” or “crafty”" data-testid="input-library-search"><button id="clearSearch" aria-label="Clear search" data-testid="button-clear-search">Clear</button></div>
+          <p id="searchCount" aria-live="polite"></p>
+        </div>
+        <div class="tabs" role="tablist" aria-label="Library types">
+          <button role="tab" aria-selected="true" data-library="scriptures" data-testid="tab-scriptures">Scriptures</button>
+          <button role="tab" aria-selected="false" data-library="prayers" data-testid="tab-prayers">Prayers</button>
+          <button role="tab" aria-selected="false" data-library="declarations" data-testid="tab-declarations">Declarations</button>
+          <button role="tab" aria-selected="false" data-library="bookmarks" data-testid="tab-bookmarks">Bookmarks</button>
+          <button role="tab" aria-selected="false" data-library="notes" data-testid="tab-notes">My notes</button>
+        </div>
+        <div id="libraryContent" class="library-grid"></div>
+      </div>
+    </section>
+
+    <section id="reviewView" class="view" aria-labelledby="reviewTitle">
+      <div class="page-hero gold-hero">
+        <div class="wrap">
+          <p class="eyebrow">REVIEW · APPLY · MASTER</p>
+          <h1 id="reviewTitle">End-of-teaching review</h1>
+          <p>Complete the assignment, final quiz, recall challenge, reflection, and closing prayer.</p>
+        </div>
+      </div>
+      <div class="section wrap review-layout">
+        <article>
+          <section class="review-card">
+            <p class="eyebrow">THREE TRUTHS TO REMEMBER</p>
+            <h2>Stand in Christ, not in fear.</h2>
+            <ol class="truth-list">
+              <li>God condemns sorcery and spiritual deception; His people do not practice or imitate it.</li>
+              <li>Victory is through Jesus Christ, the blood of the Lamb, God’s Word, prayer, repentance, and faithful obedience.</li>
+              <li>Freedom is maintained through thanksgiving, Scripture, Christian fellowship, forgiveness, renewed thinking, and wise pastoral care.</li>
+            </ol>
+          </section>
+
+          <section class="review-card" id="assignmentCard">
+            <p class="eyebrow">WEEKLY ASSIGNMENT</p>
+            <h2>Seven days of Scripture-led practice</h2>
+            <div class="checklist" id="assignmentList"></div>
+            <label class="journal-label" for="assignmentReflection">What did you notice as you practiced?</label>
+            <textarea id="assignmentReflection" rows="5" placeholder="Write your reflection here..." data-note="assignment" data-testid="textarea-assignment-reflection"></textarea>
+          </section>
+
+          <section class="review-card">
+            <p class="eyebrow">FINAL QUIZ</p>
+            <h2>Check your understanding</h2>
+            <div id="finalQuiz"></div>
+          </section>
+
+          <section class="review-card">
+            <p class="eyebrow">RANDOM RECALL</p>
+            <h2>Can you bring the truth back to mind?</h2>
+            <div id="recallCard" class="recall-card"></div>
+            <button class="button primary" id="newRecall" data-testid="button-new-recall">Draw a recall question</button>
+          </section>
+
+          <section class="review-card">
+            <p class="eyebrow">PERSONAL REFLECTION</p>
+            <h2>Pause before you finish.</h2>
+            <label class="journal-label" for="finalReflection">Which Scripture will you carry forward, and what will obedience look like?</label>
+            <textarea id="finalReflection" rows="6" placeholder="My Scripture and next step..." data-note="final" data-testid="textarea-final-reflection"></textarea>
+            <div class="discussion">
+              <h3>Family or group discussion</h3>
+              <p>How can we recognize fear-driven reactions and replace them with Scripture, prayer, forgiveness, wise boundaries, and trust in Christ?</p>
+              <a class="button secondary" href="https://linktr.ee/Pastor_kiki?utm_source=linktree_profile_share&ltsid=533ff61e-22ae-497a-95f6-1da1403c3a21" target="_blank" rel="noopener" data-testid="link-ministry-discussion">Visit the ministry platforms</a>
+            </div>
+          </section>
+
+          <section class="review-card closing-prayer">
+            <p class="eyebrow light">PRAY · DECLARE · SEAL</p>
+            <h2>Closing prayer</h2>
+            <p id="closingPrayer">Father, thank You for Your Word, for the victory of Jesus Christ, and for the blood of the Lamb. Let every device of the crafty be disappointed. Let my mind remain in the light of the glorious gospel of Christ. I receive the freedom of the Son, and I ask You to help me walk in truth, forgiveness, wisdom, and faithful obedience. Cover me and my household by the blood of Jesus. In Jesus’ name, Amen.</p>
+            <button class="listen-button" data-speak="#closingPrayer" data-testid="button-listen-closing-prayer">Listen and pray aloud</button>
+            <div class="final-declarations">
+              <p>“I am blessed. I am delivered.”</p>
+              <p>“I declare an end to that torment. I declare an end to that battle. I declare an end to that evil.”</p>
+              <p>“I declare, I am delivered in the name of Jesus Christ.”</p>
+            </div>
+          </section>
+        </article>
+
+        <aside class="completion-panel">
+          <p class="eyebrow">COURSE COMPLETION</p>
+          <div class="completion-ring" id="completionRing"><span id="completionPercent">0%</span></div>
+          <p id="completionMessage">Complete all five lessons, the weekly assignment, and the final quiz to unlock your certificate.</p>
+          <button class="button primary" id="certificateButton" disabled data-testid="button-certificate">Certificate locked</button>
+          <button class="text-button" id="resetProgress" data-testid="button-reset-progress">Reset my progress</button>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <dialog id="certificateDialog">
+    <div class="certificate">
+      <button class="icon-button dialog-close" aria-label="Close certificate" data-testid="button-close-certificate">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg>
+      </button>
+      <svg class="certificate-mark" viewBox="0 0 64 64" aria-hidden="true"><path d="M9 52V12h25v9H19v22h15v9H9Z" fill="currentColor"/><path d="M39 12h16v40H39V12Zm8 9v22" stroke="currentColor" stroke-width="7"/></svg>
+      <p class="eyebrow">L137 DELIVERANCE MINISTRY INTERNATIONAL</p>
+      <h2>Certificate of Completion</h2>
+      <p>This confirms that</p>
+      <input id="certificateName" aria-label="Name for certificate" placeholder="Type your name" data-testid="input-certificate-name">
+      <p>completed the interactive study</p>
+      <h3>Victory Over Witchcraft Attacks and Bewitchment</h3>
+      <p>Teaching by Pastor Kiky Ocansey</p>
+      <div class="certificate-actions">
+        <button class="button primary" id="printCertificate" data-testid="button-print-certificate">Print or save PDF</button>
+      </div>
+    </div>
+  </dialog>
+
+  <footer>
+    <div class="wrap footer-grid">
+      <div><b>L137 Deliverance Ministry International</b><p>“For with God nothing shall be impossible.” · Luke 1:37 KJV</p></div>
+      <a href="https://linktr.ee/Pastor_kiki?utm_source=linktree_profile_share&ltsid=533ff61e-22ae-497a-95f6-1da1403c3a21" target="_blank" rel="noopener">Connect with Pastor Kiky Ocansey</a>
+    </div>
+  </footer>
+<script data-pplx-inline-edit>
+(function () {
+  if (window === window.top) return;
+
+  const allowedParentOrigins = ["https://www.perplexity.ai","https://perplexity.ai","https://testing.perplexity.ai","https://staging.perplexity.ai","https://*.preview.i.perplexity.ai","http://perplexity.localhost","http://localhost:1420","http://127.0.0.1:1420","http://localhost:3000","http://127.0.0.1:3000","http://localhost:5173","http://127.0.0.1:5173"];
+  const MAX_FONT_BYTES = 500 * 1024;
+  const MAX_TOTAL_FONT_BYTES = 2 * 1024 * 1024;
+  let scrollForwarding = false;
+  let scrollRaf = 0;
+  let trustedTopOrigin = null;
+
+  // Allow entries like "https://*.preview.i.perplexity.ai" — the wildcard
+  // matches a single DNS label (no dots), so "https://*.foo" cannot stretch
+  // across multiple labels.
+  function matchesAllowedOrigin(origin) {
+    if (!origin) return false;
+    for (const entry of allowedParentOrigins) {
+      if (!entry.includes("*")) {
+        if (entry === origin) return true;
+        continue;
+      }
+      const pattern = new RegExp(
+        "^" +
+          entry.replace(/[.+?^${}()|[\]\\]/g, "\\$&").replace(/\*/g, "[^.]+") +
+          "$",
+      );
+      if (pattern.test(origin)) return true;
+    }
+    return false;
+  }
+
+  // Trust decision: when the sender is same-origin-visible (event.origin is a
+  // real origin like https://www.perplexity.ai) we trust event.origin directly.
+  // When event.origin is "null" (opaque broker srcdoc), we fall back to the
+  // broker's stamped `parentOrigin` to identify the top window. The fallback
+  // is claim-only — we rely on the browser's native `targetOrigin` enforcement
+  // on the response path (see postToTrustedTop) to ensure replies can't be
+  // delivered to anyone but the actual top window of that claimed origin.
+  function getTrustedParentOrigin(event) {
+    const forwardedParentOrigin =
+      typeof event.data.parentOrigin === "string" ? event.data.parentOrigin : null;
+    const parentOrigin = event.origin === "null" ? forwardedParentOrigin : event.origin;
+    return matchesAllowedOrigin(parentOrigin) ? parentOrigin : null;
+  }
+
+  // All responses go to window.top with targetOrigin = the allowlisted origin.
+  // An attacker that iframes us inside their own null-origin broker can claim
+  // any parentOrigin they like, but the browser will drop the reply whenever
+  // the real top's origin doesn't match — so the screenshot never leaves.
+  function postToTrustedTop(message) {
+    if (!trustedTopOrigin) return;
+    try {
+      window.top.postMessage(message, trustedTopOrigin);
+    } catch (_error) {}
+  }
+
+  function inlineAll(original, clone) {
+    if (original.nodeType !== 1 || clone.nodeType !== 1) return;
+
+    try {
+      const computedStyle = getComputedStyle(original);
+      // cssText on a computed style is the serialized declaration in modern
+      // Chromium/Safari — a single read beats enumerating ~400 longhand
+      // properties. Firefox returns "" here, so we fall back on empty.
+      const serialized = computedStyle.cssText;
+      if (serialized) {
+        clone.style.cssText = serialized;
+      } else {
+        const parts = new Array(computedStyle.length);
+        for (let index = 0; index < computedStyle.length; index += 1) {
+          const property = computedStyle[index];
+          parts[index] = `${property}:${computedStyle.getPropertyValue(property)};`;
+        }
+        clone.style.cssText = parts.join("");
+      }
+    } catch (_error) {}
+
+    const originalChildren = original.children;
+    const clonedChildren = clone.children;
+    for (
+      let index = 0;
+      index < originalChildren.length && index < clonedChildren.length;
+      index += 1
+    ) {
+      inlineAll(originalChildren[index], clonedChildren[index]);
+    }
+  }
+
+  function extractFontUrl(srcValue) {
+    const matches = [
+      ...srcValue.matchAll(
+        /url\(["']?([^"')]+)["']?\)(?:\s*format\(["']?([^"')]+)["']?\))?/gi,
+      ),
+    ];
+    if (matches.length === 0) return null;
+    const woff2 = matches.find((m) => m[2] && m[2].toLowerCase().includes("woff2"));
+    if (woff2) return woff2[1];
+    const woff = matches.find((m) => m[2] && m[2].toLowerCase().includes("woff"));
+    if (woff) return woff[1];
+    return matches[0][1];
+  }
+
+  // Cache resolved font URL -> data URI across captures. Fonts on a page
+  // essentially never change, and a batch run emits multiple captures back to
+  // back — without this we'd refetch + re-base64 every time.
+  const fontDataUriCache = new Map();
+  const SRC_DECLARATION_RE = /src\s*:\s*[^;}]+/i;
+
+  async function fetchAsDataUri(url) {
+    if (fontDataUriCache.has(url)) return fontDataUriCache.get(url);
+    let dataUri = null;
+    try {
+      const response = await fetch(url, { mode: "cors", credentials: "omit" });
+      if (response.ok) {
+        const blob = await response.blob();
+        if (blob.size <= MAX_FONT_BYTES) {
+          dataUri = await new Promise((resolve) => {
+            const reader = new FileReader();
+            reader.onloadend = () =>
+              resolve(typeof reader.result === "string" ? reader.result : null);
+            reader.onerror = () => resolve(null);
+            reader.readAsDataURL(blob);
+          });
+        }
+      }
+    } catch (_error) {
+      dataUri = null;
+    }
+    fontDataUriCache.set(url, dataUri);
+    return dataUri;
+  }
+
+  function collectFontFaceRuleTexts() {
+    const rules = [];
+    for (const sheet of document.styleSheets) {
+      let cssRules;
+      try {
+        cssRules = sheet.cssRules;
+      } catch (_error) {
+        continue;
+      }
+      if (!cssRules) continue;
+      for (const rule of cssRules) {
+        const cssText = rule.cssText || "";
+        if (cssText.startsWith("@font-face")) rules.push(cssText);
+      }
+    }
+    return rules;
+  }
+
+  async function buildInlinedFontCss() {
+    const ruleTexts = collectFontFaceRuleTexts();
+    if (ruleTexts.length === 0) return null;
+
+    const resolved = ruleTexts.map((cssText) => {
+      if (!SRC_DECLARATION_RE.test(cssText)) return null;
+      const srcMatch = cssText.match(/src\s*:\s*([^;}]+)[;}]/i);
+      if (!srcMatch) return null;
+      const url = extractFontUrl(srcMatch[1]);
+      if (!url) return null;
+      try {
+        return { cssText, url: new URL(url, document.baseURI).href };
+      } catch (_error) {
+        return null;
+      }
+    });
+
+    const dataUris = await Promise.all(
+      resolved.map((entry) => (entry ? fetchAsDataUri(entry.url) : Promise.resolve(null))),
+    );
+
+    const inlined = [];
+    let totalBytes = 0;
+    for (let index = 0; index < resolved.length; index += 1) {
+      const entry = resolved[index];
+      const dataUri = dataUris[index];
+      if (!entry || !dataUri) continue;
+      const approxBytes = dataUri.length * 0.75;
+      if (totalBytes + approxBytes > MAX_TOTAL_FONT_BYTES) break;
+      totalBytes += approxBytes;
+      inlined.push(entry.cssText.replace(SRC_DECLARATION_RE, `src: url("${dataUri}")`));
+    }
+    return inlined.length > 0 ? inlined.join("\n") : null;
+  }
+
+  function stripExternal(clone) {
+    const images = clone.querySelectorAll("img");
+    for (let index = 0; index < images.length; index += 1) {
+      const src = images[index].getAttribute("src");
+      if (src && !src.startsWith("data:")) images[index].removeAttribute("src");
+    }
+
+    const elements = clone.querySelectorAll("*");
+    for (let index = 0; index < elements.length; index += 1) {
+      const style = elements[index].style.cssText;
+      if (style && style.includes("url(")) {
+        elements[index].style.cssText = style.replace(
+          /url\(["']?(?!data:)[^)"']*["']?\)/gi,
+          "none",
+        );
+      }
+    }
+  }
+
+  function emitScroll() {
+    scrollRaf = 0;
+    if (!scrollForwarding) return;
+    postToTrustedTop({
+      type: "INLINE_EDIT_SCROLL",
+      scrollX: window.scrollX,
+      scrollY: window.scrollY,
+    });
+  }
+
+  window.addEventListener(
+    "scroll",
+    function () {
+      if (!scrollForwarding || scrollRaf) return;
+      scrollRaf = requestAnimationFrame(emitScroll);
+    },
+    { passive: true, capture: true },
+  );
+
+  async function handleCaptureRequest(event) {
+    const requestId = event.data.requestId;
+    const scrollX = window.scrollX;
+    const scrollY = window.scrollY;
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+
+    function postResult(dataUrl) {
+      postToTrustedTop({
+        type: "INLINE_EDIT_SCREENSHOT_RESULT",
+        requestId,
+        dataUrl,
+        scrollX,
+        scrollY,
+      });
+    }
+
+    try {
+      // Wait for any pending web fonts to resolve so both inline metrics and
+      // the @font-face inlining below see the same loaded faces.
+      if (document.fonts && document.fonts.ready) {
+        try {
+          await document.fonts.ready;
+        } catch (_error) {}
+      }
+
+      const clone = document.documentElement.cloneNode(true);
+      inlineAll(document.documentElement, clone);
+
+      const removedNodes = clone.querySelectorAll("script,link[rel=\"stylesheet\"],style");
+      for (let index = 0; index < removedNodes.length; index += 1) {
+        removedNodes[index].remove();
+      }
+
+      stripExternal(clone);
+
+      // Re-embed web fonts as data-URI @font-face rules so the SVG rasterizer
+      // can resolve them — external font URLs aren't fetched during
+      // foreignObject rendering, which would otherwise force a fallback face
+      // and change text metrics.
+      const inlinedFontCss = await buildInlinedFontCss();
+      if (inlinedFontCss) {
+        const styleEl = document.createElement("style");
+        styleEl.textContent = inlinedFontCss;
+        const head = clone.querySelector("head");
+        if (head) head.appendChild(styleEl);
+        else clone.insertBefore(styleEl, clone.firstChild);
+      }
+
+      const html = new XMLSerializer().serializeToString(clone);
+      const svg =
+        `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}">` +
+        '<foreignObject width="100%" height="100%">' +
+        `<div xmlns="http://www.w3.org/1999/xhtml" style="width:${width}px;height:${height}px;overflow:hidden">` +
+        `<div style="position:relative;left:-${scrollX}px;top:-${scrollY}px">` +
+        html +
+        "</div></div></foreignObject></svg>";
+      const svgUrl = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
+      const image = new Image();
+      image.onload = function () {
+        const canvas = document.createElement("canvas");
+        canvas.width = width;
+        canvas.height = height;
+        canvas.getContext("2d").drawImage(image, 0, 0);
+        postResult(canvas.toDataURL("image/png"));
+      };
+      image.onerror = function () {
+        postResult(null);
+      };
+      image.src = svgUrl;
+    } catch (_error) {
+      postResult(null);
+    }
+  }
+
+  window.addEventListener("message", function (event) {
+    if (!event.data) return;
+    // Only accept messages from the direct parent frame. Blocks sibling /
+    // unrelated-window postMessage senders that could otherwise reach us.
+    if (event.source !== window.parent) return;
+
+    const trustedParentOrigin = getTrustedParentOrigin(event);
+    if (!trustedParentOrigin) return;
+    trustedTopOrigin = trustedParentOrigin;
+
+    if (event.data.type === "INLINE_EDIT_SCROLL_START") {
+      scrollForwarding = true;
+      emitScroll();
+      return;
+    }
+
+    if (event.data.type === "INLINE_EDIT_SCROLL_STOP") {
+      scrollForwarding = false;
+      if (scrollRaf) cancelAnimationFrame(scrollRaf);
+      scrollRaf = 0;
+      return;
+    }
+
+    if (event.data.type !== "INLINE_EDIT_CAPTURE_REQUEST") return;
+
+    handleCaptureRequest(event);
+  });
+})();
+
+
+</script></body>
+</html>

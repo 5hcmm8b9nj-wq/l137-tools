@@ -1,0 +1,96 @@
+/* L137 Deliverance Ministry — shared styles */
+@font-face{font-family:"Serif";src:url("fonts/SourceSerif4-Regular.ttf");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Serif";src:url("fonts/SourceSerif4-Semibold.ttf");font-weight:600;font-style:normal;font-display:swap}
+@font-face{font-family:"Serif";src:url("fonts/SourceSerif4-Bold.ttf");font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:"Serif";src:url("fonts/SourceSerif4-Italic.ttf");font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:"Sans";src:url("fonts/DMSans-Regular.ttf");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Sans";src:url("fonts/DMSans-Medium.ttf");font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:"Sans";src:url("fonts/DMSans-Bold.ttf");font-weight:700;font-style:normal;font-display:swap}
+
+:root{
+  --ivory:#FAF7EF; --cream:#F3EEDF; --cream2:#F7F1DE;
+  --charcoal:#221E1A; --charcoal-mu:#5A544B; --charcoal-faint:#8A8478;
+  --teal:#0F5B5F; --teal-deep:#083E42; --teal-soft:#DDECEC;
+  --gold:#B6871A; --gold-light:#E7C965; --gold-soft:#FBF3DA;
+  --ember:#C24A16; --ember-deep:#8C3410; --ember-soft:#FBE7DA;
+  --plum:#6E2F5A; --plum-soft:#F5EBF1;
+  --green:#4F7A2E; --green-soft:#EFF3E7;
+  --shadow:0 6px 24px rgba(8,62,66,.10); --shadow-sm:0 2px 10px rgba(8,62,66,.08);
+  --radius:16px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--ivory);color:var(--charcoal);font-family:"Sans",system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:"Serif",Georgia,serif;color:var(--teal-deep);line-height:1.2;margin:0 0 .4em}
+h1{font-size:clamp(2rem,5vw,3.2rem);font-weight:700}
+h2{font-size:clamp(1.4rem,3vw,2rem);font-weight:600}
+h3{font-size:1.15rem;font-weight:600;color:var(--teal)}
+p{margin:0 0 1em}
+a{color:var(--teal);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:960px;margin:0 auto;padding:0 22px}
+.wrap-wide{max-width:1200px;margin:0 auto;padding:0 22px}
+.kicker{font-family:"Sans";font-weight:700;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+.serif-it{font-family:"Serif";font-style:italic}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:.5em;font-family:"Sans";font-weight:700;font-size:.95rem;padding:.85em 1.6em;border-radius:999px;border:2px solid transparent;cursor:pointer;transition:transform .15s,box-shadow .15s;text-decoration:none}
+.btn:hover{transform:translateY(-2px);text-decoration:none}
+.btn-primary{background:var(--gold);color:#fff;box-shadow:var(--shadow-sm)}
+.btn-primary:hover{background:var(--gold-light);color:var(--charcoal)}
+.btn-ghost{background:transparent;color:var(--ivory);border-color:var(--gold-light)}
+.btn-ghost:hover{background:rgba(231,201,101,.15)}
+.btn-teal{background:var(--teal);color:#fff}
+.btn-teal:hover{background:var(--teal-deep);color:#fff}
+
+/* hero */
+.hero{background:var(--teal-deep);color:var(--ivory);position:relative;overflow:hidden;padding:72px 0 60px;border-bottom:6px solid var(--gold)}
+.hero:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 80% -10%,rgba(15,91,95,.9),transparent 60%);pointer-events:none}
+.hero .wrap{position:relative}
+.hero .date{color:var(--gold-light);font-weight:600;letter-spacing:.04em}
+.hero h1{color:#fff;margin:.2em 0 .1em}
+.hero .verse{color:var(--gold-light);font-family:"Serif";font-style:italic;font-size:1.25rem}
+.hero .desc{color:var(--cream);max-width:640px;margin:1.1em 0 1.6em}
+.hero .attr{color:var(--gold-light);font-weight:600;font-size:.95rem;margin-bottom:1.6em}
+.cta-row{display:flex;gap:14px;flex-wrap:wrap}
+
+/* cards */
+.section{padding:56px 0}
+.section.alt{background:var(--cream)}
+.grid{display:grid;gap:20px}
+.grid-2{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.grid-3{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.card{background:#fff;border-radius:var(--radius);padding:26px;box-shadow:var(--shadow-sm);border:1px solid rgba(8,62,66,.06)}
+.card h3{margin-top:0}
+
+/* scripture / prayer / declaration blocks */
+.block{border-radius:14px;padding:18px 20px;margin:0 0 16px;border-left:6px solid}
+.scripture{background:var(--cream);border-color:var(--teal)}
+.scripture .ref{font-family:"Sans";font-weight:700;color:var(--teal);font-size:.85rem;margin-bottom:.3em}
+.scripture .txt{font-family:"Serif";font-style:italic}
+.prayer{background:var(--ember-soft);border-color:var(--ember)}
+.prayer .k{font-weight:700;color:var(--ember-deep);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.4em}
+.declaration{background:var(--gold-soft);border-color:var(--gold)}
+.declaration .k{font-weight:700;color:var(--gold);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.4em}
+.declaration li{list-style:none;margin:.4em 0;padding-left:1.2em;position:relative;font-weight:500}
+.declaration li:before{content:"\203a";position:absolute;left:0;color:var(--gold);font-weight:700}
+.declaration ul{margin:0;padding:0}
+.application{background:var(--green-soft);border-color:var(--green)}
+.memory{background:var(--gold-soft);border:2px solid var(--gold-light);border-radius:14px;padding:22px;text-align:center}
+.memory .ref{font-family:"Sans";font-weight:700;color:var(--gold);font-size:.85rem}
+.memory .txt{font-family:"Serif";font-style:italic;font-size:1.2rem;margin-top:.4em}
+
+/* footer */
+footer{background:var(--teal-deep);color:var(--cream);padding:44px 0;border-top:6px solid var(--gold)}
+footer a{color:var(--gold-light)}
+footer .tag{font-family:"Serif";font-style:italic;color:var(--gold-light);margin-top:.6em}
+.muted{color:var(--charcoal-mu)}
+.center{text-align:center}
+.pill{display:inline-block;background:var(--teal-soft);color:var(--teal-deep);font-weight:600;font-size:.8rem;padding:.3em .9em;border-radius:999px;margin:.2em}
+hr.rule{border:none;border-top:2px solid var(--gold-light);margin:32px 0}
+.steps-table{width:100%;border-collapse:collapse;font-size:.95rem;background:var(--ivory);border:1px solid var(--cream)}
+.steps-table th{background:var(--teal-deep);color:var(--ivory);font-family:"Sans";font-weight:700;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;text-align:left;padding:.7em .9em}
+.steps-table td{padding:.7em .9em;border-top:1px solid var(--cream);color:var(--charcoal);vertical-align:top}
+.steps-table tr:nth-child(even) td{background:var(--cream2)}
+.steps-table td:first-child{white-space:nowrap;color:var(--teal-deep)}
+.steps-table td:last-child{font-family:"Serif";font-style:italic;color:var(--teal);white-space:nowrap}

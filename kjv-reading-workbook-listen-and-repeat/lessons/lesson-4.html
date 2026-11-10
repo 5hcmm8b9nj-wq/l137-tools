@@ -1,0 +1,579 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Lesson 4 — KJV Reading Workbook</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="../index.html">KJV Reading Workbook <small>· Listen &amp; Repeat</small></a>
+    <div class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="#warmup">Warm-Up</a>
+      <a href="#words">Words</a>
+      <a href="#verse">Verse</a>
+      <a href="#declare">Declare</a>
+      <a href="#check">Check</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="pill">Lesson <span id="lesson-num"></span></div>
+    <h1 id="lesson-title"></h1>
+    <div class="gold-rule"></div>
+    <p class="lede"><b id="lesson-ref"></b> — King James Version</p>
+
+    <div class="controls" style="margin-top:22px;">
+      <label for="rate">Voice speed:</label>
+      <input id="rate" type="range" min="0.5" max="1.2" step="0.05" />
+      <span id="rate-label" class="muted"></span>
+      <button class="btn" id="stop-btn" type="button">Stop Voice</button>
+    </div>
+  </div>
+</header>
+
+<!-- 1. Warm-Up -->
+<section class="section" id="warmup">
+  <div class="section-inner">
+    <div class="eyebrow">Step 1</div>
+    <h2>Sound Warm-Up</h2>
+    <div class="gold-rule"></div>
+    <p>Tap each word to hear it. Say it out loud after the voice.</p>
+    <div class="word-grid" id="warmup-grid"></div>
+  </div>
+</section>
+
+<!-- 2. New Words -->
+<section class="section" id="words" style="background:var(--cream);">
+  <div class="section-inner">
+    <div class="eyebrow">Step 2</div>
+    <h2>New Words Today</h2>
+    <div class="gold-rule"></div>
+    <p>Tap each new word. Hear it. Read the meaning under it. Say it back.</p>
+    <div class="word-grid" id="words-grid"></div>
+  </div>
+</section>
+
+<!-- 3. Listen to the Verse -->
+<section class="section" id="verse">
+  <div class="section-inner">
+    <div class="eyebrow">Step 3 &amp; 4</div>
+    <h2>Listen to the Verse. Then Read With Me.</h2>
+    <div class="gold-rule"></div>
+    <p>Press <b>Play Verse</b> and just listen. Then tap any word to hear it again.</p>
+    <div id="verse-block"></div>
+    <div class="controls">
+      <button class="btn primary" id="play-verse" type="button">▶ Play Verse</button>
+      <button class="btn" id="play-slow" type="button">Play Slower</button>
+    </div>
+  </div>
+</section>
+
+<!-- 5. Read Alone -->
+<section class="section" id="alone" style="background:var(--cream);">
+  <div class="section-inner">
+    <div class="eyebrow">Step 5</div>
+    <h2>Read Alone</h2>
+    <div class="gold-rule"></div>
+    <p>Now try to read the verse yourself, out loud. If you get stuck on a word, go back to Step 3 and tap it. That is not cheating — that is how you learn.</p>
+    <div class="panel gold">
+      <div class="kicker">SAY IT OUT LOUD</div>
+      <p id="full-verse" style="font-family:'Source Serif 4', serif; font-size:26px; line-height:1.55; margin:6px 0;"></p>
+    </div>
+  </div>
+</section>
+
+<!-- 6. Declaration -->
+<section class="section" id="declare">
+  <div class="section-inner">
+    <div class="eyebrow">Step 6</div>
+    <h2>Say the Declaration</h2>
+    <div class="gold-rule"></div>
+    <p><b>Repeat after me.</b> Tap each line to hear it, then speak it out loud over your own life.</p>
+    <div id="declaration-block"></div>
+  </div>
+</section>
+
+<!-- 7. Remember Check -->
+<section class="section" id="check" style="background:var(--cream);">
+  <div class="section-inner">
+    <div class="eyebrow">Step 7</div>
+    <h2>Remember Check</h2>
+    <div class="gold-rule"></div>
+    <p>Three easy questions to remember today's Word. Tap the answer you think is right.</p>
+    <div id="questions"></div>
+  </div>
+</section>
+
+<!-- Prayer + complete -->
+<section class="section">
+  <div class="section-inner">
+    <div class="panel ember">
+      <div class="kicker">SEAL THE LESSON</div>
+      <h3>Closing Prayer</h3>
+      <p id="prayer-text" style="font-family:'Source Serif 4', serif; font-size:20px; line-height:1.6;"></p>
+      <button class="btn" id="play-prayer" type="button">🔊 Hear the Prayer</button>
+    </div>
+
+    <div style="text-align:center; margin-top:26px;">
+      <button class="btn primary big" id="mark-complete" type="button">✓ Mark Lesson Complete</button>
+    </div>
+
+    <div class="controls" style="justify-content:center; margin-top:26px;">
+      <a class="btn" id="prev-link" href="#">← Previous Lesson</a>
+      <a class="btn" href="../index.html">All Lessons</a>
+      <a class="btn primary" id="next-link" href="#">Next Lesson →</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <h4>KJV Reading Workbook</h4>
+      <p>Every verse in full King James Version.</p>
+    </div>
+    <div>
+      <h4>Luke 1:37</h4>
+      <p><i>"For with God nothing shall be impossible."</i></p>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/lessons.js"></script>
+<script src="../assets/app.js"></script>
+<script>
+(function () {
+  const LESSON_ID = 4;
+  const L = window.LESSONS.find(x => x.id === LESSON_ID);
+  const { el, renderWordTile, renderVerseBlock, renderDeclaration, renderQuestion, playVerseAloud } = window.KJVUI;
+
+  document.getElementById('lesson-num').textContent = L.id;
+  document.getElementById('lesson-title').textContent = L.title;
+  document.getElementById('lesson-ref').textContent = L.reference;
+  document.title = 'Lesson ' + L.id + ' · ' + L.title + ' — KJV Reading Workbook';
+
+  // Rate slider
+  const rate = document.getElementById('rate');
+  const rateLabel = document.getElementById('rate-label');
+  const savedRate = parseFloat((window.KJVSpeech && window.KJVSpeech.getRate && window.KJVSpeech.getRate()) || '0.85');
+  rate.value = savedRate;
+  function updateRateLabel() {
+    const v = parseFloat(rate.value);
+    let word = 'Normal';
+    if (v <= 0.65) word = 'Very Slow';
+    else if (v <= 0.8) word = 'Slow';
+    else if (v <= 0.95) word = 'Steady';
+    else if (v <= 1.05) word = 'Normal';
+    else word = 'Faster';
+    rateLabel.textContent = word;
+  }
+  updateRateLabel();
+  rate.addEventListener('input', () => { window.KJVSpeech.setRate(parseFloat(rate.value)); updateRateLabel(); });
+  document.getElementById('stop-btn').addEventListener('click', () => window.KJVSpeech.stop());
+
+  // 1. Warm-Up
+  const warmupGrid = document.getElementById('warmup-grid');
+  L.warmUp.forEach(w => warmupGrid.appendChild(renderWordTile(w)));
+
+  // 2. New Words
+  const wordsGrid = document.getElementById('words-grid');
+  L.newWords.forEach(nw => wordsGrid.appendChild(renderWordTile(nw.word, nw.meaning)));
+
+  // 3-4. Verse block
+  const verseHost = document.getElementById('verse-block');
+  const verseBlock = renderVerseBlock(L.reference, L.verse, L.fullVerse);
+  verseHost.appendChild(verseBlock);
+  document.getElementById('play-verse').addEventListener('click', () => playVerseAloud(verseBlock));
+  document.getElementById('play-slow').addEventListener('click', () => {
+    window.KJVSpeech.setRate(0.65);
+    rate.value = 0.65; updateRateLabel();
+    playVerseAloud(verseBlock);
+  });
+
+  // 5. Full verse for read-alone
+  document.getElementById('full-verse').textContent = L.fullVerse;
+
+  // 6. Declaration
+  document.getElementById('declaration-block').appendChild(renderDeclaration(L.declaration));
+
+  // 7. Questions
+  const qHost = document.getElementById('questions');
+  L.remember.forEach(q => qHost.appendChild(renderQuestion(q)));
+
+  // Prayer
+  document.getElementById('prayer-text').textContent = L.prayer;
+  document.getElementById('play-prayer').addEventListener('click', () => window.KJVSpeech.speak(L.prayer));
+
+  // Mark complete
+  const btn = document.getElementById('mark-complete');
+  function refreshCompleteBtn() {
+    if (window.KJVProgress.isComplete(L.id)) {
+      btn.textContent = '✓ Completed — Tap to Un-mark';
+      btn.classList.remove('primary');
+    } else {
+      btn.textContent = '✓ Mark Lesson Complete';
+      btn.classList.add('primary');
+    }
+  }
+  refreshCompleteBtn();
+  btn.addEventListener('click', () => {
+    const d = window.KJVProgress.load();
+    if (d[L.id] && d[L.id].completed) {
+      delete d[L.id];
+      window.KJVProgress.save(d);
+    } else {
+      window.KJVProgress.markComplete(L.id);
+      window.KJVSpeech.speak('Well done. Lesson complete. Praise the Lord.');
+    }
+    refreshCompleteBtn();
+  });
+
+  // Prev / next
+  const prev = document.getElementById('prev-link');
+  const next = document.getElementById('next-link');
+  if (L.id > 1) prev.href = 'lesson-' + (L.id - 1) + '.html';
+  else { prev.style.opacity = 0.4; prev.style.pointerEvents = 'none'; }
+  if (L.id < window.LESSONS.length) next.href = 'lesson-' + (L.id + 1) + '.html';
+  else { next.textContent = 'Back to Home'; next.href = '../index.html'; }
+})();
+</script>
+<script data-pplx-inline-edit>
+(function () {
+  if (window === window.top) return;
+
+  const allowedParentOrigins = ["https://www.perplexity.ai","https://perplexity.ai","https://testing.perplexity.ai","https://staging.perplexity.ai","https://*.preview.i.perplexity.ai","http://perplexity.localhost","http://localhost:1420","http://127.0.0.1:1420","http://localhost:3000","http://127.0.0.1:3000","http://localhost:5173","http://127.0.0.1:5173"];
+  const MAX_FONT_BYTES = 500 * 1024;
+  const MAX_TOTAL_FONT_BYTES = 2 * 1024 * 1024;
+  let scrollForwarding = false;
+  let scrollRaf = 0;
+  let trustedTopOrigin = null;
+
+  // Allow entries like "https://*.preview.i.perplexity.ai" — the wildcard
+  // matches a single DNS label (no dots), so "https://*.foo" cannot stretch
+  // across multiple labels.
+  function matchesAllowedOrigin(origin) {
+    if (!origin) return false;
+    for (const entry of allowedParentOrigins) {
+      if (!entry.includes("*")) {
+        if (entry === origin) return true;
+        continue;
+      }
+      const pattern = new RegExp(
+        "^" +
+          entry.replace(/[.+?^${}()|[\]\\]/g, "\\$&").replace(/\*/g, "[^.]+") +
+          "$",
+      );
+      if (pattern.test(origin)) return true;
+    }
+    return false;
+  }
+
+  // Trust decision: when the sender is same-origin-visible (event.origin is a
+  // real origin like https://www.perplexity.ai) we trust event.origin directly.
+  // When event.origin is "null" (opaque broker srcdoc), we fall back to the
+  // broker's stamped `parentOrigin` to identify the top window. The fallback
+  // is claim-only — we rely on the browser's native `targetOrigin` enforcement
+  // on the response path (see postToTrustedTop) to ensure replies can't be
+  // delivered to anyone but the actual top window of that claimed origin.
+  function getTrustedParentOrigin(event) {
+    const forwardedParentOrigin =
+      typeof event.data.parentOrigin === "string" ? event.data.parentOrigin : null;
+    const parentOrigin = event.origin === "null" ? forwardedParentOrigin : event.origin;
+    return matchesAllowedOrigin(parentOrigin) ? parentOrigin : null;
+  }
+
+  // All responses go to window.top with targetOrigin = the allowlisted origin.
+  // An attacker that iframes us inside their own null-origin broker can claim
+  // any parentOrigin they like, but the browser will drop the reply whenever
+  // the real top's origin doesn't match — so the screenshot never leaves.
+  function postToTrustedTop(message) {
+    if (!trustedTopOrigin) return;
+    try {
+      window.top.postMessage(message, trustedTopOrigin);
+    } catch (_error) {}
+  }
+
+  function inlineAll(original, clone) {
+    if (original.nodeType !== 1 || clone.nodeType !== 1) return;
+
+    try {
+      const computedStyle = getComputedStyle(original);
+      // cssText on a computed style is the serialized declaration in modern
+      // Chromium/Safari — a single read beats enumerating ~400 longhand
+      // properties. Firefox returns "" here, so we fall back on empty.
+      const serialized = computedStyle.cssText;
+      if (serialized) {
+        clone.style.cssText = serialized;
+      } else {
+        const parts = new Array(computedStyle.length);
+        for (let index = 0; index < computedStyle.length; index += 1) {
+          const property = computedStyle[index];
+          parts[index] = `${property}:${computedStyle.getPropertyValue(property)};`;
+        }
+        clone.style.cssText = parts.join("");
+      }
+    } catch (_error) {}
+
+    const originalChildren = original.children;
+    const clonedChildren = clone.children;
+    for (
+      let index = 0;
+      index < originalChildren.length && index < clonedChildren.length;
+      index += 1
+    ) {
+      inlineAll(originalChildren[index], clonedChildren[index]);
+    }
+  }
+
+  function extractFontUrl(srcValue) {
+    const matches = [
+      ...srcValue.matchAll(
+        /url\(["']?([^"')]+)["']?\)(?:\s*format\(["']?([^"')]+)["']?\))?/gi,
+      ),
+    ];
+    if (matches.length === 0) return null;
+    const woff2 = matches.find((m) => m[2] && m[2].toLowerCase().includes("woff2"));
+    if (woff2) return woff2[1];
+    const woff = matches.find((m) => m[2] && m[2].toLowerCase().includes("woff"));
+    if (woff) return woff[1];
+    return matches[0][1];
+  }
+
+  // Cache resolved font URL -> data URI across captures. Fonts on a page
+  // essentially never change, and a batch run emits multiple captures back to
+  // back — without this we'd refetch + re-base64 every time.
+  const fontDataUriCache = new Map();
+  const SRC_DECLARATION_RE = /src\s*:\s*[^;}]+/i;
+
+  async function fetchAsDataUri(url) {
+    if (fontDataUriCache.has(url)) return fontDataUriCache.get(url);
+    let dataUri = null;
+    try {
+      const response = await fetch(url, { mode: "cors", credentials: "omit" });
+      if (response.ok) {
+        const blob = await response.blob();
+        if (blob.size <= MAX_FONT_BYTES) {
+          dataUri = await new Promise((resolve) => {
+            const reader = new FileReader();
+            reader.onloadend = () =>
+              resolve(typeof reader.result === "string" ? reader.result : null);
+            reader.onerror = () => resolve(null);
+            reader.readAsDataURL(blob);
+          });
+        }
+      }
+    } catch (_error) {
+      dataUri = null;
+    }
+    fontDataUriCache.set(url, dataUri);
+    return dataUri;
+  }
+
+  function collectFontFaceRuleTexts() {
+    const rules = [];
+    for (const sheet of document.styleSheets) {
+      let cssRules;
+      try {
+        cssRules = sheet.cssRules;
+      } catch (_error) {
+        continue;
+      }
+      if (!cssRules) continue;
+      for (const rule of cssRules) {
+        const cssText = rule.cssText || "";
+        if (cssText.startsWith("@font-face")) rules.push(cssText);
+      }
+    }
+    return rules;
+  }
+
+  async function buildInlinedFontCss() {
+    const ruleTexts = collectFontFaceRuleTexts();
+    if (ruleTexts.length === 0) return null;
+
+    const resolved = ruleTexts.map((cssText) => {
+      if (!SRC_DECLARATION_RE.test(cssText)) return null;
+      const srcMatch = cssText.match(/src\s*:\s*([^;}]+)[;}]/i);
+      if (!srcMatch) return null;
+      const url = extractFontUrl(srcMatch[1]);
+      if (!url) return null;
+      try {
+        return { cssText, url: new URL(url, document.baseURI).href };
+      } catch (_error) {
+        return null;
+      }
+    });
+
+    const dataUris = await Promise.all(
+      resolved.map((entry) => (entry ? fetchAsDataUri(entry.url) : Promise.resolve(null))),
+    );
+
+    const inlined = [];
+    let totalBytes = 0;
+    for (let index = 0; index < resolved.length; index += 1) {
+      const entry = resolved[index];
+      const dataUri = dataUris[index];
+      if (!entry || !dataUri) continue;
+      const approxBytes = dataUri.length * 0.75;
+      if (totalBytes + approxBytes > MAX_TOTAL_FONT_BYTES) break;
+      totalBytes += approxBytes;
+      inlined.push(entry.cssText.replace(SRC_DECLARATION_RE, `src: url("${dataUri}")`));
+    }
+    return inlined.length > 0 ? inlined.join("\n") : null;
+  }
+
+  function stripExternal(clone) {
+    const images = clone.querySelectorAll("img");
+    for (let index = 0; index < images.length; index += 1) {
+      const src = images[index].getAttribute("src");
+      if (src && !src.startsWith("data:")) images[index].removeAttribute("src");
+    }
+
+    const elements = clone.querySelectorAll("*");
+    for (let index = 0; index < elements.length; index += 1) {
+      const style = elements[index].style.cssText;
+      if (style && style.includes("url(")) {
+        elements[index].style.cssText = style.replace(
+          /url\(["']?(?!data:)[^)"']*["']?\)/gi,
+          "none",
+        );
+      }
+    }
+  }
+
+  function emitScroll() {
+    scrollRaf = 0;
+    if (!scrollForwarding) return;
+    postToTrustedTop({
+      type: "INLINE_EDIT_SCROLL",
+      scrollX: window.scrollX,
+      scrollY: window.scrollY,
+    });
+  }
+
+  window.addEventListener(
+    "scroll",
+    function () {
+      if (!scrollForwarding || scrollRaf) return;
+      scrollRaf = requestAnimationFrame(emitScroll);
+    },
+    { passive: true, capture: true },
+  );
+
+  async function handleCaptureRequest(event) {
+    const requestId = event.data.requestId;
+    const scrollX = window.scrollX;
+    const scrollY = window.scrollY;
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+
+    function postResult(dataUrl) {
+      postToTrustedTop({
+        type: "INLINE_EDIT_SCREENSHOT_RESULT",
+        requestId,
+        dataUrl,
+        scrollX,
+        scrollY,
+      });
+    }
+
+    try {
+      // Wait for any pending web fonts to resolve so both inline metrics and
+      // the @font-face inlining below see the same loaded faces.
+      if (document.fonts && document.fonts.ready) {
+        try {
+          await document.fonts.ready;
+        } catch (_error) {}
+      }
+
+      const clone = document.documentElement.cloneNode(true);
+      inlineAll(document.documentElement, clone);
+
+      const removedNodes = clone.querySelectorAll("script,link[rel=\"stylesheet\"],style");
+      for (let index = 0; index < removedNodes.length; index += 1) {
+        removedNodes[index].remove();
+      }
+
+      stripExternal(clone);
+
+      // Re-embed web fonts as data-URI @font-face rules so the SVG rasterizer
+      // can resolve them — external font URLs aren't fetched during
+      // foreignObject rendering, which would otherwise force a fallback face
+      // and change text metrics.
+      const inlinedFontCss = await buildInlinedFontCss();
+      if (inlinedFontCss) {
+        const styleEl = document.createElement("style");
+        styleEl.textContent = inlinedFontCss;
+        const head = clone.querySelector("head");
+        if (head) head.appendChild(styleEl);
+        else clone.insertBefore(styleEl, clone.firstChild);
+      }
+
+      const html = new XMLSerializer().serializeToString(clone);
+      const svg =
+        `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}">` +
+        '<foreignObject width="100%" height="100%">' +
+        `<div xmlns="http://www.w3.org/1999/xhtml" style="width:${width}px;height:${height}px;overflow:hidden">` +
+        `<div style="position:relative;left:-${scrollX}px;top:-${scrollY}px">` +
+        html +
+        "</div></div></foreignObject></svg>";
+      const svgUrl = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
+      const image = new Image();
+      image.onload = function () {
+        const canvas = document.createElement("canvas");
+        canvas.width = width;
+        canvas.height = height;
+        canvas.getContext("2d").drawImage(image, 0, 0);
+        postResult(canvas.toDataURL("image/png"));
+      };
+      image.onerror = function () {
+        postResult(null);
+      };
+      image.src = svgUrl;
+    } catch (_error) {
+      postResult(null);
+    }
+  }
+
+  window.addEventListener("message", function (event) {
+    if (!event.data) return;
+    // Only accept messages from the direct parent frame. Blocks sibling /
+    // unrelated-window postMessage senders that could otherwise reach us.
+    if (event.source !== window.parent) return;
+
+    const trustedParentOrigin = getTrustedParentOrigin(event);
+    if (!trustedParentOrigin) return;
+    trustedTopOrigin = trustedParentOrigin;
+
+    if (event.data.type === "INLINE_EDIT_SCROLL_START") {
+      scrollForwarding = true;
+      emitScroll();
+      return;
+    }
+
+    if (event.data.type === "INLINE_EDIT_SCROLL_STOP") {
+      scrollForwarding = false;
+      if (scrollRaf) cancelAnimationFrame(scrollRaf);
+      scrollRaf = 0;
+      return;
+    }
+
+    if (event.data.type !== "INLINE_EDIT_CAPTURE_REQUEST") return;
+
+    handleCaptureRequest(event);
+  });
+})();
+
+
+</script></body>
+</html>

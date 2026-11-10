@@ -1,0 +1,193 @@
+:root{
+  --ivory:#FAF7EF;
+  --cream:#F3EEDF;
+  --charcoal:#221E1A;
+  --charcoal-soft:#3a342d;
+  --teal:#0F5B5F;
+  --teal-deep:#083E42;
+  --gold:#B6871A;
+  --gold-light:#E7C965;
+  --ember:#C24A16;
+  --plum:#6E2F5A;
+  --green:#4F7A2E;
+  --line:#e6dfcf;
+  --serif:'Source Serif 4', Georgia, serif;
+  --sans:'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:var(--ivory);
+  color:var(--charcoal);
+  font-family:var(--sans);
+  line-height:1.6;
+  font-size:17px;
+  -webkit-text-size-adjust:100%;
+}
+img{max-width:100%;height:auto}
+.wrap{max-width:820px;margin:0 auto;padding:0 22px}
+
+/* OPENING BLOCK */
+.opening-block{background:var(--ivory);padding:34px 0 6px;border-bottom:1px solid var(--line)}
+.opening-eyebrow{font-family:var(--sans);font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:10px}
+.opening-lede{font-family:var(--serif);font-size:20px;line-height:1.5;color:var(--charcoal);max-width:780px;margin:0 0 22px;font-style:italic}
+.opening-rule{height:2px;background:linear-gradient(90deg,var(--teal-deep) 0,var(--gold) 60%,transparent 100%);border-radius:2px}
+
+/* HERO */
+.hero{background:var(--cream);padding:48px 0 44px;border-bottom:1px solid var(--line)}
+.hero-date{font-family:var(--sans);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--teal-deep);font-weight:700;margin-bottom:8px}
+.hero-scripture{font-family:var(--serif);font-style:italic;color:var(--gold);font-size:15px;margin-bottom:14px}
+.hero-title{font-family:var(--serif);font-weight:700;font-size:38px;line-height:1.15;margin:0 0 18px;color:var(--charcoal)}
+.hero-sub{font-family:var(--serif);font-size:19px;line-height:1.5;color:var(--charcoal-soft);margin:0 0 20px;max-width:720px}
+.hero-attrib{font-family:var(--sans);font-size:14px;color:var(--teal-deep);font-weight:600;margin:0 0 26px;letter-spacing:.02em}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:12px}
+.btn{
+  display:inline-block;padding:14px 22px;border-radius:6px;font-family:var(--sans);
+  font-weight:600;font-size:15px;letter-spacing:.02em;text-decoration:none;border:0;
+  cursor:pointer;transition:transform .1s ease, box-shadow .1s ease;min-height:44px;
+}
+.btn-primary{background:var(--teal-deep);color:#fff}
+.btn-primary:hover{background:var(--teal)}
+.btn-secondary{background:transparent;color:var(--teal-deep);border:2px solid var(--teal-deep)}
+.btn-secondary:hover{background:var(--teal-deep);color:#fff}
+.btn-ghost{background:transparent;color:var(--teal-deep);border:1px solid var(--line);padding:10px 16px;font-size:13px}
+.btn-ghost:hover{background:var(--cream)}
+
+/* NAV */
+.tocnav{position:sticky;top:0;background:rgba(250,247,239,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);z-index:50}
+.tocnav .wrap{display:flex;gap:18px;overflow-x:auto;padding-top:12px;padding-bottom:12px;scrollbar-width:none}
+.tocnav .wrap::-webkit-scrollbar{display:none}
+.tocnav a{
+  font-family:var(--sans);font-size:13px;color:var(--charcoal);text-decoration:none;
+  font-weight:600;white-space:nowrap;padding:6px 0;border-bottom:2px solid transparent;
+}
+.tocnav a:hover{color:var(--teal-deep);border-bottom-color:var(--gold)}
+
+/* SECTIONS */
+.section{padding:56px 0;border-bottom:1px solid var(--line)}
+.eyebrow{font-family:var(--sans);font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:10px}
+.section h2{font-family:var(--serif);font-weight:700;font-size:30px;line-height:1.2;margin:0 0 18px;color:var(--charcoal)}
+.section .lede{font-family:var(--serif);font-size:18px;color:var(--charcoal-soft);margin:0 0 26px;max-width:720px}
+
+/* DIRECTION */
+.direction{background:var(--ivory)}
+.direction-steps{display:grid;gap:14px;margin:18px 0 26px}
+.step{display:flex;gap:14px;background:#fff;border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+.step-n{flex:0 0 32px;height:32px;border-radius:50%;background:var(--teal-deep);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--sans);font-weight:700;font-size:14px}
+.step p{margin:4px 0 0;font-family:var(--serif);font-size:16.5px}
+
+.callout{background:var(--cream);border-left:4px solid var(--gold);padding:18px 20px;border-radius:0 8px 8px 0;margin-top:16px}
+.callout-title{font-family:var(--sans);font-weight:700;font-size:14px;color:var(--teal-deep);letter-spacing:.05em;text-transform:uppercase;margin-bottom:8px}
+.callout p{margin:0;font-family:var(--serif);font-size:16.5px;line-height:1.6}
+
+/* SCRIPTURES */
+.scriptures{background:var(--cream)}
+.scripture-list{display:grid;gap:14px}
+.scripture-item{background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.scripture-summary{cursor:pointer;padding:16px 18px;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:12px;font-family:var(--sans)}
+.scripture-summary::-webkit-details-marker{display:none}
+.scripture-ref{font-family:var(--serif);font-weight:700;font-size:17px;color:var(--teal-deep)}
+.scripture-toggle{font-size:12px;color:var(--gold);font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+.scripture-body{padding:0 18px 18px;border-top:1px solid var(--line)}
+.scripture-verse{font-family:var(--serif);font-size:18px;line-height:1.6;color:var(--charcoal);font-style:italic;margin:14px 0 12px;padding:14px;background:var(--ivory);border-radius:8px;border-left:3px solid var(--gold)}
+.scripture-explain{font-family:var(--serif);font-size:16.5px;line-height:1.65;color:var(--charcoal-soft);margin:0}
+
+/* PRAYERS */
+.prayers{background:var(--ivory)}
+.prayer-controls{display:flex;gap:10px;margin-bottom:24px}
+.prayer-list{display:grid;gap:16px}
+.prayer-item{background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;box-shadow:0 1px 2px rgba(0,0,0,.02)}
+.prayer-summary{cursor:pointer;padding:18px 20px;list-style:none;display:flex;align-items:flex-start;gap:14px;font-family:var(--sans)}
+.prayer-summary::-webkit-details-marker{display:none}
+.prayer-n{flex:0 0 40px;height:40px;border-radius:50%;background:var(--teal-deep);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--sans);font-weight:700;font-size:15px}
+.prayer-title{flex:1;font-family:var(--serif);font-size:17px;line-height:1.45;color:var(--charcoal);font-weight:600}
+.prayer-toggle{flex:0 0 auto;font-size:11px;color:var(--gold);font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding-top:4px}
+
+.prayer-body{padding:0 20px 22px;border-top:1px solid var(--line)}
+.prayer-block{margin-top:18px}
+.prayer-block-label{
+  font-family:var(--sans);font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--gold);font-weight:700;margin-bottom:8px;display:flex;align-items:center;gap:8px;
+}
+.prayer-block-label::before{content:"";display:inline-block;width:14px;height:2px;background:var(--gold)}
+.prayer-block-body{font-family:var(--serif);font-size:16.5px;line-height:1.7;color:var(--charcoal)}
+.prayer-block-body p{margin:0 0 10px}
+.prayer-block-body ul{margin:0;padding-left:20px}
+.prayer-block-body li{margin-bottom:6px}
+
+.prayer-scriptures{display:grid;gap:10px;margin-top:6px}
+.prayer-scripture{background:var(--cream);border-left:3px solid var(--teal-deep);padding:12px 14px;border-radius:0 8px 8px 0}
+.prayer-scripture .r{font-family:var(--sans);font-weight:700;font-size:12.5px;color:var(--teal-deep);letter-spacing:.06em;margin-bottom:6px;text-transform:uppercase}
+.prayer-scripture .t{font-family:var(--serif);font-style:italic;font-size:15.5px;line-height:1.55;color:var(--charcoal)}
+
+.declaration-box{
+  margin-top:12px;background:linear-gradient(180deg,rgba(194,74,22,.08),rgba(194,74,22,.03));
+  border:1px solid rgba(194,74,22,.25);border-radius:10px;padding:14px 16px;
+}
+.declaration-label{
+  font-family:var(--sans);font-weight:800;font-size:12px;color:var(--ember);letter-spacing:.18em;
+  text-transform:uppercase;margin-bottom:6px;
+}
+.declaration-text{font-family:var(--serif);font-size:17px;line-height:1.55;color:var(--charcoal);font-weight:600;margin:0}
+
+/* SEAL */
+.seal{background:var(--cream);text-align:left}
+.seal-box{background:#fff;border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:0 10px 10px 0;padding:22px;margin:16px 0 18px}
+.seal-verse-ref{font-family:var(--sans);font-size:12.5px;color:var(--teal-deep);font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px}
+.seal-verse-text{font-family:var(--serif);font-size:20px;line-height:1.5;color:var(--charcoal);font-style:italic}
+.seal-explanation{font-family:var(--serif);font-size:17px;line-height:1.65;color:var(--charcoal-soft);margin:0 0 20px}
+.amen{font-family:var(--serif);font-weight:700;font-size:28px;color:var(--teal-deep);text-align:center;padding:10px 0}
+
+/* REVIEW */
+.review{background:var(--ivory)}
+.review-grid{display:grid;gap:14px;grid-template-columns:1fr}
+@media (min-width:720px){.review-grid{grid-template-columns:repeat(3,1fr)}}
+.review-card{background:#fff;border:1px solid var(--line);border-radius:10px;padding:18px}
+.review-card h3{font-family:var(--serif);font-size:18px;margin:0 0 10px;color:var(--teal-deep)}
+.review-card ul{margin:0;padding-left:20px}
+.review-card li{font-family:var(--serif);font-size:15.5px;margin-bottom:6px}
+.review-card details{margin-top:10px}
+.review-card summary{cursor:pointer;color:var(--gold);font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase}
+.review-card details p{margin-top:8px;font-family:var(--serif);font-size:15.5px;line-height:1.6}
+
+/* QUIZ */
+.quiz{background:var(--cream)}
+.quiz-item{background:#fff;border:1px solid var(--line);border-radius:10px;padding:18px;margin-bottom:14px}
+.quiz-q{font-family:var(--serif);font-size:17px;font-weight:600;margin:0 0 12px}
+.quiz-opts{display:grid;gap:8px;margin-bottom:12px}
+.quiz-opt{background:var(--ivory);border:1.5px solid var(--line);border-radius:8px;padding:12px 14px;cursor:pointer;font-family:var(--sans);font-size:15px;text-align:left;transition:all .15s ease}
+.quiz-opt:hover{border-color:var(--gold)}
+.quiz-opt.chosen{border-color:var(--teal-deep);background:#fff}
+.quiz-opt.correct{border-color:var(--green);background:rgba(79,122,46,.08);color:var(--green);font-weight:600}
+.quiz-opt.wrong{border-color:var(--ember);background:rgba(194,74,22,.08);color:var(--ember)}
+.quiz-reveal{background:transparent;color:var(--teal-deep);border:1px solid var(--teal-deep);padding:10px 16px;border-radius:6px;font-family:var(--sans);font-weight:600;font-size:13px;cursor:pointer;letter-spacing:.05em}
+.quiz-reveal:hover{background:var(--teal-deep);color:#fff}
+.quiz-explain{display:none;margin-top:12px;padding:12px 14px;background:var(--ivory);border-left:3px solid var(--gold);border-radius:0 8px 8px 0;font-family:var(--serif);font-size:15.5px;line-height:1.6}
+.quiz-explain.show{display:block}
+
+/* CLOSING */
+.closing{background:var(--ivory);text-align:left}
+.closing-prayer{font-family:var(--serif);font-style:italic;font-size:18px;line-height:1.7;color:var(--charcoal);max-width:720px;margin:0 0 26px;padding:18px 22px;background:#fff;border:1px solid var(--line);border-left:4px solid var(--teal-deep);border-radius:0 10px 10px 0}
+.final-declarations{background:linear-gradient(180deg,rgba(194,74,22,.06),rgba(194,74,22,.02));border:1px solid rgba(194,74,22,.2);border-radius:10px;padding:18px 22px;margin-bottom:22px}
+.final-declarations h3{font-family:var(--serif);color:var(--ember);margin:0 0 12px;font-size:19px}
+.final-declarations p{font-family:var(--serif);font-weight:600;font-size:17px;margin:6px 0}
+.attribution{text-align:center;font-family:var(--sans);font-size:14px;color:var(--teal-deep);margin-top:22px}
+.attribution p{margin:2px 0}
+
+.footer{background:var(--charcoal);color:#e8e0cf;padding:28px 0;text-align:center;font-family:var(--sans);font-size:13px}
+.footer p{margin:0;letter-spacing:.03em}
+
+/* MOBILE */
+@media (max-width:900px){
+  .opening-lede{font-size:17.5px}
+  .hero{padding:38px 0 34px}
+  .hero-title{font-size:30px}
+  .hero-sub{font-size:17px}
+  .section{padding:44px 0}
+  .section h2{font-size:24px}
+  .prayer-title{font-size:15.5px}
+  .prayer-summary{padding:16px 16px}
+  .prayer-body{padding:0 16px 20px}
+  .seal-verse-text{font-size:17.5px}
+}

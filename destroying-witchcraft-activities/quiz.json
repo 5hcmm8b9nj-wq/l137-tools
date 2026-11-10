@@ -1,0 +1,143 @@
+[
+ {
+  "n": 1,
+  "type": "mc",
+  "q": "In Micah 5:12, the Hebrew word kesheph means:",
+  "opts": [
+   "A type of harvest festival",
+   "Sorcery or witchcraft",
+   "A city in Israel",
+   "A musical instrument"
+  ],
+  "correct": 1,
+  "explain": "Kesheph is the plain Hebrew word for sorcery or witchcraft. It is the exact practice God says He will remove. (Strong's Hebrew H3785, BibleHub)"
+ },
+ {
+  "n": 2,
+  "type": "tf",
+  "q": "True or False: Saying “the blood of Jesus” over and over, like a magic phrase, is what makes Revelation 12:11 work.",
+  "correct": false,
+  "explain": "False. David Guzik's commentary on Revelation 12:11 warns against treating the blood of Jesus like a magic word. Victory rests on the real, historical fact of Christ's finished sacrifice — not on how many times you say it."
+ },
+ {
+  "n": 3,
+  "type": "fillblank",
+  "q": "Numbers 23:23 says: “Surely there is no ______ against Jacob, neither is there any divination against Israel.”",
+  "answer": "enchantment",
+  "explain": "“Enchantment” (Hebrew nachash) — this is Balaam's own admission that no spell has power over God's people."
+ },
+ {
+  "n": 4,
+  "type": "mc",
+  "q": "Who spoke Numbers 23:23, and in what situation?",
+  "opts": [
+   "Moses, blessing the people before his death",
+   "Balaam, forced by God to bless Israel instead of cursing them",
+   "Joshua, before the battle of Jericho",
+   "David, before facing Goliath"
+  ],
+  "correct": 1,
+  "explain": "Balak, the king of Moab, hired Balaam to curse Israel. But God made Balaam speak a blessing instead — a public admission that no magic could touch God's people."
+ },
+ {
+  "n": 5,
+  "type": "matching",
+  "q": "Match each scripture to its main point.",
+  "pairs": [
+   {
+    "left": "Micah 5:12",
+    "right": "God removes witchcraft completely from His people"
+   },
+   {
+    "left": "Numbers 23:23",
+    "right": "No spell can work against those in covenant with God"
+   },
+   {
+    "left": "Revelation 12:11",
+    "right": "Real victory comes through Christ's blood, honest testimony, and courage"
+   },
+   {
+    "left": "Hebrews 12:24",
+    "right": "Christ's blood speaks a better word than Abel's blood"
+   }
+  ],
+  "explain": "Each scripture answers a different part of witchcraft's threat: removal, protection, victory, and a better word than judgment."
+ },
+ {
+  "n": 6,
+  "type": "order",
+  "q": "Put these steps of the prophetic direction in the correct order.",
+  "items": [
+   "Pour the blood of Jesus on the earth",
+   "Pray through the twenty declarations",
+   "Pray the sealing prayer",
+   "Rest the outcome in God's hands"
+  ],
+  "answer": [
+   0,
+   1,
+   2,
+   3
+  ],
+  "explain": "The direction moves from the act of faith, through the specific declarations, to the sealing prayer, and ends in rest — not repeated anxious action."
+ },
+ {
+  "n": 7,
+  "type": "scenario",
+  "q": "A believer keeps losing job opportunities right before the final decision. A friend says, “Just say the prayers every day and don't bother applying anywhere else.” What is the more biblical response?",
+  "opts": [
+   "Only pray, and stop applying for jobs",
+   "Only keep applying, and skip prayer entirely",
+   "Pray about the spiritual pattern, and also keep applying and preparing well",
+   "Avoid job interviews altogether to be safe"
+  ],
+  "correct": 2,
+  "explain": "The biblical pattern joins prayer with wisdom and hard work — not superstition, avoidance, or magic words. Deal with the spiritual root in prayer, and also take practical steps."
+ },
+ {
+  "n": 8,
+  "type": "tf",
+  "q": "True or False: Pouring liquid on the ground is what gives this prophetic direction its power.",
+  "correct": false,
+  "explain": "False. Every scripture behind this direction — Hebrews 12:24 and Revelation 12:11 — points to what Christ's blood already did at the cross. Pouring it out is your act of faith in that finished work. It is not a ritual with power of its own."
+ },
+ {
+  "n": 9,
+  "type": "mc",
+  "q": "According to Hebrews 12:24, whose blood does Christ's blood “speak better” than?",
+  "opts": [
+   "Abraham's",
+   "Moses'",
+   "Abel's",
+   "David's"
+  ],
+  "correct": 2,
+  "explain": "Hebrews 12:24 says Christ's blood “speaketh better things than that of Abel.” Abel's blood cried out for vengeance (Genesis 4:10). Christ's blood speaks forgiveness and welcome instead."
+ },
+ {
+  "n": 10,
+  "type": "fillblank",
+  "q": "Revelation 12:11 says believers overcame “by the blood of the Lamb, and by the word of their ______.”",
+  "answer": "testimony",
+  "explain": "“Testimony” (Greek martyria) — believers' own honest, spoken account of what God has done."
+ },
+ {
+  "n": 11,
+  "type": "scenario",
+  "q": "A family member keeps saying discouraging things right before you attempt something important. What is the balanced response?",
+  "opts": [
+   "Say nothing and cut them off completely without ever talking to them",
+   "Pray Prayer 3 privately, and also set a calm, honest boundary in the relationship",
+   "Say the exact same discouraging things back to them",
+   "Ignore it completely and never mention it or pray about it"
+  ],
+  "correct": 1,
+  "explain": "Prayer 3 deals with the spiritual root. Proverbs 18:21 shows why words carry weight. Pairing prayer with a calm, honest boundary is the balanced response — not silence, getting back at them, or cutting them off without ever talking."
+ },
+ {
+  "n": 12,
+  "type": "free",
+  "q": "In your own words, explain why treating “the blood of Jesus” as a magic phrase would misunderstand Revelation 12:11. Write a sentence or two, then reveal a model answer.",
+  "model": "Because the verse's victory rests on the real, historical fact of Christ's finished sacrifice — believed and spoken honestly — not on saying a sentence a certain number of times. Treating it like a chant would turn faith in a person (Jesus) into superstition about a formula."
+ }
+]

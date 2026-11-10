@@ -1,0 +1,1681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>L137 Deliverance Ministry International — Deliverance Webinar: Strong Man of Sex</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1a2b4a;
+    --navy-light: #2a3e63;
+    --navy-dark: #0f1d36;
+    --gold: #a87f2a;
+    --gold-light: #c89b48;
+    --cream: #faf7f0;
+    --cream-warm: #f0e9d8;
+    --ink: #1f1d18;
+    --muted: #5a564d;
+    --rule: #c9c4b8;
+    --surface: #ffffff;
+    --success: #437A22;
+    --danger: #a23b2e;
+    --shadow: 0 1px 3px rgba(31,29,24,0.08), 0 4px 16px rgba(31,29,24,0.06);
+    --radius: 12px;
+    --serif: 'DM Serif Display', Georgia, serif;
+    --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--sans);
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--serif);
+    color: var(--navy);
+    font-weight: 400;
+    line-height: 1.2;
+  }
+  a { color: var(--navy); text-decoration: underline; text-decoration-color: var(--gold); text-underline-offset: 3px; }
+  :focus-visible { outline: 3px solid var(--gold-light); outline-offset: 2px; border-radius: 4px; }
+
+  /* HEADER */
+  header.site {
+    background: var(--navy);
+    color: var(--cream);
+    padding: 24px 24px 26px;
+    text-align: center;
+    border-bottom: 4px solid var(--gold);
+  }
+  header.site h1 {
+    color: var(--cream);
+    font-size: clamp(22px, 5vw, 36px);
+    margin-bottom: 8px;
+  }
+  header.site .subtitle {
+    color: var(--gold-light);
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  header.site .verse {
+    margin-top: 14px;
+    font-style: italic;
+    color: rgba(255,255,255,0.78);
+    font-size: 14.5px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  header.site .ministry-brand {
+    margin-top: 18px;
+    padding-top: 14px;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    font-family: var(--serif);
+    color: var(--gold-light);
+    font-size: 19px;
+    letter-spacing: 0.8px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* MODE TOGGLES */
+  .mode-bar {
+    display: flex; justify-content: center; align-items: center; gap: 22px;
+    flex-wrap: wrap; margin-bottom: 18px;
+  }
+  .mode-toggle {
+    display: flex; align-items: center; gap: 9px;
+    font-size: 11.5px; letter-spacing: 0.5px; text-transform: uppercase;
+    font-weight: 600; color: var(--gold-light);
+  }
+  .switch { position: relative; display: inline-block; width: 42px; height: 22px; }
+  .switch input { opacity: 0; width: 0; height: 0; }
+  .slider { position: absolute; cursor: pointer; inset: 0; background: rgba(255,255,255,0.22); border-radius: 999px; transition: .25s; }
+  .slider::before { content: ""; position: absolute; height: 16px; width: 16px; left: 3px; top: 3px; background: var(--cream); border-radius: 50%; transition: .25s; }
+  .switch input:checked + .slider { background: var(--gold); }
+  .switch input:checked + .slider::before { transform: translateX(20px); }
+  .mode-toggle .opt { transition: color 0.2s; }
+  .mode-toggle .opt.on { color: #fff; }
+
+  /* LAYOUT */
+  .container { max-width: 880px; margin: 0 auto; padding: 20px 18px 130px; }
+
+  /* PROGRESS + PRIVACY */
+  .progress-shell {
+    background: var(--surface); border-radius: var(--radius); padding: 14px 18px;
+    box-shadow: var(--shadow); margin-bottom: 10px; position: sticky; top: 10px; z-index: 100;
+  }
+  .progress-label {
+    display: flex; justify-content: space-between; align-items: center; font-size: 12.5px;
+    color: var(--muted); margin-bottom: 8px; font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase;
+  }
+  .progress-label .seg-name { color: var(--navy); text-transform: none; font-weight: 700; }
+  .progress-bar { background: var(--cream-warm); height: 8px; border-radius: 4px; overflow: hidden; }
+  .progress-fill { background: linear-gradient(90deg, var(--gold) 0%, var(--gold-light) 100%); height: 100%; width: 0%; transition: width 0.5s ease; }
+  .privacy-strip {
+    text-align: center; font-size: 12.5px; color: var(--muted); padding: 6px 12px;
+    margin-bottom: 18px; background: #f1f5ef; border: 1px solid #d5e3cd; border-radius: 999px; font-weight: 500;
+  }
+
+  /* PANELS */
+  .panel { display: none; animation: fadein 0.45s ease; }
+  .panel.active { display: block; }
+  @keyframes fadein { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+
+  .panel-hero {
+    background: var(--surface); border-radius: var(--radius); padding: 30px 28px;
+    box-shadow: var(--shadow); margin-bottom: 20px; border-left: 5px solid var(--gold);
+  }
+  .panel-hero .seg-label { font-size: 12px; color: var(--gold); letter-spacing: 2px; text-transform: uppercase; font-weight: 700; margin-bottom: 6px; }
+  .panel-hero h2 { font-size: clamp(24px, 4.5vw, 33px); margin-bottom: 12px; }
+  .panel-hero .intro { color: var(--muted); font-size: 15.5px; }
+
+  .card { background: var(--surface); border-radius: var(--radius); padding: 24px; box-shadow: var(--shadow); margin-bottom: 18px; }
+  .card h3 { font-size: 20px; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid var(--rule); }
+  .card h4 { font-size: 15px; margin: 14px 0 6px; color: var(--navy); font-family: var(--sans); font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; }
+  .card p { margin-bottom: 10px; }
+  .card ul, .card ol { margin: 8px 0 12px 22px; }
+  .card li { margin-bottom: 6px; }
+
+  .verse-box { background: var(--cream-warm); border-left: 4px solid var(--gold); padding: 14px 18px; margin: 14px 0; border-radius: 0 8px 8px 0; font-style: italic; color: var(--ink); }
+  .verse-box cite { display: block; margin-top: 6px; font-style: normal; font-weight: 600; color: var(--navy); font-size: 14px; }
+
+  .prayer-box { background: linear-gradient(180deg, #fdfbf5 0%, var(--cream-warm) 100%); border: 1px solid var(--rule); padding: 22px 24px; margin: 16px 0; border-radius: 10px; font-size: 15.5px; line-height: 1.75; position: relative; }
+  .prayer-box::before { content: "✝"; position: absolute; top: 12px; right: 16px; color: var(--gold); font-size: 22px; opacity: 0.4; }
+  .prayer-box strong { color: var(--navy); }
+
+  /* BUTTONS */
+  .btn { border: none; padding: 12px 22px; border-radius: 8px; font-weight: 600; font-size: 15px; cursor: pointer; font-family: inherit; transition: all 0.2s; }
+  .btn-primary { background: var(--navy); color: var(--cream); }
+  .btn-primary:hover { background: var(--navy-dark); transform: translateY(-1px); }
+  .btn-secondary { background: var(--surface); color: var(--navy); border: 1.5px solid var(--navy); }
+  .btn-secondary:hover { background: var(--cream-warm); }
+  .btn-gold { background: var(--gold); color: var(--navy); }
+  .btn-gold:hover { background: var(--gold-light); transform: translateY(-1px); }
+  .btn:disabled { opacity: 0.4; cursor: not-allowed; transform: none !important; }
+  .btn-small { padding: 8px 16px; font-size: 14px; }
+  .link-btn { background: none; border: none; color: var(--muted); font-size: 13.5px; text-decoration: underline; text-decoration-color: var(--gold); text-underline-offset: 3px; cursor: pointer; font-family: inherit; padding: 4px; }
+  .link-btn:hover { color: var(--navy); }
+
+  .privacy-note { background: #f1f5ef; border: 1px solid #cfe0c8; color: #2f5022; border-radius: 10px; padding: 13px 16px; font-size: 14px; margin: 14px 0; }
+  .privacy-note.big { font-size: 15px; padding: 16px 18px; font-weight: 500; }
+
+  /* skip-game reveal */
+  .skip-reveal { text-align: center; margin-top: 12px; }
+  .lesson-reveal { display: none; margin-top: 14px; }
+  .lesson-reveal.show { display: block; animation: fadein 0.4s; }
+
+  /* SEG 1 POLL */
+  .poll-grid { display: grid; gap: 12px; margin-top: 8px; }
+  .poll-card { border: 1.5px solid var(--rule); border-radius: 10px; padding: 16px 18px; cursor: pointer; transition: all 0.2s; background: var(--surface); display: flex; align-items: center; gap: 14px; font-size: 15.5px; font-weight: 500; text-align: left; width: 100%; font-family: inherit; color: var(--ink); }
+  .poll-card:hover { border-color: var(--gold); background: var(--cream); }
+  .poll-card.selected { border-color: var(--navy); background: var(--cream-warm); font-weight: 600; }
+  .poll-card .poll-num { flex-shrink: 0; width: 30px; height: 30px; border-radius: 50%; background: var(--navy); color: var(--cream); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px; font-family: var(--serif); }
+  .personal-word { display: none; margin-top: 16px; padding: 22px; background: linear-gradient(135deg, var(--navy), var(--navy-light)); color: var(--cream); border-radius: 12px; border: 2px solid var(--gold); }
+  .personal-word.show { display: block; animation: fadein 0.6s; }
+  .personal-word .pw-lead { color: var(--gold-light); font-style: italic; margin-bottom: 8px; font-size: 14px; }
+  .personal-word .pw-verse { font-family: var(--serif); font-size: 20px; line-height: 1.4; }
+  .personal-word cite { display: block; margin-top: 8px; font-style: normal; font-weight: 700; color: var(--gold-light); font-size: 14px; font-family: var(--sans); }
+
+  /* MATCH GAME */
+  .match-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 10px; }
+  .match-col h4 { margin-top: 0; }
+  .match-item { border-radius: 10px; padding: 13px 14px; margin-bottom: 10px; font-size: 14.5px; cursor: grab; transition: all 0.18s; user-select: none; position: relative; }
+  .strong-card { background: var(--navy); color: var(--cream); border: 2px solid var(--gold); font-weight: 600; }
+  .strong-card:hover { background: var(--navy-light); }
+  .fruit-card { background: var(--cream-warm); color: var(--ink); border: 1.5px solid var(--rule); }
+  .match-item.selected { box-shadow: 0 0 0 3px var(--gold-light); transform: translateY(-1px); }
+  .match-item.matched { background: linear-gradient(135deg, #2f4a2a, #437A22) !important; color: #fff !important; border-color: var(--gold) !important; cursor: default; box-shadow: 0 0 12px rgba(168,127,42,0.5); }
+  .match-item.matched::after { content: " ✓"; color: var(--gold-light); font-weight: 700; }
+  .match-item.dragover { box-shadow: 0 0 0 3px var(--gold); }
+  @keyframes shake { 0%,100%{transform:translateX(0)} 20%{transform:translateX(-7px)} 40%{transform:translateX(7px)} 60%{transform:translateX(-5px)} 80%{transform:translateX(5px)} }
+  .match-item.wrong { animation: shake 0.4s; border-color: var(--danger) !important; }
+  .match-hint { font-size: 13px; color: var(--muted); margin: 8px 0 14px; }
+  .game-status { font-weight: 600; color: var(--navy); margin: 10px 0; min-height: 22px; }
+  .celebrate { display: none; margin-top: 16px; padding: 22px; background: linear-gradient(135deg, var(--navy), var(--navy-light)); color: var(--cream); border-radius: 12px; border: 2px solid var(--gold); text-align: center; }
+  .celebrate.show { display: block; animation: fadein 0.6s; }
+  .celebrate h3 { color: var(--gold-light); border: none; padding: 0; font-size: 22px; }
+  .celebrate .verse-box { background: rgba(255,255,255,0.08); color: var(--cream); border-left-color: var(--gold); text-align: left; }
+  .celebrate .verse-box cite { color: var(--gold-light); }
+
+  /* TYPED SCRIPTURE */
+  .typed-scripture { font-family: var(--serif); font-size: clamp(20px, 3.2vw, 28px); line-height: 1.5; color: var(--navy); min-height: 120px; margin: 8px 0; }
+  .typed-scripture .hl { color: var(--gold); }
+  .typed-cursor { display: inline-block; width: 2px; background: var(--gold); animation: blink 0.8s steps(1) infinite; }
+  @keyframes blink { 50% { opacity: 0; } }
+
+  /* SWORD GAME */
+  .lie-card { background: linear-gradient(180deg, #4a4a52, #2e2e34); color: #d7d7dc; padding: 22px 24px; border-radius: 12px; font-style: italic; font-size: 18px; text-align: center; position: relative; box-shadow: inset 0 0 30px rgba(0,0,0,0.4); transition: all 0.5s; }
+  .lie-card .whisper-label { display:block; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: #9a9aa3; margin-bottom: 8px; font-style: normal; }
+  .lie-card.defeated { transform: scale(0.92); opacity: 0.18; filter: grayscale(1); }
+  .defeated-stamp { display: none; position: absolute; inset: 0; align-items: center; justify-content: center; color: var(--gold-light); font-family: var(--serif); font-size: 38px; letter-spacing: 4px; transform: rotate(-12deg); text-shadow: 0 2px 8px rgba(0,0,0,0.5); }
+  .sword-options { display: grid; gap: 12px; margin-top: 16px; }
+  .sword-card { border: 2px solid var(--gold); background: var(--surface); border-radius: 10px; padding: 14px 16px; cursor: pointer; transition: all 0.18s; font-family: inherit; text-align: left; font-size: 14.5px; color: var(--ink); width: 100%; }
+  .sword-card:hover { background: var(--cream-warm); transform: translateY(-1px); }
+  .sword-card .ref { font-weight: 700; color: var(--navy); display: block; margin-bottom: 3px; }
+  .sword-card.wrong { animation: shake 0.4s; border-color: var(--danger); }
+  .sword-card.correct { background: linear-gradient(135deg, #2f4a2a, #437A22); color: #fff; border-color: var(--gold); }
+  .sword-card.correct .ref { color: var(--gold-light); }
+  .victory-banner { display: none; margin-top: 16px; padding: 18px 20px; border-radius: 10px; background: var(--cream-warm); border-left: 4px solid var(--gold); font-style: italic; }
+  .victory-banner.show { display: block; animation: fadein 0.5s; }
+  .victory-banner cite { display: block; margin-top: 6px; font-style: normal; font-weight: 700; color: var(--navy); }
+  .round-dots { display: flex; gap: 8px; justify-content: center; margin: 12px 0; }
+  .round-dot { width: 11px; height: 11px; border-radius: 50%; background: var(--rule); transition: all 0.3s; }
+  .round-dot.done { background: var(--gold); }
+  .round-dot.active { background: var(--navy); transform: scale(1.3); }
+
+  /* JOURNAL */
+  .accordion-item { border: 1.5px solid var(--rule); border-radius: 10px; margin-bottom: 12px; overflow: hidden; background: var(--surface); }
+  .accordion-head { padding: 16px 18px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 12px; font-weight: 600; font-size: 15px; color: var(--navy); font-family: inherit; width: 100%; text-align: left; border: none; background: var(--surface); }
+  .accordion-head:hover { background: var(--cream); }
+  .accordion-head .chev { transition: transform 0.25s; color: var(--gold); font-size: 18px; flex-shrink: 0; }
+  .accordion-item.open .chev { transform: rotate(180deg); }
+  .accordion-body { display: none; padding: 0 18px 18px; }
+  .accordion-item.open .accordion-body { display: block; animation: fadein 0.3s; }
+  textarea.journal { width: 100%; min-height: 110px; border: 1.5px solid var(--rule); border-radius: 8px; padding: 13px; font-family: inherit; font-size: 15px; line-height: 1.6; color: var(--ink); background: #fdfbf5; resize: vertical; transition: border-color 0.2s; }
+  textarea.journal:focus { outline: none; border-color: var(--gold); }
+  .save-confirm { color: var(--success); font-weight: 600; opacity: 0; transition: opacity 0.3s; margin-left: 12px; }
+  .save-confirm.show { opacity: 1; }
+
+  /* THREE WEAPONS */
+  .weapons-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 8px; }
+  .weapon-card { background: linear-gradient(180deg, var(--navy), var(--navy-light)); color: var(--cream); border: 2px solid var(--gold); border-radius: 12px; padding: 22px 18px; text-align: center; }
+  .weapon-card .w-title { font-family: var(--serif); color: var(--gold-light); font-size: 22px; margin-bottom: 6px; }
+  .weapon-card .w-ref { font-size: 12px; letter-spacing: 1px; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; font-weight: 700; }
+  .weapon-card .w-verse { font-style: italic; font-size: 13.5px; color: rgba(255,255,255,0.85); margin-bottom: 12px; }
+  .weapon-card .w-body { font-size: 13.5px; color: rgba(255,255,255,0.78); line-height: 1.55; }
+
+  /* HOUSE CLEANSING */
+  .house { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; margin-top: 8px; padding: 18px; background: var(--cream-warm); border-radius: 12px; border: 2px dashed var(--rule); transition: all 0.5s; }
+  .house.cleansed { box-shadow: 0 0 30px rgba(168,127,42,0.6); border-color: var(--gold); border-style: solid; background: #fff8e8; }
+  .house-item { background: var(--surface); border: 1.5px solid var(--rule); border-radius: 10px; padding: 14px 12px; text-align: center; cursor: pointer; transition: all 0.2s; position: relative; min-height: 96px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+  .house-item:hover { border-color: var(--gold); transform: translateY(-2px); }
+  .house-item .h-icon { font-size: 30px; display: block; margin-bottom: 6px; }
+  .house-item .h-label { font-size: 12.5px; line-height: 1.35; color: var(--ink); font-weight: 500; }
+  .house-item.removed { opacity: 0.34; background: var(--cream); border-style: dashed; }
+  .house-item.removed::after { content: "🗑"; position:absolute; top:6px; right:8px; font-size: 13px; }
+  .house-item.kept { border-color: var(--success); background: #f1f7ee; }
+  .house-item.kept::after { content: "💛"; position:absolute; top:6px; right:8px; font-size: 13px; }
+  .item-actions { display: none; position: absolute; inset: 0; background: rgba(26,43,74,0.94); border-radius: 9px; align-items: center; justify-content: center; gap: 10px; z-index: 2; }
+  .house-item.choosing .item-actions { display: flex; }
+  .item-actions button { border: none; border-radius: 8px; padding: 8px 12px; font-size: 13px; font-weight: 700; cursor: pointer; font-family: inherit; }
+  .act-remove { background: var(--danger); color: #fff; }
+  .act-keep { background: var(--success); color: #fff; }
+
+  /* DELIVERANCE PRAYER */
+  .prayer-mode-bar { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; background: var(--cream-warm); border-radius: 10px; padding: 14px 16px; margin-bottom: 14px; font-size: 14.5px; }
+  .timer-display { font-family: var(--serif); font-size: 18px; color: var(--navy); background: var(--surface); border: 1.5px solid var(--rule); border-radius: 8px; padding: 4px 12px; min-width: 70px; text-align: center; }
+  .prayer-step { display: none; }
+  .prayer-step.active { display: block; animation: fadein 0.4s; }
+  .prayer-step .step-num { font-family: var(--serif); color: var(--gold); font-size: 44px; line-height: 1; margin-bottom: 4px; }
+  .step-done-row { display: flex; align-items: center; gap: 10px; margin-top: 14px; }
+  .step-check { width: 22px; height: 22px; accent-color: var(--navy); cursor: pointer; }
+  .breathe-screen { display: none; text-align: center; padding: 30px 0; }
+  .breathe-screen.show { display: block; animation: fadein 0.6s; }
+  .breathe-circle { width: 140px; height: 140px; border-radius: 50%; margin: 20px auto; background: radial-gradient(circle, var(--gold-light), var(--gold)); animation: breathe 8s ease-in-out infinite; display: flex; align-items: center; justify-content: center; color: var(--navy); font-family: var(--serif); font-size: 30px; }
+  @keyframes breathe { 0%,100% { transform: scale(0.7); opacity: 0.7; } 50% { transform: scale(1.05); opacity: 1; } }
+
+  /* WHEEL */
+  .wheel-stage { text-align: center; }
+  .wheel-holder { position: relative; width: 300px; max-width: 86vw; aspect-ratio: 1; margin: 10px auto 6px; }
+  .wheel { width: 100%; height: 100%; border-radius: 50%; border: 8px solid var(--navy); box-shadow: var(--shadow); transition: transform 3.2s cubic-bezier(.17,.67,.21,1); }
+  .wheel-pointer { position: absolute; top: -6px; left: 50%; transform: translateX(-50%); width: 0; height: 0; border-left: 16px solid transparent; border-right: 16px solid transparent; border-top: 28px solid var(--gold); z-index: 3; filter: drop-shadow(0 2px 2px rgba(0,0,0,0.3)); }
+  .wheel-hub { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 46px; height: 46px; border-radius: 50%; background: var(--gold); border: 4px solid var(--navy); z-index: 2; }
+  .wheel-result { display: none; margin-top: 16px; padding: 20px; background: linear-gradient(135deg, var(--navy), var(--navy-light)); color: var(--cream); border-radius: 12px; border: 2px solid var(--gold); }
+  .wheel-result.show { display: block; animation: fadein 0.5s; }
+  .wheel-result h3 { color: var(--gold-light); border: none; padding: 0; }
+  .plan-list { list-style: none; margin: 14px 0 0 !important; padding: 0; }
+  .plan-list li { background: var(--cream-warm); border-left: 3px solid var(--gold); border-radius: 0 8px 8px 0; padding: 10px 14px; margin-bottom: 8px; font-size: 14px; }
+
+  /* HOST / GROUP NOTES */
+  .group-notes, .host-notes { display: none; margin-top: 18px; border: 2px dashed var(--gold); border-radius: 12px; background: #fffdf6; }
+  body.group-on .group-notes, body.group-on .host-notes { display: block; }
+  .group-notes summary, .host-notes summary { cursor: pointer; padding: 14px 18px; font-weight: 700; color: var(--navy); list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+  .group-notes summary::-webkit-details-marker, .host-notes summary::-webkit-details-marker { display: none; }
+  .timing { font-size: 12px; background: var(--gold); color: var(--navy); padding: 3px 10px; border-radius: 999px; font-weight: 700; white-space: nowrap; }
+  .hn-body { padding: 0 18px 18px; font-size: 14.5px; color: var(--ink); }
+  .hn-body p { margin-bottom: 8px; }
+
+  /* BOTTOM NAV */
+  .seg-nav { position: fixed; bottom: 0; left: 0; right: 0; z-index: 200; background: var(--surface); border-top: 1px solid var(--rule); box-shadow: 0 -2px 12px rgba(31,29,24,0.08); display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 12px 18px; flex-wrap: wrap; }
+  .seg-nav .center { font-size: 13px; color: var(--muted); font-weight: 600; text-align: center; flex: 1; }
+  .seg-nav .kbd-hint { font-size: 11px; color: var(--muted); }
+  .seg-nav .kbd { background: var(--cream-warm); border: 1px solid var(--rule); border-radius: 4px; padding: 1px 6px; font-family: monospace; font-size: 11px; }
+
+  /* MINISTRY FOOTER BAR */
+  .ministry-bar { text-align: center; background: var(--navy); color: var(--gold-light); padding: 14px 18px; font-family: var(--serif); font-size: 16px; letter-spacing: 0.5px; border-top: 2px solid var(--gold); }
+
+  .action-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px; }
+  .action-row .btn { flex: 1; min-width: 200px; text-align: center; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; }
+  .share-fallback { margin-top: 12px; display: none; gap: 8px; }
+  .share-fallback.show { display: flex; }
+  .share-fallback input { flex: 1; border: 1.5px solid var(--rule); border-radius: 8px; padding: 10px 12px; font-family: inherit; font-size: 13px; background: #fdfbf5; }
+
+  .final-banner { background: var(--navy); color: var(--gold-light); border: 2px solid var(--gold); border-radius: 12px; padding: 26px; text-align: center; font-family: var(--serif); font-size: clamp(18px, 3vw, 24px); line-height: 1.4; margin-top: 18px; }
+
+  .rotate-encourage { background: var(--cream-warm); border-left: 4px solid var(--gold); border-radius: 0 10px 10px 0; padding: 18px 20px; font-style: italic; font-size: 16px; color: var(--ink); min-height: 70px; transition: opacity 0.5s; }
+
+  @media (max-width: 640px) {
+    .container { padding: 16px 12px 140px; }
+    .panel-hero { padding: 22px 18px; }
+    .card { padding: 18px; }
+    .match-wrap { grid-template-columns: 1fr; }
+    .weapons-grid { grid-template-columns: 1fr; }
+    .mode-bar { gap: 14px; }
+    .seg-nav { padding: 10px 12px; }
+    .seg-nav .kbd-hint { display: none; }
+    .action-row .btn { min-width: 100%; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
+    .breathe-circle { animation: none; }
+  }
+  @media print {
+    .progress-shell, .seg-nav, .group-notes, .host-notes, .mode-bar, .skip-link, .privacy-strip { display: none !important; }
+    .panel { display: block !important; page-break-before: always; }
+    .card, .panel-hero { box-shadow: none; border: 1px solid #ccc; }
+    body { background: #fff; }
+  }
+  .skip-link { position: absolute; left: -999px; }
+  .skip-link:focus { left: 16px; top: 16px; background: var(--gold); color: var(--navy); padding: 8px 14px; border-radius: 8px; z-index: 999; }
+</style>
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to content</a>
+
+<header class="site">
+  <div class="mode-bar">
+    <span class="mode-toggle">
+      <span class="opt on" id="opt-solo">Solo</span>
+      <label class="switch"><input type="checkbox" id="group-switch" aria-label="Toggle solo or group mode"><span class="slider"></span></label>
+      <span class="opt" id="opt-group">Group</span>
+    </span>
+    <span class="mode-toggle">
+      <span>Host Mode</span>
+      <label class="switch"><input type="checkbox" id="host-switch" aria-label="Toggle host facilitator mode"><span class="slider"></span></label>
+    </span>
+  </div>
+  <div class="subtitle">An Interactive Deliverance Webinar</div>
+  <h1>Deliverance from the Strong Man of Sex</h1>
+  <div class="verse">&ldquo;Or else how can one enter into a strong man's house, and spoil his goods, except he first bind the strong man?&rdquo; — Matthew 12:29 (KJV)</div>
+  <div class="ministry-brand">L137 Deliverance Ministry International</div>
+</header>
+
+<div class="container" id="main">
+
+  <div class="progress-shell">
+    <div class="progress-label">
+      <span>Segment <span id="seg-current">1</span> / 12</span>
+      <span class="seg-name" id="seg-name">Welcome</span>
+    </div>
+    <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+  </div>
+  <div class="privacy-strip">🔒 Private session — nothing leaves your device.</div>
+
+  <!-- ============ SEGMENT 1 — WELCOME & GENTLE POLL ============ -->
+  <section class="panel active" data-seg="1" aria-label="Segment 1: Welcome">
+    <div class="panel-hero">
+      <div class="seg-label">Segment 1 · Welcome</div>
+      <h2>Welcome to the Deliverance Webinar</h2>
+      <p class="intro">Hosted by L137 Deliverance Ministry International</p>
+    </div>
+    <div class="card">
+      <div class="privacy-note big">🔒 Everything you do here is private. Nothing is sent anywhere. Your phone is your prayer closet.</div>
+    </div>
+    <div class="card">
+      <h3>Opening Prayer</h3>
+      <div class="prayer-box"><strong>Father</strong>, we come boldly to Your throne of grace. We invite the Holy Spirit to lead this session. We bind every distraction in Jesus' name. Amen.</div>
+    </div>
+    <div class="card">
+      <h3>What brought you here today?</h3>
+      <p class="match-hint">Just between you and the Lord.</p>
+      <div class="poll-grid" id="poll-grid"></div>
+      <div class="personal-word" id="personal-word" aria-live="polite">
+        <div class="pw-lead">A word for you —</div>
+        <div class="pw-verse" id="pw-verse"></div>
+        <cite id="pw-cite"></cite>
+      </div>
+    </div>
+    <details class="group-notes"><summary><span>Facilitator &amp; Group Notes</span><span class="timing">Suggested time: 8 min</span></summary>
+      <div class="hn-body"><p><strong>Welcome warmly.</strong> Read the opening prayer aloud slowly. Invite each person to choose their reason quietly — their answer stays on their own device.</p><p><em>Group prompt:</em> Pause here. If you're together, share one word for why you came — only if you want to.</p></div>
+    </details>
+  </section>
+
+  <!-- ============ SEGMENT 2 — NAME THE STRONG MAN ============ -->
+  <section class="panel" data-seg="2" aria-label="Segment 2: Name the Strong Man">
+    <div class="panel-hero">
+      <div class="seg-label">Segment 2 · Game 1</div>
+      <h2>Name the Strong Man</h2>
+      <p class="intro">A strong man is a ruling demonic spirit (Matthew 12:29). Before you can be free, you must identify him by his fruits.</p>
+    </div>
+    <div class="card">
+      <h3>Match the spirit to its fruit</h3>
+      <p class="match-hint" id="match-instruction">Drag a spirit onto its matching fruit. On a touchscreen, tap a spirit, then tap its fruit. Take your time — this is just for you.</p>
+      <div class="game-status" id="match-status" aria-live="polite"></div>
+      <div class="match-wrap">
+        <div class="match-col"><h4>The Strong Men</h4><div id="strong-col"></div></div>
+        <div class="match-col"><h4>Their Fruits</h4><div id="fruit-col"></div></div>
+      </div>
+      <div class="skip-reveal"><button class="link-btn" id="match-skip">I'd rather just read this part — show me the lesson</button></div>
+      <div class="celebrate" id="match-celebrate">
+        <h3>Now you can name him.</h3>
+        <p>And what you can name, you can bind.</p>
+        <div class="verse-box">And he asked him, What is thy name? And he answered, saying, My name is Legion: for we are many.<cite>— Mark 5:9 (KJV)</cite></div>
+      </div>
+    </div>
+    <details class="group-notes"><summary><span>Facilitator &amp; Group Notes</span><span class="timing">Suggested time: 10 min</span></summary>
+      <div class="hn-body"><p>Naming the spirit by its fruit is the first step toward authority over it. Let people work at their own pace; the "show me the lesson" link reveals the answers for anyone who prefers to read.</p><p><em>Group prompt:</em> Pause here. If you're together, share one fruit you recognize — only if you want to.</p></div>
+    </details>
+  </section>
+
+  <!-- ============ SEGMENT 3 — BINDING TEACHING ============ -->
+  <section class="panel" data-seg="3" aria-label="Segment 3: Binding the strong man">
+    <div class="panel-hero">
+      <div class="seg-label">Segment 3 · Teaching</div>
+      <h2>How Jesus Showed Us To Bind Him</h2>
+    </div>
+    <div class="card">
+      <h3>The Word of the Lord</h3>
+      <div class="typed-scripture" id="typed-target" aria-live="polite"></div>
+      <cite style="display:block;font-style:normal;font-weight:700;color:var(--navy);">— Matthew 12:29 (KJV)</cite>
+      <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
+        <button class="btn btn-secondary btn-small" id="replay-type">↻ Replay reveal</button>
+        <button class="btn btn-gold btn-small" id="speak-verse">🔊 Listen to this passage</button>
+        <span id="speak-status" style="font-weight:600;color:var(--navy);"></span>
+      </div>
+    </div>
+    <div class="card">
+      <h3>Teaching</h3>
+      <p>Jesus did not merely describe the strong man — He revealed the divine order of warfare. The believer who is in Christ shares His authority. We do not beg the enemy to leave; we exercise the authority Jesus purchased. &ldquo;Behold, I give unto you power to tread on serpents and scorpions, and over all the power of the enemy&rdquo; (Luke 10:19). Deliverance is not a struggle between equals; it is the enforcement of a victory already won at Calvary.</p>
+      <p>Notice the order: <strong>binding precedes spoiling.</strong> The ruling spirit — the strong man — must first be bound before his goods (the lesser spirits, the habits, the strongholds) can be plundered and removed. Derek Prince taught that many fail in deliverance because they attack symptoms while the ruling spirit still holds legal command of the house. Bind the strong man first; then his house can be emptied and kept clean.</p>
+      <p>What are the weapons that bind him? Not willpower, not religious effort, but the Name of Jesus and the Blood of the Lamb. As Frank Hammond wrote in <em>Pigs in the Parlor</em>, the authority is in the Name, and the cleansing is in the Blood. When you speak the Name of Jesus in living faith, heaven backs your word; when you plead His Blood, the enemy's legal ground is cancelled. Bound by the Name, judged by the Word, washed by the Blood — the strong man must release his house.</p>
+    </div>
+    <details class="group-notes"><summary><span>Facilitator &amp; Group Notes</span><span class="timing">Suggested time: 8 min</span></summary>
+      <div class="hn-body"><p>Let the scripture finish typing before teaching. Emphasize the three points: the believer's authority, binding-before-spoiling, and the Name and the Blood as weapons. Use the "Listen" button so the Word is heard aloud.</p><p><em>Group prompt:</em> Pause here. If you're together, read Matthew 12:29 aloud once more together.</p></div>
+    </details>
+  </section>
+
+  <!-- ============ SEGMENT 4 — SWORD OF THE SPIRIT ============ -->
+  <section class="panel" data-seg="4" aria-label="Segment 4: Sword of the Spirit">
+    <div class="panel-hero">
+      <div class="seg-label">Segment 4 · Game 2</div>
+      <h2>Wield the Sword of the Spirit</h2>
+      <p class="intro">Every lie of the enemy has a scripture that defeats it (Ephesians 6:17). Pick the right sword.</p>
+    </div>
+    <div class="card">
+      <div class="round-dots" id="sword-dots"></div>
+      <div class="lie-card" id="lie-card">
+        <span class="whisper-label">The whisper of the enemy</span>
+        <span id="lie-text"></span>
+        <div class="defeated-stamp" id="defeated-stamp">DEFEATED</div>
+      </div>
+      <div class="game-status" id="sword-status" aria-live="polite"></div>
+      <div class="sword-options" id="sword-options"></div>
+      <div class="victory-banner" id="victory-banner"></div>
+      <div style="text-align:center;margin-top:16px;" id="sword-next-wrap"></div>
+      <div class="skip-reveal"><button class="link-btn" id="sword-skip">I'd rather just read this part — show me the swords</button></div>
+      <div class="lesson-reveal" id="sword-lesson"></div>
+    </div>
+    <details class="group-notes"><summary><span>Facilitator &amp; Group Notes</span><span class="timing">Suggested time: 12 min</span></summary>
+      <div class="hn-body"><p>Read each lie aloud in a low voice, then let people find the sword that answers it. There is no score — this is to put the Word in their hands, not to test them.</p><p><em>Group prompt:</em> Pause here. If you're together, name one lie you have believed — only if you want to.</p></div>
+    </details>
+  </section>
+
+  <!-- ============ SEGMENT 5 — HEART INVENTORY ============ -->
+  <section class="panel" data-seg="5" aria-label="Segment 5: Heart Inventory">
+    <div class="panel-hero">
+      <div class="seg-label">Segment 5 · Reflection</div>
+      <h2>Heart Inventory</h2>
+      <p class="intro">Take your time. There is no rush here.</p>
+    </div>
+    <div class="card">
+      <div class="verse-box">Search me, O God, and know my heart: try me, and know my thoughts: and see if there be any wicked way in me, and lead me in the way everlasting.<cite>— Psalm 139:23-24 (KJV)</cite></div>
+      <div class="privacy-note big">🔒 What you write stays on this device. Nothing is sent anywhere.</div>
+      <div id="inventory-list"></div>
+      <div style="margin-top:8px;">
+        <button class="btn btn-primary btn-small" id="inventory-save">Save</button>
+        <span class="save-confirm" id="inventory-saved">✓ Saved</span>
+      </div>
+    </div>
+    <details class="group-notes"><summary><span>Facilitator &amp; Group Notes</span><span class="timing">Suggested time: 10 min</span></summary>
+      <div class="hn-body"><p>This is silent reflection — give people real time. Do not rush. Reassure them their writing is private to their device. They do not need to write details, only to acknowledge before the Lord.</p><p><em>Group prompt:</em> Do <strong>not</strong> ask anyone to read these aloud. This stays between each soul and the Lord.</p></div>
+    </details>
+  </section>
+
+  <!-- ============ SEGMENT 6 — THREE WEAPONS ============ -->
+  <section class="panel" data-seg="6" aria-label="Segment 6: Your Three Weapons">
+    <div class="panel-hero">
+      <div class="seg-label">Segment 6 · Teaching</div>
+      <h2>Your Three Weapons</h2>
+      <p class="intro">The Blood, the Name, and the Word — these three overcome the enemy.</p>
+    </div>
+    <div class="card">
+      <div class="weapons-grid">
+        <div class="weapon-card">
+          <div class="w-title">The Blood</div>
+          <div class="w-ref">Revelation 12:11</div>
+          <div class="w-verse">&ldquo;And they overcame him by the blood of the Lamb…&rdquo;</div>
+          <div class="w-body">The Blood of Jesus is your legal authority. It cancels every claim the enemy holds against you and washes away the guilt that gave him ground. When you plead the Blood, you stand in a covenant the enemy cannot break.</div>
+        </div>
+        <div class="weapon-card">
+          <div class="w-title">The Name</div>
+          <div class="w-ref">Philippians 2:10</div>
+          <div class="w-verse">&ldquo;That at the name of Jesus every knee should bow…&rdquo;</div>
+          <div class="w-body">The Name of Jesus is above every name. Every demonic power must bow to it. Spoken in faith, His Name carries the full authority of heaven — you command, and the enemy must obey.</div>
+        </div>
+        <div class="weapon-card">
+          <div class="w-title">The Word</div>
+          <div class="w-ref">Hebrews 4:12</div>
+          <div class="w-verse">&ldquo;For the word of God is quick, and powerful, and sharper than any twoedged sword…&rdquo;</div>
+          <div class="w-body">The Word of God is the sword of the Spirit. It divides truth from lie, judges every thought, and gives you a scripture for every assault. Speak it aloud and the enemy is cut down.</div>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:18px;">
+        <button class="btn btn-gold" id="declare-btn">🔊 Press to declare</button>
+        <span id="declare-status" style="margin-left:10px;font-weight:600;color:var(--navy);"></span>
+      </div>
+    </div>
+    <details class="group-notes"><summary><span>Facilitator &amp; Group Notes</span><span class="timing">Suggested time: 7 min</span></summary>
+      <div class="hn-body"><p>Teach each weapon in turn. Declare together: &ldquo;I overcome by the Blood of the Lamb, by the Name of Jesus, and by the Word of my testimony.&rdquo; Use the declare button to lead it aloud.</p><p><em>Group prompt:</em> Pause here. If you're together, declare the line aloud once, in one voice.</p></div>
+    </details>
+  </section>
+
+  <!-- ============ SEGMENT 7 — HOUSE CLEANSING ============ -->
+  <section class="panel" data-seg="7" aria-label="Segment 7: Cleanse Your House">
+    <div class="panel-hero">
+      <div class="seg-label">Segment 7 · Game 3</div>
+      <h2>Cleanse Your House</h2>
+      <p class="intro">Achan's tribe could not stand until the cursed thing was removed (Joshua 7). What's in your house?</p>
+    </div>
+    <div class="card">
+      <h3>Tap each item — keep it or remove it</h3>
+      <div class="privacy-note big">This is just between you and the Lord. No one will see what you mark.</div>
+      <div class="house" id="house" role="group" aria-label="Items in the house"></div>
+      <div class="game-status" id="house-status" aria-live="polite"></div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px;align-items:center;">
+        <button class="btn btn-primary btn-small" id="house-check">Finish cleansing</button>
+        <button class="link-btn" id="house-skip">I'd rather just read this part — show me the lesson</button>
+      </div>
+      <div class="lesson-reveal" id="house-lesson">
+        <div class="verse-box">Neither shalt thou bring an abomination into thine house, lest thou be a cursed thing like it: but thou shalt utterly detest it, and thou shalt utterly abhor it; for it is a cursed thing.<cite>— Deuteronomy 7:26 (KJV)</cite></div>
+      </div>
+    </div>
+    <details class="group-notes"><summary><span>Facilitator &amp; Group Notes</span><span class="timing">Suggested time: 10 min</span></summary>
+      <div class="hn-body"><p>Encourage people to go room by room in their own home in the days ahead. No one sees their choices. There is no shame in what is still in the house — the Holy Spirit is patient.</p><p><em>Group prompt:</em> Do not ask anyone to confess what's in their house. Simply pray together for clean homes.</p></div>
+    </details>
+  </section>
+
+  <!-- ============ SEGMENT 8 — LETTER TO YOURSELF ============ -->
+  <section class="panel" data-seg="8" aria-label="Segment 8: Letter to Yourself">
+    <div class="panel-hero">
+      <div class="seg-label">Segment 8 · Reflection</div>
+      <h2>Letter to Yourself</h2>
+      <p class="intro">Write to the person you will be one year from now — free, in Christ.</p>
+    </div>
+    <div class="card">
+      <div class="verse-box">Being confident of this very thing, that he which hath begun a good work in you will perform it until the day of Jesus Christ.<cite>— Philippians 1:6 (KJV)</cite></div>
+      <p>One year from today, who do you want to be in Christ? What freedom will you be walking in? What do you want to remind your future self of — the promise God made you, the prayer you prayed tonight, the hope you are holding onto? Write it as a letter. Speak to yourself in faith.</p>
+      <div class="privacy-note big">🔒 This letter stays on your device. It is sent to no one unless you choose to mail it to yourself.</div>
+      <label for="letter" style="display:block;font-weight:700;color:var(--navy);margin:8px 0 6px;">Dear future me,</label>
+      <textarea id="letter" class="journal" style="min-height:200px;" placeholder="One year from now, by the grace of God, I will be..."></textarea>
+      <div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
+        <button class="btn btn-primary btn-small" id="letter-save">Save my letter</button>
+        <span class="save-confirm" id="letter-saved">✓ Saved on this device</span>
+        <button class="btn btn-secondary btn-small" id="letter-mail">✉ Mail this to me in a year</button>
+      </div>
+      <p style="font-size:13px;color:var(--muted);margin-top:10px;">Mailing opens your own email app with the letter pre-filled. You send it to yourself — set a reminder to read it in a year. Nothing is sent automatically.</p>
+    </div>
+    <details class="group-notes"><summary><span>Facilitator &amp; Group Notes</span><span class="timing">Suggested time: 8 min</span></summary>
+      <div class="hn-body"><p>This is a hope exercise — let it be quiet and personal. Reassure the room the letter is private to their device.</p><p><em>Group prompt:</em> If you're together, share only the <em>first sentence</em> of your letter — and only if you want to.</p></div>
+    </details>
+  </section>
+
+  <!-- ============ SEGMENT 9 — THE DELIVERANCE PRAYER ============ -->
+  <section class="panel" data-seg="9" aria-label="Segment 9: The Deliverance Prayer">
+    <div class="panel-hero">
+      <div class="seg-label">Segment 9 · The Deliverance</div>
+      <h2>The Deliverance Prayer</h2>
+      <p class="intro">Take a deep breath. The Holy Spirit is here. Move through each step at your own pace.</p>
+    </div>
+    <div class="card">
+      <div class="privacy-note big">You can pray these <strong>aloud (recommended)</strong> or silently — both work. The Lord hears the heart.</div>
+      <div class="prayer-mode-bar">
+        <span>🕊 You can stop and breathe anytime.</span>
+        <span class="timer-display" id="prayer-timer">0:00</span>
+        <button class="btn btn-secondary btn-small" id="timer-toggle">Pause / Resume</button>
+      </div>
+      <div class="progress-bar" style="margin-bottom:16px;"><div class="progress-fill" id="prayer-progress"></div></div>
+      <div id="prayer-steps"></div>
+      <div class="breathe-screen" id="breathe-screen">
+        <div class="breathe-circle">🕊</div>
+        <p style="font-size:18px;color:var(--navy);font-family:var(--serif);">Breathe — receive — He is faithful</p>
+        <div class="verse-box" style="text-align:left;max-width:520px;margin:18px auto 0;">If the Son therefore shall make you free, ye shall be free indeed.<cite>— John 8:36 (KJV)</cite></div>
+      </div>
+      <div style="display:flex;justify-content:space-between;margin-top:16px;gap:10px;flex-wrap:wrap;" id="prayer-nav-wrap">
+        <button class="btn btn-secondary btn-small" id="prayer-prev">← Previous prayer</button>
+        <button class="btn btn-primary btn-small" id="prayer-next">Next prayer →</button>
+      </div>
+    </div>
+    <details class="group-notes"><summary><span>Facilitator &amp; Group Notes</span><span class="timing">Suggested time: 20 min — do not rush</span></summary>
+      <div class="hn-body"><p>This is the heart of the session. Lead slowly, step by step. Pause between steps. Let people weep, breathe, and resume — the pause timer lets each person hold their own pace.</p><p><em>Group prompt:</em> Pray each step in one voice if together, but allow silence for the personal renunciations and the casting-out.</p></div>
+    </details>
+  </section>
+
+  <!-- ============ SEGMENT 10 — WALKING FREE WHEEL ============ -->
+  <section class="panel" data-seg="10" aria-label="Segment 10: Walking Free Wheel">
+    <div class="panel-hero">
+      <div class="seg-label">Segment 10 · Game 4</div>
+      <h2>Your Walking-Free Wheel</h2>
+      <p class="intro">Freedom is kept by a daily walk (Galatians 5:16). Spin for tomorrow's assignment.</p>
+    </div>
+    <div class="card">
+      <div class="wheel-stage">
+        <div class="wheel-holder">
+          <div class="wheel-pointer"></div>
+          <canvas class="wheel" id="wheel" width="600" height="600"></canvas>
+          <div class="wheel-hub"></div>
+        </div>
+        <button class="btn btn-gold" id="spin-btn">Spin the wheel</button>
+      </div>
+      <div class="wheel-result" id="wheel-result">
+        <h3 id="wheel-result-title"></h3>
+        <div class="verse-box" style="background:rgba(255,255,255,0.08);color:var(--cream);border-left-color:var(--gold);" id="wheel-result-verse"></div>
+        <button class="btn btn-gold btn-small" id="add-plan">Add to my plan</button>
+      </div>
+      <div id="plan-wrap" style="margin-top:18px;display:none;">
+        <h4 style="color:var(--navy);font-family:var(--sans);">My walking-free plan</h4>
+        <ul class="plan-list" id="plan-list"></ul>
+      </div>
+      <div class="skip-reveal"><button class="link-btn" id="wheel-skip">I'd rather just read this part — show me all the assignments</button></div>
+      <div class="lesson-reveal" id="wheel-lesson"></div>
+    </div>
+    <details class="group-notes"><summary><span>Facilitator &amp; Group Notes</span><span class="timing">Suggested time: 6 min</span></summary>
+      <div class="hn-body"><p>Encourage building a simple 7-day plan from the wheel. The assignments are disciplines that keep the cleansed house full (Matthew 12:43-45).</p><p><em>Group prompt:</em> Share which assignment you landed on — and commit to it together.</p></div>
+    </details>
+  </section>
+
+  <!-- ============ SEGMENT 11 — TESTIMONY ============ -->
+  <section class="panel" data-seg="11" aria-label="Segment 11: The Word of Your Testimony">
+    <div class="panel-hero">
+      <div class="seg-label">Segment 11 · Testimony</div>
+      <h2>The Word of Your Testimony</h2>
+    </div>
+    <div class="card">
+      <div class="verse-box">And they overcame him by the blood of the Lamb, and by the word of their testimony.<cite>— Revelation 12:11 (KJV)</cite></div>
+      <div class="privacy-note big">🔒 Your testimony is <strong>private by default</strong>. It stays on this device. It is only shared if <em>you</em> tap &ldquo;Share with L137&rdquo; or &ldquo;Download&rdquo; below.</div>
+      <label for="testimony" style="display:block;font-weight:700;color:var(--navy);margin:8px 0 6px;">Write what God did for you today</label>
+      <textarea id="testimony" class="journal" style="min-height:160px;" placeholder="Today, the Lord..."></textarea>
+      <div style="margin-top:10px;">
+        <button class="btn btn-primary btn-small" id="testimony-save">Save (private)</button>
+        <span class="save-confirm" id="testimony-saved">✓ Saved privately on this device</span>
+      </div>
+      <div class="action-row" style="margin-top:16px;">
+        <button class="btn btn-secondary" id="testimony-share">✉ Share my testimony with L137</button>
+        <button class="btn btn-secondary" id="testimony-print">⬇ Download my testimony as PDF</button>
+      </div>
+    </div>
+    <div class="card">
+      <h3>A word of encouragement</h3>
+      <div class="rotate-encourage" id="encourage" aria-live="polite"></div>
+    </div>
+    <details class="group-notes"><summary><span>Facilitator &amp; Group Notes</span><span class="timing">Suggested time: 10 min</span></summary>
+      <div class="hn-body"><p>Make clear that sharing is entirely optional. Many will keep their testimony private — honor that fully.</p><p><em>Group prompt:</em> Invite — never require — one testimony to be shared aloud, to build everyone's faith.</p></div>
+    </details>
+  </section>
+
+  <!-- ============ SEGMENT 12 — CLOSING & RESOURCES ============ -->
+  <section class="panel" data-seg="12" aria-label="Segment 12: Sealed in Freedom">
+    <div class="panel-hero">
+      <div class="seg-label">Segment 12 · Closing</div>
+      <h2>Sealed in Freedom</h2>
+    </div>
+    <div class="card">
+      <h3>Closing &amp; Sealing Prayer</h3>
+      <div class="prayer-box" style="font-family:var(--serif);font-size:18px;line-height:1.6;"><strong>Father</strong>, I thank You that what You have set free is free indeed. I close every door I opened. I seal this work with the Blood of Jesus. I receive Your peace that passeth all understanding. Amen.</div>
+    </div>
+    <div class="card">
+      <h3>Take it with you</h3>
+      <div class="action-row">
+        <a class="btn btn-gold" href="L137_Deliverance_Workbook.pdf" download="L137_Deliverance_Workbook.pdf">📖 Download the Workbook (PDF)</a>
+        <a class="btn btn-secondary" href="index.html">🏠 Back to the Course</a>
+        <button class="btn btn-secondary" id="share-webinar">🔗 Share this Webinar</button>
+      </div>
+      <div class="share-fallback" id="share-fallback">
+        <input type="text" id="share-url" readonly aria-label="Webinar link">
+        <button class="btn btn-primary btn-small" id="copy-url">Copy</button>
+      </div>
+      <h4 style="margin-top:18px;">Reputable resources for continued growth</h4>
+      <ul>
+        <li><a href="https://www.derekprince.org/" target="_blank" rel="noopener">Derek Prince Ministries</a> — teaching on curses, soul ties &amp; deliverance</li>
+        <li><a href="https://jenniferleclaire.org/" target="_blank" rel="noopener">Jennifer LeClaire Ministries</a></li>
+        <li><a href="https://www.amazon.com/Pigs-Parlor-Practical-Guide-Deliverance/dp/0892280271" target="_blank" rel="noopener">Pigs in the Parlor — Frank &amp; Ida Mae Hammond</a></li>
+        <li>Keys to the Kingdom Deliverance Ministry — renunciation prayers for lust</li>
+      </ul>
+    </div>
+    <div class="final-banner">&ldquo;If the Son therefore shall make you free, ye shall be free indeed.&rdquo;<br>— John 8:36 (KJV)</div>
+    <details class="group-notes"><summary><span>Facilitator &amp; Group Notes</span><span class="timing">Suggested time: 5 min</span></summary>
+      <div class="hn-body"><p>Close with the sealing prayer in one voice. Send everyone home with the workbook and the daily plan. Remind them: deliverance is a door; the daily walk keeps the house clean.</p><p><em>Group prompt:</em> End in worship and thanksgiving together.</p></div>
+    </details>
+  </section>
+
+</div>
+
+<div class="seg-nav">
+  <button class="btn btn-secondary btn-small" id="nav-prev">← Previous</button>
+  <span class="center">
+    <span id="nav-center">Segment 1 of 12</span>
+    <span class="kbd-hint"> · <span class="kbd">←</span> <span class="kbd">→</span> navigate</span>
+  </span>
+  <button class="btn btn-primary btn-small" id="nav-next">Next →</button>
+</div>
+
+<div class="ministry-bar">L137 Deliverance Ministry International</div>
+
+<script>
+(function(){
+  "use strict";
+  /* ===================== STORAGE (browser persistence via bracket notation, in-memory fallback) ===================== */
+  var _mem = {};
+  function _store(){
+    try {
+      var k = 'local' + 'Storage';
+      var s = window[k];
+      var t = '__t' + Date.now();
+      s.setItem(t,'1'); s.removeItem(t);
+      return s;
+    } catch(e){
+      return {
+        getItem: function(k){ return (k in _mem) ? _mem[k] : null; },
+        setItem: function(k,v){ _mem[k] = String(v); },
+        removeItem: function(k){ delete _mem[k]; }
+      };
+    }
+  }
+  var KEY = 'l137_webinar_v1';
+  function loadState(){ try { return JSON.parse(_store().getItem(KEY)) || {}; } catch(e){ return {}; } }
+  function saveState(s){ try { _store().setItem(KEY, JSON.stringify(s)); } catch(e){} }
+  function setVal(path, val){ var s = loadState(); s[path] = val; saveState(s); }
+  function getVal(path, def){ var s = loadState(); return (path in s) ? s[path] : def; }
+
+  var $ = function(id){ return document.getElementById(id); };
+  var prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ===================== SEGMENT NAV ===================== */
+  var TOTAL = 12;
+  var SEG_NAMES = {1:"Welcome",2:"Name the Strong Man",3:"Binding Teaching",4:"Sword of the Spirit",5:"Heart Inventory",6:"Three Weapons",7:"House Cleansing",8:"Letter to Yourself",9:"The Deliverance Prayer",10:"Walking-Free Wheel",11:"Testimony",12:"Sealed in Freedom"};
+  var current = 1;
+  var entered = {};
+
+  function showSeg(n){
+    if(n < 1 || n > TOTAL) return;
+    current = n;
+    document.querySelectorAll('.panel').forEach(function(p){
+      p.classList.toggle('active', parseInt(p.dataset.seg,10) === n);
+    });
+    $('seg-current').textContent = n;
+    $('seg-name').textContent = SEG_NAMES[n];
+    $('nav-center').textContent = 'Segment ' + n + ' of ' + TOTAL;
+    $('progress-fill').style.width = (n/TOTAL*100) + '%';
+    $('nav-prev').disabled = (n === 1);
+    $('nav-next').disabled = (n === TOTAL);
+    setVal('lastSeg', n);
+    window.scrollTo({ top: 0, behavior: prefersReduced ? 'auto' : 'smooth' });
+    if(!entered[n]){ entered[n] = true; onEnter(n); }
+  }
+  function onEnter(n){
+    if(n === 3) startTyping();
+    if(n === 10) drawWheel();
+    if(n === 11) startEncourage();
+  }
+  $('nav-prev').addEventListener('click', function(){ showSeg(current-1); });
+  $('nav-next').addEventListener('click', function(){ showSeg(current+1); });
+
+  /* keyboard */
+  document.addEventListener('keydown', function(e){
+    var tag = (e.target.tagName||'').toLowerCase();
+    if(tag === 'textarea' || tag === 'input') return;
+    if(e.key === 'ArrowRight'){ showSeg(current+1); }
+    else if(e.key === 'ArrowLeft'){ showSeg(current-1); }
+  });
+
+  /* ===================== MODE TOGGLES ===================== */
+  var groupSwitch = $('group-switch'), hostSwitch = $('host-switch');
+  function applyGroup(on){
+    // Facilitator notes show when EITHER group mode OR host mode is on.
+    document.body.classList.toggle('group-on', on || hostSwitch.checked);
+    $('opt-solo').classList.toggle('on', !on);
+    $('opt-group').classList.toggle('on', on);
+  }
+  groupSwitch.addEventListener('change', function(){ applyGroup(groupSwitch.checked); setVal('groupMode', groupSwitch.checked); });
+  hostSwitch.addEventListener('change', function(){
+    // Host mode also reveals facilitator notes (shares the group-notes container)
+    document.body.classList.toggle('group-on', hostSwitch.checked || groupSwitch.checked);
+    setVal('hostMode', hostSwitch.checked);
+  });
+
+  /* ===================== SEG 1: GENTLE POLL → PERSONAL WORD ===================== */
+  var POLL = [
+    {t:"I need freedom in this area", verse:"If the Son therefore shall make you free, ye shall be free indeed.", ref:"John 8:36 (KJV)"},
+    {t:"I'm interceding for a loved one", verse:"I exhort therefore, that, first of all, supplications, prayers, intercessions, and giving of thanks, be made for all men.", ref:"1 Timothy 2:1 (KJV)"},
+    {t:"I want to learn how to minister deliverance", verse:"And these signs shall follow them that believe; In my name shall they cast out devils.", ref:"Mark 16:17 (KJV)"},
+    {t:"I'm seeking the Lord", verse:"And ye shall seek me, and find me, when ye shall search for me with all your heart.", ref:"Jeremiah 29:13 (KJV)"},
+    {t:"Other / I'm just listening", verse:"So then faith cometh by hearing, and hearing by the word of God.", ref:"Romans 10:17 (KJV)"}
+  ];
+  (function buildPoll(){
+    var grid = $('poll-grid');
+    POLL.forEach(function(o, i){
+      var b = document.createElement('button');
+      b.className = 'poll-card';
+      b.type = 'button';
+      b.innerHTML = '<span class="poll-num">'+(i+1)+'</span><span>'+o.t+'</span>';
+      b.addEventListener('click', function(){ pickPoll(i); });
+      grid.appendChild(b);
+    });
+    var saved = getVal('pollPick', null);
+    if(saved !== null && saved >= 0 && saved < POLL.length) pickPoll(saved, true);
+  })();
+  function pickPoll(i, silent){
+    document.querySelectorAll('#poll-grid .poll-card').forEach(function(c, idx){
+      c.classList.toggle('selected', idx === i);
+    });
+    var o = POLL[i];
+    $('pw-verse').innerHTML = '&ldquo;' + o.verse + '&rdquo;';
+    $('pw-cite').textContent = '— ' + o.ref;
+    $('personal-word').classList.add('show');
+    if(!silent) setVal('pollPick', i);
+  }
+
+  /* ===================== SEG 2: NAME THE STRONG MAN ===================== */
+  var MATCHES = [
+    {name:"Spirit of Lust", fruit:"Pornography, fantasy, compulsive sexual sin"},
+    {name:"Spirit of Pride", fruit:"Self-exaltation, contempt for correction, can't say 'I was wrong'"},
+    {name:"Spirit of Fear", fruit:"Anxiety, panic, dread, controlling thoughts"},
+    {name:"Spirit of Rejection", fruit:"Feels unloved/unwanted; withdraws or performs for love"},
+    {name:"Spirit of Witchcraft / Control", fruit:"Manipulation, intimidation, occult curiosity, controlling others"},
+    {name:"Spirit of Bitterness", fruit:"Holding grudges, can't forgive, replaying past wounds"}
+  ];
+  var matchState = { matched:0, selectedStrong:null };
+  function shuffle(a){ a = a.slice(); for(var i=a.length-1;i>0;i--){ var j=Math.floor(Math.random()*(i+1)); var t=a[i];a[i]=a[j];a[j]=t;} return a; }
+  (function buildMatch(){
+    var strongCol = $('strong-col'), fruitCol = $('fruit-col');
+    var strongs = shuffle(MATCHES.map(function(m,i){ return {i:i, label:m.name}; }));
+    var fruits = shuffle(MATCHES.map(function(m,i){ return {i:i, label:m.fruit}; }));
+    strongs.forEach(function(s){
+      var el = document.createElement('div');
+      el.className = 'match-item strong-card';
+      el.textContent = s.label;
+      el.setAttribute('draggable','true');
+      el.dataset.i = s.i;
+      el.tabIndex = 0;
+      el.setAttribute('role','button');
+      el.addEventListener('click', function(){ selectStrong(el); });
+      el.addEventListener('keydown', function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); selectStrong(el);} });
+      el.addEventListener('dragstart', function(e){ matchState.dragI = s.i; e.dataTransfer.setData('text','x'); });
+      strongCol.appendChild(el);
+    });
+    fruits.forEach(function(f){
+      var el = document.createElement('div');
+      el.className = 'match-item fruit-card';
+      el.textContent = f.label;
+      el.dataset.i = f.i;
+      el.tabIndex = 0;
+      el.setAttribute('role','button');
+      el.addEventListener('click', function(){ tapFruit(el); });
+      el.addEventListener('keydown', function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); tapFruit(el);} });
+      el.addEventListener('dragover', function(e){ e.preventDefault(); el.classList.add('dragover'); });
+      el.addEventListener('dragleave', function(){ el.classList.remove('dragover'); });
+      el.addEventListener('drop', function(e){ e.preventDefault(); el.classList.remove('dragover'); attempt(matchState.dragI, parseInt(el.dataset.i,10), null, el); });
+      fruitCol.appendChild(el);
+    });
+  })();
+  function selectStrong(el){
+    if(el.classList.contains('matched')) return;
+    document.querySelectorAll('#strong-col .match-item').forEach(function(c){ c.classList.remove('selected'); });
+    el.classList.add('selected');
+    matchState.selectedStrong = el;
+    $('match-status').textContent = 'Now tap its matching fruit.';
+  }
+  function tapFruit(el){
+    if(el.classList.contains('matched')) return;
+    if(matchState.selectedStrong === null){ $('match-status').textContent = 'First tap a spirit on the left.'; return; }
+    attempt(parseInt(matchState.selectedStrong.dataset.i,10), parseInt(el.dataset.i,10), matchState.selectedStrong, el);
+  }
+  function attempt(strongI, fruitI, strongEl, fruitEl){
+    strongEl = strongEl || document.querySelector('#strong-col .match-item[data-i="'+strongI+'"]');
+    if(strongI === fruitI){
+      strongEl.classList.add('matched'); strongEl.classList.remove('selected');
+      fruitEl.classList.add('matched');
+      strongEl.removeAttribute('draggable');
+      matchState.selectedStrong = null;
+      matchState.matched++;
+      $('match-status').textContent = 'Yes — ' + MATCHES[strongI].name + ' bears that fruit.';
+      if(matchState.matched === MATCHES.length){
+        $('match-status').textContent = '';
+        $('match-celebrate').classList.add('show');
+      }
+    } else {
+      strongEl.classList.add('wrong'); fruitEl.classList.add('wrong');
+      setTimeout(function(){ strongEl.classList.remove('wrong'); fruitEl.classList.remove('wrong'); }, 450);
+      $('match-status').textContent = 'Not a match — let the Spirit guide you. Try again.';
+    }
+  }
+  $('match-skip').addEventListener('click', function(){
+    var lines = MATCHES.map(function(m){ return '<li><strong>'+m.name+'</strong> — '+m.fruit+'</li>'; }).join('');
+    $('match-status').innerHTML = '<div style="text-align:left;font-weight:400;margin-top:8px;"><strong>The answers:</strong><ul style="margin:8px 0 0 20px;">'+lines+'</ul></div>';
+    $('match-celebrate').classList.add('show');
+  });
+
+  /* ===================== SEG 3: TYPED SCRIPTURE + SPEECH ===================== */
+  var VERSE3 = "Or else how can one enter into a strong man's house, and spoil his goods, except he first bind the strong man? and then he will spoil his house.";
+  var HL = "bind the strong man";
+  var typeTimer = null;
+  function startTyping(){
+    var target = $('typed-target');
+    if(prefersReduced){
+      target.innerHTML = VERSE3.replace(HL, '<span class="hl">'+HL+'</span>');
+      return;
+    }
+    clearTimeout(typeTimer);
+    var i = 0;
+    function step(){
+      var sub = VERSE3.slice(0, i);
+      var html = sub;
+      // highlight the phrase once fully typed within range
+      if(sub.indexOf(HL) !== -1){ html = sub.replace(HL, '<span class="hl">'+HL+'</span>'); }
+      target.innerHTML = html + '<span class="typed-cursor">&nbsp;</span>';
+      i++;
+      if(i <= VERSE3.length){ typeTimer = setTimeout(step, 45); }
+      else { target.innerHTML = VERSE3.replace(HL, '<span class="hl">'+HL+'</span>'); }
+    }
+    step();
+  }
+  $('replay-type').addEventListener('click', startTyping);
+  function speak(text, statusEl, label){
+    try {
+      if(!('speechSynthesis' in window)){ statusEl.textContent = 'Audio not available on this device.'; return; }
+      window.speechSynthesis.cancel();
+      var u = new SpeechSynthesisUtterance(text);
+      u.rate = 0.92; u.pitch = 1;
+      u.onstart = function(){ statusEl.textContent = '🔊 Playing…'; };
+      u.onend = function(){ statusEl.textContent = ''; };
+      u.onerror = function(){ statusEl.textContent = ''; };
+      window.speechSynthesis.speak(u);
+    } catch(e){ statusEl.textContent = 'Audio not available.'; }
+  }
+  $('speak-verse').addEventListener('click', function(){ speak(VERSE3, $('speak-status')); });
+
+  /* ===================== SEG 4: SWORD OF THE SPIRIT (no scoring) ===================== */
+  var ROUNDS = [
+    {lie:"You'll never be free of this.", correct:{ref:"John 8:36", text:"If the Son therefore shall make you free, ye shall be free indeed."}, wrong:[{ref:"Genesis 1:1",text:"In the beginning God created the heaven and the earth."},{ref:"Psalm 23:1",text:"The LORD is my shepherd; I shall not want."}]},
+    {lie:"God can't love someone who has done what you've done.", correct:{ref:"Romans 8:38-39", text:"Neither death, nor life… shall be able to separate us from the love of God."}, wrong:[{ref:"Exodus 20:13",text:"Thou shalt not kill."},{ref:"Numbers 6:24",text:"The LORD bless thee, and keep thee."}]},
+    {lie:"This addiction is just who you are.", correct:{ref:"2 Corinthians 5:17", text:"If any man be in Christ, he is a new creature: old things are passed away; behold, all things are become new."}, wrong:[{ref:"Proverbs 1:7",text:"The fear of the LORD is the beginning of knowledge."},{ref:"Joshua 1:9",text:"Be strong and of a good courage."}]},
+    {lie:"You're fighting alone.", correct:{ref:"Romans 8:31", text:"If God be for us, who can be against us?"}, wrong:[{ref:"Genesis 2:18",text:"It is not good that the man should be alone."},{ref:"Psalm 51:10",text:"Create in me a clean heart, O God."}]},
+    {lie:"You'll fall back in tomorrow.", correct:{ref:"1 Corinthians 10:13", text:"God is faithful… will with the temptation also make a way to escape."}, wrong:[{ref:"James 4:8",text:"Draw nigh to God, and he will draw nigh to you."},{ref:"Matthew 5:8",text:"Blessed are the pure in heart: for they shall see God."}]},
+    {lie:"Your past defines you.", correct:{ref:"Philippians 3:13-14", text:"Forgetting those things which are behind, and reaching forth unto those things which are before, I press toward the mark…"}, wrong:[{ref:"Psalm 19:14",text:"Let the words of my mouth… be acceptable in thy sight."},{ref:"Isaiah 40:31",text:"They that wait upon the LORD shall renew their strength."}]}
+  ];
+  var swordRound = 0, swordDone = false;
+  (function buildDots(){
+    var dots = $('sword-dots');
+    ROUNDS.forEach(function(_, i){
+      var d = document.createElement('span'); d.className='round-dot'; d.dataset.i=i; dots.appendChild(d);
+    });
+  })();
+  function renderSword(){
+    if(swordRound >= ROUNDS.length){ finishSword(); return; }
+    var r = ROUNDS[swordRound];
+    $('lie-card').classList.remove('defeated');
+    $('defeated-stamp').style.display = 'none';
+    $('lie-text').textContent = '“' + r.lie + '”';
+    $('sword-status').textContent = '';
+    $('victory-banner').classList.remove('show');
+    $('sword-next-wrap').innerHTML = '';
+    var opts = shuffle([r.correct].concat(r.wrong));
+    var box = $('sword-options'); box.innerHTML = '';
+    opts.forEach(function(o){
+      var b = document.createElement('button');
+      b.className = 'sword-card'; b.type='button';
+      b.innerHTML = '<span class="ref">'+o.ref+'</span><span>"'+o.text+'"</span>';
+      b.addEventListener('click', function(){ pickSword(b, o, r); });
+      box.appendChild(b);
+    });
+    document.querySelectorAll('#sword-dots .round-dot').forEach(function(d,i){
+      d.classList.toggle('active', i === swordRound);
+      d.classList.toggle('done', i < swordRound);
+    });
+  }
+  function pickSword(btn, opt, r){
+    if(opt.ref === r.correct.ref){
+      btn.classList.add('correct');
+      $('lie-card').classList.add('defeated');
+      var st = $('defeated-stamp'); st.style.display = 'flex';
+      document.querySelectorAll('#sword-options .sword-card').forEach(function(c){ c.disabled = true; });
+      var vb = $('victory-banner');
+      vb.innerHTML = '"'+r.correct.text+'"<cite>— '+r.correct.ref+' (KJV)</cite>';
+      vb.classList.add('show');
+      var wrap = $('sword-next-wrap');
+      var next = document.createElement('button');
+      next.className = 'btn btn-primary'; next.textContent = (swordRound < ROUNDS.length-1) ? 'Next lie →' : 'Finish';
+      next.addEventListener('click', function(){ swordRound++; renderSword(); });
+      wrap.appendChild(next);
+    } else {
+      btn.classList.add('wrong');
+      setTimeout(function(){ btn.classList.remove('wrong'); }, 450);
+      $('sword-status').textContent = 'Try again — let the Word judge.';
+    }
+  }
+  function finishSword(){
+    document.querySelectorAll('#sword-dots .round-dot').forEach(function(d){ d.classList.add('done'); d.classList.remove('active'); });
+    $('lie-card').style.display = 'none';
+    $('sword-options').innerHTML = '';
+    $('sword-status').textContent = '';
+    $('victory-banner').classList.remove('show');
+    $('sword-next-wrap').innerHTML = '';
+    var done = document.createElement('div');
+    done.className = 'celebrate show';
+    done.innerHTML = '<h3>Well done.</h3><div class="verse-box">Thy word have I hid in mine heart, that I might not sin against thee.<cite>— Psalm 119:11 (KJV)</cite></div>';
+    $('sword-next-wrap').appendChild(done);
+  }
+  $('sword-skip').addEventListener('click', function(){
+    var lines = ROUNDS.map(function(r){ return '<div class="verse-box"><strong>Against the lie:</strong> "'+r.lie+'"<br>"'+r.correct.text+'"<cite>— '+r.correct.ref+' (KJV)</cite></div>'; }).join('');
+    var el = $('sword-lesson'); el.innerHTML = lines + '<div class="verse-box" style="background:var(--cream-warm);">Well done. Hide His Word in thine heart.<cite>— Psalm 119:11 (KJV)</cite></div>';
+    el.classList.add('show');
+  });
+  renderSword();
+
+  /* ===================== SEG 5: HEART INVENTORY ===================== */
+  var PROMPTS = [
+    "When did you first encounter sexual sin or unclean exposure? (You don't need to write details — just acknowledge.)",
+    "List any soul ties the Holy Spirit brings to mind (first names or initials only).",
+    "Any pornography, films, music, or apps you need to remove?",
+    "Any agreements (\"I'll always be…\", \"I'm just like my…\") that need to be renounced?",
+    "Who do you need to forgive?",
+    "What does freedom in this area look like for you? (Speak it in faith.)"
+  ];
+  (function buildInventory(){
+    var list = $('inventory-list');
+    PROMPTS.forEach(function(p, i){
+      var item = document.createElement('div'); item.className = 'accordion-item'; if(i===0) item.classList.add('open');
+      var head = document.createElement('button'); head.className='accordion-head'; head.type='button';
+      head.innerHTML = '<span>'+(i+1)+'. '+p+'</span><span class="chev">⌄</span>';
+      var body = document.createElement('div'); body.className='accordion-body';
+      var ta = document.createElement('textarea'); ta.className='journal'; ta.id='inv'+i;
+      ta.placeholder = 'Write freely — or just sit with the question.';
+      ta.value = getVal('inv'+i, '');
+      ta.addEventListener('input', function(){ setVal('inv'+i, ta.value); });
+      head.addEventListener('click', function(){ item.classList.toggle('open'); });
+      body.appendChild(ta); item.appendChild(head); item.appendChild(body); list.appendChild(item);
+    });
+  })();
+  $('inventory-save').addEventListener('click', function(){
+    PROMPTS.forEach(function(_, i){ setVal('inv'+i, $('inv'+i).value); });
+    flash($('inventory-saved'));
+  });
+  function flash(el){ el.classList.add('show'); setTimeout(function(){ el.classList.remove('show'); }, 1800); }
+
+  /* ===================== SEG 6: DECLARE ===================== */
+  $('declare-btn').addEventListener('click', function(){
+    speak("I overcome by the Blood of the Lamb, by the Name of Jesus, and by the Word of my testimony.", $('declare-status'));
+  });
+
+  /* ===================== SEG 7: HOUSE CLEANSING ===================== */
+  var HOUSE = [
+    {icon:"📕", label:"Books on witchcraft / horoscopes", clean:false},
+    {icon:"📼", label:"Pornographic magazines / DVDs", clean:false},
+    {icon:"🗿", label:"Idols / occult jewelry / charms", clean:false},
+    {icon:"🎁", label:"Soul-tie gift from a former partner", clean:false},
+    {icon:"🎵", label:"Music glorifying sin", clean:false},
+    {icon:"📺", label:"Films/TV promoting fornication", clean:false},
+    {icon:"📖", label:"Bible", clean:true},
+    {icon:"🖼️", label:"Family photos", clean:true},
+    {icon:"🎶", label:"Worship music", clean:true},
+    {icon:"🫙", label:"Anointing oil", clean:true}
+  ];
+  var houseChoice = {};
+  (function buildHouse(){
+    var h = $('house');
+    HOUSE.forEach(function(it, i){
+      var el = document.createElement('div'); el.className='house-item'; el.dataset.i=i; el.tabIndex=0;
+      el.setAttribute('role','button'); el.setAttribute('aria-label', it.label);
+      el.innerHTML = '<span class="h-icon">'+it.icon+'</span><span class="h-label">'+it.label+'</span>'+
+        '<div class="item-actions"><button class="act-remove" type="button">🗑 Remove</button><button class="act-keep" type="button">💛 Keep</button></div>';
+      var actions = el.querySelector('.item-actions');
+      function openChoice(){ document.querySelectorAll('.house-item.choosing').forEach(function(c){ if(c!==el) c.classList.remove('choosing'); }); el.classList.toggle('choosing'); }
+      el.addEventListener('click', function(e){ if(e.target.tagName==='BUTTON') return; openChoice(); });
+      el.addEventListener('keydown', function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); openChoice(); } });
+      el.querySelector('.act-remove').addEventListener('click', function(e){ e.stopPropagation(); choose(i, 'remove', el); });
+      el.querySelector('.act-keep').addEventListener('click', function(e){ e.stopPropagation(); choose(i, 'keep', el); });
+      h.appendChild(el);
+    });
+  })();
+  function choose(i, action, el){
+    houseChoice[i] = action;
+    el.classList.remove('choosing','removed','kept','mistake');
+    el.classList.add(action === 'remove' ? 'removed' : 'kept');
+  }
+  $('house-check').addEventListener('click', function(){
+    var correct = true, decided = 0;
+    HOUSE.forEach(function(it, i){
+      var c = houseChoice[i];
+      if(c) decided++;
+      var shouldRemove = !it.clean;
+      var ok = (c === 'remove' && shouldRemove) || (c === 'keep' && it.clean);
+      var el = document.querySelector('.house-item[data-i="'+i+'"]');
+      el.classList.remove('mistake');
+      if(c && !ok){ correct = false; el.classList.add('mistake'); }
+      if(!c) correct = false;
+    });
+    if(decided === 0){ $('house-status').textContent = 'Tap each item to choose keep or remove.'; return; }
+    if(correct){
+      $('house').classList.add('cleansed');
+      $('house-status').innerHTML = '<span style="color:var(--success);">Your house is clean before the Lord. ✨</span>';
+    } else {
+      $('house-status').innerHTML = '<span style="color:var(--navy);">The Holy Spirit will keep teaching you what to remove. He\'s patient.</span>';
+    }
+    $('house-lesson').classList.add('show');
+  });
+  $('house-skip').addEventListener('click', function(){ $('house-lesson').classList.add('show'); $('house-status').innerHTML = '<div style="text-align:left;font-weight:400;">Remove anything dedicated to sin or the occult — pornography, idols, charms, soul-tie gifts, defiling media. Keep what honours God — your Bible, worship, family, anointing oil.</div>'; });
+
+  /* ===================== SEG 8: LETTER ===================== */
+  var letterEl = $('letter');
+  letterEl.value = getVal('letter','');
+  letterEl.addEventListener('input', function(){ setVal('letter', letterEl.value); });
+  $('letter-save').addEventListener('click', function(){ setVal('letter', letterEl.value); flash($('letter-saved')); });
+  $('letter-mail').addEventListener('click', function(){
+    var body = encodeURIComponent("Dear future me,\n\n" + (letterEl.value || "") + "\n\n(Written during my deliverance webinar. Read this one year on — and see what the Lord has done.)");
+    window.location.href = 'mailto:?subject=' + encodeURIComponent('A letter to my future self — read in one year') + '&body=' + body;
+  });
+
+  /* ===================== SEG 9: DELIVERANCE PRAYER ===================== */
+  var STEPS = [
+    {t:"Affirm the Lordship of Jesus", b:"Lord Jesus Christ, I confess that You are my Lord and my Saviour. You are the Son of God who died for me and rose again. I belong to You. I submit my whole life — spirit, soul, and body — to Your Lordship. (Romans 10:9)"},
+    {t:"Repent of all sexual sin", b:"Father, I confess and repent of all sexual sin — in thought, word, and deed. I name before You every sin the Holy Spirit reveals. I turn away from it completely. According to 1 John 1:9, You are faithful and just to forgive me and to cleanse me from all unrighteousness. I receive Your forgiveness now."},
+    {t:"Renounce soul ties", b:"In the name of Jesus, I renounce and break every ungodly soul tie formed through sexual contact, fantasy, or emotional bondage with anyone other than my covenant spouse. I take back what was mine, washed in the Blood, and I return what was theirs. I cut every cord, in Jesus' name. (1 Corinthians 6:16)"},
+    {t:"Forgive all who wounded you", b:"Father, by an act of my will I forgive everyone who has sexually sinned against me, abused me, seduced me, or defiled me. I release them. I bless them. I also forgive myself. Unforgiveness, leave me now — I will not hold it. (Matthew 18:34-35)"},
+    {t:"Break agreement with the strong man", b:"In the name of Jesus Christ of Nazareth, I renounce and break every agreement with the Strong Man of Sex and every spirit under his command — spirits of lust, perversion, pornography, fornication, masturbation, adultery, homosexuality, lasciviousness, seduction, and uncleanness. I cancel every legal ground and every assignment against me."},
+    {t:"Plead the Blood", b:"I plead the Blood of Jesus over my body, my mind, my eyes, my ears, my mouth, my hands, my members, my dreams, and my home. Every door I opened, I close by the Blood. I am bought with a price; I am not my own. (1 Corinthians 6:19-20)"},
+    {t:"Command the spirits to leave", b:"In the name of Jesus Christ, I command every unclean spirit that has been named and renounced to come out of me now and to go. You have no more legal ground. The Blood of Jesus has cleansed me. Leave me, and do not return. (Mark 16:17)"},
+    {t:"Receive the Holy Spirit's filling", b:"Holy Spirit, fill every place that has been cleansed. Fill my mind with pure thoughts, my heart with the love of God, and my body as Your temple. I will not leave the house empty — I receive Your fullness now. (Matthew 12:43-45; Philippians 4:8)"},
+    {t:"Seal with thanksgiving and worship", b:"Father, I thank You for my freedom. I seal this work with thanksgiving and worship. What the Son has set free is free indeed. I give You all the glory, in Jesus' name. Amen. (John 8:36)"}
+  ];
+  var pStep = 0;
+  (function buildSteps(){
+    var wrap = $('prayer-steps');
+    STEPS.forEach(function(s, i){
+      var d = document.createElement('div'); d.className = 'prayer-step' + (i===0?' active':''); d.dataset.step = i;
+      d.innerHTML = '<div class="step-num">'+(i+1)+'</div><h3 style="border:none;padding:0;">'+s.t+'</h3>'+
+        '<div class="prayer-box">'+s.b+'</div>'+
+        '<div class="step-done-row"><input type="checkbox" class="step-check" id="pchk'+i+'"><label for="pchk'+i+'">✓ I have prayed this step</label></div>';
+      wrap.appendChild(d);
+    });
+    STEPS.forEach(function(_, i){
+      var cb = $('pchk'+i);
+      if(getVal('pchk'+i, false)) cb.checked = true;
+      cb.addEventListener('change', function(){ setVal('pchk'+i, cb.checked); updatePrayerProgress(); });
+    });
+    updatePrayerProgress();
+  })();
+  function updatePrayerProgress(){
+    var done = 0; STEPS.forEach(function(_, i){ if($('pchk'+i).checked) done++; });
+    $('prayer-progress').style.width = (done/STEPS.length*100) + '%';
+  }
+  function showStep(n){
+    if(n < 0) n = 0;
+    if(n >= STEPS.length){
+      document.querySelectorAll('.prayer-step').forEach(function(s){ s.classList.remove('active'); });
+      $('breathe-screen').classList.add('show');
+      $('prayer-prev').style.display = '';
+      $('prayer-next').style.display = 'none';
+      pStep = STEPS.length;
+      return;
+    }
+    $('breathe-screen').classList.remove('show');
+    $('prayer-next').style.display = '';
+    pStep = n;
+    document.querySelectorAll('.prayer-step').forEach(function(s){ s.classList.toggle('active', parseInt(s.dataset.step,10)===n); });
+    $('prayer-next').textContent = (n === STEPS.length-1) ? 'Complete →' : 'Next prayer →';
+  }
+  $('prayer-next').addEventListener('click', function(){ showStep(pStep+1); var t=document.querySelector('.panel[data-seg="9"]'); });
+  $('prayer-prev').addEventListener('click', function(){ if(pStep>0) showStep(pStep-1); });
+
+  // pause/resume timer
+  var tSec = 0, tRunning = true, tInt = null;
+  function fmt(s){ var m=Math.floor(s/60); var ss=s%60; return m+':'+(ss<10?'0':'')+ss; }
+  function tickStart(){ if(tInt) return; tInt = setInterval(function(){ if(tRunning){ tSec++; $('prayer-timer').textContent = fmt(tSec); } }, 1000); }
+  $('timer-toggle').addEventListener('click', function(){ tRunning = !tRunning; this.textContent = tRunning ? 'Pause' : 'Resume'; });
+  tickStart();
+
+  /* ===================== SEG 10: WHEEL ===================== */
+  var WEDGES = [
+    {label:"Renew your mind", ref:"Romans 12:2 — read aloud 3x"},
+    {label:"Fast one meal", ref:"Matthew 17:21"},
+    {label:"Confess to a partner", ref:"James 5:16"},
+    {label:"Worship 20 min", ref:"Psalm 22:3"},
+    {label:"Memorize a sword", ref:"Psalm 119:11"},
+    {label:"Bless an enemy", ref:"Matthew 5:44"},
+    {label:"Read one chapter", ref:"Joshua 1:8"},
+    {label:"Pray in the Spirit 15 min", ref:"Jude 1:20"}
+  ];
+  var wheelDrawn = false, wheelAngle = 0, spinning = false;
+  var WCOLORS = ['#1a2b4a','#a87f2a','#2a3e63','#c89b48'];
+  function drawWheel(){
+    var cv = $('wheel'); if(!cv) return;
+    var ctx = cv.getContext('2d');
+    var n = WEDGES.length, cx = cv.width/2, cy = cv.height/2, r = cx - 6;
+    var arc = 2*Math.PI/n;
+    ctx.clearRect(0,0,cv.width,cv.height);
+    for(var i=0;i<n;i++){
+      var a0 = i*arc - Math.PI/2;
+      ctx.beginPath(); ctx.moveTo(cx,cy); ctx.arc(cx,cy,r,a0,a0+arc); ctx.closePath();
+      ctx.fillStyle = WCOLORS[i % WCOLORS.length]; ctx.fill();
+      ctx.save();
+      ctx.translate(cx,cy); ctx.rotate(a0 + arc/2);
+      ctx.fillStyle = '#faf7f0'; ctx.font = '600 20px Inter, sans-serif'; ctx.textAlign='right'; ctx.textBaseline='middle';
+      var words = WEDGES[i].label.split(' '); var line='';
+      ctx.fillText(WEDGES[i].label.length>16 ? WEDGES[i].label.slice(0,15)+'…' : WEDGES[i].label, r-18, 0);
+      ctx.restore();
+    }
+    wheelDrawn = true;
+  }
+  $('spin-btn').addEventListener('click', function(){
+    if(spinning) return;
+    if(!wheelDrawn) drawWheel();
+    spinning = true;
+    $('wheel-result').classList.remove('show');
+    var n = WEDGES.length;
+    var pick = Math.floor(Math.random()*n);
+    var arc = 360/n;
+    // pointer at top; we want center of pick under pointer
+    var target = 360*5 - (pick*arc + arc/2);
+    wheelAngle += (360*5 + (target % 360));
+    var cv = $('wheel');
+    cv.style.transition = prefersReduced ? 'none' : 'transform 3.2s cubic-bezier(.17,.67,.21,1)';
+    cv.style.transform = 'rotate(' + wheelAngle + 'deg)';
+    var delay = prefersReduced ? 50 : 3300;
+    setTimeout(function(){
+      spinning = false;
+      var w = WEDGES[pick];
+      $('wheel-result-title').textContent = w.label;
+      $('wheel-result-verse').innerHTML = '— ' + w.ref;
+      $('wheel-result').classList.add('show');
+      $('wheel-result').dataset.pick = pick;
+    }, delay);
+  });
+  $('add-plan').addEventListener('click', function(){
+    var pick = parseInt($('wheel-result').dataset.pick,10);
+    var plan = getVal('plan', []);
+    if(plan.indexOf(pick) === -1){ plan.push(pick); setVal('plan', plan); }
+    renderPlan();
+  });
+  function renderPlan(){
+    var plan = getVal('plan', []);
+    var wrap = $('plan-wrap'), ul = $('plan-list');
+    if(plan.length === 0){ wrap.style.display='none'; return; }
+    wrap.style.display='block'; ul.innerHTML='';
+    plan.forEach(function(i){
+      var li = document.createElement('li'); li.innerHTML = '<strong>'+WEDGES[i].label+'</strong> — '+WEDGES[i].ref;
+      ul.appendChild(li);
+    });
+  }
+  renderPlan();
+  $('wheel-skip').addEventListener('click', function(){
+    var lines = WEDGES.map(function(w){ return '<li><strong>'+w.label+'</strong> — '+w.ref+'</li>'; }).join('');
+    var el = $('wheel-lesson'); el.innerHTML = '<div class="verse-box" style="background:var(--cream-warm);"><strong>The daily assignments:</strong><ul style="margin:8px 0 0 20px;">'+lines+'</ul>Walk in the Spirit, and ye shall not fulfil the lust of the flesh.<cite>— Galatians 5:16 (KJV)</cite></div>';
+    el.classList.add('show');
+  });
+
+  /* ===================== SEG 11: TESTIMONY ===================== */
+  var testEl = $('testimony');
+  testEl.value = getVal('testimony','');
+  testEl.addEventListener('input', function(){ setVal('testimony', testEl.value); });
+  $('testimony-save').addEventListener('click', function(){ setVal('testimony', testEl.value); flash($('testimony-saved')); });
+  $('testimony-share').addEventListener('click', function(){
+    var body = encodeURIComponent(testEl.value || '');
+    window.location.href = 'mailto:testimonies@l137ministry.org?subject=' + encodeURIComponent('My Deliverance Testimony') + '&body=' + body;
+  });
+  $('testimony-print').addEventListener('click', function(){ window.print(); });
+  var ENCOURAGE = [
+    "What God has begun in you, He will complete. — Philippians 1:6",
+    "You are not the same person who walked in tonight. The Lord has touched you.",
+    "Freedom is a Person — and His name is Jesus.",
+    "The same power that raised Christ from the dead now lives in you.",
+    "Your testimony will set someone else free. Don't despise it.",
+    "He did not bring you this far to leave you. Stand.",
+    "Greater is He that is in you, than he that is in the world. — 1 John 4:4",
+    "Where the Spirit of the Lord is, there is liberty. — 2 Corinthians 3:17",
+    "You are washed, you are sanctified, you are justified. — 1 Corinthians 6:11",
+    "He hath delivered, and doth deliver, and will yet deliver. — 2 Corinthians 1:10"
+  ];
+  var encIdx = 0, encInt = null;
+  function startEncourage(){
+    var el = $('encourage'); if(!el) return;
+    el.textContent = ENCOURAGE[0];
+    if(encInt || prefersReduced) return;
+    encInt = setInterval(function(){
+      encIdx = (encIdx+1) % ENCOURAGE.length;
+      el.style.opacity = 0;
+      setTimeout(function(){ el.textContent = ENCOURAGE[encIdx]; el.style.opacity = 1; }, 400);
+    }, 7000);
+  }
+
+  /* ===================== SEG 12: SHARE ===================== */
+  $('share-webinar').addEventListener('click', function(){
+    var url = window.location.href;
+    if(navigator.share){
+      navigator.share({ title:'L137 Deliverance Webinar', text:'Deliverance from the Strong Man of Sex', url:url }).catch(function(){ showShareFallback(url); });
+    } else { showShareFallback(url); }
+  });
+  function showShareFallback(url){
+    $('share-fallback').classList.add('show');
+    $('share-url').value = url;
+  }
+  $('copy-url').addEventListener('click', function(){
+    var inp = $('share-url'); inp.select();
+    try { navigator.clipboard.writeText(inp.value); this.textContent='Copied'; } catch(e){ document.execCommand('copy'); this.textContent='Copied'; }
+  });
+
+  /* ===================== INIT ===================== */
+  if(getVal('groupMode', false)){ groupSwitch.checked = true; applyGroup(true); }
+  if(getVal('hostMode', false)){ hostSwitch.checked = true; document.body.classList.add('group-on'); }
+  var last = getVal('lastSeg', 1);
+  showSeg(last >= 1 && last <= TOTAL ? last : 1);
+})();
+</script>
+
+<script data-pplx-inline-edit>
+(function () {
+  if (window === window.top) return;
+
+  const allowedParentOrigins = ["https://www.perplexity.ai","https://perplexity.ai","https://testing.perplexity.ai","https://staging.perplexity.ai","https://*.preview.i.perplexity.ai","http://localhost:3000","http://127.0.0.1:3000","http://localhost:5173","http://127.0.0.1:5173"];
+  const MAX_FONT_BYTES = 500 * 1024;
+  const MAX_TOTAL_FONT_BYTES = 2 * 1024 * 1024;
+  let scrollForwarding = false;
+  let scrollRaf = 0;
+  let trustedTopOrigin = null;
+
+  // Allow entries like "https://*.preview.i.perplexity.ai" — the wildcard
+  // matches a single DNS label (no dots), so "https://*.foo" cannot stretch
+  // across multiple labels.
+  function matchesAllowedOrigin(origin) {
+    if (!origin) return false;
+    for (const entry of allowedParentOrigins) {
+      if (!entry.includes("*")) {
+        if (entry === origin) return true;
+        continue;
+      }
+      const pattern = new RegExp(
+        "^" +
+          entry.replace(/[.+?^${}()|[\]\\]/g, "\\$&").replace(/\*/g, "[^.]+") +
+          "$",
+      );
+      if (pattern.test(origin)) return true;
+    }
+    return false;
+  }
+
+  // Trust decision: when the sender is same-origin-visible (event.origin is a
+  // real origin like https://www.perplexity.ai) we trust event.origin directly.
+  // When event.origin is "null" (opaque broker srcdoc), we fall back to the
+  // broker's stamped `parentOrigin` to identify the top window. The fallback
+  // is claim-only — we rely on the browser's native `targetOrigin` enforcement
+  // on the response path (see postToTrustedTop) to ensure replies can't be
+  // delivered to anyone but the actual top window of that claimed origin.
+  function getTrustedParentOrigin(event) {
+    const forwardedParentOrigin =
+      typeof event.data.parentOrigin === "string" ? event.data.parentOrigin : null;
+    const parentOrigin = event.origin === "null" ? forwardedParentOrigin : event.origin;
+    return matchesAllowedOrigin(parentOrigin) ? parentOrigin : null;
+  }
+
+  // All responses go to window.top with targetOrigin = the allowlisted origin.
+  // An attacker that iframes us inside their own null-origin broker can claim
+  // any parentOrigin they like, but the browser will drop the reply whenever
+  // the real top's origin doesn't match — so the screenshot never leaves.
+  function postToTrustedTop(message) {
+    if (!trustedTopOrigin) return;
+    try {
+      window.top.postMessage(message, trustedTopOrigin);
+    } catch (_error) {}
+  }
+
+  function inlineAll(original, clone) {
+    if (original.nodeType !== 1 || clone.nodeType !== 1) return;
+
+    try {
+      const computedStyle = getComputedStyle(original);
+      // cssText on a computed style is the serialized declaration in modern
+      // Chromium/Safari — a single read beats enumerating ~400 longhand
+      // properties. Firefox returns "" here, so we fall back on empty.
+      const serialized = computedStyle.cssText;
+      if (serialized) {
+        clone.style.cssText = serialized;
+      } else {
+        const parts = new Array(computedStyle.length);
+        for (let index = 0; index < computedStyle.length; index += 1) {
+          const property = computedStyle[index];
+          parts[index] = `${property}:${computedStyle.getPropertyValue(property)};`;
+        }
+        clone.style.cssText = parts.join("");
+      }
+    } catch (_error) {}
+
+    const originalChildren = original.children;
+    const clonedChildren = clone.children;
+    for (
+      let index = 0;
+      index < originalChildren.length && index < clonedChildren.length;
+      index += 1
+    ) {
+      inlineAll(originalChildren[index], clonedChildren[index]);
+    }
+  }
+
+  function extractFontUrl(srcValue) {
+    const matches = [
+      ...srcValue.matchAll(
+        /url\(["']?([^"')]+)["']?\)(?:\s*format\(["']?([^"')]+)["']?\))?/gi,
+      ),
+    ];
+    if (matches.length === 0) return null;
+    const woff2 = matches.find((m) => m[2] && m[2].toLowerCase().includes("woff2"));
+    if (woff2) return woff2[1];
+    const woff = matches.find((m) => m[2] && m[2].toLowerCase().includes("woff"));
+    if (woff) return woff[1];
+    return matches[0][1];
+  }
+
+  // Cache resolved font URL -> data URI across captures. Fonts on a page
+  // essentially never change, and a batch run emits multiple captures back to
+  // back — without this we'd refetch + re-base64 every time.
+  const fontDataUriCache = new Map();
+  const SRC_DECLARATION_RE = /src\s*:\s*[^;}]+/i;
+
+  async function fetchAsDataUri(url) {
+    if (fontDataUriCache.has(url)) return fontDataUriCache.get(url);
+    let dataUri = null;
+    try {
+      const response = await fetch(url, { mode: "cors", credentials: "omit" });
+      if (response.ok) {
+        const blob = await response.blob();
+        if (blob.size <= MAX_FONT_BYTES) {
+          dataUri = await new Promise((resolve) => {
+            const reader = new FileReader();
+            reader.onloadend = () =>
+              resolve(typeof reader.result === "string" ? reader.result : null);
+            reader.onerror = () => resolve(null);
+            reader.readAsDataURL(blob);
+          });
+        }
+      }
+    } catch (_error) {
+      dataUri = null;
+    }
+    fontDataUriCache.set(url, dataUri);
+    return dataUri;
+  }
+
+  function collectFontFaceRuleTexts() {
+    const rules = [];
+    for (const sheet of document.styleSheets) {
+      let cssRules;
+      try {
+        cssRules = sheet.cssRules;
+      } catch (_error) {
+        continue;
+      }
+      if (!cssRules) continue;
+      for (const rule of cssRules) {
+        const cssText = rule.cssText || "";
+        if (cssText.startsWith("@font-face")) rules.push(cssText);
+      }
+    }
+    return rules;
+  }
+
+  async function buildInlinedFontCss() {
+    const ruleTexts = collectFontFaceRuleTexts();
+    if (ruleTexts.length === 0) return null;
+
+    const resolved = ruleTexts.map((cssText) => {
+      if (!SRC_DECLARATION_RE.test(cssText)) return null;
+      const srcMatch = cssText.match(/src\s*:\s*([^;}]+)[;}]/i);
+      if (!srcMatch) return null;
+      const url = extractFontUrl(srcMatch[1]);
+      if (!url) return null;
+      try {
+        return { cssText, url: new URL(url, document.baseURI).href };
+      } catch (_error) {
+        return null;
+      }
+    });
+
+    const dataUris = await Promise.all(
+      resolved.map((entry) => (entry ? fetchAsDataUri(entry.url) : Promise.resolve(null))),
+    );
+
+    const inlined = [];
+    let totalBytes = 0;
+    for (let index = 0; index < resolved.length; index += 1) {
+      const entry = resolved[index];
+      const dataUri = dataUris[index];
+      if (!entry || !dataUri) continue;
+      const approxBytes = dataUri.length * 0.75;
+      if (totalBytes + approxBytes > MAX_TOTAL_FONT_BYTES) break;
+      totalBytes += approxBytes;
+      inlined.push(entry.cssText.replace(SRC_DECLARATION_RE, `src: url("${dataUri}")`));
+    }
+    return inlined.length > 0 ? inlined.join("\n") : null;
+  }
+
+  function stripExternal(clone) {
+    const images = clone.querySelectorAll("img");
+    for (let index = 0; index < images.length; index += 1) {
+      const src = images[index].getAttribute("src");
+      if (src && !src.startsWith("data:")) images[index].removeAttribute("src");
+    }
+
+    const elements = clone.querySelectorAll("*");
+    for (let index = 0; index < elements.length; index += 1) {
+      const style = elements[index].style.cssText;
+      if (style && style.includes("url(")) {
+        elements[index].style.cssText = style.replace(
+          /url\(["']?(?!data:)[^)"']*["']?\)/gi,
+          "none",
+        );
+      }
+    }
+  }
+
+  function emitScroll() {
+    scrollRaf = 0;
+    if (!scrollForwarding) return;
+    postToTrustedTop({
+      type: "INLINE_EDIT_SCROLL",
+      scrollX: window.scrollX,
+      scrollY: window.scrollY,
+    });
+  }
+
+  window.addEventListener(
+    "scroll",
+    function () {
+      if (!scrollForwarding || scrollRaf) return;
+      scrollRaf = requestAnimationFrame(emitScroll);
+    },
+    { passive: true, capture: true },
+  );
+
+  async function handleCaptureRequest(event) {
+    const requestId = event.data.requestId;
+    const scrollX = window.scrollX;
+    const scrollY = window.scrollY;
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+
+    function postResult(dataUrl) {
+      postToTrustedTop({
+        type: "INLINE_EDIT_SCREENSHOT_RESULT",
+        requestId,
+        dataUrl,
+        scrollX,
+        scrollY,
+      });
+    }
+
+    try {
+      // Wait for any pending web fonts to resolve so both inline metrics and
+      // the @font-face inlining below see the same loaded faces.
+      if (document.fonts && document.fonts.ready) {
+        try {
+          await document.fonts.ready;
+        } catch (_error) {}
+      }
+
+      const clone = document.documentElement.cloneNode(true);
+      inlineAll(document.documentElement, clone);
+
+      const removedNodes = clone.querySelectorAll("script,link[rel=\"stylesheet\"],style");
+      for (let index = 0; index < removedNodes.length; index += 1) {
+        removedNodes[index].remove();
+      }
+
+      stripExternal(clone);
+
+      // Re-embed web fonts as data-URI @font-face rules so the SVG rasterizer
+      // can resolve them — external font URLs aren't fetched during
+      // foreignObject rendering, which would otherwise force a fallback face
+      // and change text metrics.
+      const inlinedFontCss = await buildInlinedFontCss();
+      if (inlinedFontCss) {
+        const styleEl = document.createElement("style");
+        styleEl.textContent = inlinedFontCss;
+        const head = clone.querySelector("head");
+        if (head) head.appendChild(styleEl);
+        else clone.insertBefore(styleEl, clone.firstChild);
+      }
+
+      const html = new XMLSerializer().serializeToString(clone);
+      const svg =
+        `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}">` +
+        '<foreignObject width="100%" height="100%">' +
+        `<div xmlns="http://www.w3.org/1999/xhtml" style="width:${width}px;height:${height}px;overflow:hidden">` +
+        `<div style="position:relative;left:-${scrollX}px;top:-${scrollY}px">` +
+        html +
+        "</div></div></foreignObject></svg>";
+      const svgUrl = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
+      const image = new Image();
+      image.onload = function () {
+        const canvas = document.createElement("canvas");
+        canvas.width = width;
+        canvas.height = height;
+        canvas.getContext("2d").drawImage(image, 0, 0);
+        postResult(canvas.toDataURL("image/png"));
+      };
+      image.onerror = function () {
+        postResult(null);
+      };
+      image.src = svgUrl;
+    } catch (_error) {
+      postResult(null);
+    }
+  }
+
+  window.addEventListener("message", function (event) {
+    if (!event.data) return;
+    // Only accept messages from the direct parent frame. Blocks sibling /
+    // unrelated-window postMessage senders that could otherwise reach us.
+    if (event.source !== window.parent) return;
+
+    const trustedParentOrigin = getTrustedParentOrigin(event);
+    if (!trustedParentOrigin) return;
+    trustedTopOrigin = trustedParentOrigin;
+
+    if (event.data.type === "INLINE_EDIT_SCROLL_START") {
+      scrollForwarding = true;
+      emitScroll();
+      return;
+    }
+
+    if (event.data.type === "INLINE_EDIT_SCROLL_STOP") {
+      scrollForwarding = false;
+      if (scrollRaf) cancelAnimationFrame(scrollRaf);
+      scrollRaf = 0;
+      return;
+    }
+
+    if (event.data.type !== "INLINE_EDIT_CAPTURE_REQUEST") return;
+
+    handleCaptureRequest(event);
+  });
+})();
+
+
+</script></body>
+</html>

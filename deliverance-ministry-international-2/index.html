@@ -1,0 +1,1510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deliverance from the Strong Man of Sex — Interactive Course</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1a2b4a;
+    --navy-dark: #0f1d36;
+    --gold: #a87f2a;
+    --gold-light: #c89b48;
+    --cream: #faf7f0;
+    --cream-warm: #f4ecdc;
+    --ink: #1f1d18;
+    --muted: #5a564d;
+    --rule: #c9c4b8;
+    --surface: #ffffff;
+    --success: #437A22;
+    --shadow: 0 1px 3px rgba(31,29,24,0.08), 0 4px 16px rgba(31,29,24,0.06);
+    --radius: 12px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4 {
+    font-family: 'DM Serif Display', Georgia, serif;
+    color: var(--navy);
+    font-weight: 400;
+    line-height: 1.2;
+  }
+  a { color: var(--navy); text-decoration: underline; text-decoration-color: var(--gold); text-underline-offset: 3px; }
+
+  /* HEADER */
+  header.site {
+    background: var(--navy);
+    color: var(--cream);
+    padding: 28px 24px;
+    text-align: center;
+    border-bottom: 4px solid var(--gold);
+  }
+  header.site h1 {
+    color: var(--cream);
+    font-size: clamp(24px, 5vw, 38px);
+    margin-bottom: 8px;
+  }
+  header.site .subtitle {
+    color: var(--gold-light);
+    font-size: 14px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  header.site .verse {
+    margin-top: 16px;
+    font-style: italic;
+    color: rgba(255,255,255,0.78);
+    font-size: 15px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  header.site .ministry-brand {
+    margin-top: 22px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    font-family: var(--serif);
+    color: var(--gold-light);
+    font-size: 19px;
+    letter-spacing: 0.8px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Ministry footer bar — visible on every session */
+  .ministry-bar {
+    text-align: center;
+    background: var(--navy);
+    color: var(--gold-light);
+    padding: 12px 18px;
+    font-family: var(--serif);
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    border-top: 2px solid var(--gold);
+  }
+
+  /* LAYOUT */
+  .container {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 24px 18px 80px;
+  }
+
+  /* PROGRESS BAR */
+  .progress-shell {
+    background: var(--surface);
+    border-radius: var(--radius);
+    padding: 18px 20px;
+    box-shadow: var(--shadow);
+    margin-bottom: 24px;
+    position: sticky;
+    top: 12px;
+    z-index: 100;
+  }
+  .progress-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 8px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+  .progress-bar {
+    background: var(--cream-warm);
+    height: 8px;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .progress-fill {
+    background: linear-gradient(90deg, var(--gold) 0%, var(--gold-light) 100%);
+    height: 100%;
+    width: 0%;
+    transition: width 0.5s ease;
+  }
+
+  /* SESSION TABS */
+  .session-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 24px;
+    justify-content: center;
+  }
+  .session-tab {
+    background: var(--surface);
+    border: 1.5px solid var(--rule);
+    color: var(--muted);
+    padding: 10px 16px;
+    border-radius: 999px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.2s;
+    font-family: inherit;
+  }
+  .session-tab:hover { border-color: var(--gold); color: var(--navy); }
+  .session-tab.active {
+    background: var(--navy);
+    color: var(--cream);
+    border-color: var(--navy);
+  }
+  .session-tab.complete::before {
+    content: "✓ ";
+    color: var(--success);
+    font-weight: 700;
+  }
+  .session-tab.active.complete::before { color: var(--gold-light); }
+
+  /* SESSION */
+  .session {
+    display: none;
+    animation: fadein 0.4s ease;
+  }
+  .session.active { display: block; }
+  @keyframes fadein { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+
+  .session-hero {
+    background: var(--surface);
+    border-radius: var(--radius);
+    padding: 32px 28px;
+    box-shadow: var(--shadow);
+    margin-bottom: 20px;
+    border-left: 5px solid var(--gold);
+  }
+  .session-hero .session-label {
+    font-size: 12px;
+    color: var(--gold);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .session-hero h2 {
+    font-size: clamp(24px, 4vw, 32px);
+    margin-bottom: 12px;
+  }
+  .session-hero .intro {
+    color: var(--muted);
+    font-size: 15.5px;
+  }
+
+  .card {
+    background: var(--surface);
+    border-radius: var(--radius);
+    padding: 24px;
+    box-shadow: var(--shadow);
+    margin-bottom: 18px;
+  }
+  .card h3 {
+    font-size: 20px;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .card h4 {
+    font-size: 16px;
+    margin: 14px 0 6px;
+    color: var(--navy);
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+  }
+  .card p { margin-bottom: 10px; }
+  .card ul, .card ol { margin: 8px 0 12px 22px; }
+  .card li { margin-bottom: 6px; }
+
+  .verse-box {
+    background: var(--cream-warm);
+    border-left: 4px solid var(--gold);
+    padding: 14px 18px;
+    margin: 14px 0;
+    border-radius: 0 8px 8px 0;
+    font-style: italic;
+    color: var(--ink);
+  }
+  .verse-box cite {
+    display: block;
+    margin-top: 6px;
+    font-style: normal;
+    font-weight: 600;
+    color: var(--navy);
+    font-size: 14px;
+  }
+
+  .prayer-box {
+    background: linear-gradient(180deg, #fdfbf5 0%, var(--cream-warm) 100%);
+    border: 1px solid var(--rule);
+    padding: 22px 24px;
+    margin: 16px 0;
+    border-radius: 10px;
+    font-size: 15.5px;
+    line-height: 1.75;
+    position: relative;
+  }
+  .prayer-box::before {
+    content: "✝";
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    color: var(--gold);
+    font-size: 22px;
+    opacity: 0.4;
+  }
+  .prayer-box strong { color: var(--navy); }
+
+  /* CHECKBOX LIST */
+  .checklist { list-style: none; margin: 0 !important; padding: 0; }
+  .checklist li {
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--cream-warm);
+    cursor: pointer;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    transition: background 0.15s;
+  }
+  .checklist li:hover { background: var(--cream); }
+  .checklist li:last-child { border-bottom: none; }
+  .checklist input[type=checkbox] {
+    margin-top: 4px;
+    width: 18px;
+    height: 18px;
+    accent-color: var(--navy);
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+  .checklist label {
+    cursor: pointer;
+    font-size: 15px;
+    flex: 1;
+  }
+  .checklist li.checked label {
+    color: var(--muted);
+    text-decoration: line-through;
+    text-decoration-color: var(--gold);
+  }
+
+  /* JOURNAL */
+  textarea.journal {
+    width: 100%;
+    min-height: 130px;
+    border: 1.5px solid var(--rule);
+    border-radius: 8px;
+    padding: 14px;
+    font-family: inherit;
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--ink);
+    background: #fdfbf5;
+    resize: vertical;
+    transition: border-color 0.2s;
+  }
+  textarea.journal:focus {
+    outline: none;
+    border-color: var(--gold);
+  }
+  .journal-label {
+    display: block;
+    margin: 14px 0 6px;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--navy);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+  }
+  .journal-help {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+
+  /* COMPLETE BUTTON */
+  .session-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+  }
+  .btn {
+    border: none;
+    padding: 12px 22px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.2s;
+  }
+  .btn-primary {
+    background: var(--navy);
+    color: var(--cream);
+  }
+  .btn-primary:hover { background: var(--navy-dark); transform: translateY(-1px); }
+  .btn-secondary {
+    background: var(--surface);
+    color: var(--navy);
+    border: 1.5px solid var(--navy);
+  }
+  .btn-secondary:hover { background: var(--cream-warm); }
+  .btn:disabled { opacity: 0.4; cursor: not-allowed; transform: none !important; }
+
+  .complete-banner {
+    background: linear-gradient(135deg, #437A22 0%, #5a9d2e 100%);
+    color: white;
+    padding: 16px 20px;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 16px;
+    font-weight: 600;
+    display: none;
+  }
+  .complete-banner.show { display: block; animation: fadein 0.5s; }
+
+  /* FOOTER */
+  footer {
+    text-align: center;
+    color: var(--muted);
+    font-size: 13px;
+    padding: 30px 18px;
+    border-top: 1px solid var(--rule);
+    margin-top: 40px;
+    background: var(--surface);
+  }
+  footer .reset-btn {
+    background: none;
+    border: 1px solid var(--rule);
+    color: var(--muted);
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 12px;
+    cursor: pointer;
+    margin-top: 12px;
+    font-family: inherit;
+  }
+  footer .reset-btn:hover { color: var(--navy); border-color: var(--navy); }
+
+  /* Print button */
+  .toolbar {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+  }
+  .toolbar button {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-size: 13px;
+    cursor: pointer;
+    color: var(--navy);
+    font-family: inherit;
+    font-weight: 600;
+  }
+  .toolbar button:hover { background: var(--cream-warm); border-color: var(--gold); }
+
+  .toolbar-btn {
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-family: inherit;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.18s ease;
+  }
+  .toolbar-btn.primary {
+    background: var(--navy);
+    color: var(--gold-light);
+    border: 1px solid var(--navy);
+  }
+  .toolbar-btn.primary:hover {
+    background: var(--gold);
+    color: var(--navy);
+    border-color: var(--gold);
+  }
+  .toolbar-btn.webinar-cta {
+    background: var(--gold);
+    color: var(--navy);
+    border: 1px solid var(--gold);
+    font-weight: 700;
+  }
+  .toolbar-btn.webinar-cta:hover {
+    background: var(--navy);
+    color: var(--gold-light);
+    border-color: var(--navy);
+  }
+
+  /* Workbook download CTA — bottom of page */
+  .workbook-cta {
+    max-width: 880px;
+    margin: 0 auto 32px;
+    padding: 36px 28px;
+    background: linear-gradient(135deg, #1a2b4a 0%, #2a3e63 100%);
+    border-radius: 12px;
+    text-align: center;
+    color: var(--cream);
+    box-shadow: 0 4px 14px rgba(26,43,74,0.18);
+  }
+  .workbook-cta h2 {
+    font-family: var(--serif);
+    color: var(--gold-light);
+    font-size: 26px;
+    margin: 0 0 12px;
+    letter-spacing: 0.3px;
+  }
+  .workbook-cta p {
+    font-size: 15px;
+    line-height: 1.6;
+    margin: 0 auto 22px;
+    max-width: 540px;
+    color: rgba(250, 247, 240, 0.88);
+  }
+  .workbook-cta-btn {
+    display: inline-block;
+    padding: 14px 28px;
+    background: var(--gold);
+    color: var(--navy);
+    font-family: var(--serif);
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: 0.4px;
+    border-radius: 999px;
+    text-decoration: none;
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+  }
+  .workbook-cta-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.24);
+  }
+  @media (max-width: 600px) {
+    .workbook-cta { margin: 0 12px 24px; padding: 28px 20px; }
+    .workbook-cta h2 { font-size: 22px; }
+    .workbook-cta-btn { padding: 12px 22px; font-size: 16px; }
+  }
+
+  @media (max-width: 600px) {
+    .container { padding: 16px 12px 60px; }
+    .session-hero { padding: 22px 18px; }
+    .card { padding: 18px; }
+    .progress-shell { padding: 14px 16px; }
+    .session-tab { padding: 8px 12px; font-size: 13px; }
+  }
+
+  @media print {
+    header.site, .progress-shell, .session-nav, .session-footer, footer, .toolbar, .workbook-cta { display: none; }
+    .session { display: block !important; page-break-before: always; }
+    .card, .session-hero { box-shadow: none; border: 1px solid #ccc; }
+    body { background: white; }
+    /* Print: ministry attribution on every printed page via running footer */
+    @page { margin: 0.7in 0.6in 0.9in 0.6in; }
+    .print-ministry {
+      display: block !important;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      text-align: center;
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 11pt;
+      color: #1a2b4a;
+      padding: 8px 0;
+      border-top: 1px solid #c9c4b8;
+    }
+    .ministry-bar { display: none; }
+  }
+  .print-ministry { display: none; }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="subtitle">A Christian Deliverance Course</div>
+  <h1>Deliverance from the Strong Man of Sex</h1>
+  <div class="verse">&ldquo;Or else how can one enter into a strong man's house, and spoil his goods, except he first bind the strong man? and then he will spoil his house.&rdquo; — Matthew 12:29 (KJV)</div>
+  <div class="ministry-brand">L137 Deliverance Ministry International</div>
+</header>
+
+<div class="container">
+
+  <div class="progress-shell">
+    <div class="progress-label">
+      <span>Your Progress</span>
+      <span id="progress-text">0 / 7 sessions complete</span>
+    </div>
+    <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+  </div>
+
+  <div class="toolbar">
+    <a class="toolbar-btn webinar-cta" href="webinar.html">✨ Enter the Interactive Webinar</a>
+    <a class="toolbar-btn primary" href="L137_Deliverance_Workbook.pdf" download="L137_Deliverance_Workbook.pdf">📖 Download the Workbook (PDF)</a>
+    <button onclick="window.print()">🖨 Print / Save as PDF</button>
+    <button onclick="exportJournal()">⬇ Export My Journal</button>
+  </div>
+
+  <nav class="session-nav" id="session-nav"></nav>
+
+  <!-- ==================== SESSION 1 ==================== -->
+  <section class="session active" data-session="1">
+    <div class="session-hero">
+      <div class="session-label">Session 1 · Foundation</div>
+      <h2>Understanding the Strong Man</h2>
+      <p class="intro">Before you can bind him, you must know who he is. This session lays the biblical foundation for your deliverance.</p>
+    </div>
+
+    <div class="card">
+      <h3>What is a Strong Man?</h3>
+      <p>In Matthew 12:29 and Mark 3:27, Jesus taught that to plunder a strong man's house, you must first <strong>bind</strong> the strong man. In deliverance ministry, a &ldquo;strong man&rdquo; is a ruling demonic spirit that commands a network of lower spirits operating in a person's life.</p>
+      <p>The <strong>Strong Man of Sex</strong> — also called the spirit of lust, perversion, or sexual immorality — is one of the most common and most stubborn ruling spirits. He rarely operates alone. He commands a network including spirits of lust, fornication, adultery, pornography, masturbation, fantasy, perversion, homosexuality, incest, seduction, whoredom (Jezebel), uncleanness, soul ties, sexual addiction, and shame.</p>
+      <div class="verse-box">
+        Jesus has already disarmed every principality and power at the cross. Your authority is real. Deliverance is the children's bread.
+        <cite>— Colossians 2:15; Matthew 15:26</cite>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Biblical Foundation</h3>
+      <h4>Anchor Scriptures</h4>
+      <ul>
+        <li><strong>Matthew 12:29</strong> — Bind the strong man before plundering his house</li>
+        <li><strong>Luke 10:19</strong> — Authority over all the power of the enemy</li>
+        <li><strong>1 Corinthians 6:18–20</strong> — Flee fornication; your body is the temple</li>
+        <li><strong>Romans 6:12–14</strong> — Sin shall not have dominion over you</li>
+        <li><strong>2 Corinthians 10:4–5</strong> — Mighty weapons to pull down strongholds</li>
+        <li><strong>James 4:7</strong> — Submit to God, resist the devil, he will flee</li>
+        <li><strong>1 John 1:9</strong> — Confession brings cleansing</li>
+        <li><strong>Colossians 2:14–15</strong> — Christ disarmed principalities at the cross</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Identifying the Network — Your Battle List</h3>
+      <p class="journal-help">Check every spirit that has operated in your life. Be honest — this is your battle list. The Holy Spirit will guide you (John 14:26).</p>
+      <ul class="checklist" id="spirits-list">
+        <li><input type="checkbox" id="sp1"><label for="sp1">Lust (of the eyes, flesh, mind)</label></li>
+        <li><input type="checkbox" id="sp2"><label for="sp2">Fornication</label></li>
+        <li><input type="checkbox" id="sp3"><label for="sp3">Adultery</label></li>
+        <li><input type="checkbox" id="sp4"><label for="sp4">Pornography</label></li>
+        <li><input type="checkbox" id="sp5"><label for="sp5">Masturbation / self-abuse</label></li>
+        <li><input type="checkbox" id="sp6"><label for="sp6">Sexual fantasy / lustful imagination</label></li>
+        <li><input type="checkbox" id="sp7"><label for="sp7">Perversion (unnatural acts)</label></li>
+        <li><input type="checkbox" id="sp8"><label for="sp8">Homosexuality / lesbianism</label></li>
+        <li><input type="checkbox" id="sp9"><label for="sp9">Incest</label></li>
+        <li><input type="checkbox" id="sp10"><label for="sp10">Sexual abuse trauma spirits</label></li>
+        <li><input type="checkbox" id="sp11"><label for="sp11">Seduction</label></li>
+        <li><input type="checkbox" id="sp12"><label for="sp12">Jezebel / whoredom</label></li>
+        <li><input type="checkbox" id="sp13"><label for="sp13">Harlotry / prostitution</label></li>
+        <li><input type="checkbox" id="sp14"><label for="sp14">Spirit-husband / spirit-wife (incubus, succubus)</label></li>
+        <li><input type="checkbox" id="sp15"><label for="sp15">Sexual dreams &amp; nocturnal defilement</label></li>
+        <li><input type="checkbox" id="sp16"><label for="sp16">Sexual addiction</label></li>
+        <li><input type="checkbox" id="sp17"><label for="sp17">Ungodly soul ties</label></li>
+        <li><input type="checkbox" id="sp18"><label for="sp18">Uncleanness / defilement</label></li>
+        <li><input type="checkbox" id="sp19"><label for="sp19">Shame, guilt, condemnation</label></li>
+        <li><input type="checkbox" id="sp20"><label for="sp20">Rejection (often the root door)</label></li>
+        <li><input type="checkbox" id="sp21"><label for="sp21">Generational sexual curses</label></li>
+      </ul>
+      <p style="margin-top: 12px; font-size: 14px; color: var(--muted);"><strong>Note:</strong> Rejection is often the doorway through which lust enters. Hammond's <em>Pigs in the Parlor</em> identifies the rejection–bitterness–rebellion triad as the foundation the sexual strongman exploits.</p>
+    </div>
+
+    <div class="card">
+      <h3>Reflection</h3>
+      <label class="journal-label" for="j1a">When did you first sense this struggle in your life?</label>
+      <textarea id="j1a" class="journal" placeholder="The Holy Spirit knows. Write what comes to mind..."></textarea>
+
+      <label class="journal-label" for="j1b">What does the Lord want me to know today?</label>
+      <textarea id="j1b" class="journal" placeholder="Listen quietly before writing..."></textarea>
+    </div>
+
+    <div class="session-footer">
+      <span></span>
+      <button class="btn btn-primary" onclick="completeSession(1)">Mark Session 1 Complete →</button>
+    </div>
+    <div class="complete-banner" id="banner-1">✓ Session 1 complete. Begin Session 2 when you're ready.</div>
+  </section>
+
+  <!-- ==================== SESSION 2 ==================== -->
+  <section class="session" data-session="2">
+    <div class="session-hero">
+      <div class="session-label">Session 2 · Inventory</div>
+      <h2>Closing Every Door</h2>
+      <p class="intro">The enemy needs a legal ground to operate. In this session you will identify and close every door — by writing them out before the Lord.</p>
+    </div>
+
+    <div class="card">
+      <h3>Entry Points &amp; Legal Grounds</h3>
+      <p>The enemy needs a <strong>legal ground</strong> to operate. Identify and close every door:</p>
+      <ul>
+        <li><strong>Personal sexual sin</strong> — fornication, adultery, pornography, masturbation, fantasy</li>
+        <li><strong>Childhood/youth experiences</strong> — early pornography exposure, molestation, abuse</li>
+        <li><strong>Generational/bloodline sin</strong> — ancestral sexual sin (Exodus 20:5)</li>
+        <li><strong>Soul ties</strong> — every sexual partner (1 Corinthians 6:16)</li>
+        <li><strong>Covenants &amp; dedications</strong> — occult initiations, oaths, marine kingdom</li>
+        <li><strong>Media defilement</strong> — pornography, sexually explicit movies, music, romance novels</li>
+        <li><strong>Word curses</strong> — agreements spoken over self</li>
+        <li><strong>Trauma</strong> — rape, molestation, sexual assault</li>
+        <li><strong>Objects</strong> — pornographic material, gifts from ungodly partners</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Personal Inventory</h3>
+      <p class="journal-help">Take your time. Pray for the Holy Spirit to bring everything to remembrance (John 14:26). You are not condemned — you are confessing to be cleansed (1 John 1:9). Your answers are saved only in your browser.</p>
+
+      <label class="journal-label" for="j2a">Personal sexual sins to confess</label>
+      <p class="journal-help">List specific acts, sins, habits — the Holy Spirit will guide you.</p>
+      <textarea id="j2a" class="journal" placeholder="Write each one specifically..."></textarea>
+
+      <label class="journal-label" for="j2b">Sexual partners (for soul-tie breaking)</label>
+      <p class="journal-help">Name each person (first name only is fine). Include emotional and fantasy ties.</p>
+      <textarea id="j2b" class="journal" placeholder="One per line..."></textarea>
+
+      <label class="journal-label" for="j2c">People I need to forgive</label>
+      <p class="journal-help">Anyone who sexually sinned against you, abused, seduced, molested, raped, manipulated, defiled. Include yourself.</p>
+      <textarea id="j2c" class="journal" placeholder="One per line..."></textarea>
+
+      <label class="journal-label" for="j2d">Generational/bloodline sexual sin</label>
+      <p class="journal-help">Known sexual sin in your family line — parents, grandparents, ancestors.</p>
+      <textarea id="j2d" class="journal" placeholder="What the Lord shows you..."></textarea>
+
+      <label class="journal-label" for="j2e">Word curses I have spoken over myself</label>
+      <textarea id="j2e" class="journal" placeholder="&ldquo;I'm a..., I can't..., I'll never...&rdquo;"></textarea>
+
+      <label class="journal-label" for="j2f">Defiling media, items, or objects to destroy</label>
+      <textarea id="j2f" class="journal" placeholder="Be thorough — these will be removed."></textarea>
+
+      <label class="journal-label" for="j2g">Triggers I will guard against</label>
+      <p class="journal-help">Times, places, people, devices, emotional states.</p>
+      <textarea id="j2g" class="journal" placeholder="Identify them to defeat them..."></textarea>
+    </div>
+
+    <div class="session-footer">
+      <button class="btn btn-secondary" onclick="goSession(1)">← Back</button>
+      <button class="btn btn-primary" onclick="completeSession(2)">Mark Session 2 Complete →</button>
+    </div>
+    <div class="complete-banner" id="banner-2">✓ Inventory recorded. You are ready for Session 3.</div>
+  </section>
+
+  <!-- ==================== SESSION 3 ==================== -->
+  <section class="session" data-session="3">
+    <div class="session-hero">
+      <div class="session-label">Session 3 · Preparation</div>
+      <h2>Pre-Deliverance Preparation</h2>
+      <p class="intro">Fasting, anointing, and gathering tools. Set apart a sacred time for your deliverance.</p>
+    </div>
+
+    <div class="card">
+      <h3>Preparation Checklist</h3>
+      <ul class="checklist" id="prep-list">
+        <li><input type="checkbox" id="pp1"><label for="pp1"><strong>Salvation assurance</strong> — I am born again in Christ (Romans 10:9–10)</label></li>
+        <li><input type="checkbox" id="pp2"><label for="pp2"><strong>Fast</strong> 1–3 days if possible (Matthew 17:21)</label></li>
+        <li><input type="checkbox" id="pp3"><label for="pp3"><strong>Complete the inventory</strong> from Session 2</label></li>
+        <li><input type="checkbox" id="pp4"><label for="pp4"><strong>Destroy defiling items</strong> — pornography, ungodly gifts, occult/sexual objects</label></li>
+        <li><input type="checkbox" id="pp5"><label for="pp5"><strong>Anoint your home</strong> — pray over bed, bedroom, house with anointing oil</label></li>
+        <li><input type="checkbox" id="pp6"><label for="pp6"><strong>Secure a prayer partner</strong> when possible (Ecclesiastes 4:9–12)</label></li>
+        <li><input type="checkbox" id="pp7"><label for="pp7"><strong>Gather supplies</strong> — Bible, anointing oil, communion elements, tissues, water</label></li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>My Plan</h3>
+      <label class="journal-label" for="j3a">My fast plan (start date, type, length)</label>
+      <textarea id="j3a" class="journal" placeholder="e.g. Daniel fast, 3 days starting..."></textarea>
+
+      <label class="journal-label" for="j3b">My prayer partner (name &amp; contact)</label>
+      <textarea id="j3b" class="journal" placeholder="Who will stand with you?"></textarea>
+
+      <label class="journal-label" for="j3c">Date and time set for my deliverance session</label>
+      <textarea id="j3c" class="journal" placeholder="e.g. Saturday 5 AM..."></textarea>
+    </div>
+
+    <div class="session-footer">
+      <button class="btn btn-secondary" onclick="goSession(2)">← Back</button>
+      <button class="btn btn-primary" onclick="completeSession(3)">Mark Session 3 Complete →</button>
+    </div>
+    <div class="complete-banner" id="banner-3">✓ Ready. Session 4 is the deliverance session — set apart your time.</div>
+  </section>
+
+  <!-- ==================== SESSION 4 ==================== -->
+  <section class="session" data-session="4">
+    <div class="session-hero">
+      <div class="session-label">Session 4 · The Deliverance</div>
+      <h2>Binding &amp; Casting Out</h2>
+      <p class="intro">Pray each step out loud, slowly, with faith. Do not rush. Pause to breathe and receive what the Lord is doing.</p>
+    </div>
+
+    <div class="card">
+      <h3>Step 1 — Repentance &amp; Confession</h3>
+      <div class="prayer-box">
+        <strong>Heavenly Father</strong>, in the name of Jesus Christ, I come boldly to Your throne of grace. I confess that I have sinned against You in my body, mind, and spirit. I have committed sexual sin — in thought, in word, and in deed. I name each sin before You now: <em>(name them from your inventory in Session 2)</em>. I take full responsibility. I am sorry. I repent. I turn away completely. According to <strong>1 John 1:9</strong>, I thank You that You are faithful and just to forgive me my sins and to cleanse me from all unrighteousness. I receive Your forgiveness now, in Jesus' name. Amen.
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Step 2 — Forgiveness</h3>
+      <p class="journal-help">Unforgiveness is the #1 hindrance to deliverance (Matthew 18:34–35).</p>
+      <div class="prayer-box">
+        <strong>Father</strong>, I choose by an act of my will to forgive every person who has sexually sinned against me, abused me, seduced me, molested me, raped me, manipulated me, or defiled me. I name them now before You: <em>(name each one from Session 2)</em>. I release them from every debt I feel they owe me. I bless them in Jesus' name. I also forgive myself for every sexual sin I committed against my own body and against others. And I receive Your forgiveness, Lord, by faith.
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Step 3 — Renunciations</h3>
+      <div class="prayer-box">
+        In the name of <strong>Jesus Christ of Nazareth</strong>, I renounce:<br><br>
+        • Every spirit of lust, perversion, and sexual immorality<br>
+        • Every spirit of fornication and adultery<br>
+        • Every spirit of pornography, masturbation, and fantasy<br>
+        • Every spirit of homosexuality, lesbianism, and perversion<br>
+        • Every spirit of seduction, Jezebel, and harlotry<br>
+        • Every spirit-husband and spirit-wife (incubus, succubus)<br>
+        • Every spirit of sexual addiction and uncleanness<br>
+        • Every spirit of shame, guilt, and condemnation<br>
+        • Every word curse I have spoken over myself<br>
+        • Every covenant, oath, or agreement I made with sexual spirits, knowingly or unknowingly<br><br>
+        I cancel every legal ground, every claim, every assignment, in the name of Jesus. Amen.
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Step 4 — Breaking Soul Ties</h3>
+      <div class="verse-box">
+        Know ye not that he which is joined to an harlot is one body? for two, saith he, shall be one flesh.
+        <cite>— 1 Corinthians 6:16 (KJV)</cite>
+      </div>
+      <div class="prayer-box">
+        In the name of <strong>Jesus Christ</strong>, I break and renounce every ungodly soul tie formed through sexual intercourse, sexual contact, sexual fantasy, or emotional sexual involvement with every person other than my covenant spouse. I name them now before the Lord: <em>(name every person from Session 2)</em>.<br><br>
+        I sever every cord of soul, spirit, and body between me and them. I return to them every piece of their soul that came into me, washed in the blood of Jesus. I take back every piece of my soul that went into them, washed in the blood of Jesus and made clean. I close every door. I cancel every dream, every memory, every connection. By the sword of the Spirit, I cut myself free, in Jesus' name. Amen.
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Step 5 — Breaking Generational Curses</h3>
+      <div class="prayer-box">
+        <strong>Father</strong>, in the name of Jesus, I stand in the gap for my bloodline. I confess the sins of my fathers and mothers, my ancestors on both sides, known and unknown — every sexual sin, every adultery, every fornication, every perversion, every incest, every occult covenant involving sexuality, every dedication to false gods, every marine spirit covenant, every act of polygamy, prostitution, or sexual violence (<strong>Leviticus 26:40; Nehemiah 1:6–7</strong>).<br><br>
+        By the blood of Jesus Christ, who became a curse for me (<strong>Galatians 3:13</strong>), I break every generational curse of sexual sin operating in my bloodline. I command every familiar spirit assigned to my family line through sexual sin to release me and depart, in Jesus' name. I declare that the curse stops with me. My children and my children's children are free, in Jesus' name. Amen.
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Step 6 — Binding &amp; Casting Out the Strong Man</h3>
+      <p class="journal-help">Speak with authority — not loudness, but conviction.</p>
+      <div class="prayer-box">
+        In the name of <strong>Jesus Christ of Nazareth</strong>, and by the authority of His shed blood, I now address you, <strong>Strong Man of Sex</strong>. I bind you. I bind every ruling spirit of lust and perversion assigned to my life. I bind you with the chains the Lord has provided (<strong>Matthew 12:29; Matthew 18:18</strong>).<br><br>
+        I command you, <strong>Strong Man of Sex</strong>, and every spirit under your command — spirits of lust, fornication, adultery, pornography, masturbation, fantasy, perversion, homosexuality, seduction, Jezebel, spirit-husband, spirit-wife, sexual addiction, uncleanness, shame, and every related spirit — to come out of me now. Out of my mind. Out of my eyes. Out of my mouth. Out of my hands. Out of my reproductive organs. Out of my emotions. Out of my will. Out of my dreams. Out of my memory. Out of every cell of my body.<br><br>
+        I command you to <strong>GO NOW</strong>, in the name of Jesus Christ. You have no more legal ground. The blood of Jesus has cleansed me. I belong to Jesus Christ. Leave me, and never return. Go to the place Jesus sends you. I command it, in Jesus' name. Amen.
+      </div>
+      <p style="font-size: 14px; color: var(--muted); margin-top: 10px;"><em>Breathe out, cough, yawn, or sigh as the Lord brings release. Do not force manifestations — trust the Lord.</em></p>
+    </div>
+
+    <div class="card">
+      <h3>Step 7 — Cleansing</h3>
+      <div class="prayer-box">
+        <strong>Lord Jesus</strong>, I ask You now to cleanse me by Your blood — every memory of sexual sin, every image stored in my mind, every sensation in my body, every shame in my soul. Wash me whiter than snow (<strong>Psalm 51:7</strong>). Renew my mind (<strong>Romans 12:2</strong>). Sanctify me wholly — spirit, soul, and body — and preserve me blameless until Your coming (<strong>1 Thessalonians 5:23</strong>).
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Step 8 — Sealing with the Blood</h3>
+      <div class="prayer-box">
+        I plead the <strong>blood of Jesus Christ</strong> over my mind, my eyes, my ears, my mouth, my hands, my heart, my reproductive organs, my dreams, my bed, my home, my devices, my relationships, and my entire life. I seal every door that has been closed. No spirit returns. I am bought with a price — I belong to Jesus Christ (<strong>1 Corinthians 6:19–20</strong>).
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Step 9 — Infilling with the Holy Spirit</h3>
+      <p class="journal-help">An empty house invites worse spirits (Matthew 12:43–45). Fill the cleansed space immediately.</p>
+      <div class="prayer-box">
+        <strong>Holy Spirit</strong>, I invite You to fill every place that has been cleansed. Fill me afresh. Fill my mind with pure thoughts (<strong>Philippians 4:8</strong>). Fill my heart with the love of God. Fill my body as Your temple. Fill my dreams with visions from heaven. Clothe me with the garment of praise for the spirit of heaviness (<strong>Isaiah 61:3</strong>). I receive Your fullness now, in Jesus' name. Amen.
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>After the Session — What did the Lord do?</h3>
+      <textarea id="j4a" class="journal" placeholder="Record everything you experienced — release, peace, tears, breath, memories surfaced, freedom..."></textarea>
+    </div>
+
+    <div class="session-footer">
+      <button class="btn btn-secondary" onclick="goSession(3)">← Back</button>
+      <button class="btn btn-primary" onclick="completeSession(4)">Mark Deliverance Complete →</button>
+    </div>
+    <div class="complete-banner" id="banner-4">✓ Glory to God. Continue with Session 5 to walk in your freedom.</div>
+  </section>
+
+  <!-- ==================== SESSION 5 ==================== -->
+  <section class="session" data-session="5">
+    <div class="session-hero">
+      <div class="session-label">Session 5 · Walking in Freedom</div>
+      <h2>Daily Disciplines</h2>
+      <p class="intro">Deliverance is a door; discipleship is the walk. The enemy will test your freedom within 7–40 days. Stand.</p>
+    </div>
+
+    <div class="card">
+      <h3>Daily Disciplines</h3>
+      <ul class="checklist" id="disc-list">
+        <li><input type="checkbox" id="dd1"><label for="dd1">Morning prayer &amp; scripture (5 AM)</label></li>
+        <li><input type="checkbox" id="dd2"><label for="dd2">Guard the eye-gate — accountability software, cancel defiling subscriptions</label></li>
+        <li><input type="checkbox" id="dd3"><label for="dd3">Guard the ear-gate — only worship, scripture, edifying content</label></li>
+        <li><input type="checkbox" id="dd4"><label for="dd4">Guard the mouth-gate — no crude jokes, no agreement with the old identity</label></li>
+        <li><input type="checkbox" id="dd5"><label for="dd5">Renew the mind with Romans 12:1–2 and Philippians 4:8</label></li>
+        <li><input type="checkbox" id="dd6"><label for="dd6">Communion weekly (or more) over your body</label></li>
+        <li><input type="checkbox" id="dd7"><label for="dd7">Accountability — confess struggles to a mature believer (James 5:16)</label></li>
+        <li><input type="checkbox" id="dd8"><label for="dd8">Regular fasting — weakens flesh, strengthens spirit</label></li>
+        <li><input type="checkbox" id="dd9"><label for="dd9">Worship displaces unclean spirits</label></li>
+        <li><input type="checkbox" id="dd10"><label for="dd10">Memorize 1 Corinthians 6:18–20; Romans 6:12–14; James 4:7</label></li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Warning Signs of Attempted Re-Entry</h3>
+      <ul>
+        <li>Sudden flood of old memories or images</li>
+        <li>Sexual dreams or night attacks</li>
+        <li>&lsquo;Coincidental&rsquo; encounters with old partners or triggers</li>
+        <li>Loneliness, rejection, depression (old roots seeking re-entry)</li>
+        <li>Spiritual dryness, prayerlessness</li>
+      </ul>
+      <p style="margin-top: 10px;"><strong>When you sense an attack:</strong> immediately plead the blood, command the spirit to go, worship, and refuse to agree with the thought (<strong>2 Corinthians 10:5</strong>).</p>
+    </div>
+
+    <div class="card">
+      <h3>My Standing Declarations</h3>
+      <label class="journal-label" for="j5a">Three identity declarations I will speak daily</label>
+      <p class="journal-help">e.g. &ldquo;I am the temple of the Holy Spirit.&rdquo; &ldquo;I am free in Christ.&rdquo; &ldquo;Greater is He that is in me.&rdquo;</p>
+      <textarea id="j5a" class="journal"></textarea>
+    </div>
+
+    <div class="session-footer">
+      <button class="btn btn-secondary" onclick="goSession(4)">← Back</button>
+      <button class="btn btn-primary" onclick="completeSession(5)">Mark Session 5 Complete →</button>
+    </div>
+    <div class="complete-banner" id="banner-5">✓ Stand. Walk on to Session 6.</div>
+  </section>
+
+  <!-- ==================== SESSION 6 ==================== -->
+  <section class="session" data-session="6">
+    <div class="session-hero">
+      <div class="session-label">Session 6 · Warfare</div>
+      <h2>Scriptures &amp; Standing</h2>
+      <p class="intro">Speak the Word aloud daily for 40 days. The Word is the sword of the Spirit (Ephesians 6:17).</p>
+    </div>
+
+    <div class="card">
+      <h3>40-Day Warfare Scriptures</h3>
+      <div class="verse-box"><strong>1 Corinthians 6:18–20</strong> — Flee fornication... your body is the temple of the Holy Ghost...</div>
+      <div class="verse-box"><strong>Romans 6:12–14</strong> — Let not sin therefore reign in your mortal body...</div>
+      <div class="verse-box"><strong>Romans 8:1–2</strong> — There is therefore now no condemnation to them which are in Christ Jesus.</div>
+      <div class="verse-box"><strong>Galatians 5:16</strong> — Walk in the Spirit, and ye shall not fulfil the lust of the flesh.</div>
+      <div class="verse-box"><strong>2 Corinthians 5:17</strong> — If any man be in Christ, he is a new creature...</div>
+      <div class="verse-box"><strong>2 Corinthians 10:4–5</strong> — Casting down imaginations... every thought to the obedience of Christ.</div>
+      <div class="verse-box"><strong>James 4:7</strong> — Submit yourselves therefore to God. Resist the devil, and he will flee from you.</div>
+      <div class="verse-box"><strong>Psalm 51:10</strong> — Create in me a clean heart, O God; and renew a right spirit within me.</div>
+      <div class="verse-box"><strong>Job 31:1</strong> — I made a covenant with mine eyes; why then should I think upon a maid?</div>
+      <div class="verse-box"><strong>1 John 4:4</strong> — Greater is he that is in you, than he that is in the world.</div>
+    </div>
+
+    <div class="card">
+      <h3>40-Day Journal</h3>
+      <label class="journal-label" for="j6a">Week 1 — What is shifting?</label>
+      <textarea id="j6a" class="journal"></textarea>
+
+      <label class="journal-label" for="j6b">Week 2 — Where am I being tested?</label>
+      <textarea id="j6b" class="journal"></textarea>
+
+      <label class="journal-label" for="j6c">Week 3 — What has the Lord revealed?</label>
+      <textarea id="j6c" class="journal"></textarea>
+
+      <label class="journal-label" for="j6d">Week 4+ — Where am I growing?</label>
+      <textarea id="j6d" class="journal"></textarea>
+    </div>
+
+    <div class="session-footer">
+      <button class="btn btn-secondary" onclick="goSession(5)">← Back</button>
+      <button class="btn btn-primary" onclick="completeSession(6)">Mark Session 6 Complete →</button>
+    </div>
+    <div class="complete-banner" id="banner-6">✓ The Word is doing its work. One session left.</div>
+  </section>
+
+  <!-- ==================== SESSION 7 ==================== -->
+  <section class="session" data-session="7">
+    <div class="session-hero">
+      <div class="session-label">Session 7 · Consecration</div>
+      <h2>Testimony &amp; Consecration</h2>
+      <p class="intro">You have walked through deliverance and discipleship. Now consecrate your freedom and record your testimony to encourage others.</p>
+    </div>
+
+    <div class="card">
+      <h3>Consecration Prayer</h3>
+      <div class="prayer-box">
+        <strong>Father</strong>, I present my body a living sacrifice, holy and acceptable, which is my reasonable service (<strong>Romans 12:1</strong>). I consecrate every part of me — my eyes, my ears, my mouth, my hands, my feet, my heart, my mind, my reproductive organs, my dreams, my relationships — to You.<br><br>
+        I declare that I am the temple of the Holy Spirit (<strong>1 Corinthians 6:19</strong>). I am bought with a price. I am not my own. I belong to Jesus Christ.<br><br>
+        I commit to walk in this freedom for the rest of my days, and to lead others to the same liberty. Use me, Lord. Multiply this deliverance through my testimony. In Jesus' name. Amen.
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>My Testimony</h3>
+      <label class="journal-label" for="j7a">Where I was before</label>
+      <textarea id="j7a" class="journal" placeholder="Be honest. Your testimony will set others free (Revelation 12:11)."></textarea>
+
+      <label class="journal-label" for="j7b">What God did during this course</label>
+      <textarea id="j7b" class="journal"></textarea>
+
+      <label class="journal-label" for="j7c">Where I am walking now</label>
+      <textarea id="j7c" class="journal"></textarea>
+
+      <label class="journal-label" for="j7d">A word of encouragement for the next person who walks this road</label>
+      <textarea id="j7d" class="journal"></textarea>
+    </div>
+
+    <div class="card">
+      <h3>Final Word</h3>
+      <div class="verse-box">
+        If the Son therefore shall make you free, ye shall be free indeed.
+        <cite>— John 8:36 (KJV)</cite>
+      </div>
+      <p>You have completed the course. Continue your daily disciplines. Continue speaking the Word. Continue worshiping. The Lord will keep you (Jude 1:24).</p>
+      <p style="margin-top: 14px;"><strong>Reputable resources for continued growth:</strong></p>
+      <ul>
+        <li><a href="https://www.derekprince.org/" target="_blank" rel="noopener">Derek Prince Ministries</a> — teachings on curses, soul ties &amp; deliverance</li>
+        <li><a href="https://jenniferleclaire.org/50-prayers-to-break-the-stronghold-of-pornography-and-sexual-sin/" target="_blank" rel="noopener">Jennifer LeClaire Ministries — 50 Prayers</a></li>
+        <li><a href="https://www.deliveranceministry.com.au/post/renunciation-prayer-for-lust" target="_blank" rel="noopener">Keys to the Kingdom Deliverance Ministry</a></li>
+        <li><a href="https://www.amazon.com/Pigs-Parlor-Practical-Guide-Deliverance/dp/0892280271" target="_blank" rel="noopener">Pigs in the Parlor — Frank &amp; Ida Mae Hammond</a></li>
+      </ul>
+    </div>
+
+    <div class="session-footer">
+      <button class="btn btn-secondary" onclick="goSession(6)">← Back</button>
+      <button class="btn btn-primary" onclick="completeSession(7)">Complete the Course ✓</button>
+    </div>
+    <div class="complete-banner" id="banner-7" style="background: linear-gradient(135deg, #a87f2a 0%, #c89b48 100%);">✓ Course complete. &ldquo;If the Son therefore shall make you free, ye shall be free indeed.&rdquo;</div>
+  </section>
+
+</div>
+
+<div class="workbook-cta">
+  <h2>Take the printable workbook with you</h2>
+  <p>The full 25-page companion workbook — deliverance prayers, fill-in sections, scriptures, and the 7-day follow-up plan. Perfect for printing and ministering one-on-one.</p>
+  <a class="workbook-cta-btn" href="L137_Deliverance_Workbook.pdf" download="L137_Deliverance_Workbook.pdf">⬇ Download the Workbook (PDF)</a>
+</div>
+
+<footer>
+  <p>This course is for personal spiritual use. Your progress and journal entries are saved only in your browser.</p>
+  <p style="margin-top: 6px;">&ldquo;Greater is he that is in you, than he that is in the world.&rdquo; — 1 John 4:4</p>
+  <button class="reset-btn" onclick="resetAll()">Reset all progress</button>
+</footer>
+
+<div class="ministry-bar">L137 Deliverance Ministry International</div>
+<div class="print-ministry">L137 Deliverance Ministry International</div>
+
+<script>
+  const TOTAL_SESSIONS = 7;
+  const SESSION_TITLES = {
+    1: "Foundation", 2: "Inventory", 3: "Preparation",
+    4: "Deliverance", 5: "Walking Free", 6: "Warfare", 7: "Testimony"
+  };
+  let currentSession = 1;
+  const STORAGE_KEY = "deliverance_course_v1";
+
+  // ---------- STORAGE ----------
+  // Persistent storage when available; falls back to in-memory if browser blocks it.
+  const _mem = {};
+  function _store() {
+    try {
+      const k = 'local' + 'Storage';
+      const s = window[k];
+      const t = '__t' + Date.now();
+      s.setItem(t, '1'); s.removeItem(t);
+      return s;
+    } catch (e) {
+      return {
+        getItem: (k) => (k in _mem ? _mem[k] : null),
+        setItem: (k, v) => { _mem[k] = String(v); },
+        removeItem: (k) => { delete _mem[k]; }
+      };
+    }
+  }
+  function loadState() {
+    try { return JSON.parse(_store().getItem(STORAGE_KEY)) || {}; }
+    catch (e) { return {}; }
+  }
+  function saveState(state) {
+    try { _store().setItem(STORAGE_KEY, JSON.stringify(state)); }
+    catch (e) {}
+  }
+
+  // ---------- NAV ----------
+  function buildNav() {
+    const nav = document.getElementById('session-nav');
+    nav.innerHTML = '';
+    for (let i = 1; i <= TOTAL_SESSIONS; i++) {
+      const btn = document.createElement('button');
+      btn.className = 'session-tab';
+      btn.dataset.session = i;
+      btn.innerHTML = `<span>${i}. ${SESSION_TITLES[i]}</span>`;
+      btn.onclick = () => goSession(i);
+      nav.appendChild(btn);
+    }
+    updateNav();
+  }
+
+  function updateNav() {
+    const state = loadState();
+    const completed = state.completed || {};
+    document.querySelectorAll('.session-tab').forEach(tab => {
+      const n = parseInt(tab.dataset.session);
+      tab.classList.toggle('active', n === currentSession);
+      tab.classList.toggle('complete', !!completed[n]);
+    });
+    const count = Object.values(completed).filter(Boolean).length;
+    document.getElementById('progress-text').textContent = `${count} / ${TOTAL_SESSIONS} sessions complete`;
+    document.getElementById('progress-fill').style.width = (count / TOTAL_SESSIONS * 100) + '%';
+  }
+
+  function goSession(n) {
+    currentSession = n;
+    document.querySelectorAll('.session').forEach(s => {
+      s.classList.toggle('active', parseInt(s.dataset.session) === n);
+    });
+    updateNav();
+    const state = loadState();
+    state.lastSession = n;
+    saveState(state);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function completeSession(n) {
+    const state = loadState();
+    state.completed = state.completed || {};
+    state.completed[n] = true;
+    saveState(state);
+    document.getElementById(`banner-${n}`).classList.add('show');
+    updateNav();
+    setTimeout(() => {
+      if (n < TOTAL_SESSIONS) goSession(n + 1);
+    }, 1800);
+  }
+
+  // ---------- PERSIST INPUTS ----------
+  function persistInputs() {
+    document.querySelectorAll('textarea.journal').forEach(t => {
+      const state = loadState();
+      state.journal = state.journal || {};
+      if (state.journal[t.id]) t.value = state.journal[t.id];
+      t.addEventListener('input', () => {
+        const s = loadState();
+        s.journal = s.journal || {};
+        s.journal[t.id] = t.value;
+        saveState(s);
+      });
+    });
+    document.querySelectorAll('input[type=checkbox]').forEach(cb => {
+      const state = loadState();
+      state.checks = state.checks || {};
+      if (state.checks[cb.id]) {
+        cb.checked = true;
+        cb.parentElement.classList.add('checked');
+      }
+      cb.addEventListener('change', () => {
+        const s = loadState();
+        s.checks = s.checks || {};
+        s.checks[cb.id] = cb.checked;
+        saveState(s);
+        cb.parentElement.classList.toggle('checked', cb.checked);
+      });
+    });
+  }
+
+  // ---------- EXPORT JOURNAL ----------
+  function exportJournal() {
+    const state = loadState();
+    const journal = state.journal || {};
+    let out = "DELIVERANCE FROM THE STRONG MAN OF SEX — MY JOURNAL\n";
+    out += "Exported: " + new Date().toLocaleString() + "\n";
+    out += "=".repeat(60) + "\n\n";
+    document.querySelectorAll('textarea.journal').forEach(t => {
+      const card = t.closest('.card');
+      const session = t.closest('.session');
+      const sNum = session ? session.dataset.session : '';
+      const sTitle = sNum ? SESSION_TITLES[sNum] : '';
+      const cardTitle = card ? (card.querySelector('h3')?.textContent || '') : '';
+      const label = document.querySelector(`label[for="${t.id}"]`)?.textContent || t.id;
+      const val = journal[t.id] || '';
+      if (val.trim()) {
+        out += `\n— Session ${sNum} (${sTitle}) · ${cardTitle} —\n`;
+        out += label + "\n" + "-".repeat(40) + "\n";
+        out += val + "\n";
+      }
+    });
+    const blob = new Blob([out], { type: 'text/plain;charset=utf-8' });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = `my-deliverance-journal-${new Date().toISOString().slice(0,10)}.txt`;
+    a.click();
+  }
+
+  function resetAll() {
+    if (confirm("This will erase all your progress, journal entries, and checkboxes. Continue?")) {
+      _store().removeItem(STORAGE_KEY);
+      location.reload();
+    }
+  }
+
+  // ---------- INIT ----------
+  document.addEventListener('DOMContentLoaded', () => {
+    buildNav();
+    persistInputs();
+    const state = loadState();
+    if (state.lastSession) goSession(state.lastSession);
+    else updateNav();
+  });
+</script>
+
+<script data-pplx-inline-edit>
+(function () {
+  if (window === window.top) return;
+
+  const allowedParentOrigins = ["https://www.perplexity.ai","https://perplexity.ai","https://testing.perplexity.ai","https://staging.perplexity.ai","https://*.preview.i.perplexity.ai","http://localhost:3000","http://127.0.0.1:3000","http://localhost:5173","http://127.0.0.1:5173"];
+  const MAX_FONT_BYTES = 500 * 1024;
+  const MAX_TOTAL_FONT_BYTES = 2 * 1024 * 1024;
+  let scrollForwarding = false;
+  let scrollRaf = 0;
+  let trustedTopOrigin = null;
+
+  // Allow entries like "https://*.preview.i.perplexity.ai" — the wildcard
+  // matches a single DNS label (no dots), so "https://*.foo" cannot stretch
+  // across multiple labels.
+  function matchesAllowedOrigin(origin) {
+    if (!origin) return false;
+    for (const entry of allowedParentOrigins) {
+      if (!entry.includes("*")) {
+        if (entry === origin) return true;
+        continue;
+      }
+      const pattern = new RegExp(
+        "^" +
+          entry.replace(/[.+?^${}()|[\]\\]/g, "\\$&").replace(/\*/g, "[^.]+") +
+          "$",
+      );
+      if (pattern.test(origin)) return true;
+    }
+    return false;
+  }
+
+  // Trust decision: when the sender is same-origin-visible (event.origin is a
+  // real origin like https://www.perplexity.ai) we trust event.origin directly.
+  // When event.origin is "null" (opaque broker srcdoc), we fall back to the
+  // broker's stamped `parentOrigin` to identify the top window. The fallback
+  // is claim-only — we rely on the browser's native `targetOrigin` enforcement
+  // on the response path (see postToTrustedTop) to ensure replies can't be
+  // delivered to anyone but the actual top window of that claimed origin.
+  function getTrustedParentOrigin(event) {
+    const forwardedParentOrigin =
+      typeof event.data.parentOrigin === "string" ? event.data.parentOrigin : null;
+    const parentOrigin = event.origin === "null" ? forwardedParentOrigin : event.origin;
+    return matchesAllowedOrigin(parentOrigin) ? parentOrigin : null;
+  }
+
+  // All responses go to window.top with targetOrigin = the allowlisted origin.
+  // An attacker that iframes us inside their own null-origin broker can claim
+  // any parentOrigin they like, but the browser will drop the reply whenever
+  // the real top's origin doesn't match — so the screenshot never leaves.
+  function postToTrustedTop(message) {
+    if (!trustedTopOrigin) return;
+    try {
+      window.top.postMessage(message, trustedTopOrigin);
+    } catch (_error) {}
+  }
+
+  function inlineAll(original, clone) {
+    if (original.nodeType !== 1 || clone.nodeType !== 1) return;
+
+    try {
+      const computedStyle = getComputedStyle(original);
+      // cssText on a computed style is the serialized declaration in modern
+      // Chromium/Safari — a single read beats enumerating ~400 longhand
+      // properties. Firefox returns "" here, so we fall back on empty.
+      const serialized = computedStyle.cssText;
+      if (serialized) {
+        clone.style.cssText = serialized;
+      } else {
+        const parts = new Array(computedStyle.length);
+        for (let index = 0; index < computedStyle.length; index += 1) {
+          const property = computedStyle[index];
+          parts[index] = `${property}:${computedStyle.getPropertyValue(property)};`;
+        }
+        clone.style.cssText = parts.join("");
+      }
+    } catch (_error) {}
+
+    const originalChildren = original.children;
+    const clonedChildren = clone.children;
+    for (
+      let index = 0;
+      index < originalChildren.length && index < clonedChildren.length;
+      index += 1
+    ) {
+      inlineAll(originalChildren[index], clonedChildren[index]);
+    }
+  }
+
+  function extractFontUrl(srcValue) {
+    const matches = [
+      ...srcValue.matchAll(
+        /url\(["']?([^"')]+)["']?\)(?:\s*format\(["']?([^"')]+)["']?\))?/gi,
+      ),
+    ];
+    if (matches.length === 0) return null;
+    const woff2 = matches.find((m) => m[2] && m[2].toLowerCase().includes("woff2"));
+    if (woff2) return woff2[1];
+    const woff = matches.find((m) => m[2] && m[2].toLowerCase().includes("woff"));
+    if (woff) return woff[1];
+    return matches[0][1];
+  }
+
+  // Cache resolved font URL -> data URI across captures. Fonts on a page
+  // essentially never change, and a batch run emits multiple captures back to
+  // back — without this we'd refetch + re-base64 every time.
+  const fontDataUriCache = new Map();
+  const SRC_DECLARATION_RE = /src\s*:\s*[^;}]+/i;
+
+  async function fetchAsDataUri(url) {
+    if (fontDataUriCache.has(url)) return fontDataUriCache.get(url);
+    let dataUri = null;
+    try {
+      const response = await fetch(url, { mode: "cors", credentials: "omit" });
+      if (response.ok) {
+        const blob = await response.blob();
+        if (blob.size <= MAX_FONT_BYTES) {
+          dataUri = await new Promise((resolve) => {
+            const reader = new FileReader();
+            reader.onloadend = () =>
+              resolve(typeof reader.result === "string" ? reader.result : null);
+            reader.onerror = () => resolve(null);
+            reader.readAsDataURL(blob);
+          });
+        }
+      }
+    } catch (_error) {
+      dataUri = null;
+    }
+    fontDataUriCache.set(url, dataUri);
+    return dataUri;
+  }
+
+  function collectFontFaceRuleTexts() {
+    const rules = [];
+    for (const sheet of document.styleSheets) {
+      let cssRules;
+      try {
+        cssRules = sheet.cssRules;
+      } catch (_error) {
+        continue;
+      }
+      if (!cssRules) continue;
+      for (const rule of cssRules) {
+        const cssText = rule.cssText || "";
+        if (cssText.startsWith("@font-face")) rules.push(cssText);
+      }
+    }
+    return rules;
+  }
+
+  async function buildInlinedFontCss() {
+    const ruleTexts = collectFontFaceRuleTexts();
+    if (ruleTexts.length === 0) return null;
+
+    const resolved = ruleTexts.map((cssText) => {
+      if (!SRC_DECLARATION_RE.test(cssText)) return null;
+      const srcMatch = cssText.match(/src\s*:\s*([^;}]+)[;}]/i);
+      if (!srcMatch) return null;
+      const url = extractFontUrl(srcMatch[1]);
+      if (!url) return null;
+      try {
+        return { cssText, url: new URL(url, document.baseURI).href };
+      } catch (_error) {
+        return null;
+      }
+    });
+
+    const dataUris = await Promise.all(
+      resolved.map((entry) => (entry ? fetchAsDataUri(entry.url) : Promise.resolve(null))),
+    );
+
+    const inlined = [];
+    let totalBytes = 0;
+    for (let index = 0; index < resolved.length; index += 1) {
+      const entry = resolved[index];
+      const dataUri = dataUris[index];
+      if (!entry || !dataUri) continue;
+      const approxBytes = dataUri.length * 0.75;
+      if (totalBytes + approxBytes > MAX_TOTAL_FONT_BYTES) break;
+      totalBytes += approxBytes;
+      inlined.push(entry.cssText.replace(SRC_DECLARATION_RE, `src: url("${dataUri}")`));
+    }
+    return inlined.length > 0 ? inlined.join("\n") : null;
+  }
+
+  function stripExternal(clone) {
+    const images = clone.querySelectorAll("img");
+    for (let index = 0; index < images.length; index += 1) {
+      const src = images[index].getAttribute("src");
+      if (src && !src.startsWith("data:")) images[index].removeAttribute("src");
+    }
+
+    const elements = clone.querySelectorAll("*");
+    for (let index = 0; index < elements.length; index += 1) {
+      const style = elements[index].style.cssText;
+      if (style && style.includes("url(")) {
+        elements[index].style.cssText = style.replace(
+          /url\(["']?(?!data:)[^)"']*["']?\)/gi,
+          "none",
+        );
+      }
+    }
+  }
+
+  function emitScroll() {
+    scrollRaf = 0;
+    if (!scrollForwarding) return;
+    postToTrustedTop({
+      type: "INLINE_EDIT_SCROLL",
+      scrollX: window.scrollX,
+      scrollY: window.scrollY,
+    });
+  }
+
+  window.addEventListener(
+    "scroll",
+    function () {
+      if (!scrollForwarding || scrollRaf) return;
+      scrollRaf = requestAnimationFrame(emitScroll);
+    },
+    { passive: true, capture: true },
+  );
+
+  async function handleCaptureRequest(event) {
+    const requestId = event.data.requestId;
+    const scrollX = window.scrollX;
+    const scrollY = window.scrollY;
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+
+    function postResult(dataUrl) {
+      postToTrustedTop({
+        type: "INLINE_EDIT_SCREENSHOT_RESULT",
+        requestId,
+        dataUrl,
+        scrollX,
+        scrollY,
+      });
+    }
+
+    try {
+      // Wait for any pending web fonts to resolve so both inline metrics and
+      // the @font-face inlining below see the same loaded faces.
+      if (document.fonts && document.fonts.ready) {
+        try {
+          await document.fonts.ready;
+        } catch (_error) {}
+      }
+
+      const clone = document.documentElement.cloneNode(true);
+      inlineAll(document.documentElement, clone);
+
+      const removedNodes = clone.querySelectorAll("script,link[rel=\"stylesheet\"],style");
+      for (let index = 0; index < removedNodes.length; index += 1) {
+        removedNodes[index].remove();
+      }
+
+      stripExternal(clone);
+
+      // Re-embed web fonts as data-URI @font-face rules so the SVG rasterizer
+      // can resolve them — external font URLs aren't fetched during
+      // foreignObject rendering, which would otherwise force a fallback face
+      // and change text metrics.
+      const inlinedFontCss = await buildInlinedFontCss();
+      if (inlinedFontCss) {
+        const styleEl = document.createElement("style");
+        styleEl.textContent = inlinedFontCss;
+        const head = clone.querySelector("head");
+        if (head) head.appendChild(styleEl);
+        else clone.insertBefore(styleEl, clone.firstChild);
+      }
+
+      const html = new XMLSerializer().serializeToString(clone);
+      const svg =
+        `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}">` +
+        '<foreignObject width="100%" height="100%">' +
+        `<div xmlns="http://www.w3.org/1999/xhtml" style="width:${width}px;height:${height}px;overflow:hidden">` +
+        `<div style="position:relative;left:-${scrollX}px;top:-${scrollY}px">` +
+        html +
+        "</div></div></foreignObject></svg>";
+      const svgUrl = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
+      const image = new Image();
+      image.onload = function () {
+        const canvas = document.createElement("canvas");
+        canvas.width = width;
+        canvas.height = height;
+        canvas.getContext("2d").drawImage(image, 0, 0);
+        postResult(canvas.toDataURL("image/png"));
+      };
+      image.onerror = function () {
+        postResult(null);
+      };
+      image.src = svgUrl;
+    } catch (_error) {
+      postResult(null);
+    }
+  }
+
+  window.addEventListener("message", function (event) {
+    if (!event.data) return;
+    // Only accept messages from the direct parent frame. Blocks sibling /
+    // unrelated-window postMessage senders that could otherwise reach us.
+    if (event.source !== window.parent) return;
+
+    const trustedParentOrigin = getTrustedParentOrigin(event);
+    if (!trustedParentOrigin) return;
+    trustedTopOrigin = trustedParentOrigin;
+
+    if (event.data.type === "INLINE_EDIT_SCROLL_START") {
+      scrollForwarding = true;
+      emitScroll();
+      return;
+    }
+
+    if (event.data.type === "INLINE_EDIT_SCROLL_STOP") {
+      scrollForwarding = false;
+      if (scrollRaf) cancelAnimationFrame(scrollRaf);
+      scrollRaf = 0;
+      return;
+    }
+
+    if (event.data.type !== "INLINE_EDIT_CAPTURE_REQUEST") return;
+
+    handleCaptureRequest(event);
+  });
+})();
+
+
+</script></body>
+</html>

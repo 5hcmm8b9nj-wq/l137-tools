@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="day">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Refuse to Remain Like This | L137 Prophetic Direction with Pastor Kiky Ocansey</title>
+<meta name="description" content="An interactive study of the October 21, 2026 L137 prophetic direction by Pastor Kiky Ocansey: Refuse to Remain Like This (Family Bondage). Earth! Earth!! Earth!!! Hear the Word of the Lord.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=1793341494">
+<link rel="stylesheet" href="extra.css?v=1793341494">
+</head>
+<body>
+<canvas id="sky" aria-hidden="true"></canvas>
+<div class="rays" aria-hidden="true"></div>
+<header class="nav">
+  <div class="wrap nav-in">
+    <a href="#top" class="brand"><span class="mark">L</span><span><b>L137 DELIVERANCE</b><i>with Pastor Kiky Ocansey</i></span></a>
+    <nav class="links" aria-label="Sections">
+      <a href="#part1">Part 1</a><a href="#part2">Part 2</a><a href="#word">Bible Study</a><a href="#family">Family Names</a><a href="#declare">Declarations</a><a href="#quiz">Quiz</a><a href="#help">Help</a>
+    </nav>
+    <div class="prog" id="prog">
+      <button class="ring" id="progBtn" aria-expanded="false" aria-controls="progInfo" aria-label="Study progress">
+        <svg viewBox="0 0 44 44" width="44" height="44" aria-hidden="true"><circle class="rt" cx="22" cy="22" r="18"/><circle class="rf" id="ringFill" cx="22" cy="22" r="18"/></svg>
+        <span class="pct" id="progPct">0%</span>
+      </button>
+      <span class="ptext" id="progText">Study progress: 0 of 35</span>
+      <div class="prog-info" id="progInfo" hidden>
+        <b>Study progress</b>
+        <ul id="progList"></ul>
+        <p class="small">Study progress counts the points you mark as studied. It is kept on this device. Daily prayer is tracked separately in the Declarations section and starts fresh each day.</p>
+        <button class="restart" id="restartBtn">Start Over</button>
+      </div>
+    </div>
+    <button id="themeBtn" class="theme" aria-label="Switch to night">
+      <svg class="sun" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="12" cy="12" r="4.5" fill="currentColor"/><g stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></g></svg>
+      <svg class="moon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z" fill="currentColor"/></svg>
+      <span class="theme-label">Day</span>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+  <section class="opening-block" aria-label="About this study">
+    <div class="wrap narrow">
+      <div class="opening-eyebrow">L137 Deliverance Ministry</div>
+      <p class="opening-lede">An interactive study of a prophetic direction given by Pastor Kiky Ocansey.</p>
+      <div class="opening-rule" aria-hidden="true"></div>
+    </div>
+  </section>
+
+  <section class="hero">
+    <div class="hero-img"><img src="assets/img/hero.jpg" alt="Golden anointing oil poured onto dark earth beneath rays of heavenly light"></div>
+    <div class="wrap hero-in">
+      <p class="eyebrow">L137 PROPHETIC DIRECTION · FASTING AND PRAYER</p>
+      <h1 class="display">REFUSE TO REMAIN<br>LIKE THIS</h1>
+      <p class="sub">Family Bondage</p>
+      <p class="hero-cry">Earth! Earth!! Earth!!! Hear the Word of the Lord</p>
+      <p class="by">A prophetic direction by Pastor Kiky Ocansey · L137 Deliverance Ministry International<br>October 21, 2026 · KJV throughout</p>
+      <div class="cta">
+        <a class="btn gold" href="#part1">Part 1 · The Direction</a>
+        <a class="btn ghost" href="#part2">Part 2 · Explained</a>
+        <button class="btn ghost" data-play="p1">▶ Listen</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="listen" class="apanel-sec" aria-label="Listen">
+    <div class="wrap narrow">
+      <div class="apanel">
+        <div class="apanel-btns">
+          <button class="hf-play" data-play="p1" aria-label="Listen to Part 1, the prophetic direction"><span class="hf-ico" aria-hidden="true">▶</span><span><b>Part 1 · The Direction</b><small id="hfLen1">Pastor Kiky Ocansey’s words</small></span></button>
+          <button class="hf-play alt" data-play="p2" aria-label="Listen to Part 2, Prophetic Directions Explained"><span class="hf-ico" aria-hidden="true">▶</span><span><b>Part 2 · Explained</b><small id="hfLen2">With Scripture</small></span></button>
+        </div>
+        <button class="cbtn resume" id="resumeBtn" hidden></button>
+        <details class="asettings"><summary>Listening settings and notes <span class="chev">▾</span></summary>
+          <div class="toggles">
+            <label class="tog"><input type="checkbox" id="chain" checked><span>Go straight into Part 2 when Part 1 ends</span></label>
+            <label class="tog"><input type="checkbox" id="follow" checked><span>Scroll the page along with the reading</span></label>
+            <label class="tog"><input type="checkbox" id="autoStart"><span>Start Part 1 by itself when I open this page</span></label>
+          </div>
+          <p class="muted small">One tap starts the reading, and the page highlights the part being read. The narrator reads Pastor Kiky’s words and the study notes; a second, softer voice reads the Scripture. Phones handle background audio differently, so a locked screen may pause the reading. See <a href="#help">Help</a>.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section id="part1" class="wrap narrow sec">
+    <p class="kicker center">PART 1</p>
+    <h2 class="center">The Prophetic Direction</h2>
+    <p class="center muted p1-title">REFUSE TO REMAIN LIKE THIS (FAMILY BONDAGE)</p>
+    <div class="orn">❦</div>
+    <figure class="wide-img"><img src="assets/img/m1.jpg" alt="Golden light over hills and a valley at dawn" loading="lazy"></figure>
+    <div class="dact center"><button class="cbtn lbtn" data-play="p1">▶ Listen to Part 1</button></div>
+    <div class="p1" id="p1Text"></div>
+  </section>
+
+  <section id="part2" class="band">
+    <div class="wrap narrow sec">
+      <p class="kicker center">PART 2</p>
+      <h2 class="center">Prophetic Directions Explained</h2>
+      <div class="orn">❦</div>
+      <p data-cue="p2-intro">Pastor Kiky’s words come first, then the Scripture in full from the King James Version. The study notes follow.</p>
+      <div class="dact center"><button class="cbtn lbtn" data-play="p2">▶ Listen to Part 2</button></div>
+      <div class="labels three">
+        <div class="callout kiky-c"><span class="chip kiky-chip">❝ Pastor Kiky Ocansey</span><p>Her own words, in royal purple.</p></div>
+        <div class="callout red"><span class="chip">✝ Scripture (KJV)</span><p>The Bible text in full, read in the second voice.</p></div>
+        <div class="callout note"><span class="chip ed-chip">✎ Study notes</span><p>Explanations at three levels: beginner, intermediate and advanced.</p></div>
+      </div>
+      <div class="mode-bar" role="group" aria-label="Choose how to use Part 2">
+        <button data-mode="prayer" aria-pressed="true"><b>Prayer Mode</b><small>Pastor Kiky’s words and Scripture. Study notes stay closed and are not read aloud.</small></button>
+        <button data-mode="study" aria-pressed="false"><b>Study Mode</b><small>Study notes open and are read aloud. Choose a level below.</small></button>
+      </div>
+      <div class="levels-bar" role="group" aria-label="Choose study note level" hidden>
+        <span class="muted small">Study notes level:</span>
+        <button data-level="all" aria-pressed="true">All three</button>
+        <button data-level="b" aria-pressed="false">Beginner</button>
+        <button data-level="i" aria-pressed="false">Intermediate</button>
+        <button data-level="a" aria-pressed="false">Advanced</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="prep" class="wrap narrow sec">
+    <p class="kicker">BEFORE YOU GO OUTSIDE</p>
+    <h2>Prepare Your Heart</h2>
+    <div class="orn">❦</div>
+    <p>Pray through the L137 order of prayer before you take up the oil.</p>
+    <ol id="prepList" class="prep"></ol>
+  </section>
+
+  <section id="word" class="wrap sec">
+    <p class="kicker center">PART 2 · BIBLE STUDY</p>
+    <h2 class="center">The Word Explained</h2>
+    <p class="center muted">Jeremiah 22:29, Psalm 24:1, and standing on the authority of God’s Word.</p>
+    <div class="orn">❦</div>
+    <figure class="wide-img"><img src="assets/img/m5.jpg" alt="A young green sapling rising from the earth in morning light" loading="lazy"></figure>
+    <div id="wordList" class="steps"></div>
+  </section>
+
+  <section id="steps" class="wrap sec">
+    <p class="kicker center">PART 2 · THE STEPS</p>
+    <h2 class="center">The Steps Explained</h2>
+    <p class="center muted">The seven steps Pastor Kiky gives, explained one at a time.</p>
+    <div class="orn">❦</div>
+    <figure class="wide-img"><img src="assets/img/m2.jpg" alt="A hand holding a small vial of anointing oil beside an open Bible at dawn" loading="lazy"></figure>
+    <div id="stepList" class="steps"></div>
+  </section>
+
+  <section id="family" class="band">
+    <div class="wrap narrow sec">
+      <p class="kicker">PART 2 · FAMILY NAMES</p>
+      <h2>Names to Speak Over</h2>
+      <div class="orn">❦</div>
+      <p>Write the names of the people you are standing for. They appear beside the declarations in Part 2 that speak over them, and under the sealing prayer, so you can call each name aloud when the voice pauses.</p>
+      <div class="names">
+        <label class="nf"><span>Your full name <small>(also used on your certificate)</small></span><input id="nmSelf" type="text" autocomplete="name" placeholder="Your name"></label>
+        <label class="nf"><span>Husband or wife</span><input id="nmSpouse" type="text" autocomplete="off" placeholder="Name"></label>
+        <div class="nf group" data-group="children"><span>Children</span><div class="rows"></div><button class="cbtn add" data-add="children">+ Add a child</button></div>
+        <div class="nf group" data-group="family"><span>Family members <small>(parents, brothers, sisters, relatives)</small></span><div class="rows"></div><button class="cbtn add" data-add="family">+ Add a family member</button></div>
+        <div class="nf group" data-group="others"><span>Others I am standing for</span><div class="rows"></div><button class="cbtn add" data-add="others">+ Add a name</button></div>
+      </div>
+      <p class="muted small">Names are saved only in this browser on this device. This page does not send them to any server, and clearing your browser data erases them.</p>
+      <div class="callout kiky-c" id="namesSummary" hidden></div>
+    </div>
+  </section>
+
+  <section id="declare" class="wrap sec">
+    <p class="kicker center">PART 2 · THE DECLARATIONS</p>
+    <h2 class="center">The Declarations Explained</h2>
+    <p class="center muted">Say each declaration aloud with faith and authority. Tap “Prayed today” as you go. Today’s count starts fresh each day and is separate from study progress.</p>
+    <div class="orn">❦</div>
+    <figure class="wide-img"><img src="assets/img/m3.jpg" alt="A broken wooden yoke and iron chains lying on the earth under golden light" loading="lazy"></figure>
+    <p class="center"><span class="today" id="declCount">Today’s prayer: 0 of 25 declarations prayed</span></p>
+    <div id="declList" class="decls"></div>
+  </section>
+
+  <section id="close" class="band">
+    <div class="wrap narrow sec closing">
+      <p class="kicker">CLOSING</p>
+      <h2>Thank You Jesus</h2>
+      <div class="orn">❦</div>
+      <blockquote class="kiky big" data-cue="close-k"><span class="chip kiky-chip">❝ Pastor Kiky Ocansey</span><p>THANK YOU JESUS FOR DELIVERANCE</p></blockquote>
+      <figure class="wide-img"><img src="assets/img/m4.jpg" alt="A family home on a hillside covered by a canopy of golden heavenly light" loading="lazy"></figure>
+      <div data-cue="close-seal"><h3>Seal Your Prayer</h3>
+      <p class="seal" id="sealPrayer"></p></div>
+      <p class="speak-over" id="sealNames" hidden></p>
+      <div id="closeVerses"></div>
+      <p class="muted small center" data-cue="close-end">This completes Prophetic Directions Explained. The optional quiz and the study completion certificate follow.</p>
+    </div>
+  </section>
+
+  <section id="extra" class="wrap narrow sec">
+    <p class="kicker">ADDITIONAL WORK</p>
+    <h2>Go Deeper</h2>
+    <div class="orn">❦</div>
+    <div class="taps">
+      <details class="tap" id="tapAssign"><summary><span class="tap-k">Tap to open</span><b>Assignments for This Direction</b><span class="chev">▾</span></summary><div class="tap-body"><ol id="assignList" class="assign"></ol></div></details>
+      <details class="tap" id="tapJournal"><summary><span class="tap-k">Tap to open</span><b>Reflection Journal</b><span class="chev">▾</span></summary><div class="tap-body" id="journal"></div></details>
+      <details class="tap" id="chars"><summary><span class="tap-k">Tap to open</span><b>Bible Characters for Further Study</b><span class="chev">▾</span></summary><div class="tap-body" id="charList"></div></details>
+      <details class="tap" id="tapRelated"><summary><span class="tap-k">Tap to open</span><b>Related Teachings</b><span class="chev">▾</span></summary><div class="tap-body">
+        <a class="dl" href="https://holy-spirit-anointing-dominion-hour.pplx.app" target="_blank" rel="noopener"><span class="ico">✦</span><span><b>The Holy Spirit Anointing</b>Dominion Hour with Prophet Prince Amo David · October 26, 2026. Six chapters on the anointing, breaking generational altars and territorial curses, and the yoke destroyed by the anointing.</span><span class="go">Open ↗</span></a>
+      </div></details>
+    </div>
+  </section>
+
+  <section id="quiz" class="band">
+    <div class="wrap sec">
+      <p class="kicker center">OPTIONAL REVIEW</p>
+      <h2 class="center">Quiz</h2>
+      <div class="orn">❦</div>
+      <p class="center muted">Optional. You do not need the quiz to pray the direction. Twelve questions; each answer is shown only after you choose. Score 10 or more to receive a Study Completion Certificate.</p>
+      <div id="quizBox" class="tabpanel"></div>
+      <p id="quizScore" class="center score" aria-live="polite"></p>
+      <div class="row center"><button class="btn ghost" id="quizReset">Retake the quiz</button></div>
+    </div>
+  </section>
+
+  <section id="cert" class="wrap sec">
+    <p class="kicker center">OPTIONAL</p>
+    <h2 class="center">Study Completion Certificate</h2>
+    <p class="center muted small cert-note">This certificate records that you completed the study and its quiz. It is not a ministry accreditation or credential, and it does not measure or confirm any spiritual outcome.</p>
+    <div class="orn">❦</div>
+    <p class="center muted" id="certMsg">Score 10 or more in the optional quiz to receive this certificate.</p>
+    <div class="cert-wrap" id="certWrap" hidden>
+      <div class="cert" id="certCard">
+        <div class="cert-in">
+          <p class="cert-k">L137 DELIVERANCE MINISTRY INTERNATIONAL</p>
+          <p class="cert-t">Study Completion Certificate</p>
+          <p class="cert-s">This is to certify that</p>
+          <p class="cert-n" id="certName">Your Name</p>
+          <p class="cert-s">has completed the interactive study and quiz for the prophetic direction</p>
+          <p class="cert-title">Refuse to Remain Like This</p>
+          <p class="cert-s">Family Bondage · Earth! Earth!! Earth!!! Hear the Word of the Lord<br>A prophetic direction by Pastor Kiky Ocansey · October 21, 2026</p>
+          <p class="cert-meta" id="certMeta"></p>
+          <p class="cert-v">“For with God nothing shall be impossible.” Luke 1:37</p>
+          <p class="cert-disc">This certificate records completion of a study. It is not a ministry accreditation or credential and does not measure any spiritual outcome.</p>
+        </div>
+      </div>
+      <label class="nf cert-name"><span>Name on certificate</span><input id="certInput" type="text" placeholder="Your full name"></label>
+      <div class="row center"><button class="btn gold" id="certDl">Download Certificate</button><button class="btn ghost" id="certPrint">Print</button></div>
+    </div>
+  </section>
+
+  <section id="help" class="band">
+    <div class="wrap narrow sec">
+      <p class="kicker">HELP</p>
+      <h2>Help and Phone Fixes</h2>
+      <div class="orn">❦</div>
+      <p>Tap a question to open the answer.</p>
+      <div class="taps">
+        <details class="tap"><summary><span class="tap-k">Sound</span><b>I pressed play but hear nothing</b><span class="chev">▾</span></summary><div class="tap-body"><ol class="assign">
+          <li>Phones need one tap before they will play sound. If you see “Tap anywhere to begin listening,” tap the screen once.</li>
+          <li>iPhone: check the silent switch on the side of the phone. If you see orange, flip it back. Then turn the volume up.</li>
+          <li>Check that the sound is not going to Bluetooth earphones or a car you are no longer using.</li>
+          <li>Still nothing? Press ■ (stop) in the player, then press ▶ Part 1 or Part 2 again.</li></ol></div></details>
+        <details class="tap"><summary><span class="tap-k">Sound</span><b>The reading stops when my screen locks</b><span class="chev">▾</span></summary><div class="tap-body"><ol class="assign">
+          <li>Phones differ. Many keep playing after you lock the screen, but some pause the sound. Start the reading first, then lock the phone, and use the lock screen play button if it pauses.</li>
+          <li>Leave this page open in your browser. Do not close the tab or swipe the browser away.</li>
+          <li>Low Power Mode (iPhone) or Battery Saver (Android) can stop sound in the background. Turn it off while you pray.</li>
+          <li>If it still stops, keep the screen on: iPhone Settings → Display &amp; Brightness → Auto-Lock → Never, then set it back afterwards.</li></ol></div></details>
+        <details class="tap"><summary><span class="tap-k">Reading</span><b>The voice and the screen are not together</b><span class="chev">▾</span></summary><div class="tap-body"><ol class="assign">
+          <li>Make sure “Scroll the page along with the reading” is ticked under Listening settings near the top.</li>
+          <li>If you scroll the page yourself, the page stops following for a few seconds so you can read. It catches up on its own.</li>
+          <li>Tap ▶ Listen from here on any point to start the voice exactly at that point.</li>
+          <li>In Prayer Mode the study notes are skipped, so the voice moves from Pastor Kiky’s words and Scripture straight to the next point. In Study Mode with one level chosen, only that level is read.</li>
+          <li>If nothing helps, reload the page. Your names, ticks, and quiz results are kept.</li></ol></div></details>
+        <details class="tap"><summary><span class="tap-k">Saving</span><b>Will my names, ticks, and quiz be saved?</b><span class="chev">▾</span></summary><div class="tap-body"><ol class="assign">
+          <li>Yes. Names, marks, journal answers, and quiz results are saved automatically in this browser on this phone. The page does not send them to any server.</li>
+          <li>Open the page again in the same browser to continue. Use “Resume where I stopped” to continue the reading.</li>
+          <li>Private or Incognito browsing does not save. Use a normal browser window.</li>
+          <li>Clearing your browser history or website data erases what you saved.</li>
+          <li>A different phone or browser starts fresh.</li></ol></div></details>
+        <details class="tap"><summary><span class="tap-k">Saving</span><b>Put this study on my home screen</b><span class="chev">▾</span></summary><div class="tap-body"><ol class="assign">
+          <li>iPhone (Safari): tap the Share button (square with an arrow), then Add to Home Screen.</li>
+          <li>Android (Chrome): tap the three dots at the top right, then Add to Home screen.</li></ol></div></details>
+        <details class="tap"><summary><span class="tap-k">Certificate</span><b>My certificate will not download</b><span class="chev">▾</span></summary><div class="tap-body"><ol class="assign">
+          <li>iPhone: after you tap Download Certificate, the picture may open in a new view. Press and hold it, then tap Save to Photos.</li>
+          <li>Or tap Print, then choose Save as PDF (or Save to Files).</li>
+          <li>The Study Completion Certificate appears when you score 10 or more out of 12 in the optional quiz.</li></ol></div></details>
+        <details class="tap"><summary><span class="tap-k">Other</span><b>Text too small, night mode, or starting over</b><span class="chev">▾</span></summary><div class="tap-body"><ol class="assign">
+          <li>Make text bigger by spreading two fingers on the screen. On iPhone you can also tap “aA” in the address bar.</li>
+          <li>Tap the Day / Night button at the top to switch the lighting.</li>
+          <li>To start over, tap the progress circle at the top, then Start Over. Your family names and journal are kept.</li></ol></div></details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <p class="display">L137 DELIVERANCE MINISTRY INTERNATIONAL</p>
+    <p>Refuse to Remain Like This · A prophetic direction by Pastor Kiky Ocansey · October 21, 2026</p>
+    <p>All Scripture in this study is quoted from the Authorized King James Version.</p>
+    <p class="approval">“For with God nothing shall be impossible.” Luke 1:37</p>
+  </div>
+</footer>
+
+<div class="player" id="player" hidden>
+  <div class="wrap player-in">
+    <img class="pthumb" id="pThumb" src="assets/img/m1.jpg" alt="">
+    <div class="ptitle"><span class="kicker" id="pMode">NOW PLAYING</span><b id="pName"></b></div>
+    <div class="pctl">
+      <button id="pPrev" class="pbtn" aria-label="Previous section">⏮</button>
+      <button id="pToggle" class="pbtn on" aria-label="Pause">❚❚</button>
+      <button id="pNext" class="pbtn" aria-label="Next section">⏭</button>
+      <button id="pStop" class="pbtn" aria-label="Stop">■</button>
+    </div>
+    <div class="pbar"><input id="pSeek" type="range" min="0" max="1000" value="0" step="1" aria-label="Seek"><span id="pTime">0:00</span></div>
+  </div>
+</div>
+
+<div class="tapgate" id="tapGate" hidden role="button" tabindex="0" aria-label="Tap anywhere to begin listening">
+  <div><span class="hf-ico">▶</span><b>Tap anywhere to begin listening</b><small>Your phone needs one tap before it can play sound. After that, the reading continues to the end on its own.</small></div>
+</div>
+<div class="modal" id="confirmBox" hidden role="dialog" aria-modal="true" aria-labelledby="cTitle">
+  <div class="modal-card"><h3 id="cTitle"></h3><p id="cBody"></p><div class="row"><button class="btn ghost" id="cCancel">Cancel</button><button class="btn gold" id="cOk"></button></div></div>
+</div>
+<audio id="audio" preload="none" playsinline></audio>
+<script src="data.js?v=1793341494"></script>
+<script src="chapters.js?v=1793341494"></script>
+<script src="audio.js?v=1793341494"></script>
+<script src="app.js?v=1793341494"></script>
+<script data-pplx-inline-edit>
+(function () {
+  if (window === window.top) return;
+
+  const allowedParentOrigins = ["https://www.perplexity.ai","https://perplexity.ai","https://testing.perplexity.ai","https://staging.perplexity.ai","https://*.preview.i.perplexity.ai","http://perplexity.localhost","http://localhost:1420","http://127.0.0.1:1420","http://localhost:3000","http://127.0.0.1:3000","http://localhost:5173","http://127.0.0.1:5173"];
+  const MAX_FONT_BYTES = 500 * 1024;
+  const MAX_TOTAL_FONT_BYTES = 2 * 1024 * 1024;
+  const DEFAULT_LINE_HEIGHT = 16;
+  let scrollForwarding = false;
+  let scrollRaf = 0;
+  let trustedTopOrigin = null;
+
+  // Allow entries like "https://*.preview.i.perplexity.ai" — the wildcard
+  // matches a single DNS label (no dots), so "https://*.foo" cannot stretch
+  // across multiple labels.
+  function matchesAllowedOrigin(origin) {
+    if (!origin) return false;
+    for (const entry of allowedParentOrigins) {
+      if (!entry.includes("*")) {
+        if (entry === origin) return true;
+        continue;
+      }
+      const pattern = new RegExp(
+        "^" +
+          entry.replace(/[.+?^${}()|[\]\\]/g, "\\$&").replace(/\*/g, "[^.]+") +
+          "$",
+      );
+      if (pattern.test(origin)) return true;
+    }
+    return false;
+  }
+
+  // Trust decision: when the sender is same-origin-visible (event.origin is a
+  // real origin like https://www.perplexity.ai) we trust event.origin directly.
+  // When event.origin is "null" (opaque broker srcdoc), we fall back to the
+  // broker's stamped `parentOrigin` to identify the top window. The fallback
+  // is claim-only — we rely on the browser's native `targetOrigin` enforcement
+  // on the response path (see postToTrustedTop) to ensure replies can't be
+  // delivered to anyone but the actual top window of that claimed origin.
+  function getTrustedParentOrigin(event) {
+    const forwardedParentOrigin =
+      typeof event.data.parentOrigin === "string" ? event.data.parentOrigin : null;
+    const parentOrigin = event.origin === "null" ? forwardedParentOrigin : event.origin;
+    return matchesAllowedOrigin(parentOrigin) ? parentOrigin : null;
+  }
+
+  // All responses go to window.top with targetOrigin = the allowlisted origin.
+  // An attacker that iframes us inside their own null-origin broker can claim
+  // any parentOrigin they like, but the browser will drop the reply whenever
+  // the real top's origin doesn't match — so the screenshot never leaves.
+  function postToTrustedTop(message) {
+    if (!trustedTopOrigin) return;
+    try {
+      window.top.postMessage(message, trustedTopOrigin);
+    } catch (_error) {}
+  }
+
+  const PICK_CAPABILITIES = ["pick"];
+  const PICK_CHAIN_LENGTH = 4;
+  const PICK_MAX_TEXT_CHARS = 120;
+  const PICK_MAX_HTML_CHARS = 300;
+
+  function truncate(value, maxChars) {
+    return value.length > maxChars ? value.slice(0, maxChars - 1) + "…" : value;
+  }
+
+  function isPickableElement(element) {
+    return (
+      element instanceof Element &&
+      element !== document.documentElement &&
+      element !== document.body
+    );
+  }
+
+  function resolvePickTarget(x, y) {
+    if (!Number.isFinite(x) || !Number.isFinite(y)) return null;
+    const element = document.elementFromPoint(x, y);
+    return isPickableElement(element) ? element.closest("svg") || element : null;
+  }
+
+  function pickLabel(element) {
+    if (element.id) return element.localName + "#" + element.id;
+    return [element.localName].concat(Array.from(element.classList).slice(0, 2)).join(".");
+  }
+
+  // Only attributes that help find the element in source. data-* values and URL
+  // query strings or fragments can carry tokens.
+  const PICK_ATTRIBUTES = new Set([
+    "id",
+    "class",
+    "name",
+    "type",
+    "role",
+    "alt",
+    "aria-label",
+    "href",
+    "src",
+  ]);
+
+  function pickAttributeValue(attribute) {
+    return attribute.name === "href" || attribute.name === "src"
+      ? attribute.value.split(/[?#]/)[0]
+      : attribute.value;
+  }
+
+  function describePickElement(element) {
+    const chain = [];
+    for (
+      let current = element;
+      isPickableElement(current) && chain.length < PICK_CHAIN_LENGTH;
+      current = current.parentElement
+    ) {
+      chain.unshift(current);
+    }
+    const attributes = Array.from(element.attributes)
+      .filter((attribute) => PICK_ATTRIBUTES.has(attribute.name))
+      .map((attribute) => ` ${attribute.name}="${pickAttributeValue(attribute).replace(/"/g, "&quot;")}"`)
+      .join("");
+    const text = (element.innerText || element.textContent || "").replace(/\s+/g, " ").trim();
+    return {
+      chain: chain.map(pickLabel),
+      html: truncate(`<${element.localName}${attributes}>`, PICK_MAX_HTML_CHARS),
+      text: text ? truncate(text, PICK_MAX_TEXT_CHARS) : undefined,
+    };
+  }
+
+  // Hover asks once per frame, and innerText on a large section forces layout,
+  // so only the rect is re-read while the pointer stays on the same element.
+  // Clicks ask for fresh details since the page may have changed the element.
+  let lastPick = null;
+
+  function describePickTarget(element, fresh) {
+    if (fresh || lastPick?.element !== element) {
+      lastPick = { element, details: describePickElement(element) };
+    }
+    const rect = element.getBoundingClientRect();
+    return {
+      rect: { x: rect.left, y: rect.top, width: rect.width, height: rect.height },
+      ...lastPick.details,
+    };
+  }
+
+  function inlineAll(original, clone) {
+    if (original.nodeType !== 1 || clone.nodeType !== 1) return;
+
+    try {
+      const computedStyle = getComputedStyle(original);
+      // cssText on a computed style is the serialized declaration in modern
+      // Chromium/Safari — a single read beats enumerating ~400 longhand
+      // properties. Firefox returns "" here, so we fall back on empty.
+      const serialized = computedStyle.cssText;
+      if (serialized) {
+        clone.style.cssText = serialized;
+      } else {
+        const parts = new Array(computedStyle.length);
+        for (let index = 0; index < computedStyle.length; index += 1) {
+          const property = computedStyle[index];
+          parts[index] = `${property}:${computedStyle.getPropertyValue(property)};`;
+        }
+        clone.style.cssText = parts.join("");
+      }
+    } catch (_error) {}
+
+    const originalChildren = original.children;
+    const clonedChildren = clone.children;
+    for (
+      let index = 0;
+      index < originalChildren.length && index < clonedChildren.length;
+      index += 1
+    ) {
+      inlineAll(originalChildren[index], clonedChildren[index]);
+    }
+  }
+
+  function extractFontUrl(srcValue) {
+    const matches = [
+      ...srcValue.matchAll(
+        /url\(["']?([^"')]+)["']?\)(?:\s*format\(["']?([^"')]+)["']?\))?/gi,
+      ),
+    ];
+    if (matches.length === 0) return null;
+    const woff2 = matches.find((m) => m[2] && m[2].toLowerCase().includes("woff2"));
+    if (woff2) return woff2[1];
+    const woff = matches.find((m) => m[2] && m[2].toLowerCase().includes("woff"));
+    if (woff) return woff[1];
+    return matches[0][1];
+  }
+
+  // Cache resolved font URL -> data URI across captures. Fonts on a page
+  // essentially never change, and a batch run emits multiple captures back to
+  // back — without this we'd refetch + re-base64 every time.
+  const fontDataUriCache = new Map();
+  const SRC_DECLARATION_RE = /src\s*:\s*[^;}]+/i;
+
+  async function fetchAsDataUri(url) {
+    if (fontDataUriCache.has(url)) return fontDataUriCache.get(url);
+    let dataUri = null;
+    try {
+      const response = await fetch(url, { mode: "cors", credentials: "omit" });
+      if (response.ok) {
+        const blob = await response.blob();
+        if (blob.size <= MAX_FONT_BYTES) {
+          dataUri = await new Promise((resolve) => {
+            const reader = new FileReader();
+            reader.onloadend = () =>
+              resolve(typeof reader.result === "string" ? reader.result : null);
+            reader.onerror = () => resolve(null);
+            reader.readAsDataURL(blob);
+          });
+        }
+      }
+    } catch (_error) {
+      dataUri = null;
+    }
+    fontDataUriCache.set(url, dataUri);
+    return dataUri;
+  }
+
+  function collectFontFaceRuleTexts() {
+    const rules = [];
+    for (const sheet of document.styleSheets) {
+      let cssRules;
+      try {
+        cssRules = sheet.cssRules;
+      } catch (_error) {
+        continue;
+      }
+      if (!cssRules) continue;
+      for (const rule of cssRules) {
+        const cssText = rule.cssText || "";
+        if (cssText.startsWith("@font-face")) rules.push(cssText);
+      }
+    }
+    return rules;
+  }
+
+  async function buildInlinedFontCss() {
+    const ruleTexts = collectFontFaceRuleTexts();
+    if (ruleTexts.length === 0) return null;
+
+    const resolved = ruleTexts.map((cssText) => {
+      if (!SRC_DECLARATION_RE.test(cssText)) return null;
+      const srcMatch = cssText.match(/src\s*:\s*([^;}]+)[;}]/i);
+      if (!srcMatch) return null;
+      const url = extractFontUrl(srcMatch[1]);
+      if (!url) return null;
+      try {
+        return { cssText, url: new URL(url, document.baseURI).href };
+      } catch (_error) {
+        return null;
+      }
+    });
+
+    const dataUris = await Promise.all(
+      resolved.map((entry) => (entry ? fetchAsDataUri(entry.url) : Promise.resolve(null))),
+    );
+
+    const inlined = [];
+    let totalBytes = 0;
+    for (let index = 0; index < resolved.length; index += 1) {
+      const entry = resolved[index];
+      const dataUri = dataUris[index];
+      if (!entry || !dataUri) continue;
+      const approxBytes = dataUri.length * 0.75;
+      if (totalBytes + approxBytes > MAX_TOTAL_FONT_BYTES) break;
+      totalBytes += approxBytes;
+      inlined.push(entry.cssText.replace(SRC_DECLARATION_RE, `src: url("${dataUri}")`));
+    }
+    return inlined.length > 0 ? inlined.join("\n") : null;
+  }
+
+  function stripExternal(clone) {
+    const images = clone.querySelectorAll("img");
+    for (let index = 0; index < images.length; index += 1) {
+      const src = images[index].getAttribute("src");
+      if (src && !src.startsWith("data:")) images[index].removeAttribute("src");
+    }
+
+    const elements = clone.querySelectorAll("*");
+    for (let index = 0; index < elements.length; index += 1) {
+      const style = elements[index].style.cssText;
+      if (style && style.includes("url(")) {
+        elements[index].style.cssText = style.replace(
+          /url\(["']?(?!data:)[^)"']*["']?\)/gi,
+          "none",
+        );
+      }
+    }
+  }
+
+  function emitScroll() {
+    scrollRaf = 0;
+    if (!scrollForwarding) return;
+    postToTrustedTop({
+      type: "INLINE_EDIT_SCROLL",
+      scrollX: window.scrollX,
+      scrollY: window.scrollY,
+      capabilities: PICK_CAPABILITIES,
+    });
+  }
+
+  window.addEventListener(
+    "scroll",
+    function () {
+      if (!scrollForwarding || scrollRaf) return;
+      scrollRaf = requestAnimationFrame(emitScroll);
+    },
+    { passive: true, capture: true },
+  );
+
+  async function handleCaptureRequest(event) {
+    const requestId = event.data.requestId;
+    const scrollX = window.scrollX;
+    const scrollY = window.scrollY;
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+
+    function postResult(dataUrl) {
+      postToTrustedTop({
+        type: "INLINE_EDIT_SCREENSHOT_RESULT",
+        requestId,
+        dataUrl,
+        scrollX,
+        scrollY,
+      });
+    }
+
+    try {
+      // Wait for any pending web fonts to resolve so both inline metrics and
+      // the @font-face inlining below see the same loaded faces.
+      if (document.fonts && document.fonts.ready) {
+        try {
+          await document.fonts.ready;
+        } catch (_error) {}
+      }
+
+      const clone = document.documentElement.cloneNode(true);
+      inlineAll(document.documentElement, clone);
+
+      const removedNodes = clone.querySelectorAll("script,link[rel=\"stylesheet\"],style");
+      for (let index = 0; index < removedNodes.length; index += 1) {
+        removedNodes[index].remove();
+      }
+
+      stripExternal(clone);
+
+      // Re-embed web fonts as data-URI @font-face rules so the SVG rasterizer
+      // can resolve them — external font URLs aren't fetched during
+      // foreignObject rendering, which would otherwise force a fallback face
+      // and change text metrics.
+      const inlinedFontCss = await buildInlinedFontCss();
+      if (inlinedFontCss) {
+        const styleEl = document.createElement("style");
+        styleEl.textContent = inlinedFontCss;
+        const head = clone.querySelector("head");
+        if (head) head.appendChild(styleEl);
+        else clone.insertBefore(styleEl, clone.firstChild);
+      }
+
+      const html = new XMLSerializer().serializeToString(clone);
+      const svg =
+        `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}">` +
+        '<foreignObject width="100%" height="100%">' +
+        `<div xmlns="http://www.w3.org/1999/xhtml" style="width:${width}px;height:${height}px;overflow:hidden">` +
+        `<div style="position:relative;left:-${scrollX}px;top:-${scrollY}px">` +
+        html +
+        "</div></div></foreignObject></svg>";
+      const svgUrl = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
+      const image = new Image();
+      image.onload = function () {
+        const canvas = document.createElement("canvas");
+        canvas.width = width;
+        canvas.height = height;
+        canvas.getContext("2d").drawImage(image, 0, 0);
+        postResult(canvas.toDataURL("image/png"));
+      };
+      image.onerror = function () {
+        postResult(null);
+      };
+      image.src = svgUrl;
+    } catch (_error) {
+      postResult(null);
+    }
+  }
+
+  window.addEventListener("message", function (event) {
+    if (!event.data) return;
+    // Only accept messages from the direct parent frame. Blocks sibling /
+    // unrelated-window postMessage senders that could otherwise reach us.
+    if (event.source !== window.parent) return;
+
+    const trustedParentOrigin = getTrustedParentOrigin(event);
+    if (!trustedParentOrigin) return;
+    trustedTopOrigin = trustedParentOrigin;
+
+    if (event.data.type === "INLINE_EDIT_PICK") {
+      const element = resolvePickTarget(event.data.x, event.data.y);
+      postToTrustedTop({
+        type: "INLINE_EDIT_PICK_RESULT",
+        seq: event.data.seq,
+        target: element ? describePickTarget(element, event.data.fresh === true) : null,
+      });
+      return;
+    }
+
+    if (event.data.type === "INLINE_EDIT_SCROLL_START") {
+      scrollForwarding = true;
+      emitScroll();
+      return;
+    }
+
+    if (event.data.type === "INLINE_EDIT_SCROLL_STOP") {
+      scrollForwarding = false;
+      if (scrollRaf) cancelAnimationFrame(scrollRaf);
+      scrollRaf = 0;
+      return;
+    }
+
+    if (event.data.type === "INLINE_EDIT_SCROLL_BY") {
+      const { deltaX, deltaY, deltaMode } = event.data;
+      if (!scrollForwarding || !Number.isFinite(deltaX) || !Number.isFinite(deltaY)) return;
+      if (deltaMode !== 0 && deltaMode !== 1 && deltaMode !== 2) return;
+      const lineHeight =
+        parseFloat(getComputedStyle(document.documentElement).lineHeight) || DEFAULT_LINE_HEIGHT;
+      const scaleX = deltaMode === 1 ? lineHeight : deltaMode === 2 ? window.innerWidth : 1;
+      const scaleY = deltaMode === 1 ? lineHeight : deltaMode === 2 ? window.innerHeight : 1;
+      // The selection overlay receives the wheel event instead of this iframe.
+      // Instant scrolling preserves trackpad deltas even on smooth-scroll sites.
+      window.scrollBy({ left: deltaX * scaleX, top: deltaY * scaleY, behavior: "instant" });
+      emitScroll();
+      return;
+    }
+
+    if (event.data.type !== "INLINE_EDIT_CAPTURE_REQUEST") return;
+
+    handleCaptureRequest(event);
+  });
+})();
+
+
+</script></body>
+</html>

@@ -1,0 +1,726 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Breaking Ungodly Soul Ties — March 28, 2026 | L137 Interactive Study</title>
+<style>
+:root{
+  --bg:#fbf6ee; --panel:#ffffff; --ink:#1c1712; --muted:#6b5f52;
+  --line:#e7d8c4; --accent:#8b1e18; --gold:#a8681a; --focus:#0b4a7a;
+  --shadow:0 8px 24px rgba(90,50,20,0.12); --knot:#5a4632; --cut:#1f7a3d;
+}
+[data-theme="night"]{
+  --bg:#0b0f16; --panel:#161c26; --ink:#f4ecdd; --muted:#c3b8a6;
+  --line:#33404f; --accent:#ff9b82; --gold:#f0c065; --focus:#9fd2ff;
+  --shadow:0 8px 24px rgba(0,0,0,0.5); --knot:#c3b8a6; --cut:#5fd68a;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,'Segoe UI',Arial,sans-serif;line-height:1.5;transition:background .2s,color .2s}
+.wrap{max-width:720px;margin:0 auto;padding:0 16px}
+header{background:linear-gradient(135deg,#4b0d0a,#8b1e18 55%,#a8681a);color:#fff;padding:22px 0 18px;border-bottom:4px solid var(--gold)}
+[data-theme="night"] header{background:linear-gradient(135deg,#241417,#3a1a16 55%,#5a3a12)}
+h1{font-size:clamp(1.35rem,5.2vw,1.9rem);margin:0 0 4px;line-height:1.15}
+.meta{font-size:.82rem;opacity:.92;display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+.meta span{background:rgba(255,255,255,.14);padding:3px 9px;border-radius:20px}
+.topbar{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:10px}
+button{cursor:pointer;border:0;border-radius:10px;font:600 .85rem inherit;padding:9px 12px}
+.theme-btn{background:rgba(255,255,255,.16);color:#fff}
+.theme-btn:focus,button:focus{outline:3px solid var(--focus);outline-offset:2px}
+nav.tabs{display:flex;gap:6px;overflow-x:auto;padding:10px 0;margin:0 -16px;padding-left:16px;padding-right:16px}
+nav.tabs button{flex:0 0 auto;background:var(--panel);border:1px solid var(--line);color:var(--ink);white-space:nowrap}
+nav.tabs button.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+main{padding-bottom:40px}
+.panel{display:none}
+.panel.show{display:block;animation:fade .25s ease}
+@keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px;margin:12px 0;box-shadow:var(--shadow)}
+.chapnum{font-size:.72rem;letter-spacing:.06em;color:var(--gold);font-weight:700;text-transform:uppercase}
+h2{font-size:1.15rem;margin:2px 0 6px}
+.gist{font-size:.92rem;color:var(--muted);margin:0 0 10px;font-style:italic}
+.verse{border-left:4px solid var(--gold);background:rgba(168,104,26,0.08);padding:10px 12px;border-radius:0 10px 10px 0;margin:9px 0;font-size:.97rem}
+.ref{display:block;font:700 .78rem inherit;color:var(--accent);letter-spacing:.02em;margin-bottom:3px}
+.controls{display:flex;gap:6px;flex-wrap:wrap;margin:6px 0 12px}
+.controls button{background:var(--panel);border:1px solid var(--line);color:var(--ink);min-width:64px;padding:7px 9px;font-size:.8rem}
+.controls button.speak{background:var(--accent);color:#fff;border-color:var(--accent)}
+details{border:1px solid var(--line);border-radius:10px;margin:8px 0;background:rgba(0,0,0,0.02)}
+details summary{cursor:pointer;padding:9px 12px;font-weight:600;font-size:.88rem;list-style:none}
+details summary::before{content:"▸ ";color:var(--gold)}
+details[open] summary::before{content:"▾ "}
+details .inner{padding:0 12px 12px;font-size:.88rem}
+details .inner ul{margin:6px 0;padding-left:18px}
+details .inner li{margin:4px 0}
+.step{display:flex;align-items:center;gap:10px;border:1px solid var(--line);border-radius:10px;padding:10px 12px;margin:8px 0;background:var(--panel)}
+.step.cut{opacity:.55}
+.knot{font-size:1.3rem;flex:0 0 auto}
+.step .txt{flex:1;font-size:.9rem}
+.step .txt b{display:block;font-size:.78rem;color:var(--gold);text-transform:uppercase;letter-spacing:.03em}
+.step button.cutbtn{background:var(--panel);border:1px solid var(--accent);color:var(--accent);font-size:.78rem;padding:7px 10px}
+.step.cut button.cutbtn{border-color:var(--cut);color:var(--cut)}
+.ropebar{height:12px;border-radius:8px;background:var(--line);overflow:hidden;margin:10px 0}
+.ropebar > div{height:100%;background:linear-gradient(90deg,var(--accent),var(--gold));width:0;transition:width .35s}
+.declare{border:1px solid var(--gold);background:rgba(168,104,26,0.1);border-radius:12px;padding:12px 14px;margin:9px 0;font-size:.96rem}
+.declare .lbl{font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;color:var(--accent);font-weight:700;display:block;margin-bottom:4px}
+.quizq{border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin:10px 0;background:var(--panel)}
+.quizq p{margin:0 0 8px;font-size:.93rem}
+.opt{display:block;width:100%;text-align:left;background:var(--panel);border:1px solid var(--line);color:var(--ink);padding:9px 11px;margin:5px 0;font-size:.88rem;border-radius:8px}
+.opt.correct{background:rgba(31,122,61,0.15);border-color:var(--cut)}
+.opt.wrong{background:rgba(139,30,24,0.15);border-color:var(--accent)}
+.result{font-size:.8rem;font-weight:700;min-height:1.2em;margin-top:4px}
+.scoreline{position:sticky;top:0;background:var(--bg);padding:8px 0;font-weight:700;font-size:.85rem;z-index:2}
+.small{font-size:.8rem;color:var(--muted)}
+footer{text-align:center;padding:18px 16px 30px;font-size:.78rem;color:var(--muted)}
+@media (min-width:600px){.controls button{min-width:78px}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <h1>Breaking Ungodly Soul Ties</h1>
+  <div class="meta">
+    <span>L137 Deliverance Ministry International</span>
+    <span>Teaching by Pastor Kiky Ocansey</span>
+    <span>Service date · March 28, 2026</span>
+    <span>Main Scripture · Isaiah 28:18</span>
+  </div>
+  <div class="topbar">
+    <span class="small" style="color:#fff;opacity:.85">Scripture-only study · KJV</span>
+    <button class="theme-btn" id="themeBtn">☾ Night mode</button>
+  </div>
+</div></header>
+
+<div class="wrap">
+<nav class="tabs" aria-label="Learning levels">
+  <button class="active" data-p="new">01 · New Believer</button>
+  <button data-p="mid">02 · Intermediate</button>
+  <button data-p="adv">03 · Advanced</button>
+  <button data-p="quiz">04 · Scripture Quiz</button>
+  <button data-p="declare">05 · Declare &amp; Pray</button>
+</nav>
+
+<main>
+
+<!-- NEW BELIEVER -->
+<section class="panel show" id="new">
+  <div class="card">
+    <span class="chapnum">Chapter 1 of 8</span>
+    <h2>What Is a Soul Tie?</h2>
+    <p class="gist">A soul tie is a spiritual and emotional bond that links two people — mind, will, emotion, and sometimes spirit.</p>
+    <div class="verse"><span class="ref">Genesis 2:24 (KJV)</span>“Therefore shall a man leave his father and his mother, and shall cleave unto his wife: and they shall be one flesh.”</div>
+    <div class="controls">
+      <button class="speak" data-text="Genesis chapter two verse twenty-four. Therefore shall a man leave his father and his mother, and shall cleave unto his wife: and they shall be one flesh.">▶ Play</button>
+      <button class="pause">Ⅱ Pause</button><button class="stop">■ Stop</button><button class="rewind">↺ Rewind</button>
+    </div>
+    <div class="verse"><span class="ref">1 Samuel 18:1 (KJV)</span>“And it came to pass, when he had made an end of speaking unto Saul, that the soul of Jonathan was knit with the soul of David, and Jonathan loved him as his own soul.”</div>
+    <div class="controls">
+      <button class="speak" data-text="First Samuel chapter eighteen verse one. And it came to pass, when he had made an end of speaking unto Saul, that the soul of Jonathan was knit with the soul of David, and Jonathan loved him as his own soul.">▶ Play</button>
+      <button class="pause">Ⅱ Pause</button><button class="stop">■ Stop</button><button class="rewind">↺ Rewind</button>
+    </div>
+    <div class="verse"><span class="ref">1 Corinthians 6:16 (KJV)</span>“What? know ye not that he which is joined to an harlot is one body? for two, saith he, shall be one flesh.”</div>
+    <div class="verse"><span class="ref">1 Corinthians 6:17 (KJV)</span>“But he that is joined unto the Lord is one spirit.”</div>
+    <div class="controls">
+      <button class="speak" data-text="First Corinthians chapter six verses sixteen and seventeen. What? know ye not that he which is joined to an harlot is one body? for two, saith he, shall be one flesh. But he that is joined unto the Lord is one spirit.">▶ Play</button>
+      <button class="pause">Ⅱ Pause</button><button class="stop">■ Stop</button><button class="rewind">↺ Rewind</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <span class="chapnum">Chapter 2 of 8</span>
+    <h2>Godly vs Ungodly Soul Ties</h2>
+    <p class="gist">Not every soul tie is evil. Godly ties build you and open doors; ungodly ties formed through sin, trauma, or manipulation hold you captive.</p>
+    <details><summary>Three God-ordained soul ties</summary><div class="inner"><ul>
+      <li>Husband and wife</li><li>Parents and children</li><li>Believers and Christ</li>
+    </ul></div></details>
+    <div class="declare"><span class="lbl">Repeat after me</span>By the power of the Holy Ghost, every ungodly soul tie must break in the name of Jesus.</div>
+  </div>
+</section>
+
+<!-- INTERMEDIATE -->
+<section class="panel" id="mid">
+  <div class="card">
+    <span class="chapnum">Chapter 3 of 8</span>
+    <h2>How Ungodly Soul Ties Are Formed</h2>
+    <p class="gist">Pastor Kiky named five doorways an ungodly soul tie enters through.</p>
+    <details><summary>The five doorways</summary><div class="inner"><ul>
+      <li>Sexual relationships outside the will of God (1 Corinthians 6:16)</li>
+      <li>Toxic and abusive relationships — control, manipulation, fear</li>
+      <li>Past relationships never released</li>
+      <li>Trauma and deep emotional bonds</li>
+      <li>Covenants and spiritual agreements — words, rituals, dedications</li>
+    </ul></div></details>
+    <div class="verse"><span class="ref">Isaiah 28:18 (KJV)</span>“And your covenant with death shall be disannulled, and your agreement with hell shall not stand; when the overflowing scourge shall pass through, then ye shall be trodden down by it.”</div>
+    <div class="controls">
+      <button class="speak" data-text="Isaiah chapter twenty-eight verse eighteen. And your covenant with death shall be disannulled, and your agreement with hell shall not stand; when the overflowing scourge shall pass through, then ye shall be trodden down by it.">▶ Play</button>
+      <button class="pause">Ⅱ Pause</button><button class="stop">■ Stop</button><button class="rewind">↺ Rewind</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <span class="chapnum">Chapter 4 of 8</span>
+    <h2>Signs an Ungodly Soul Tie Is Operating</h2>
+    <details><summary>Nine signs to check honestly</summary><div class="inner"><ul>
+      <li>Cannot stop thinking about the other person</li>
+      <li>Feel spiritually and emotionally drained</li>
+      <li>Keep returning to a toxic relationship</li>
+      <li>Repeated dreams about the person</li>
+      <li>Feel controlled, manipulated, bound, distressed</li>
+      <li>Spiritual sexual attack in dreams; a monitoring spirit</li>
+      <li>Struggle to move forward in life or any relationship</li>
+      <li>Feel guilty, confused, oppressed</li>
+      <li>Feel fear without a clear reason</li>
+    </ul></div></details>
+  </div>
+
+  <div class="card">
+    <span class="chapnum">Chapter 5 of 8</span>
+    <h2>What Ungodly Soul Ties Do</h2>
+    <p class="gist">They delay destiny, block blessing, pollute prayer, and transfer burdens — as with Samson and Delilah.</p>
+    <div class="verse"><span class="ref">Judges 16:19 (KJV)</span>“And she made him sleep upon her knees; and she called for a man, and she caused him to shave off the seven locks of his head; and she began to afflict him, and his strength went from him.”</div>
+    <div class="controls">
+      <button class="speak" data-text="Judges chapter sixteen verse nineteen. And she made him sleep upon her knees; and she called for a man, and she caused him to shave off the seven locks of his head; and she began to afflict him, and his strength went from him.">▶ Play</button>
+      <button class="pause">Ⅱ Pause</button><button class="stop">■ Stop</button><button class="rewind">↺ Rewind</button>
+    </div>
+    <div class="verse"><span class="ref">Hosea 4:6 (KJV)</span>“My people are destroyed for lack of knowledge: because thou hast rejected knowledge, I will also reject thee, that thou shalt be no priest to me: seeing thou hast forgotten the law of thy God, I will also forget thy children.”</div>
+    <div class="controls">
+      <button class="speak" data-text="Hosea chapter four verse six. My people are destroyed for lack of knowledge: because thou hast rejected knowledge, I will also reject thee, that thou shalt be no priest to me: seeing thou hast forgotten the law of thy God, I will also forget thy children.">▶ Play</button>
+      <button class="pause">Ⅱ Pause</button><button class="stop">■ Stop</button><button class="rewind">↺ Rewind</button>
+    </div>
+  </div>
+</section>
+
+<!-- ADVANCED -->
+<section class="panel" id="adv">
+  <div class="card">
+    <span class="chapnum">Chapter 6 of 8</span>
+    <h2>Freedom Through the Son</h2>
+    <p class="gist">Jesus did not only come to forgive sins; He came to break every bondage.</p>
+    <div class="verse"><span class="ref">John 8:36 (KJV)</span>“If the Son therefore shall make you free, ye shall be free indeed.”</div>
+    <div class="controls">
+      <button class="speak" data-text="John chapter eight verse thirty-six. If the Son therefore shall make you free, ye shall be free indeed.">▶ Play</button>
+      <button class="pause">Ⅱ Pause</button><button class="stop">■ Stop</button><button class="rewind">↺ Rewind</button>
+    </div>
+    <div class="verse"><span class="ref">Galatians 3:13 (KJV)</span>“Christ hath redeemed us from the curse of the law, being made a curse for us: for it is written, Cursed is every one that hangeth on a tree:”</div>
+    <div class="verse"><span class="ref">Galatians 3:14 (KJV)</span>“That the blessing of Abraham might come on the Gentiles through Jesus Christ; that we might receive the promise of the Spirit through faith.”</div>
+    <div class="controls">
+      <button class="speak" data-text="Galatians chapter three verses thirteen and fourteen. Christ hath redeemed us from the curse of the law, being made a curse for us: for it is written, Cursed is every one that hangeth on a tree: That the blessing of Abraham might come on the Gentiles through Jesus Christ; that we might receive the promise of the Spirit through faith.">▶ Play</button>
+      <button class="pause">Ⅱ Pause</button><button class="stop">■ Stop</button><button class="rewind">↺ Rewind</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <span class="chapnum">Chapter 7 of 8</span>
+    <h2>Seven Steps to Break Ungodly Soul Ties</h2>
+    <p class="gist">Tap each step to cut that tie and hear its Scripture.</p>
+    <div class="ropebar"><div id="ropeFill"></div></div>
+    <p class="small" id="ropeCount">0 of 7 steps cut</p>
+    <div class="step" data-text="Acts chapter three verse nineteen. Repent ye therefore, and be converted, that your sins may be blotted out, when the times of refreshing shall come from the presence of the Lord.">
+      <span class="knot">🪢</span><div class="txt"><b>Step 1 · Repent</b>Acts 3:19 — “Repent ye therefore, and be converted, that your sins may be blotted out…”</div>
+      <button class="cutbtn">Cut ✂</button>
+    </div>
+    <div class="step" data-text="Your freedom is voice activated. Renounce and denounce every ungodly soul tie out loud, mentioning the names the Holy Spirit brings to mind.">
+      <span class="knot">🪢</span><div class="txt"><b>Step 2 · Renounce aloud</b>“Your freedom is voice-activated.” Speak the names; renounce the connection.</div>
+      <button class="cutbtn">Cut ✂</button>
+    </div>
+    <div class="step" data-text="Revelation chapter twelve verse eleven. And they overcame him by the blood of the Lamb, and by the word of their testimony; and they loved not their lives unto the death.">
+      <span class="knot">🪢</span><div class="txt"><b>Step 3 · The blood of the Lamb</b>Revelation 12:11 — “they overcame him by the blood of the Lamb…”</div>
+      <button class="cutbtn">Cut ✂</button>
+    </div>
+    <div class="step" data-text="Cut every emotional and spiritual access point. Stop communication if necessary with the toxic person who has disgraced, manipulated, or beaten you.">
+      <span class="knot">🪢</span><div class="txt"><b>Step 4 · Cut access</b>Stop every emotional and spiritual access point still open to the tie.</div>
+      <button class="cutbtn">Cut ✂</button>
+    </div>
+    <div class="step" data-text="Remove anything that keeps the connection alive, and guard your heart.">
+      <span class="knot">🪢</span><div class="txt"><b>Step 5 · Remove the object</b>Remove anything that keeps the connection alive; guard your heart.</div>
+      <button class="cutbtn">Cut ✂</button>
+    </div>
+    <div class="step" data-text="Matthew chapter twelve verses forty-three through forty-five. When the unclean spirit is gone out of a man, he walketh through dry places, seeking rest, and findeth none. Then he saith, I will return into my house from whence I came out; and when he is come, he findeth it empty, swept, and garnished. Then goeth he, and taketh with himself seven other spirits more wicked than himself, and they enter in and dwell there: and the last state of that man is worse than the first.">
+      <span class="knot">🪢</span><div class="txt"><b>Step 6 · Fill the void</b>Matthew 12:43–45 warns: do not leave the house empty, swept, and garnished.</div>
+      <button class="cutbtn">Cut ✂</button>
+    </div>
+    <div class="step" data-text="First Corinthians chapter six verse seventeen. But he that is joined unto the Lord is one spirit.">
+      <span class="knot">🪢</span><div class="txt"><b>Step 7 · Be joined to Christ</b>1 Corinthians 6:17 — “he that is joined unto the Lord is one spirit.”</div>
+      <button class="cutbtn">Cut ✂</button>
+    </div>
+    <div class="controls" style="margin-top:8px">
+      <button class="pause" id="advPause">Ⅱ Pause</button><button class="stop" id="advStop">■ Stop</button><button class="rewind" id="advRewind">↺ Rewind</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <span class="chapnum">Chapter 8 of 8</span>
+    <h2>Restoration and Open Doors</h2>
+    <p class="gist">Breaking the tie restores identity, emotional stability, and spiritual strength.</p>
+    <div class="verse"><span class="ref">Revelation 3:8 (KJV)</span>“I know thy works: behold, I have set before thee an open door, and no man can shut it: for thou hast a little strength, and hast kept my word, and hast not denied my name.”</div>
+    <div class="controls">
+      <button class="speak" data-text="Revelation chapter three verse eight. I know thy works: behold, I have set before thee an open door, and no man can shut it: for thou hast a little strength, and hast kept my word, and hast not denied my name.">▶ Play</button>
+      <button class="pause">Ⅱ Pause</button><button class="stop">■ Stop</button><button class="rewind">↺ Rewind</button>
+    </div>
+    <div class="verse"><span class="ref">Psalm 5:12 (KJV)</span>“For thou, LORD, wilt bless the righteous; with favour wilt thou compass him as with a shield.”</div>
+    <div class="controls">
+      <button class="speak" data-text="Psalm five verse twelve. For thou, LORD, wilt bless the righteous; with favour wilt thou compass him as with a shield.">▶ Play</button>
+      <button class="pause">Ⅱ Pause</button><button class="stop">■ Stop</button><button class="rewind">↺ Rewind</button>
+    </div>
+  </div>
+</section>
+
+<!-- QUIZ -->
+<section class="panel" id="quiz">
+  <div class="card">
+    <div class="scoreline" id="scoreline">0 of 8 correct</div>
+    <p class="small">Every question and answer is exact Scripture wording — KJV only.</p>
+
+    <div class="quizq" data-a="c"><p>1. Isaiah 28:18 — "your covenant with ___ shall be disannulled."</p>
+      <button class="opt" data-c="a">sin</button><button class="opt" data-c="b">hell</button><button class="opt" data-c="c">death</button><p class="result"></p></div>
+
+    <div class="quizq" data-a="b"><p>2. John 8:36 — "If the Son therefore shall make you free, ye shall be ___ indeed."</p>
+      <button class="opt" data-c="a">saved</button><button class="opt" data-c="b">free</button><button class="opt" data-c="c">blessed</button><p class="result"></p></div>
+
+    <div class="quizq" data-a="a"><p>3. Revelation 12:11 — "they overcame him by the ___ of the Lamb."</p>
+      <button class="opt" data-c="a">blood</button><button class="opt" data-c="b">word</button><button class="opt" data-c="c">name</button><p class="result"></p></div>
+
+    <div class="quizq" data-a="c"><p>4. 1 Corinthians 6:17 — "he that is joined unto the Lord is one ___."</p>
+      <button class="opt" data-c="a">body</button><button class="opt" data-c="b">flesh</button><button class="opt" data-c="c">spirit</button><p class="result"></p></div>
+
+    <div class="quizq" data-a="b"><p>5. Acts 3:19 — "Repent ye therefore, and be ___."</p>
+      <button class="opt" data-c="a">baptized</button><button class="opt" data-c="b">converted</button><button class="opt" data-c="c">restored</button><p class="result"></p></div>
+
+    <div class="quizq" data-a="a"><p>6. Hosea 4:6 — "My people are destroyed for lack of ___."</p>
+      <button class="opt" data-c="a">knowledge</button><button class="opt" data-c="b">faith</button><button class="opt" data-c="c">prayer</button><p class="result"></p></div>
+
+    <div class="quizq" data-a="c"><p>7. Revelation 3:8 — "I have set before thee an open ___, and no man can shut it."</p>
+      <button class="opt" data-c="a">gate</button><button class="opt" data-c="b">window</button><button class="opt" data-c="c">door</button><p class="result"></p></div>
+
+    <div class="quizq" data-a="b"><p>8. Psalm 5:12 — "with favour wilt thou compass him as with a ___."</p>
+      <button class="opt" data-c="a">crown</button><button class="opt" data-c="b">shield</button><button class="opt" data-c="c">robe</button><p class="result"></p></div>
+
+    <button id="resetQuiz" style="background:var(--panel);border:1px solid var(--line);color:var(--ink);margin-top:8px">Reset quiz</button>
+  </div>
+</section>
+
+<!-- DECLARE & PRAY -->
+<section class="panel" id="declare">
+  <div class="card">
+    <h2>Repeat After Me</h2>
+    <p class="small">Every line below is taken directly from the deliverance exercises of this teaching. Speak each one out loud.</p>
+    <div class="declare"><span class="lbl">Step 1</span>I repent of every involvement in every ungodly soul tie. Blot out my sins, Lord, and let the times of refreshing come.</div>
+    <div class="declare"><span class="lbl">Step 2</span>I renounce and I denounce every ungodly soul tie. I was with you, but now I am not part of you, in the name of Jesus.</div>
+    <div class="declare"><span class="lbl">Step 3</span>By the blood of the Lamb I overcome. The blood disconnects me from every ungodly covenant and brings me into a new covenant.</div>
+    <div class="declare"><span class="lbl">Step 4</span>I cut every emotional and spiritual access point into my life. Every access point the enemy has into my life, I close it.</div>
+    <div class="declare"><span class="lbl">Step 6</span>I fill the void with God, with the Word of God, and with the power of the Holy Ghost. My house will not be left empty.</div>
+    <div class="declare"><span class="lbl">Step 7</span>I am joined unto the Lord and I am one spirit with Him. My identity, my power, my potential, my confidence — return to me now.</div>
+    <div class="declare"><span class="lbl">Freedom</span>My covenant with death is disannulled. My agreement with hell shall not stand, in the mighty name of Jesus.</div>
+    <div class="declare"><span class="lbl">Restoration</span>Father, open doors that no man can shut. Doors of promotion, increase, divine connection, destiny and restoration — let it be open in my life.</div>
+  </div>
+</section>
+
+</main>
+</div>
+
+<footer>
+  L137 Deliverance Ministry International · Pastor Kiky Ocansey · Luke 1:37 — "For with God nothing shall be impossible."<br>
+  Source: Breaking Ungodly Soul Ties, Clubhouse teaching, March 28, 2026. Scripture quoted King James Version, in full.
+</footer>
+
+<script>
+let speech = window.speechSynthesis, currentText = '', paused = false;
+function speak(text){ speech.cancel(); currentText = text; const u = new SpeechSynthesisUtterance(text); u.rate = .92; speech.speak(u); paused = false; }
+document.querySelectorAll('.controls .speak').forEach(b => b.onclick = () => speak(b.dataset.text));
+document.querySelectorAll('.controls .pause, #advPause').forEach(b => b.onclick = () => {
+  if (speech.speaking && !paused){ speech.pause(); paused = true; b.textContent = '▶ Resume'; }
+  else if (paused){ speech.resume(); paused = false; b.textContent = 'Ⅱ Pause'; }
+});
+document.querySelectorAll('.controls .stop, #advStop').forEach(b => b.onclick = () => {
+  speech.cancel(); paused = false;
+  document.querySelectorAll('.controls .pause, #advPause').forEach(x => x.textContent = 'Ⅱ Pause');
+});
+document.querySelectorAll('.controls .rewind, #advRewind').forEach(b => b.onclick = () => { if (currentText) speak(currentText); });
+
+// tabs
+document.querySelectorAll('nav.tabs button').forEach(b => b.onclick = () => {
+  document.querySelectorAll('nav.tabs button').forEach(x => x.classList.remove('active'));
+  b.classList.add('active');
+  document.querySelectorAll('.panel').forEach(x => x.classList.remove('show'));
+  document.getElementById(b.dataset.p).classList.add('show');
+  window.scrollTo({top:0, behavior:'smooth'});
+});
+
+// theme
+document.getElementById('themeBtn').onclick = function(){
+  const night = document.documentElement.dataset.theme === 'night';
+  document.documentElement.dataset.theme = night ? '' : 'night';
+  this.textContent = night ? '☾ Night mode' : '☀ Daylight mode';
+};
+
+// rope steps
+const steps = document.querySelectorAll('.step');
+function updateRope(){
+  const cut = document.querySelectorAll('.step.cut').length;
+  document.getElementById('ropeFill').style.width = (cut/steps.length*100) + '%';
+  document.getElementById('ropeCount').textContent = cut + ' of ' + steps.length + ' steps cut';
+}
+steps.forEach(s => {
+  const btn = s.querySelector('.cutbtn');
+  btn.onclick = () => {
+    const already = s.classList.contains('cut');
+    if (!already){ speak(s.dataset.text); s.classList.add('cut'); s.querySelector('.knot').textContent='✂️'; btn.textContent='Cut'; }
+    else { s.classList.remove('cut'); s.querySelector('.knot').textContent='🪢'; btn.textContent='Cut ✂'; }
+    updateRope();
+  };
+});
+
+// quiz
+let answered = new Set();
+function tally(){
+  const n = [...document.querySelectorAll('.quizq')].filter(q => q.dataset.result === 'correct').length;
+  document.getElementById('scoreline').textContent = n + ' of ' + document.querySelectorAll('.quizq').length + ' correct';
+}
+document.querySelectorAll('.quizq .opt').forEach(o => o.onclick = () => {
+  const q = o.closest('.quizq');
+  if (answered.has(q)) return;
+  answered.add(q);
+  const correct = q.dataset.a;
+  q.querySelectorAll('.opt').forEach(x => { x.disabled = true; if (x.dataset.c === correct) x.classList.add('correct'); });
+  const r = q.querySelector('.result');
+  if (o.dataset.c === correct){ q.dataset.result = 'correct'; r.textContent = 'Correct.'; r.style.color = 'var(--cut)'; }
+  else { q.dataset.result = 'wrong'; o.classList.add('wrong'); r.textContent = 'Read the Scripture again.'; r.style.color = 'var(--accent)'; }
+  tally();
+});
+document.getElementById('resetQuiz').onclick = () => {
+  answered.clear();
+  document.querySelectorAll('.quizq').forEach(q => {
+    delete q.dataset.result;
+    q.querySelectorAll('.opt').forEach(o => { o.disabled = false; o.classList.remove('correct','wrong'); });
+    q.querySelector('.result').textContent = '';
+  });
+  tally();
+};
+</script>
+<script data-pplx-inline-edit>
+(function () {
+  if (window === window.top) return;
+
+  const allowedParentOrigins = ["https://www.perplexity.ai","https://perplexity.ai","https://testing.perplexity.ai","https://staging.perplexity.ai","https://*.preview.i.perplexity.ai","http://perplexity.localhost","http://localhost:1420","http://127.0.0.1:1420","http://localhost:3000","http://127.0.0.1:3000","http://localhost:5173","http://127.0.0.1:5173"];
+  const MAX_FONT_BYTES = 500 * 1024;
+  const MAX_TOTAL_FONT_BYTES = 2 * 1024 * 1024;
+  let scrollForwarding = false;
+  let scrollRaf = 0;
+  let trustedTopOrigin = null;
+
+  // Allow entries like "https://*.preview.i.perplexity.ai" — the wildcard
+  // matches a single DNS label (no dots), so "https://*.foo" cannot stretch
+  // across multiple labels.
+  function matchesAllowedOrigin(origin) {
+    if (!origin) return false;
+    for (const entry of allowedParentOrigins) {
+      if (!entry.includes("*")) {
+        if (entry === origin) return true;
+        continue;
+      }
+      const pattern = new RegExp(
+        "^" +
+          entry.replace(/[.+?^${}()|[\]\\]/g, "\\$&").replace(/\*/g, "[^.]+") +
+          "$",
+      );
+      if (pattern.test(origin)) return true;
+    }
+    return false;
+  }
+
+  // Trust decision: when the sender is same-origin-visible (event.origin is a
+  // real origin like https://www.perplexity.ai) we trust event.origin directly.
+  // When event.origin is "null" (opaque broker srcdoc), we fall back to the
+  // broker's stamped `parentOrigin` to identify the top window. The fallback
+  // is claim-only — we rely on the browser's native `targetOrigin` enforcement
+  // on the response path (see postToTrustedTop) to ensure replies can't be
+  // delivered to anyone but the actual top window of that claimed origin.
+  function getTrustedParentOrigin(event) {
+    const forwardedParentOrigin =
+      typeof event.data.parentOrigin === "string" ? event.data.parentOrigin : null;
+    const parentOrigin = event.origin === "null" ? forwardedParentOrigin : event.origin;
+    return matchesAllowedOrigin(parentOrigin) ? parentOrigin : null;
+  }
+
+  // All responses go to window.top with targetOrigin = the allowlisted origin.
+  // An attacker that iframes us inside their own null-origin broker can claim
+  // any parentOrigin they like, but the browser will drop the reply whenever
+  // the real top's origin doesn't match — so the screenshot never leaves.
+  function postToTrustedTop(message) {
+    if (!trustedTopOrigin) return;
+    try {
+      window.top.postMessage(message, trustedTopOrigin);
+    } catch (_error) {}
+  }
+
+  function inlineAll(original, clone) {
+    if (original.nodeType !== 1 || clone.nodeType !== 1) return;
+
+    try {
+      const computedStyle = getComputedStyle(original);
+      // cssText on a computed style is the serialized declaration in modern
+      // Chromium/Safari — a single read beats enumerating ~400 longhand
+      // properties. Firefox returns "" here, so we fall back on empty.
+      const serialized = computedStyle.cssText;
+      if (serialized) {
+        clone.style.cssText = serialized;
+      } else {
+        const parts = new Array(computedStyle.length);
+        for (let index = 0; index < computedStyle.length; index += 1) {
+          const property = computedStyle[index];
+          parts[index] = `${property}:${computedStyle.getPropertyValue(property)};`;
+        }
+        clone.style.cssText = parts.join("");
+      }
+    } catch (_error) {}
+
+    const originalChildren = original.children;
+    const clonedChildren = clone.children;
+    for (
+      let index = 0;
+      index < originalChildren.length && index < clonedChildren.length;
+      index += 1
+    ) {
+      inlineAll(originalChildren[index], clonedChildren[index]);
+    }
+  }
+
+  function extractFontUrl(srcValue) {
+    const matches = [
+      ...srcValue.matchAll(
+        /url\(["']?([^"')]+)["']?\)(?:\s*format\(["']?([^"')]+)["']?\))?/gi,
+      ),
+    ];
+    if (matches.length === 0) return null;
+    const woff2 = matches.find((m) => m[2] && m[2].toLowerCase().includes("woff2"));
+    if (woff2) return woff2[1];
+    const woff = matches.find((m) => m[2] && m[2].toLowerCase().includes("woff"));
+    if (woff) return woff[1];
+    return matches[0][1];
+  }
+
+  // Cache resolved font URL -> data URI across captures. Fonts on a page
+  // essentially never change, and a batch run emits multiple captures back to
+  // back — without this we'd refetch + re-base64 every time.
+  const fontDataUriCache = new Map();
+  const SRC_DECLARATION_RE = /src\s*:\s*[^;}]+/i;
+
+  async function fetchAsDataUri(url) {
+    if (fontDataUriCache.has(url)) return fontDataUriCache.get(url);
+    let dataUri = null;
+    try {
+      const response = await fetch(url, { mode: "cors", credentials: "omit" });
+      if (response.ok) {
+        const blob = await response.blob();
+        if (blob.size <= MAX_FONT_BYTES) {
+          dataUri = await new Promise((resolve) => {
+            const reader = new FileReader();
+            reader.onloadend = () =>
+              resolve(typeof reader.result === "string" ? reader.result : null);
+            reader.onerror = () => resolve(null);
+            reader.readAsDataURL(blob);
+          });
+        }
+      }
+    } catch (_error) {
+      dataUri = null;
+    }
+    fontDataUriCache.set(url, dataUri);
+    return dataUri;
+  }
+
+  function collectFontFaceRuleTexts() {
+    const rules = [];
+    for (const sheet of document.styleSheets) {
+      let cssRules;
+      try {
+        cssRules = sheet.cssRules;
+      } catch (_error) {
+        continue;
+      }
+      if (!cssRules) continue;
+      for (const rule of cssRules) {
+        const cssText = rule.cssText || "";
+        if (cssText.startsWith("@font-face")) rules.push(cssText);
+      }
+    }
+    return rules;
+  }
+
+  async function buildInlinedFontCss() {
+    const ruleTexts = collectFontFaceRuleTexts();
+    if (ruleTexts.length === 0) return null;
+
+    const resolved = ruleTexts.map((cssText) => {
+      if (!SRC_DECLARATION_RE.test(cssText)) return null;
+      const srcMatch = cssText.match(/src\s*:\s*([^;}]+)[;}]/i);
+      if (!srcMatch) return null;
+      const url = extractFontUrl(srcMatch[1]);
+      if (!url) return null;
+      try {
+        return { cssText, url: new URL(url, document.baseURI).href };
+      } catch (_error) {
+        return null;
+      }
+    });
+
+    const dataUris = await Promise.all(
+      resolved.map((entry) => (entry ? fetchAsDataUri(entry.url) : Promise.resolve(null))),
+    );
+
+    const inlined = [];
+    let totalBytes = 0;
+    for (let index = 0; index < resolved.length; index += 1) {
+      const entry = resolved[index];
+      const dataUri = dataUris[index];
+      if (!entry || !dataUri) continue;
+      const approxBytes = dataUri.length * 0.75;
+      if (totalBytes + approxBytes > MAX_TOTAL_FONT_BYTES) break;
+      totalBytes += approxBytes;
+      inlined.push(entry.cssText.replace(SRC_DECLARATION_RE, `src: url("${dataUri}")`));
+    }
+    return inlined.length > 0 ? inlined.join("\n") : null;
+  }
+
+  function stripExternal(clone) {
+    const images = clone.querySelectorAll("img");
+    for (let index = 0; index < images.length; index += 1) {
+      const src = images[index].getAttribute("src");
+      if (src && !src.startsWith("data:")) images[index].removeAttribute("src");
+    }
+
+    const elements = clone.querySelectorAll("*");
+    for (let index = 0; index < elements.length; index += 1) {
+      const style = elements[index].style.cssText;
+      if (style && style.includes("url(")) {
+        elements[index].style.cssText = style.replace(
+          /url\(["']?(?!data:)[^)"']*["']?\)/gi,
+          "none",
+        );
+      }
+    }
+  }
+
+  function emitScroll() {
+    scrollRaf = 0;
+    if (!scrollForwarding) return;
+    postToTrustedTop({
+      type: "INLINE_EDIT_SCROLL",
+      scrollX: window.scrollX,
+      scrollY: window.scrollY,
+    });
+  }
+
+  window.addEventListener(
+    "scroll",
+    function () {
+      if (!scrollForwarding || scrollRaf) return;
+      scrollRaf = requestAnimationFrame(emitScroll);
+    },
+    { passive: true, capture: true },
+  );
+
+  async function handleCaptureRequest(event) {
+    const requestId = event.data.requestId;
+    const scrollX = window.scrollX;
+    const scrollY = window.scrollY;
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+
+    function postResult(dataUrl) {
+      postToTrustedTop({
+        type: "INLINE_EDIT_SCREENSHOT_RESULT",
+        requestId,
+        dataUrl,
+        scrollX,
+        scrollY,
+      });
+    }
+
+    try {
+      // Wait for any pending web fonts to resolve so both inline metrics and
+      // the @font-face inlining below see the same loaded faces.
+      if (document.fonts && document.fonts.ready) {
+        try {
+          await document.fonts.ready;
+        } catch (_error) {}
+      }
+
+      const clone = document.documentElement.cloneNode(true);
+      inlineAll(document.documentElement, clone);
+
+      const removedNodes = clone.querySelectorAll("script,link[rel=\"stylesheet\"],style");
+      for (let index = 0; index < removedNodes.length; index += 1) {
+        removedNodes[index].remove();
+      }
+
+      stripExternal(clone);
+
+      // Re-embed web fonts as data-URI @font-face rules so the SVG rasterizer
+      // can resolve them — external font URLs aren't fetched during
+      // foreignObject rendering, which would otherwise force a fallback face
+      // and change text metrics.
+      const inlinedFontCss = await buildInlinedFontCss();
+      if (inlinedFontCss) {
+        const styleEl = document.createElement("style");
+        styleEl.textContent = inlinedFontCss;
+        const head = clone.querySelector("head");
+        if (head) head.appendChild(styleEl);
+        else clone.insertBefore(styleEl, clone.firstChild);
+      }
+
+      const html = new XMLSerializer().serializeToString(clone);
+      const svg =
+        `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}">` +
+        '<foreignObject width="100%" height="100%">' +
+        `<div xmlns="http://www.w3.org/1999/xhtml" style="width:${width}px;height:${height}px;overflow:hidden">` +
+        `<div style="position:relative;left:-${scrollX}px;top:-${scrollY}px">` +
+        html +
+        "</div></div></foreignObject></svg>";
+      const svgUrl = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
+      const image = new Image();
+      image.onload = function () {
+        const canvas = document.createElement("canvas");
+        canvas.width = width;
+        canvas.height = height;
+        canvas.getContext("2d").drawImage(image, 0, 0);
+        postResult(canvas.toDataURL("image/png"));
+      };
+      image.onerror = function () {
+        postResult(null);
+      };
+      image.src = svgUrl;
+    } catch (_error) {
+      postResult(null);
+    }
+  }
+
+  window.addEventListener("message", function (event) {
+    if (!event.data) return;
+    // Only accept messages from the direct parent frame. Blocks sibling /
+    // unrelated-window postMessage senders that could otherwise reach us.
+    if (event.source !== window.parent) return;
+
+    const trustedParentOrigin = getTrustedParentOrigin(event);
+    if (!trustedParentOrigin) return;
+    trustedTopOrigin = trustedParentOrigin;
+
+    if (event.data.type === "INLINE_EDIT_SCROLL_START") {
+      scrollForwarding = true;
+      emitScroll();
+      return;
+    }
+
+    if (event.data.type === "INLINE_EDIT_SCROLL_STOP") {
+      scrollForwarding = false;
+      if (scrollRaf) cancelAnimationFrame(scrollRaf);
+      scrollRaf = 0;
+      return;
+    }
+
+    if (event.data.type !== "INLINE_EDIT_CAPTURE_REQUEST") return;
+
+    handleCaptureRequest(event);
+  });
+})();
+
+
+</script></body>
+</html>
